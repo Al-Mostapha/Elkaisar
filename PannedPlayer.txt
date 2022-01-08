@@ -1,0 +1,48 @@
+Array
+(
+    [0] => Array
+        (
+            [id_player] => 6224
+            [user_group] => 0
+            [prestige] => 199921961
+            [honor] => 2147483647
+            [gold] => 0
+            [avatar] => 5
+            [guild] => مزرعه
+            [id_guild] => 31
+            [name] => 𝓡𝓮𝓭𝓪
+            [lang] => ar
+            [city_flag] => 0
+            [porm] => 29
+            [chat_panne] => 1641674051
+            [online] => 0
+            [last_seen] => 1641664361
+            [panned] => 2147483647
+            [p_token] => $2y$10$UzNMkgRplA6CxhHC69BqtuDdLJB8KdB3eOs6HNpFY/f33vDLA8l4W
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id_player] => 6224
+            [user_group] => 0
+            [prestige] => 200100206
+            [honor] => 2147483647
+            [gold] => 0
+            [avatar] => 5
+            [guild] => مزرعه
+            [id_guild] => 31
+            [name] => 𝓡𝓮𝓭𝓪
+            [lang] => ar
+            [city_flag] => 0
+            [porm] => 29
+            [chat_panne] => 1641674051
+            [online] => 0
+            [last_seen] => 1641664361
+            [panned] => 2147483647
+            [p_token] => $2y$10$UzNMkgRplA6CxhHC69BqtuDdLJB8KdB3eOs6HNpFY/f33vDLA8l4W
+        )
+
+)

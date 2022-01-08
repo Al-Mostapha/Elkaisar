@@ -19,12 +19,17 @@ exports.abort = function (con, msgObj) {
 
 
 exports.Join = function (con, msgObj) {
-
+    
+    if( Elkaisar.Lib.LBattel.HeroListInBattel[msgObj.Hero.id_hero] > Date.now()/1000)
+        return con.sendUTF(JSON.stringify({"classPath": "Battel.StartFailed", "state": "not_in_city", "Console Log" : console.log("Duiplicated Hero Of", msgObj)}));
+    if(Elkaisar.Battel.BattelList[msgObj.Battel.id_battel] && Elkaisar.Battel.BattelList[msgObj.Battel.id_battel].Battel)
+        Elkaisar.Lib.LBattel.HeroListInBattel[msgObj.Hero["id_hero"]] = Elkaisar.Battel.BattelList[msgObj.Battel.id_battel].Battel.time_end;
     Elkaisar.Lib.LBattel.heroJoinedBattel(msgObj.Hero, msgObj.Battel);
 
 };
 
 exports.start = async function (con, msgObj) {
+    
     const idPlayer      = con.idPlayer;
     const idHero        = Elkaisar.Base.validateId(msgObj["idHero"]);
     const xCoord        = Elkaisar.Base.validateId(msgObj["xCoord"]);
@@ -36,12 +41,13 @@ exports.start = async function (con, msgObj) {
     const powerNeeded   = UnitData.reqFitness;
     const LHArmy        = new Elkaisar.Lib.LHeroArmy();
     
+    
     if(!Hero[0] || !UnitData)
         return con.sendUTF(JSON.stringify({"classPath": "Battel.StartFailed", "state": "error_0","d" : Unit, "k": UnitData}));
     if(await LHArmy.isCarringArmy(idHero) === false)
         return con.sendUTF(JSON.stringify({"classPath": "Battel.StartFailed", "state": "hero_carry_no_army"}));
-    if(Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY)
-        return con.sendUTF(JSON.stringify({"classPath": "Battel.StartFailed", "state": "not_in_city"}));
+    if(Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHero] > Date.now()/1000)
+        return con.sendUTF(JSON.stringify({"classPath": "Battel.StartFailed", "state": "not_in_city", "Console Log" : console.log("Duiplicated Hero Of", msgObj)}));
     if(UnitData.maxLvl > 0 && Unit.l > UnitData.maxLvl)
         return con.sendUTF(JSON.stringify({"classPath": "Battel.StartFailed", "state": "no_more_lvls"}));
     if(Unit["lo"] == Elkaisar.Config.WU_lOCKED_UNIT)
@@ -56,9 +62,10 @@ exports.start = async function (con, msgObj) {
         return con.sendUTF(JSON.stringify({"classPath": "Battel.StartFailed", "state": "no_enough_hero_power"}));
     if(!(await Elkaisar.Lib.LBattelUnit.onTheRoleInAttQue(idPlayer, Unit)))
         return con.sendUTF(JSON.stringify({"classPath": "Battel.StartFailed", "state": "not_his_role"}));
-
+    if(!(await Elkaisar.Lib.LCity.heroCityCanFight(Hero[0].id_city)))
+        return con.sendUTF(JSON.stringify({"classPath": "Battel.StartFailed", "state": "hero_count_over_plaze"}));
     Hero[0].LHArmy = LHArmy;
-
+    
     Elkaisar.Lib.LBattelUnit.startBattel(idPlayer, idHero, Hero , Unit, attackTask);
    
 

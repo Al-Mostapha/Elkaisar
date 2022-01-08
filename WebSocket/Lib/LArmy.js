@@ -91,12 +91,12 @@ class LArmy
                     b_2_num = ${RemainAmount["b_2"]}, b_2_type = ${RemainType["b_2"]}, 
                     b_3_num = ${RemainAmount["b_3"]}, b_3_type = ${RemainType["b_3"]} `;*/
                                         
-        var Query = `f_1_num  = GREATEST(f_1_num - ${Hero["post"]["f_1"]*factor}, 0), f_1_type =  (SELECT if(f_1_num - ${Hero["post"]["f_1"]*factor} >= 1 , f_1_type, 0)), 
-                    f_2_num  = GREATEST(f_2_num - ${Hero["post"]["f_2"]*factor}, 0), f_2_type =  (SELECT if(f_2_num - ${Hero["post"]["f_2"]*factor} >= 1 , f_2_type, 0)), 
-                    f_3_num  = GREATEST(f_3_num - ${Hero["post"]["f_3"]*factor}, 0), f_3_type =  (SELECT if(f_3_num - ${Hero["post"]["f_3"]*factor} >= 1 , f_3_type, 0)),  
-                    b_1_num  = GREATEST(b_1_num - ${Hero["post"]["b_1"]*factor}, 0), b_1_type =  (SELECT if(b_1_num - ${Hero["post"]["b_1"]*factor} >= 1 , b_1_type, 0)), 
-                    b_2_num  = GREATEST(b_2_num - ${Hero["post"]["b_2"]*factor}, 0), b_2_type =  (SELECT if(b_2_num - ${Hero["post"]["b_2"]*factor} >= 1 , b_2_type, 0)),  
-                    b_3_num  = GREATEST(b_3_num - ${Hero["post"]["b_3"]*factor}, 0), b_3_type =  (SELECT if(b_3_num - ${Hero["post"]["b_3"]*factor} >= 1 , b_3_type, 0)) `;
+        var Query = `f_1_num  = GREATEST(CAST(f_1_num AS SIGNED) - ${Math.ceil(Hero["post"]["f_1"]*factor)}, 0), f_1_type =  (SELECT if(CAST(f_1_num AS SIGNED) - ${Math.ceil(Hero["post"]["f_1"]*factor)} >= 1 , f_1_type, 0)), 
+                    f_2_num  = GREATEST(CAST(f_2_num AS SIGNED) - ${Math.ceil(Hero["post"]["f_2"]*factor)}, 0), f_2_type =  (SELECT if(CAST(f_2_num AS SIGNED) - ${Math.ceil(Hero["post"]["f_2"]*factor)} >= 1 , f_2_type, 0)), 
+                    f_3_num  = GREATEST(CAST(f_3_num AS SIGNED) - ${Math.ceil(Hero["post"]["f_3"]*factor)}, 0), f_3_type =  (SELECT if(CAST(f_3_num AS SIGNED) - ${Math.ceil(Hero["post"]["f_3"]*factor)} >= 1 , f_3_type, 0)),  
+                    b_1_num  = GREATEST(CAST(b_1_num AS SIGNED) - ${Math.ceil(Hero["post"]["b_1"]*factor)}, 0), b_1_type =  (SELECT if(CAST(b_1_num AS SIGNED) - ${Math.ceil(Hero["post"]["b_1"]*factor)} >= 1 , b_1_type, 0)), 
+                    b_2_num  = GREATEST(CAST(b_2_num AS SIGNED) - ${Math.ceil(Hero["post"]["b_2"]*factor)}, 0), b_2_type =  (SELECT if(CAST(b_2_num AS SIGNED) - ${Math.ceil(Hero["post"]["b_2"]*factor)} >= 1 , b_2_type, 0)),  
+                    b_3_num  = GREATEST(CAST(b_3_num AS SIGNED) - ${Math.ceil(Hero["post"]["b_3"]*factor)}, 0), b_3_type =  (SELECT if(CAST(b_3_num AS SIGNED)- ${Math.ceil(Hero["post"]["b_3"]*factor)} >= 1 , b_3_type, 0)) `;
         Elkaisar.DB.Update(Query, "hero_army", "id_hero = ?" , [Hero["id_hero"]]);
         
         

@@ -612,7 +612,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wood_1.wood_1'",
         "Texture2D": "Texture2D'/Game/images/world/Sprites/w_1_Sprite.w_1_Sprite'",
         "tileName": "w_1",
-        "AnimKey" : "Forest.1",
+        "AnimKey": "Forest.1",
         "hitArea": [63, 72, 90, 83, 92, 97, 67, 112, 39, 99, 47, 84],
         "Desc": null,
         "heroLvl": 1,
@@ -632,7 +632,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wood_1.wood_1'",
         "Texture2D": "Texture2D'/Game/images/world/Sprites/w_2_Sprite.w_2_Sprite'",
         "tileName": "w_2",
-        "AnimKey" : "Forest.1",
+        "AnimKey": "Forest.1",
         "hitArea": [63, 72, 90, 83, 92, 97, 67, 112, 39, 99, 47, 84],
         "Desc": null,
         "heroLvl": 1,
@@ -652,7 +652,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wood_1.wood_1'",
         "Texture2D": "Texture2D'/Game/images/world/Sprites/w_3_Sprite.w_3_Sprite'",
         "tileName": "w_3",
-        "AnimKey" : "Forest.1",
+        "AnimKey": "Forest.1",
         "hitArea": [63, 72, 90, 83, 92, 97, 67, 112, 39, 99, 47, 84],
         "Desc": null,
         "heroLvl": 1,
@@ -672,7 +672,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wood_1.wood_1'",
         "Texture2D": "Texture2D'/Game/images/world/Sprites/w_4_Sprite.w_4_Sprite'",
         "tileName": "w_4",
-        "AnimKey" : "Forest.1",
+        "AnimKey": "Forest.1",
         "hitArea": [63, 72, 90, 83, 92, 97, 67, 112, 39, 99, 47, 84],
         "Desc": null,
         "heroLvl": 1,
@@ -692,7 +692,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wood_2.wood_2'",
         "Texture2D": "Texture2D'/Game/images/world/Sprites/w_5_Sprite.w_5_Sprite'",
         "tileName": "w_5",
-        "AnimKey" : "Forest.2",
+        "AnimKey": "Forest.2",
         "hitArea": [64, 64, 106, 86, 109, 101, 66, 122, 27, 97, 33, 80],
         "Desc": null,
         "heroLvl": 1,
@@ -712,7 +712,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wood_2.wood_2'",
         "Texture2D": "Texture2D'/Game/images/world/Sprites/w_6_Sprite.w_6_Sprite'",
         "tileName": "w_6",
-        "AnimKey" : "Forest.2",
+        "AnimKey": "Forest.2",
         "hitArea": [64, 64, 106, 86, 109, 101, 66, 122, 27, 97, 33, 80],
         "Desc": null,
         "heroLvl": 1,
@@ -732,7 +732,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wood_2.wood_2'",
         "Texture2D": "Texture2D'/Game/images/world/Sprites/w_7_Sprite.w_7_Sprite'",
         "tileName": "w_7",
-        "AnimKey" : "Forest.2",
+        "AnimKey": "Forest.2",
         "hitArea": [64, 64, 106, 86, 109, 101, 66, 122, 27, 97, 33, 80],
         "Desc": null,
         "heroLvl": 1,
@@ -752,7 +752,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wood_3.wood_3'",
         "Texture2D": "Texture2D'/Game/images/world/Sprites/w_8_Sprite.w_8_Sprite'",
         "tileName": "w_8",
-        "AnimKey" : "Forest.3",
+        "AnimKey": "Forest.3",
         "hitArea": [62, 48, 116, 77, 120, 97, 65, 127, 15, 100, 16, 74],
         "Desc": null,
         "heroLvl": 1,
@@ -772,7 +772,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wood_3.wood_3'",
         "Texture2D": "Texture2D'/Game/images/world/Sprites/w_9_Sprite.w_9_Sprite'",
         "tileName": "w_9",
-        "AnimKey" : "Forest.3",
+        "AnimKey": "Forest.3",
         "hitArea": [62, 48, 116, 77, 120, 97, 65, 127, 15, 100, 16, 74],
         "Desc": null,
         "heroLvl": 1,
@@ -792,7 +792,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wood_3.wood_3'",
         "Texture2D": "Texture2D'/Game/images/world/Sprites/w_10_Sprite.w_10_Sprite'",
         "tileName": "w_10",
-        "AnimKey" : "Forest.3",
+        "AnimKey": "Forest.3",
         "hitArea": [62, 48, 116, 77, 120, 97, 65, 127, 15, 100, 16, 74],
         "Desc": null,
         "heroLvl": 1,
@@ -1643,7 +1643,12 @@
                 "amount": 1
             }
         ],
-        "JoinReq": []
+        "JoinReq": [ 
+            {
+                "Item": "repel_trumpet_1",
+                "amount": 1
+            }
+        ]
     },
     "102": {
         "Title": "فرق العصيان القرطاجى",
@@ -1667,7 +1672,12 @@
                 "amount": 1
             }
         ],
-        "JoinReq": []
+        "JoinReq": [
+            {
+                "Item": "repel_trumpet_1",
+                "amount": 1
+            }
+        ]
     },
     "103": {
         "Title": "متمردى قرطاجة",
@@ -2390,7 +2400,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wolf_3.wolf_3'",
         "Texture2D": "PaperSprite'/Game/images/world/Sprites/fightChallangeServer_Sprite.fightChallangeServer_Sprite'",
         "tileName": "fightChallangeServer",
-        "hitArea": [7,261,61,136,228,54,348,114,377,241,264,371,49,344],
+        "hitArea": [7, 261, 61, 136, 228, 54, 348, 114, 377, 241, 264, 371, 49, 344],
         "Desc": "التخلي عن النضال عديمة الفائدة! أنا هنا لإنهاء حياتك السلمية.\n\nالجمهورية الرومانية تتعرض للهجوم من قبل              Skullbearer Fearless ويشارك اللوردات في المعركة مع قوات المتمردين.\n             وبالتالي لا يوجد عدد كاف من القوات للحفاظ على النظام في المدن.\n            في هذا الوقت ، تتعرض الثروة الشعبية للتهديد من قبل مجرمين مثل اللصوص وعصابات العصابات المتجولين وعصابات العصابات ،\n             وكلهم يختبئون في الجمهورية الرومانية لفترة طويلة. إنهم يقرعون ويقتلون السكان ، مما يجعل الناس يعانون.\n            أيضا ، يحرقون المنازل لإخراج الناس من المكان الذي يعيشون فيه ، مما يسبب عدم استقرار المجتمع.\n            الآن المواطنون الرومانيون يتوقون إلى الحياة السلمية وينتظرون المنقذ الذي يمكنه القضاء على الجرائم وتقديمهم إلى الحياة السعيدة السابقة.",
         "heroLvl": 1,
         "heroNum": 3,
@@ -2409,7 +2419,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wolf_3.wolf_3'",
         "Texture2D": "PaperSprite'/Game/images/world/Sprites/seaCity_1_Sprite.seaCity_1_Sprite'",
         "tileName": "seaCity_1",
-        "hitArea": [7,261,61,136,228,54,348,114,377,241,264,371,49,344],
+        "hitArea": [7, 261, 61, 136, 228, 54, 348, 114, 377, 241, 264, 371, 49, 344],
         "Desc": "التخلي عن النضال عديمة الفائدة! أنا هنا لإنهاء حياتك السلمية.\n\nالجمهورية الرومانية تتعرض للهجوم من قبل              Skullbearer Fearless ويشارك اللوردات في المعركة مع قوات المتمردين.\n             وبالتالي لا يوجد عدد كاف من القوات للحفاظ على النظام في المدن.\n            في هذا الوقت ، تتعرض الثروة الشعبية للتهديد من قبل مجرمين مثل اللصوص وعصابات العصابات المتجولين وعصابات العصابات ،\n             وكلهم يختبئون في الجمهورية الرومانية لفترة طويلة. إنهم يقرعون ويقتلون السكان ، مما يجعل الناس يعانون.\n            أيضا ، يحرقون المنازل لإخراج الناس من المكان الذي يعيشون فيه ، مما يسبب عدم استقرار المجتمع.\n            الآن المواطنون الرومانيون يتوقون إلى الحياة السلمية وينتظرون المنقذ الذي يمكنه القضاء على الجرائم وتقديمهم إلى الحياة السعيدة السابقة.",
         "heroLvl": 1,
         "heroNum": 3,
@@ -2428,7 +2438,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wolf_3.wolf_3'",
         "Texture2D": "PaperSprite'/Game/images/world/Sprites/seaCity_2_Sprite.seaCity_2_Sprite'",
         "tileName": "seaCity_2",
-        "hitArea": [7,261,61,136,228,54,348,114,377,241,264,371,49,344],
+        "hitArea": [7, 261, 61, 136, 228, 54, 348, 114, 377, 241, 264, 371, 49, 344],
         "Desc": "التخلي عن النضال عديمة الفائدة! أنا هنا لإنهاء حياتك السلمية.\n\nالجمهورية الرومانية تتعرض للهجوم من قبل              Skullbearer Fearless ويشارك اللوردات في المعركة مع قوات المتمردين.\n             وبالتالي لا يوجد عدد كاف من القوات للحفاظ على النظام في المدن.\n            في هذا الوقت ، تتعرض الثروة الشعبية للتهديد من قبل مجرمين مثل اللصوص وعصابات العصابات المتجولين وعصابات العصابات ،\n             وكلهم يختبئون في الجمهورية الرومانية لفترة طويلة. إنهم يقرعون ويقتلون السكان ، مما يجعل الناس يعانون.\n            أيضا ، يحرقون المنازل لإخراج الناس من المكان الذي يعيشون فيه ، مما يسبب عدم استقرار المجتمع.\n            الآن المواطنون الرومانيون يتوقون إلى الحياة السلمية وينتظرون المنقذ الذي يمكنه القضاء على الجرائم وتقديمهم إلى الحياة السعيدة السابقة.",
         "heroLvl": 1,
         "heroNum": 3,
@@ -2447,7 +2457,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wolf_3.wolf_3'",
         "Texture2D": "PaperSprite'/Game/images/world/Sprites/seaCity_3_Sprite.seaCity_3_Sprite'",
         "tileName": "seaCity_3",
-        "hitArea": [7,261,61,136,228,54,348,114,377,241,264,371,49,344],
+        "hitArea": [7, 261, 61, 136, 228, 54, 348, 114, 377, 241, 264, 371, 49, 344],
         "Desc": "التخلي عن النضال عديمة الفائدة! أنا هنا لإنهاء حياتك السلمية.\n\nالجمهورية الرومانية تتعرض للهجوم من قبل              Skullbearer Fearless ويشارك اللوردات في المعركة مع قوات المتمردين.\n             وبالتالي لا يوجد عدد كاف من القوات للحفاظ على النظام في المدن.\n            في هذا الوقت ، تتعرض الثروة الشعبية للتهديد من قبل مجرمين مثل اللصوص وعصابات العصابات المتجولين وعصابات العصابات ،\n             وكلهم يختبئون في الجمهورية الرومانية لفترة طويلة. إنهم يقرعون ويقتلون السكان ، مما يجعل الناس يعانون.\n            أيضا ، يحرقون المنازل لإخراج الناس من المكان الذي يعيشون فيه ، مما يسبب عدم استقرار المجتمع.\n            الآن المواطنون الرومانيون يتوقون إلى الحياة السلمية وينتظرون المنقذ الذي يمكنه القضاء على الجرائم وتقديمهم إلى الحياة السعيدة السابقة.",
         "heroLvl": 1,
         "heroNum": 3,
@@ -2466,7 +2476,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wolf_3.wolf_3'",
         "Texture2D": "PaperSprite'/Game/images/world/Sprites/seaCity_4_Sprite.seaCity_4_Sprite'",
         "tileName": "seaCity_4",
-        "hitArea": [7,261,61,136,228,54,348,114,377,241,264,371,49,344],
+        "hitArea": [7, 261, 61, 136, 228, 54, 348, 114, 377, 241, 264, 371, 49, 344],
         "Desc": "التخلي عن النضال عديمة الفائدة! أنا هنا لإنهاء حياتك السلمية.\n\nالجمهورية الرومانية تتعرض للهجوم من قبل              Skullbearer Fearless ويشارك اللوردات في المعركة مع قوات المتمردين.\n             وبالتالي لا يوجد عدد كاف من القوات للحفاظ على النظام في المدن.\n            في هذا الوقت ، تتعرض الثروة الشعبية للتهديد من قبل مجرمين مثل اللصوص وعصابات العصابات المتجولين وعصابات العصابات ،\n             وكلهم يختبئون في الجمهورية الرومانية لفترة طويلة. إنهم يقرعون ويقتلون السكان ، مما يجعل الناس يعانون.\n            أيضا ، يحرقون المنازل لإخراج الناس من المكان الذي يعيشون فيه ، مما يسبب عدم استقرار المجتمع.\n            الآن المواطنون الرومانيون يتوقون إلى الحياة السلمية وينتظرون المنقذ الذي يمكنه القضاء على الجرائم وتقديمهم إلى الحياة السعيدة السابقة.",
         "heroLvl": 1,
         "heroNum": 3,
@@ -2485,7 +2495,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wolf_3.wolf_3'",
         "Texture2D": "PaperSprite'/Game/images/world/Sprites/seaCity_5_Sprite.seaCity_5_Sprite'",
         "tileName": "seaCity_5",
-        "hitArea": [7,261,61,136,228,54,348,114,377,241,264,371,49,344],
+        "hitArea": [7, 261, 61, 136, 228, 54, 348, 114, 377, 241, 264, 371, 49, 344],
         "Desc": "التخلي عن النضال عديمة الفائدة! أنا هنا لإنهاء حياتك السلمية.\n\nالجمهورية الرومانية تتعرض للهجوم من قبل              Skullbearer Fearless ويشارك اللوردات في المعركة مع قوات المتمردين.\n             وبالتالي لا يوجد عدد كاف من القوات للحفاظ على النظام في المدن.\n            في هذا الوقت ، تتعرض الثروة الشعبية للتهديد من قبل مجرمين مثل اللصوص وعصابات العصابات المتجولين وعصابات العصابات ،\n             وكلهم يختبئون في الجمهورية الرومانية لفترة طويلة. إنهم يقرعون ويقتلون السكان ، مما يجعل الناس يعانون.\n            أيضا ، يحرقون المنازل لإخراج الناس من المكان الذي يعيشون فيه ، مما يسبب عدم استقرار المجتمع.\n            الآن المواطنون الرومانيون يتوقون إلى الحياة السلمية وينتظرون المنقذ الذي يمكنه القضاء على الجرائم وتقديمهم إلى الحياة السعيدة السابقة.",
         "heroLvl": 1,
         "heroNum": 3,
@@ -2504,7 +2514,7 @@
         "SnapShootRect": "Texture2D'/Game/images/world/SnapShootRect/wolf_3.wolf_3'",
         "Texture2D": "PaperSprite'/Game/images/world/Sprites/seaCity_6_Sprite.seaCity_6_Sprite'",
         "tileName": "seaCity_6",
-        "hitArea": [7,261,61,136,228,54,348,114,377,241,264,371,49,344],
+        "hitArea": [7, 261, 61, 136, 228, 54, 348, 114, 377, 241, 264, 371, 49, 344],
         "Desc": "التخلي عن النضال عديمة الفائدة! أنا هنا لإنهاء حياتك السلمية.\n\nالجمهورية الرومانية تتعرض للهجوم من قبل              Skullbearer Fearless ويشارك اللوردات في المعركة مع قوات المتمردين.\n             وبالتالي لا يوجد عدد كاف من القوات للحفاظ على النظام في المدن.\n            في هذا الوقت ، تتعرض الثروة الشعبية للتهديد من قبل مجرمين مثل اللصوص وعصابات العصابات المتجولين وعصابات العصابات ،\n             وكلهم يختبئون في الجمهورية الرومانية لفترة طويلة. إنهم يقرعون ويقتلون السكان ، مما يجعل الناس يعانون.\n            أيضا ، يحرقون المنازل لإخراج الناس من المكان الذي يعيشون فيه ، مما يسبب عدم استقرار المجتمع.\n            الآن المواطنون الرومانيون يتوقون إلى الحياة السلمية وينتظرون المنقذ الذي يمكنه القضاء على الجرائم وتقديمهم إلى الحياة السعيدة السابقة.",
         "heroLvl": 1,
         "heroNum": 3,

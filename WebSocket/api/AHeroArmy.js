@@ -26,8 +26,8 @@ class AHeroArmy{
             return {"state": "error_3"};
         if(Hero[0][`${ArmyPlace}_num`] < amount)
             return {"state": "error_4"};
-        if(Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY)
-            return {"state": "error_5"};
+        if(Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHero] > Date.now()/1000)
+            return {"state": "error_5", "Console" : Console.log("Doublicate Hero", idHero)};
         const CityType = Elkaisar.Config.CArmy.ArmyCityPlace[Hero[0][`${ArmyPlace}_type`]];
         await Elkaisar.DB.AUpdate("`"+CityType+"` = `"+CityType+"` + ?",  "city",  "id_city = ? AND id_player = ?", [amount, Hero[0]["id_city"], this.idPlayer]);
         
@@ -67,8 +67,8 @@ class AHeroArmy{
             return {"state": "error_3"};
         if(EmptyPlaces < amount*OnArmyUnitSize)
             return {"state": "error_4"};
-        if(Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY)
-            return {"state": "error_5"};
+        if(Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHero] > Date.now()/1000)
+            return {"state": "error_5", "Console" : Console.log("Doublicate Hero", idHero)};
          if(CityArmy < amount)
             return {"state": "error_6"};
         
@@ -106,8 +106,10 @@ class AHeroArmy{
             return {"state": "error_3"};
         if(Elkaisar.Lib.LHeroArmy.emptyPlacesSize(this.idPlayer, idHeroTo) < amount*Elkaisar.Config.CArmy.ArmyCap[HeroFrom[0][(ArmyPlaceFrom+"_type")]])
             return {"state": "error_4"};
-        if(HeroFrom[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || HeroTo[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY)
-            return {"state": "error_5"};
+        if(HeroFrom[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHeroFrom] > Date.now()/1000)
+            return {"state": "error_5", "Console" : Console.log("Doublicate Hero From", idHeroFrom)};
+        if(HeroTo[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHeroTo] > Date.now()/1000)
+            return {"state": "error_5", "Console" : Console.log("Doublicate Hero To", idHeroTo)};
         if(HeroFrom[0]["id_city"] != HeroTo[0]["id_city"])
             return {"state": "error_6"};
         
@@ -140,8 +142,14 @@ class AHeroArmy{
             return {"state" : "error_0"};
         if(HeroLeftCap < HeroRightfill || HeroRightCap < HeroLeftFill)
             return {"state" : "error_1"};
-        if(HeroLeft[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || HeroRight[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY)
-            return {"state" : "error_2"};
+        
+        
+        
+        if(HeroRight[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHeroRight] > Date.now()/1000)
+            return {"state": "error_2", "Console" : Console.log("Doublicate Hero Right", idHeroRight)};
+        if(HeroLeft[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHeroLeft] > Date.now()/1000)
+            return {"state": "error_2", "Console" : Console.log("Doublicate Hero Left", idHeroRight)};
+        
        
         const quary_1 = `f_1_type = ${HeroLeft[0]["f_1_type"]} , f_1_num = ${HeroLeft[0]["f_1_num"]},
                     f_2_type = ${HeroLeft[0]["f_2_type"]} , f_2_num = ${HeroLeft[0]["f_2_num"]},
@@ -172,8 +180,12 @@ class AHeroArmy{
         const Hero = await Elkaisar.DB.ASelectFrom("hero.id_city, hero.in_city, hero_army.*", "hero Join hero_army ON hero.id_hero = hero_army.id_hero", "hero.id_hero = ? AND hero.id_player = ?", [idHero, this.idPlayer]);
         if(Hero.length <= 0)
             return {"state": "error_0"};
-        if(Hero[0]["in_city"] !=  Elkaisar.Config.HERO_IN_CITY)
-            return {"state": "error_1"};
+        
+        
+        
+        if(Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHero] > Date.now()/1000)
+            return {"state": "error_1", "Console" : Console.log("Doublicate Hero Clear", idHero)};
+        
         
         let cityArmy = {0:0, "army_a": 0, "army_b": 0, "army_c": 0, "army_d": 0, "army_e": 0, "army_f": 0};
         

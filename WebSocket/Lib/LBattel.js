@@ -1,6 +1,7 @@
 
 class LBattel
 {
+    static HeroListInBattel = {};
     static addUnitGarrison(Battel, callBack) {
         Elkaisar.DB.SelectFrom(
                 `world_unit_garrison.id_player, world_unit_garrison.id_hero, world_unit_garrison.x_coord AS x,
@@ -225,6 +226,8 @@ class LBattel
         var Unit = Elkaisar.World.getUnit(Battel.Battel.x_coord, Battel.Battel.y_coord);
         var UnitHeros = Elkaisar.Lib.LWorld.unitHeros(Unit);
         var UnitEquip = Elkaisar.Lib.LWorld.unitEquip(Unit);
+        var AllHeros = {};
+        
         for (var ii in UnitHeros)
         {
             var OneHero = UnitHeros[ii];
@@ -238,8 +241,18 @@ class LBattel
             });
 
         }
+       
         for (var iii in Battel.Heros) {
-
+            
+            
+            if(AllHeros[Battel.Heros[iii].idHero]){
+                console.log(Date() + "Hero Battel Duplicated");
+                console.log(Battel.Heros[iii],Battel);
+                continue;
+            }
+                
+            
+            AllHeros[Battel.Heros[iii].idHero] = true;
             var Player = Battel.Players[Battel.Heros[iii].Hero.id_player];
             Elkaisar.Lib.LHero.prepareForBattel(Battel.Heros[iii], Battel);
 
@@ -306,4 +319,3 @@ Elkaisar.OnEvent.on('OnServerReady', function () {
 
 
 module.exports = LBattel;
-

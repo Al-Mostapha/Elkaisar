@@ -194,7 +194,8 @@ class LPlayer {
 
                     if (!GateRank)
                         return;
-
+                    if(!LPlayer.RANK_POINT_PLUSE[`gate_${GateIndex}`])
+                        return ;
                     if(LPlayer.RANK_POINT_PLUSE[`gate_${GateIndex}`]["attack"])
                         Player.GodGate["attack"] += LPlayer.RANK_POINT_PLUSE[`gate_${GateIndex}`]["attack"][GateRank.rank] || 0;
                     if(LPlayer.RANK_POINT_PLUSE[`gate_${GateIndex}`]["defence"])

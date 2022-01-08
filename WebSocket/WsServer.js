@@ -47,7 +47,7 @@ wsServer.on('request', function (request) {
             delete Elkaisar.BusyPlayers[connection.idPlayer];
     });
 });
-console.log(wsServer)
+
 
 
 

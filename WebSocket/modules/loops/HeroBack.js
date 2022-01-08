@@ -30,7 +30,7 @@ Elkaisar.Helper.HeroTrans = function (Hero) {
 
         if (!CityTo || !CityTo.length) {
             Elkaisar.DB.Update("in_city = ?", "hero", "id_hero = ?", [Elkaisar.Config.HERO_IN_CITY, Hero.id_hero]);
-            
+            delete(Elkaisar.Lib.LBattel.HeroListInBattel[Hero["id_hero"]]);
             var Player = Elkaisar.Base.getPlayer(Hero.id_player);
             if (Player)
                 Player.connection.sendUTF(JSON.stringify({
@@ -93,7 +93,7 @@ Elkaisar.Helper.HeroTrans = function (Hero) {
 Elkaisar.Helper.HeroBackHome = function (Hero) {
 
     Elkaisar.DB.Update("in_city = ?", "hero", "id_hero = ?", [Elkaisar.Config.HERO_IN_CITY, Hero["id_hero"]]);
-
+    delete(Elkaisar.Lib.LBattel.HeroListInBattel[Hero["id_hero"]]);
     var Player = Elkaisar.Base.getPlayer(Hero.id_player);
     if (Player)
         Player.connection.sendUTF(JSON.stringify({
@@ -157,3 +157,16 @@ setInterval(function () {
      );*/
 
 }, 1000);
+
+
+setInterval(function (){
+    var ii;
+    var now = Date.now()/1000;
+    for(ii in Elkaisar.Lib.LBattel.HeroListInBattel){
+        
+        if(Elkaisar.Lib.LBattel.HeroListInBattel[ii] < now )
+            delete(Elkaisar.Lib.LBattel.HeroListInBattel[ii]);
+        
+    }
+    
+}, 15000);

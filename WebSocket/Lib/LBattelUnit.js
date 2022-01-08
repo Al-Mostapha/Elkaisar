@@ -202,8 +202,8 @@ class LBattelUnit {
         Hero.side = side;
         Elkaisar.Lib.LBattel.heroJoinedBattel(Hero, Battel);
         Elkaisar.DB.Insert(
-            "id_battel = ? , id_player = ? ,id_hero = ? ,  side = ? , ord = ?", "battel_member",
-            [Battel["id_battel"], idPlayer, Hero["id_hero"], side, Ord]
+            "id_battel = ? , id_player = ? ,id_hero = ?, id_city = ?,  side = ? , ord = ?", "battel_member",
+            [Battel["id_battel"], idPlayer, Hero["id_hero"], Hero["id_city"], side, Ord]
         );
     }
 
@@ -326,19 +326,18 @@ class LBattelUnit {
 
     static async startBattel(idPlayer, idHero, Hero, Unit, attackTask) {
 
-
-
         Elkaisar.DB.Update("s = ?", "world", "x = ? AND y = ?", [Elkaisar.Config.WU_ON_FIRE, Unit.x, Unit.y]);
-        Elkaisar.DB.Update("in_city = 0", "hero", "id_hero = ?", [idHero]);
+        Elkaisar.DB.Update("in_city = ?", "hero", "id_hero = ?", [Elkaisar.Config.HERO_IN_BATTEL, idHero]);
         const attackTime = Elkaisar.Lib.LBattelUnit.calAttackTime(Hero[0], Unit, Hero[0].LHArmy.getSlowestSpeed());
         const now = Date.now() / 1000;
         const InsBattel = await Elkaisar.DB.AInsert(
             "id_hero = ?, time_start = ?, time_end = ?, x_coord = ?, y_coord = ?, id_player = ?, x_city = ? , y_city = ? , task = ?", "battel",
             [idHero, now, now + attackTime, Unit["x"], Unit["y"], idPlayer, Hero[0]["x"], Hero[0]["y"], attackTask]
         );
+        
         const Battel = await Elkaisar.Lib.LBattelUnit.getBattelById(InsBattel.insertId);
 
-
+        Elkaisar.Lib.LBattel.HeroListInBattel[Hero["id_hero"]] = now + attackTime;
         Elkaisar.Lib.LBattel.newBattelStarted(Battel);
         Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero[0], Elkaisar.Config.BATTEL_SIDE_ATT);
 

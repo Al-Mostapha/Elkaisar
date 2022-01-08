@@ -159,7 +159,7 @@ class ACityPalace
             return [ "state" => "error_2", "TryToHack" => TryToHack()];
         
         deleteTable("world_unit_garrison", "id_hero = :idh", ["idh" => $idHero]);
-        updateTable("in_city = :ic", "hero", "id_hero = :idh", ["idh" => $idHero, "ic" => HERO_IN_CITY]);
+        updateTable("in_city = :ic", "hero", "id_hero = :idh AND in_city != :nc", ["idh" => $idHero, "ic" => HERO_IN_CITY, "nc" => HERO_IN_BATTEL]);
         
         return [
             "state"    => "ok",

@@ -40,9 +40,14 @@ if($UrlLandMark == "api"){
     DbConnect($idServer);
      
     if($Token)
-        $Player = selectFromTable("id_player", "player_auth", "auth_token = :pt", ["pt" => $Token]);
+        $Player = selectFromTable("id_player, panned", "player_auth", "auth_token = :pt", ["pt" => $Token]);
     if(!isset($Player[0])){
         file_put_contents("PlayerTokenError.txt", print_r($Token, TRUE)."\n". json_encode($VPlayer)."   ".print_r($router->request->requestUri, true)."\n\n\n\n", FILE_APPEND);
+    }
+    
+    if($Player[0]["panned"] > time()){
+        exit("الحساب محظور من الإدارة");
+        file_put_contents("PannedPlayer3.txt", print_r($Token, TRUE)."\n". json_encode($VPlayer)."   ".print_r($router->request->requestUri, true)."\n\n\n\n", FILE_APPEND);
     }
         
     $idPlayer = $Player[0]["id_player"];

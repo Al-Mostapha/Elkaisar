@@ -78,6 +78,16 @@ class HLogIn
         if(!count($playerOuth))
             return ["state" => "error_0"];
         $Player = selectFromTable("*", "player", "id_player = :idp", ["idp" => $playerOuth[0]["id_player"]]);
+        if($Player[0]["panned"] > time()){
+            file_put_contents("PannedPlayer.txt", print_r($Player, TRUE), FILE_APPEND);
+            return ["state" => "error_0"];
+        }
+            
+        if($playerOuth[0]["panned"] > time()){
+            file_put_contents("PannedPlayer2.txt", print_r($Player, TRUE), FILE_APPEND);
+            return ["state" => "error_0"];
+        }
+            
         updateTableIndex("last_server = :ls", "game_user", "id_user = :idu", ["idu" => $playerOuth[0]["id_player"], "ls" => $idServer]);
         
         

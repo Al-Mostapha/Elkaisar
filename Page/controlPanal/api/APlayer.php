@@ -132,6 +132,7 @@ class APlayer
         $newVal   = validatePlayerWord($_POST["newVal"]);
         
         updateTable("panned = :n", "player", "id_player = :idp", ["idp" => $idPlayer, "n" => $newVal + time()]);
+        updateTable("panned = :n", "player_auth", "id_player = :idp", ["idp" => $idPlayer, "n" => $newVal + time()]);
         
         return [
             "state" => "ok"

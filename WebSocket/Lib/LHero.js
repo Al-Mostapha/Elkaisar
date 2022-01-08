@@ -1,5 +1,5 @@
 class LHero {
-
+    
     static prepareHeroEquipPower(Hero, Battel)
     {
         var Unit = Elkaisar.World.getUnit(Battel.Battel.x_coord, Battel.Battel.y_coord);

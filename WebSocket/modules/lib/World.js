@@ -58,7 +58,7 @@ console.log(MoreTypes.some(i => i > 0))
                             "world_unit_prize",
                             [ii, i, Item, amountMin, amountMax, winRate], function () {
                         Elkaisar.World.refreshWorldUnitPrize();
-                        console.log("das", MoreTypes, MoreLvls)
+                        console.log("das", MoreTypes, MoreLvls);
                     });
                 }
             }
@@ -68,7 +68,6 @@ console.log(MoreTypes.some(i => i > 0))
                     "world_unit_prize",
                     [unitType, unitLvl, Item, amountMin, amountMax, winRate], function () {
                 Elkaisar.World.refreshWorldUnitPrize();
-                console.log("sadsad")
             });
         }
     }

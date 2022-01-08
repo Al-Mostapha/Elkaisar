@@ -136,6 +136,8 @@ class LBattelReport
         this.Battel.Fight.FightRecord.addHero({
             side: Hero.side,type: Hero.type, pre: Hero.pre, post: Hero.post, Hero: Hero.Hero
         });
+        
+        
     }
 
     addPrize(Player)

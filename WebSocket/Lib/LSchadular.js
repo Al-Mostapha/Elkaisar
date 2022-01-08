@@ -167,7 +167,7 @@ Elkaisar.Cron.schedule("51 * * * *", async  function (){
     const Teams = await Elkaisar.DB.ASelectFrom("id_team", "team", "1");
     Teams.forEach(function (Team){
         Elkaisar.Lib.ALTeam.refreshTeamData(Team.id_team);
-    })
+    });
 }, {
     scheduled: true,
     timezone: "Etc/UTC"

@@ -49,7 +49,7 @@ class ABattel {
 
         if (!Hero.length)
             return {"state": "error_0"};
-        if (Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY)
+        if (Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHero] > Date.now()/1000)
             return {"state": "error_1"};
         if (!Battel.length)
             return {"state": "error_2"};
@@ -69,9 +69,11 @@ class ABattel {
             return {"state": "error_8"};
         if (!(await Elkaisar.Lib.LBattelUnit.takeJoinPrice(this.idPlayer, Battel[0]["ut"])))
             return {"state": "error_6"};
-        const TakenPower = Elkaisar.Lib.LBattelUnit.takeHeroPower(idHero, Battel[0]["ut"])
+        const TakenPower = Elkaisar.Lib.LBattelUnit.takeHeroPower(idHero, Battel[0]["ut"]);
         if (TakenPower == false)
             return {"state": "error_7"};
+        if(!(await Elkaisar.Lib.LCity.heroCityCanFight(Hero[0].id_city)))
+            return {"state": "error_9"};
 
         Elkaisar.Lib.LBattelUnit.join(this.idPlayer, Battel[0], Hero[0], side);
         Elkaisar.DB.Update("in_city = ?", "hero", "id_hero = ?", [Elkaisar.Config.HERO_IN_BATTEL, idHero]);

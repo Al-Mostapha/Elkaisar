@@ -23,7 +23,7 @@ class LCityBuilding {
                buildingLvl = {
                         "Place" : onePlace,
                         "Type": oneType,
-                        "Lvl" : cityBuildingLvl[onePlace]
+                        "Lvl" : Number(cityBuildingLvl[onePlace])
                     };
         }
         

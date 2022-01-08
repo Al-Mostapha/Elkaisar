@@ -62,6 +62,23 @@ class LCity {
             });
         });
     } 
+    
+    static async  heroCityCanFight(idCity){
+        
+        const CityCount = await Elkaisar.DB.ASelectFrom("id_hero", "battel_member", "id_city = ?", [idCity]);
+        const OutHero   = await Elkaisar.DB.ASelectFrom("hero_back.id_hero", "hero_back", "id_hero IN (SELECT id_hero FROM hero WHERE id_city = ?)", [idCity]);
+        const BlazaBuilding = await Elkaisar.Lib.LCityBuilding.buildingWithHeighestLvl(idCity, Elkaisar.Config.CITY_BUILDING_HOSPITAL);
+        
+        if(CityCount.length + OutHero.length >= Math.min(BlazaBuilding.Lvl, 20)){
+            console.log(`Hero City Error Mor Hero Count `, idCity);
+            return false;
+            
+        }
+            
+        
+        return true;
+        
+    }
 
 }
 

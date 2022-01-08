@@ -68,7 +68,7 @@ Elkaisar.CP = {};
 Elkaisar.Base = require('./modules/lib/base');
 Elkaisar.data = require('./modules/util/world/unitData');
 
-require("./ImportLib")
+require("./ImportLib");
 
 Elkaisar.Config.CHero = require('./Config/CHero');
 Elkaisar.Config.CArmy = require('./Config/CArmy');
@@ -150,9 +150,11 @@ Elkaisar.Base.HandleReq = async function(Path, Parm){
         
         if (Path[1] == "api") {
             
-            const Player = await Elkaisar.DB.ASelectFrom("id_player", "player_auth", "auth_token = ?", [Parm.token]);
+            const Player = await Elkaisar.DB.ASelectFrom("id_player, panned", "player_auth", "auth_token = ?", [Parm.token]);
             if(!Player.length)
                 return console.log(Path, Parm);
+            if(Player[0].panned > Date.now()/1000)
+                return console.log(Date(), "Panned Player Try To Open", Path, Parm);
             Res = JSON.stringify(await (new Elkaisar.API[Path[2]](Player[0].id_player, Parm))[Path[3]]());
 
         } else if(Path[1] == "cp") {
