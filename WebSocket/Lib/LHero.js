@@ -7,8 +7,18 @@ class LHero {
         if (!Elkaisar.Lib.LWorldUnit.isEquipEfeective(Unit.ut))
             return Hero;
 
+      
         for (var iii in Hero.Equip)
         {
+            
+            if(Hero.Equip[iii].id_equip && Battel.EquipList[Hero.Equip[iii].id_equip]){
+                console.log(Date() + "Equip Battel Duplicated");
+                console.log(Hero.Equip[iii].id_equip);
+                return Hero;
+            }
+            Battel.EquipList[Hero.Equip[iii].id_equip] = true;
+            
+            
             Hero.Equip[iii].lvl = Math.max(Hero.Equip[iii].lvl, 1);
             var EquipEff = Elkaisar.Equip.EquipPower[`${Hero.Equip[iii].type}.${Hero.Equip[iii].part}.${Hero.Equip[iii].lvl}`];
             Hero.EquipSpAt[EquipEff.sp_attr] = true;

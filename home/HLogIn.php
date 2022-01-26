@@ -45,6 +45,11 @@ class HLogIn
         }else{
          //updateTable ("player_auth = :pt", "player_auth", "id_player = :idp", ["idp" => $Player[0]["id_player"], "pt" => LBase::newPlayerToken($Player[0]["id_player"])]);  
         }
+        
+        if($Player[0]["panned"] > time()){
+            file_put_contents("PannedPlayer.txt", print_r($Player, TRUE), FILE_APPEND);
+            return ["state" => "error_0"];
+        }
         $newToken  = LBase::newPlayerToken($Player[0]["id_player"]);
            
         queryExe("INSERT INTO player_auth(id_player, auth_token) VALUES (:idp, :t) ON DUPLICATE KEY UPDATE auth_token = :ot", ["idp" => $Player[0]["id_player"], "t" => $newToken, "ot" => $newToken]);

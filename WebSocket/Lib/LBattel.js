@@ -227,7 +227,7 @@ class LBattel
         var UnitHeros = Elkaisar.Lib.LWorld.unitHeros(Unit);
         var UnitEquip = Elkaisar.Lib.LWorld.unitEquip(Unit);
         var AllHeros = {};
-        
+        Battel.EquipList = {};
         for (var ii in UnitHeros)
         {
             var OneHero = UnitHeros[ii];
