@@ -37,6 +37,7 @@ function DbConnect($idServer)
 
 
 define("BASE_URL", "http://localhost/Elkaisar");
+define("PAY_URL", "http://localhost/ElkaisarPay");
 define("WEB_SOCKET_HOST", "localhost");
 
 define("URL_LANDMARK_INDEX", 1);

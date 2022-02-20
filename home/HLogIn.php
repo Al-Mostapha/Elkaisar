@@ -113,7 +113,9 @@ class HLogIn
             "WsHost"    => WEB_SOCKET_HOST,
             "OuthToken" => $OuthToken,
             "idServer"  => $idServer,
-            "idCities"  => $Cities
+            "idCities"  => $Cities,
+            "PayLink"   => PAY_URL,
+            "RechCode"  => selectFromTableIndex("rech_code", "game_user", "id_user = :idu", ["idu" => $idPlayer])[0]["rech_code"]
         ];
         
     }
@@ -204,7 +206,21 @@ class HLogIn
         LPlayer::giveNewCommerPrize($idPlayer);
     }
     
-    
+    static function genRechCode($UserName){
+        $Encoded = base_convert($UserName++, 10, 36);
+        for ($i = 0; $i < strlen($Encoded); $i++){
+            if($Encoded[$i] == "=" || $Encoded[$i] == "+" || $Encoded[$i] == "/" ){
+                
+                $Encoded[$i] = random_int(0, 9);
+                
+                
+            }
+        }
+        
+        return $Encoded;
+    }
+
+
     function signUp()
     {
         
@@ -229,7 +245,9 @@ class HLogIn
        
         $enc_pass = LBase::passEnc($Password);
 
-        $idUser = insertIntoTableIndex("user_name = :un, user_password = :up, enc_pass = :ep, email = :e", "game_user", ["un" => $UserName, "up" => md5($Password), "ep" => $enc_pass, "e" => $Email]);
+        $idUser = insertIntoTableIndex("user_name = :un, user_password = :up, enc_pass = :ep, email = :e", "game_user", 
+                ["un" => $UserName, "up" => md5($Password), "ep" => $enc_pass, "e" => $Email]);
+       
         
         $User = selectFromTableIndex("id_user , user_name , last_server", "game_user", "id_user = :idu", ["idu" =>$idUser]);
         if(!count($User))
@@ -238,7 +256,7 @@ class HLogIn
         insertIntoTableIndex("id_user = :idu, ip_address = :ip", "user_log", ["idu" => $User[0]["id_user"], "ip" => LBase::getIpAddress()]);
         
         LBase::userLogedIn($User[0]["id_user"]);
-        
+        updateTableIndex("rech_code = :rc", "game_user", "id_user = :idu", ["rc" => HLogIn::genRechCode($idUser), "idu" => $idUser]);
         return [
             "state"  => "ok",
             "User" => $User[0]
@@ -248,6 +266,17 @@ class HLogIn
     }
     
     
+    function RechCode(){
+        $Users = selectFromTableIndex("id_user, user_name", "game_user", "rech_code = NULL");
+        foreach ($Users as $one){
+            updateTableIndex("rech_code = :rc", "game_user", "id_user = :idu", ["rc" => HLogIn::genRechCode($one["id_user"]), "idu" => $one["id_user"]]);
+        }
+        
+        echo "done";
+        
+    }
+
+
     function logOut()
     {
         

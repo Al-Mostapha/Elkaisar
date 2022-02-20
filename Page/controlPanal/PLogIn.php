@@ -1,5 +1,7 @@
 <html class="" lang="ar">
     <head>
+        <title>Elkaisar CP</title>
+        <link rel="icon" type="image/png" href="<?= RESOURCE_BATH ?>/images/favicon.png" sizes="128×128">
         <link rel="stylesheet" href="<?=RESOURCE_BATH?>/css/login.css"/>
 
     </head>

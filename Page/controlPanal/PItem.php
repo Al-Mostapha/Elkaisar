@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Elkaisar CP</title>
+        <link rel="icon" type="image/png" href="<?= RESOURCE_BATH ?>/images/favicon.png" sizes="128×128">
         <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
         <link rel="stylesheet" href="<?= RESOURCE_BATH ?>/css/all.css"/>
     </head>

@@ -30,7 +30,9 @@ class CPGodGate {
         await Elkaisar.DB.AUpdate(`vit = ${this.Parm.vit},        attack = ${this.Parm.attack}, 
                                     damage = ${this.Parm.damage}, defence = ${this.Parm.defence}, 
                                     break = ${this.Parm.break},   anti_break = ${this.Parm.anti_break}, 
-                                    strike = ${this.Parm.strike}, immunity = ${this.Parm.immunity}`,"god_gate_max_val", "1");
+                                    strike = ${this.Parm.strike}, immunity = ${this.Parm.immunity},
+                                    rate_1 = ${this.Parm.rate_1}, rate_2 = ${this.Parm.rate_2}, 
+                                    rate_3 = ${this.Parm.rate_3} `,"god_gate_max_val", "1");
         return {state : "ok"};
         
     }

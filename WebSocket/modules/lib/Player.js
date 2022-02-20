@@ -2,6 +2,8 @@
 module.exports.online = function (con) {
 
     var idPlayer = con.idPlayer;
+    
+    
     Elkaisar.DB.Update("`online` = 1", "player", "id_player = ?", [idPlayer]);
     Elkaisar.DB.Insert("id_player = ?, ipv4 = ?", "player_logs", [idPlayer, con.ip]);
     Elkaisar.DB.SelectFrom("*", "player_title", "id_player = ?", [idPlayer], function (PlayerTitle) {

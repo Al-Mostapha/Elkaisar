@@ -233,8 +233,8 @@ class LPrize {
             const ResourcePrize = await this.cityPrize(Player);
             const ItemPrize = await this.cityItemsPrize(Player);
             this.addPrizeToDB({ ResourcePrize: ResourcePrize, ItemPrize: ItemPrize }, Player);
-            
             return;
+            
         } else if (Elkaisar.Lib.LWorldUnit.isSeaCity(Unit["ut"]) && this.Battel.Battel.task == Elkaisar.Config.BATTEL_TASK_CONQUER) {
             Prizes["ItemPrize"] = Elkaisar.World.getUnitPrize(this.Battel);
             const ResourcePrize =  this.seaCityPrize(Player, Unit["ut"]);

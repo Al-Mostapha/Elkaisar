@@ -81,7 +81,42 @@ class CPSendPrize {
         return await Elkaisar.DB.ASelectFrom("*", "guild", `name LIKE '%${this.Parm.seg}%' ORDER BY prestige DESC`);
 
     }
+    
+    async sendPlayerOffer(){
+        
+        const idPlayer = Elkaisar.Base.validateId(this.Parm.idPlayer);
+        const idOffer  = Elkaisar.Base.validateId(this.Parm.idOffer);
+        
+        
+        const Offer = await Elkaisar.DB.ASelectFrom("*", "server_offer", "id_offer = ?", [idOffer]);
+        
+        if(!Offer.length)
+            return {state : "error_0"};
+        
+        const OfferPrize = Elkaisar.Base.isJson(Offer[0]["offer"]);
+        if(!OfferPrize)
+            return {state : "error_1"};
+        
+        OfferPrize.forEach(function (Prize){
+            if (Prize.type == "matrial")
+                Elkaisar.Lib.LItem.addItem(idPlayer, Prize.matrial, Prize.amount);
+            else if (Prize.type == "equip") {
+                Elkaisar.Lib.LItem.addEquip(idPlayer, Prize.idEquip, Prize.amount);
+            }
+        });
+        Elkaisar.Lib.LPlayer.givePlayerGold(idPlayer, Offer[0].gold);
+        Elkaisar.Lib.LItem.offerSent(idPlayer, idOffer);
+        Elkaisar.DB.Insert("id_player = ?, id_offer = ?", "server_offer_taken", [idPlayer, idOffer]);
+        
+        return {state : "ok"};
+    }
 
+    async offerSent(){
+        const idPlayer = Elkaisar.Base.validateId(this.Parm.idPlayer);
+        const idOffer = Elkaisar.Base.validateId(this.Parm.idOffer);
+        Elkaisar.Lib.LItem.offerSent(idPlayer, idOffer);
+        return {"state" : "ok", "C" : "s"};
+    }
 }
 
 module.exports = CPSendPrize;

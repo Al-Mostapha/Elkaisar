@@ -240,7 +240,6 @@ Elkaisar.Config.HERO_IN_GARISON = 2;
 Elkaisar.Config.HERO_IN_CITY = 1;
 Elkaisar.Config.HERO_IN_BATTEL = 0;
 
-
 Elkaisar.Config.BATTEL_TASK_CONQUER = 0;
 Elkaisar.Config.BATTEL_TASK_DOMINATE = 1;
 Elkaisar.Config.BATTEL_TASK_JOIN_ATT = 2;

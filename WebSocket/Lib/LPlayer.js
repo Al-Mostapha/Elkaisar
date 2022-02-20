@@ -225,6 +225,11 @@ class LPlayer {
 
     }
 
+    static async  givePlayerGold(idPlayer, amount) {
+        Elkaisar.DB.Update("gold = gold + ?", "player", "id_player = ?", [amount, idPlayer]);
+        return true;
+    }
+
 }
 
 

@@ -11,6 +11,12 @@ class LPlayer {
 
         return true;
     }
+    
+    static function giveGold($idPlayer, $amount){
+        
+        updateTable("gold = gold + :g", "player", "id_player = :idp", ["idp" => $idPlayer, "g" => $amount]);
+        
+    }
 
     static function haveEnoughGold($amount) {
         if ($amount <= 0) return false;

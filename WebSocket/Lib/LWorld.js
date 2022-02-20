@@ -226,20 +226,6 @@ class LWorld {
         return WorldUnit.UnitEquip[WorldUnit.l];
     }
 
-    static unitGarrisonHero(Unit, callBack) {
-        Elkaisar.DB.SelectFrom(
-                `world_unit_garrison.* , hero.id_city, 
-                hero.point_b, hero.point_b_plus, hero.point_c, hero.point_c_plus  , 
-                hero_medal.medal_den , hero_medal.medal_leo, city.x ,city.y `,
-                `world_unit_garrison JOIN hero ON hero.id_hero = world_unit_garrison.id_hero
-                JOIN hero_medal ON hero_medal.id_hero = world_unit_garrison.id_hero
-                JOIN city ON city.id_city = hero.id_city`,
-                `world_unit_garrison.x_coord = ? AND world_unit_garrison.y_coord = ? ORDER BY ord ASC`, [Unit.x, Unit.y],
-                function (Res) {
-                    callBack(Res);
-                });
-
-    }
 
     static battelHeros(Battel, callBack) {
         Elkaisar.DB.SelectFrom(

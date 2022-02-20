@@ -22,12 +22,13 @@ class AHeroArmy{
             return {"state": "error_1"};
         if(Hero[0][`${ArmyPlace}_type`] < 1 || Hero[0][`${ArmyPlace}_type`] > 6)
             return {"state" :"error_2"};
-        if(amount <= 0)
+        if(Number(amount) && amount <= 0)
             return {"state": "error_3"};
         if(Hero[0][`${ArmyPlace}_num`] < amount)
             return {"state": "error_4"};
         if(Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHero] > Date.now()/1000)
             return {"state": "error_5", "Console" : Console.log("Doublicate Hero", idHero)};
+        
         const CityType = Elkaisar.Config.CArmy.ArmyCityPlace[Hero[0][`${ArmyPlace}_type`]];
         await Elkaisar.DB.AUpdate("`"+CityType+"` = `"+CityType+"` + ?",  "city",  "id_city = ? AND id_player = ?", [amount, Hero[0]["id_city"], this.idPlayer]);
         
@@ -47,23 +48,25 @@ class AHeroArmy{
     
     async  transArmyFromCityToHero()
     {
-        const idHero    = Elkaisar.Base.validateId(this.Parm["idHero"]);
-        const ArmyPlace = Elkaisar.Base.validateGameNames(this.Parm["ArmyPlace"]);
-        const ArmyType  = Elkaisar.Base.validateGameNames(this.Parm["ArmyType"]);
-        const amount    = Elkaisar.Base.validateId(this.Parm["amount"]);
-        
-        const Hero = await  Elkaisar.DB.ASelectFrom("hero.id_city, hero.in_city, hero_army.*", "hero Join hero_army ON hero.id_hero = hero_army.id_hero", "hero.id_hero = ? AND hero.id_player = ?", [idHero, this.idPlayer]);
-        const CityArmy = (await  (Elkaisar.DB.ASelectFrom(ArmyType, "city", "id_city = ?", [ Hero[0]["id_city"]])))[0][ArmyType];
-        const EmptyPlaces = await  Elkaisar.Lib.LHeroArmy.emptyPlacesSize(this.idPlayer, idHero);
+        const idHero         = Elkaisar.Base.validateId(this.Parm["idHero"]);
+        const ArmyPlace      = Elkaisar.Base.validateGameNames(this.Parm["ArmyPlace"]);
+        const ArmyType       = Elkaisar.Base.validateGameNames(this.Parm["ArmyType"]);
+        const amount         = Elkaisar.Base.validateId(this.Parm["amount"]);
+        const Hero           =  await  Elkaisar.DB.ASelectFrom("hero.id_city, hero.in_city, hero_army.*", "hero Join hero_army ON hero.id_hero = hero_army.id_hero", "hero.id_hero = ? AND hero.id_player = ?", [idHero, this.idPlayer]);
+        const CityArmy       = (await  (Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [ Hero[0]["id_city"]])))[0][ArmyType];
+        const EmptyPlaces    =  await  Elkaisar.Lib.LHeroArmy.emptyPlacesSize(this.idPlayer, idHero);
         const OnArmyUnitSize =  Elkaisar.Config.CArmy.ArmyCap[Elkaisar.Config.CArmy.ArmyCityToArmyHero[ArmyType]];
+        const HeroArmyType   = Elkaisar.Config.CArmy.ArmyCityToArmyHero[ArmyType];
         
         if(!Array.isArray(Hero) || Hero.length < 1)
             return {"state": "error_0"};
         if(!Hero[0].hasOwnProperty(`${ArmyPlace}_num`))
             return {"state": "error_1"};
-        if(Hero[0][`${ArmyPlace}_type`] != 0 && ArmyType != Elkaisar.Config.CArmy.ArmyCityPlace[Hero[0][`${ArmyPlace}_type`]])
-            return {"state" :"error_2"};
-        if(amount <= 0)
+        if(Hero[0][`${ArmyPlace}_type`] != 0 && ArmyType != Elkaisar.Config.CArmy.ArmyCityPlace[Hero[0][`${ArmyPlace}_type`]] || !HeroArmyType)
+            return {"state" :"error_2", "t" : console.log("Army Type Error", this.Parm)};
+        if(Hero[0][`${ArmyPlace}_type`] == 0 && Hero[0][`${ArmyPlace}_num`] > 0)
+            return {"state" :"error_2", "t" : console.log("Bug Found 12", this.Parm)};
+        if(Number(amount) && amount <= 0)
             return {"state": "error_3"};
         if(EmptyPlaces < amount*OnArmyUnitSize)
             return {"state": "error_4"};
@@ -102,9 +105,9 @@ class AHeroArmy{
             return {"state": "error_1"};
         if(HeroTo[0][(ArmyPlaceTo+"_type")] != 0 && HeroFrom[0][(ArmyPlaceFrom+"_type")] != HeroTo[0][(ArmyPlaceTo+"_type")])
             return {"state": "error_2"};
-        if(amount <= 0 || amount > HeroFrom[0][(ArmyPlaceFrom+"_num")])
+        if(amount <= 0 || amount > HeroFrom[0][(ArmyPlaceFrom+"_num")] || HeroFrom[0][(ArmyPlaceFrom+"_type")] == 0)
             return {"state": "error_3"};
-        if(Elkaisar.Lib.LHeroArmy.emptyPlacesSize(this.idPlayer, idHeroTo) < amount*Elkaisar.Config.CArmy.ArmyCap[HeroFrom[0][(ArmyPlaceFrom+"_type")]])
+        if((await Elkaisar.Lib.LHeroArmy.emptyPlacesSize(this.idPlayer, idHeroTo)) < amount*Elkaisar.Config.CArmy.ArmyCap[HeroFrom[0][(ArmyPlaceFrom+"_type")]])
             return {"state": "error_4"};
         if(HeroFrom[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHeroFrom] > Date.now()/1000)
             return {"state": "error_5", "Console" : Console.log("Doublicate Hero From", idHeroFrom)};
@@ -112,6 +115,11 @@ class AHeroArmy{
             return {"state": "error_5", "Console" : Console.log("Doublicate Hero To", idHeroTo)};
         if(HeroFrom[0]["id_city"] != HeroTo[0]["id_city"])
             return {"state": "error_6"};
+        
+        if(HeroFrom[0][`${ArmyPlaceFrom}_type`] == 0 && HeroFrom[0][`${ArmyPlaceFrom}_num`] > 0)
+            return {"state" :"error_2", "t" : console.log("Bug Found 1200", this.Parm)};
+        if(HeroTo[0][`${ArmyPlaceTo}_type`] == 0 && HeroTo[0][`${ArmyPlaceTo}_num`] > 0)
+            return {"state" :"error_2", "t" : console.log("Bug Found 1201", this.Parm)};
         
         if(HeroFrom[0][(ArmyPlaceFrom+"_num")] == amount)
             await Elkaisar.DB.AUpdate("`"+ArmyPlaceFrom+"_type` = ?, `"+ArmyPlaceFrom+"_num` = `"+ArmyPlaceFrom+"_num` - ?", "hero_army", "id_hero = ?", [0, amount, idHeroFrom]);
@@ -133,10 +141,10 @@ class AHeroArmy{
         const idHeroRight   = Elkaisar.Base.validateId(this.Parm["idHeroRight"]);
         const HeroLeft      = await Elkaisar.DB.ASelectFrom("hero.id_city, hero.in_city, hero_army.*", "hero JOIN hero_army ON hero.id_hero = hero_army.id_hero", "hero.id_hero = ? AND hero.id_player = ?", [idHeroLeft,  this.idPlayer]);
         const HeroRight     = await Elkaisar.DB.ASelectFrom("hero.id_city, hero.in_city, hero_army.*", "hero JOIN hero_army ON hero.id_hero = hero_army.id_hero", "hero.id_hero = ? AND hero.id_player = ?", [idHeroRight, this.idPlayer]);
-        const HeroLeftCap   = Elkaisar.Lib.LHeroArmy.heroFullCap(this.idPlayer, idHeroLeft);
-        const HeroLeftFill  = Elkaisar.Lib.LHeroArmy.filledPlacesSize(idHeroLeft);
-        const HeroRightCap  = Elkaisar.Lib.LHeroArmy.heroFullCap(this.idPlayer, idHeroRight);
-        const HeroRightfill = Elkaisar.Lib.LHeroArmy.filledPlacesSize(idHeroRight);
+        const HeroLeftCap   = await Elkaisar.Lib.LHeroArmy.heroFullCap(this.idPlayer, idHeroLeft);
+        const HeroLeftFill  = await Elkaisar.Lib.LHeroArmy.filledPlacesSize(idHeroLeft);
+        const HeroRightCap  = await Elkaisar.Lib.LHeroArmy.heroFullCap(this.idPlayer, idHeroRight);
+        const HeroRightfill = await Elkaisar.Lib.LHeroArmy.filledPlacesSize(idHeroRight);
         
         if(!HeroLeft.length || !HeroRight.length)
             return {"state" : "error_0"};

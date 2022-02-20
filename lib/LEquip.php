@@ -10,6 +10,14 @@ class LEquip {
                 ["idp" => $idPlayer, "t" => $Equip, "p" => $part, "l" => $lvl]
         );
     }
+    
+    static function addEquipForPlayer($idPlayer, $Equip, $part, $lvl = 1) {
+        insertIntoTable(
+                "id_player = :idp, type = :t, part = :p, lvl = :l",
+                "equip",
+                ["idp" => $idPlayer, "t" => $Equip, "p" => $part, "l" => $lvl]
+        );
+    }
 
     static function prepareHeroBattel(&$Heros, $Unit) {
         

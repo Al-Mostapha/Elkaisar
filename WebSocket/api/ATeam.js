@@ -251,6 +251,8 @@ class ATeam {
         
         await Elkaisar.DB.ADelete("team_member", "id_team = ?", [TeamMember[0]["id_team"]]);
         await Elkaisar.DB.ADelete("team", "id_leader = ?", [this.idPlayer]);
+        await Elkaisar.DB.ADelete("arena_team_challange_hero", "id_team = ?", [TeamMember[0]["id_team"]]);
+        await Elkaisar.DB.ADelete("arena_team_challange", "id_team = ?", [TeamMember[0]["id_team"]]);
         
         Elkaisar.Base.broadcast(JSON.stringify({
                                     classPath: "Team.TeamDisbanded",

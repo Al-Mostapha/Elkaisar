@@ -12,6 +12,7 @@ and open the template in the editor.
     <head>
 
         <title>استعراض المعارك</title>
+        <link rel="icon" type="image/png" href="images/favicon.png" sizes="128×128">
         <meta id="" name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width,height=device-height,target-densitydpi=device-dpi, user-scalable=yes">
 
         <link rel="stylesheet" href="<?= RESOURCE_BATH ?>/css/reset-min.css"/>

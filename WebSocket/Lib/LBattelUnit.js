@@ -50,7 +50,6 @@ class LBattelUnit {
                 return false;
             Elkaisar.DB.Update("amount = amount - ?", "player_item", "id_player = ? AND id_item = ?", [UnitData.MakeReq[iii].amount, idPlayer, UnitData.MakeReq[iii].Item]);
         }
-
         return true;
 
     }
@@ -127,7 +126,6 @@ class LBattelUnit {
 
 
     static calAttackTime(City, Unit, slowestSpeed) {
-      
 
         if (
             Elkaisar.Lib.LWorldUnit.isAsianSquads(Unit.ut) || Elkaisar.Lib.LWorldUnit.isGangStar(Unit.ut)
@@ -336,8 +334,8 @@ class LBattelUnit {
         );
         
         const Battel = await Elkaisar.Lib.LBattelUnit.getBattelById(InsBattel.insertId);
-
-        Elkaisar.Lib.LBattel.HeroListInBattel[Hero["id_hero"]] = now + attackTime;
+        
+        Elkaisar.Lib.LBattel.HeroListInBattel[idHero] = now + attackTime;
         Elkaisar.Lib.LBattel.newBattelStarted(Battel);
         Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero[0], Elkaisar.Config.BATTEL_SIDE_ATT);
 

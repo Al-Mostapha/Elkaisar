@@ -16,16 +16,16 @@ class CPPlayer {
 
         const idPlayer = Elkaisar.Base.validateId(this.Parm.idPlayer);
         const Player = await Elkaisar.DB.ASelectFrom("name", "player", "id_player = ?", [idPlayer]);
-        const Title_1 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_1);
-        const Title_2 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_2);
-        const Title_3 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_3);
-        const Title_4 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_4);
-        const Title_5 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_5);
-        const Title_6 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_6);
-        const Title_7 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_7);
-        const Title_8 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_8);
-        const Title_9 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_9);
-        const Title_10 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_10);
+        const Title_1 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_1).trim();
+        const Title_2 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_2).trim();
+        const Title_3 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_3).trim();
+        const Title_4 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_4).trim();
+        const Title_5 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_5).trim();
+        const Title_6 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_6).trim();
+        const Title_7 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_7).trim();
+        const Title_8 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_8).trim();
+        const Title_9 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_9).trim();
+        const Title_10 = Elkaisar.Base.validatePlayerWord(this.Parm.Title_10).trim();
         var Titles = [];
         if (Title_1 != "" && Title_1 != " ")
             Titles.push(`title_1 = '${Title_1}'`);

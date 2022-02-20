@@ -23,7 +23,7 @@ class AItem {
         return {
             state: "ok",
             "PlayerItem": await Elkaisar.DB.ASelectFrom("*", "player_item", "id_player = ?", [this.idPlayer])
-        }
+        };
 
 
     }
@@ -71,9 +71,11 @@ class AItem {
         return {
             "state": "ok",
             "Item": PlayerPrize
-        }
+        };
 
     }
+    
+   
 
 }
 

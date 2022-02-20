@@ -50,9 +50,12 @@ class ABattel {
         if (!Hero.length)
             return {"state": "error_0"};
         if (Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHero] > Date.now()/1000)
-            return {"state": "error_1"};
+            return {"state": "error_1", "T" : console.log("Hero Dub Here",this.Parm )};
         if (!Battel.length)
             return {"state": "error_2"};
+       
+        
+        Elkaisar.Lib.LBattel.HeroListInBattel[idHero] = Battel[0].time_end;
        
         
         if (Elkaisar.Lib.LWorldUnit.limitedHero(Battel[0]["ut"])){

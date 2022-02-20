@@ -31,12 +31,10 @@ class LAfterFight {
         var now = Math.floor(Date.now() / 1000);
         var Unit = Elkaisar.World.getUnit(this.Battel.Battel.x_coord, this.Battel.Battel.y_coord);
 
-        if (
-                Elkaisar.Lib.LWorldUnit.isArmyCapital(Unit["ut"]) || Elkaisar.Lib.LWorldUnit.isArena(Unit["ut"])
-                ) {
+        if (Elkaisar.Lib.LWorldUnit.isArmyCapital(Unit["ut"]) || Elkaisar.Lib.LWorldUnit.isArena(Unit["ut"])) {
 
             var idDominant = 0;
-
+            await  Elkaisar.DB.AUpdate("duration = ? - time_stamp", "world_unit_rank", "x = ? AND y = ? ORDER BY id_round DESC LIMIT 1", [now, Unit.x, Unit.y]);
             if (Elkaisar.Lib.LWorldUnit.isArenaGuild(Unit["ut"])) {
                 idDominant = this.Battel.Players[this.Battel.Battel.id_player].Player.idGuild;
                 Elkaisar.DB.Insert("x = ?, y = ?, id_dominant = ?, id_guild = ?, time_stamp = ?", "world_unit_rank", [Unit.x, Unit.y, idDominant, idDominant, now]);
@@ -44,9 +42,7 @@ class LAfterFight {
                 idDominant = this.Battel.Battel.id_player;
                 Elkaisar.DB.Insert("x = ?, y = ?, id_dominant = ?, id_player = ?, time_stamp = ?", "world_unit_rank", [Unit.x, Unit.y, idDominant, idDominant, now]);
             }
-
-
-            Elkaisar.DB.Update("duration = ? - time_stamp", "world_unit_rank", "x = ? AND y = ? ORDER BY id_round DESC LIMIT 1", [now, Unit.x, Unit.y]);
+           
             Elkaisar.DB.Update("time_end = time_end + 300", "battel", "x_coord = ? AND y_coord = ?", [Unit.x, Unit.y]);
 
 
@@ -152,8 +148,8 @@ class LAfterFight {
         var This = this, Arena;
         if (this.Battel.Battel["task"] != Elkaisar.Config.BATTEL_TASK_CHALLANGE)
             return;
+        
         const Unit = Elkaisar.World.getUnit(this.Battel.Battel.x_coord, this.Battel.Battel.y_coord);
-
         if (Elkaisar.Lib.LWorldUnit.isChallangeFieldPlayer(Unit.ut)) {
             const Res = await Elkaisar.DB.AQueryExc(
                     `UPDATE arena_player_challange AS a1 JOIN arena_player_challange AS a2 ON( a1.id_player = ? AND a2.id_player = ? )
@@ -299,12 +295,14 @@ class LAfterFight {
 
             if (parseInt(OneHero.idHero) <= 0)
                 return;
+            
             var RT = Elkaisar.Lib.LWorldUnit.calReturningTime(OneHero, Unit);
-
-
+            
+            Elkaisar.Lib.LBattel.HeroListInBattel[OneHero.idHero] = RT;
+            
             if (This.keepGarrisonHero(OneHero))
                 return;
-
+            
             Elkaisar.DB.Insert(
                     `id_hero = ${OneHero.idHero}, x_from  = ${Unit.x}, y_from = ${Unit.y},
                      task = ${This.Battel.Battel.task}, x_to = ${OneHero.x_coord} , y_to = ${OneHero.y_coord},
@@ -318,6 +316,7 @@ class LAfterFight {
     }
 
     async giveWinnerPrize() {
+        
         var Unit = Elkaisar.World.getUnit(this.Battel.Battel.x_coord, this.Battel.Battel.y_coord);
         var This = this;
 
@@ -327,6 +326,8 @@ class LAfterFight {
             Prize.heroShare();
 
         if (Elkaisar.Lib.LWorldUnit.isCity(Unit.ut)) {
+            if(this.Battel.Battel.task == Elkaisar.Config.BATTEL_TASK_DOMINATE)
+                return ;
             await Prize.getCityAvailRes();
             await Prize.takeCityRes();
             Object.values(This.Battel.Players).forEach(async function (Player, Index) {
@@ -344,10 +345,8 @@ class LAfterFight {
             });
             return;
         } else if (Elkaisar.Lib.LWorldUnit.isSeaCity(Unit.ut)) {
-
-
+            
             var TotalHeroCount = 0;
-
             for (var iii in this.Battel.HeroReadyList) {
                 var OneHero = this.Battel.HeroReadyList[iii];
                 var OneHeroRealCount = 0;
@@ -367,6 +366,7 @@ class LAfterFight {
 
 
         Object.values(This.Battel.Players).forEach(async function (Player, Index) {
+            
             if (Player.idPlayer <= 0)
                 return;
             if (Player.side === Elkaisar.Config.BATTEL_SIDE_DEF)

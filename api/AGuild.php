@@ -207,6 +207,9 @@ class AGuild {
         deleteTable("guild_member", "id_guild = :idg", ["idg"=>$GuildMember[0]["id_guild"]]);
         updateTable("guild = NULL, id_guild = NULL"  , "player", "id_guild = :idg", ["idg" => $GuildMember[0]["id_guild"]]);
         deleteTable("guild", "id_leader = :idp", ["idp" => $idPlayer]);
+        deleteTable("arena_guild_challange_hero", "id_guild = :idg", ["idp" => $GuildMember[0]["id_guild"]]);
+        deleteTable("arena_guild_challange", "id_guild = :idg", ["idp" => $GuildMember[0]["id_guild"]]);
+        
         return [
             "state" => "ok",
             "playerGuildData" => LGuild::getPlayerGuildData($idPlayer),
@@ -326,7 +329,7 @@ class AGuild {
                 "guild.name AS GuildName, player.name AS LeaderName,"
                 . " guild.mem_num AS memberNum, guild.id_guild AS idGuild,"
                 . " guild.id_leader AS idPlayer, guild.slog_top, guild.slog_cnt,"
-                . " guild.slog_btm", "guild JOIN player ON guild.id_leader = player.id_player",
+                . " guild.slog_btm", "guild JOIN player ON player.id_player = (SELECT id_player FROM guild_member WHERE guild_member.id_guild = guild.id_guild AND guild_member.rank = ".GUILD_R_LEADER." LIMIT 1)",
                 "guild.name LIKE :gn", ["gn" => "%$GuildName%"]);
         
     }

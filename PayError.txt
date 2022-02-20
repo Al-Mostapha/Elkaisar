@@ -1,0 +1,8 @@
+Transaction already CompletedArray
+(
+)
+Transaction already CompletedArray
+(
+    [MerchantReference] => 1_54_2_25
+    [Amount] => 2100
+)

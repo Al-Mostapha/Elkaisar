@@ -14,6 +14,10 @@ class LBattel
                 `world_unit_garrison.x_coord = ? AND world_unit_garrison.y_coord = ? ORDER BY world_unit_garrison.ord ASC`, [Battel.x_coord, Battel.y_coord],
                 function (Res) {
                     Res.forEach(function (Hero, index) {
+                        Elkaisar.Lib.LBattel.HeroListInBattel[Hero.id_hero] = Battel.time_end;
+                    });
+                    return;
+                    Res.forEach(function (Hero, index) {
                         var HeroBattel = {
                             idHero: Hero.id_hero,
                             isGarrison: true,
@@ -23,6 +27,7 @@ class LBattel
                         };
                         LBattel.addPlayerToBattel(Hero.id_player, Elkaisar.Battel.BattelList[Battel.id_battel], Elkaisar.Config.BATTEL_SIDE_DEF);
                         Elkaisar.Battel.BattelList[Battel.id_battel].Heros.push(HeroBattel);
+                        Elkaisar.Lib.LBattel.HeroListInBattel[Hero.id_hero] = Battel.time_end;
                         Elkaisar.Lib.LHero.getHeroEquip(HeroBattel);
                         Elkaisar.Lib.LHero.getHeroArmy(HeroBattel);
                     });
@@ -247,7 +252,6 @@ class LBattel
             
             if(AllHeros[Battel.Heros[iii].idHero]){
                 console.log(Date() + "Hero Battel Duplicated");
-                console.log(Battel.Heros[iii],Battel);
                 continue;
             }
                 

@@ -171,6 +171,7 @@ else if($UrlLandMark == "ws")
     
     require_once 'configHome.php';
     require_once __DIR__.DIRECTORY_SEPARATOR."lib".DIRECTORY_SEPARATOR."LConfig.php";
+    if(file_exists(__DIR__.DIRECTORY_SEPARATOR."Page".DIRECTORY_SEPARATOR.$formatedRoute[URL_LANDMARK_INDEX].DIRECTORY_SEPARATOR."P".$formatedRoute[URL_LANDMARK_INDEX + 1].".php"))
     require_once __DIR__.DIRECTORY_SEPARATOR."Page".DIRECTORY_SEPARATOR.$formatedRoute[URL_LANDMARK_INDEX].DIRECTORY_SEPARATOR."P".$formatedRoute[URL_LANDMARK_INDEX + 1].".php";
     
 }

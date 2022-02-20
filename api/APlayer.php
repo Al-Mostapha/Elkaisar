@@ -75,6 +75,7 @@ class APlayer {
     function online() {
 
         global $idPlayer;
+        
         $ip = validatePlayerWord($_POST["ip"]);
         updateTable("`online` = 1", "player", "id_player = :idp", ["idp" => $idPlayer]);
         $idLog = insertIntoTable("id_player = :idp, ipv4 = :ip", "player_logs", ["idp" => $idPlayer, "ip" => $ip]);

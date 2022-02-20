@@ -28,13 +28,16 @@ setInterval(function () {
         Fight.prepareFight();
         Fight.startFight();
         AFterFight.heroBattelBack();
-
+        if(Battel.PrizeTaken)
+            return console.log("Battel Prize Taken", Date);
+        
         if (Fight.sideWin === Elkaisar.Config.BATTEL_SIDE_ATT){
             await AFterFight.afterWin();
             AFterFight.afterWinAnnounce();
         }else
             await AFterFight.afterLose();
         
+        Battel.PrizeTaken = true;
 
         Fight.FightRecord.saveAllPlayers(Battel);
         Fight.FightRecord.saveRecord(Battel.Battel);
@@ -55,10 +58,7 @@ setInterval(function () {
                 Player: OnePlayer,
                 sideWin: Fight.sideWin
             }));
-        })
-      
-           
-       
+        });
         Elkaisar.Lib.LBattel.removeBattel(Battel.Battel.id_battel);
     });
 }, 1000);

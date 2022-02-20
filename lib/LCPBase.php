@@ -33,6 +33,7 @@ class LCPBase
                     <li'.($CurrentTab == 'reportprize'    ? ' class="active"' : "").'><span><span><a href="reportPrize.php?server='.$serverID.'&AdminToken='.$Ot.'">تقارير</a></span></span></li>
                     <li'.($CurrentTab == 'Ip'             ? ' class="active"' : "").'><span><span><a href="Ip?server='.$serverID.'&AdminToken='.$Ot.'">ip</a></span></span></li>
                     <li'.($CurrentTab == 'GodGate'        ? ' class="active"' : "").'><span><span><a href="GodGate?server='.$serverID.'&AdminToken='.$Ot.'">بوابات</a></span></span></li>
+                    <li'.($CurrentTab == 'ServerOffer'    ? ' class="active"' : "").'><span><span><a href="ServerOffer?server='.$serverID.'&AdminToken='.$Ot.'">العروض</a></span></span></li>
                   '
                 ;
         return $ret;

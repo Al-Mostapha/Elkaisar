@@ -144,7 +144,6 @@ class ACityPalace
     }
     function removeHeroFromGarrison()
     {
-         return [ "state" => "error_0"];
         global $idPlayer;
         $idHero     = validateID($_POST["idHero"]);
         $idCity     = validateID($_POST["idCity"]);
@@ -171,7 +170,6 @@ class ACityPalace
     
     function  addCityGarrison()
     {
-         return [ "state" => "error_0"];
         global $idPlayer;
         $idHero = validateID($_POST["idHero"]);
         $Hero = selectFromTable(
@@ -205,7 +203,6 @@ class ACityPalace
     
     function reordCityGarrison()
     {
-        return [ "state" => "error_0"];
         global $idPlayer;
         $idHero          = validateID($_POST["idHero"]);
         $ordDirection    = validateGameNames($_POST["Direction"]);

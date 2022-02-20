@@ -99,6 +99,7 @@ class AGodGate {
     }
 
     function changeGateUnlockedCells() {
+        
         global $idPlayer;
         $gateIndex = validateID($_POST["gateIndex"]);
         $godGate = selectFromTable("*", "`god_gate_$gateIndex`", "id_player = :idp", ["idp" => $idPlayer]);
@@ -106,7 +107,7 @@ class AGodGate {
         $MaxVal = CGodGate::getMaxVal();
         if (!count($godGate))
             return ["state" => "error_0", "TryToHack" => TryToHack()];
-
+        
         $lockCells = 0;
         $lockedTypes = [];
 
@@ -133,6 +134,7 @@ class AGodGate {
 
 
         for ($iii = 1; $iii <= 4; $iii++) {
+            
             if ($godGate[0][("c_" . $iii . "_s")] == 2) {
                 continue;
             }
@@ -151,11 +153,11 @@ class AGodGate {
             $score = 0;
 
             $randLH = rand(0, 100);
-            if ($randLH > 97) {
-                rand(floor($MaxVal[$unlockedTyps[$newType]] * 0.97), $MaxVal[$unlockedTyps[$newType]]);
-            } else if ($randLH > 80) {
-                $score = rand(1, floor($MaxVal[$unlockedTyps[$newType]] * 0.97));
-            } else if ($randLH > 71) {
+            if ($randLH > 100 -  $MaxVal["rate_1"]) {
+                $score = rand(floor($MaxVal[$unlockedTyps[$newType]] * 0.97), $MaxVal[$unlockedTyps[$newType]]);
+            } else if ($randLH > 100 - $MaxVal["rate_2"]) {
+                $score = rand(floor($MaxVal[$unlockedTyps[$newType]] * 0.5), floor($MaxVal[$unlockedTyps[$newType]] * 0.97));
+            } else if ($randLH > 100 - $MaxVal["rate_3"]) {
                 $score = rand(1, floor($MaxVal[$unlockedTyps[$newType]] * 0.7));
             } else {
                 $score = rand(1, floor($MaxVal[$unlockedTyps[$newType]] * 0.5));

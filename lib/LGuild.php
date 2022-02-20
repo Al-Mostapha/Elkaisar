@@ -64,7 +64,7 @@ class LGuild {
         $GuildData = [];
         
         $GuildData["GuildData"]  = $Guild[0];
-        $GuildData["leaderName"] = LPlayer::getName($Guild[0]["id_leader"]);
+        $GuildData["leaderName"] = selectFromTable("name", "player", "id_player = (SELECT id_player FROM guild_member WHERE id_guild = :idg AND rank = ".GUILD_R_LEADER." LIMIT 1)", ["idg"=>$idGuild])[0]["name"];
         $GuildData["Allay"]      = selectFromTable("guild.id_guild AS idGuild, guild.name , guild_relation.state", "guild JOIN guild_relation ON guild.id_guild = guild_relation.id_guild_2", "guild_relation.id_guild_1 = :idg", ["idg"=>$idGuild]);
         $GuildData["prizeShare"] = selectFromTable("SUM(prize_share) AS total_prize_share ", "guild_member", "id_guild = :idg", ["idg"=>$idGuild])[0]["total_prize_share"];
 

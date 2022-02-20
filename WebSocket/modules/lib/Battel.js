@@ -17,17 +17,19 @@ exports.abort = function (con, msgObj) {
 
 };
 
-
+/*
 exports.Join = function (con, msgObj) {
     
     if( Elkaisar.Lib.LBattel.HeroListInBattel[msgObj.Hero.id_hero] > Date.now()/1000)
-        return con.sendUTF(JSON.stringify({"classPath": "Battel.StartFailed", "state": "not_in_city", "Console Log" : console.log("Duiplicated Hero Of", msgObj)}));
+        return con.sendUTF(JSON.stringify({"classPath": "Battel.StartFailed", "state": "not_in_city", "Console Log" : console.log("Duiplicated Hero Of 3", msgObj)}));
     if(Elkaisar.Battel.BattelList[msgObj.Battel.id_battel] && Elkaisar.Battel.BattelList[msgObj.Battel.id_battel].Battel)
         Elkaisar.Lib.LBattel.HeroListInBattel[msgObj.Hero["id_hero"]] = Elkaisar.Battel.BattelList[msgObj.Battel.id_battel].Battel.time_end;
+    console.log(Elkaisar.Battel.BattelList[msgObj.Battel.id_battel],  Elkaisar.Lib.LBattel.HeroListInBattel, msgObj);
+    
     Elkaisar.Lib.LBattel.heroJoinedBattel(msgObj.Hero, msgObj.Battel);
 
 };
-
+*/
 exports.start = async function (con, msgObj) {
     
     const idPlayer      = con.idPlayer;
