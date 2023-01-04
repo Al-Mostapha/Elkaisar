@@ -252,6 +252,7 @@ class LBattel
             
             if(AllHeros[Battel.Heros[iii].idHero]){
                 console.log(Date() + "Hero Battel Duplicated");
+                Battel.Heros.splice(iii, 1);
                 continue;
             }
                 
