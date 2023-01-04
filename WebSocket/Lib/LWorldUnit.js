@@ -355,7 +355,14 @@ class LWorldUnit {
     }
 
     static limitedHero($t) {
-        return (LWorldUnit.isArmyCapital($t) || LWorldUnit.isCarthagianArmies($t) || LWorldUnit.isStatueWalf($t)|| LWorldUnit.isStatueWar($t) || LWorldUnit.isSeaCity($t));
+        return (
+                LWorldUnit.isArmyCapital($t) ||
+                LWorldUnit.isCarthagianArmies($t) ||
+                LWorldUnit.isStatueWalf($t)||
+                LWorldUnit.isStatueWar($t) ||
+                LWorldUnit.isSeaCity($t) ||
+                LWorldUnit.isQueenCity($t) ||
+                LWorldUnit.isRepelCastle($t));
     }
     
     static  isDefencable($t){

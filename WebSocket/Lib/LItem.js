@@ -16,7 +16,8 @@ class LItem {
                             if (LItem.ItemList[OneItem.id_item])
                                 LItem.ItemList[OneItem.id_item].gold = OneItem.gold;
                         });
-                    })
+                    });
+                    console.log("Item Fetched");
                     if (callBack)
                         callBack();
                 }

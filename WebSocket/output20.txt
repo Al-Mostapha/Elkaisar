@@ -1,0 +1,3171 @@
+1658342819057
+World City Length Is 1968
+Item Fetched
+1658342819619
+HerosLen is 285253EWorld City Length Is 1114
+1658347200173
+1658347200748
+World City Length Is 1115
+World City Length Is 1116
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+World City Length Is 1117
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+World City Length Is 1117
+World City Length Is 1118
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnError: connect ETIMEDOUT 172.66.43.113:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.43.113',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+1658361600318
+1658361600931
+World City Length Is 1968
+1658368800192
+1658368800749
+1658376000197
+1658376000767
+1658390400261
+1658390400799
+World City Length Is 1969
+Item Fetched
+1658404800202
+1658404800775
+1658408400110
+1658408400111
+1658408400111
+1658408401280
+1658408401591
+1658408401713
+1658412000220
+1658412000716
+1658412000845
+1658412001360
+1658415600183
+1658415600772
+1658419200214
+1658419200766
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1658433600146
+1658433600699
+1658448000406
+1658448001006
+1658455200208
+1658455200811
+1658462400202
+1658462400750
+1658476800207
+1658476800808
+1658491200270
+1658491200826
+1658494800106
+1658494800113
+1658494800332
+1658494800678
+1658494801625
+1658494801736
+1658498400213
+1658498400689
+1658498400790
+1658498401318
+1658502000222
+1658502000807
+1658505600203
+1658505600758
+World City Length Is 1970
+Duiplicated Hero Of { xCoord: 316, yCoord: 454, idHero: 12117029, attackTask: '0' }
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1658520000210
+1658520000738
+1658534400332
+1658534401017
+1658541600200
+1658541600777
+1658548800181
+1658548800753
+World City Length Is 1971
+1658563200169
+1658563200742
+World City Length Is 1972
+1658577600231
+1658577600803
+1658581200097
+1658581200097
+1658581200965
+1658581201068
+1658581201173
+1658581201720
+1658584800204
+1658584800733
+1658584800836
+1658584801373
+World City Length Is 1973
+1658588400204
+1658588400787
+World City Length Is 1974
+1658592000185
+1658592000755
+World City Length Is 1975
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+Hero City Error Mor Hero Count  41945
+World City Length Is 1976
+1658606400221
+1658606400805
+World City Length Is 1977
+1658620800309
+1658620800929
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+World City Length Is 1977
+1658628000174
+1658628000778
+1658635200216
+1658635200753
+1658649600222
+1658649600780
+1658664000226
+1658664000806
+1658667600080
+1658667600292
+1658667600293
+1658667600623
+1658667601563
+1658667601664
+1658671200167
+1658671200738
+1658671200739
+1658671201274
+1658674800202
+1658674800784
+1658678400162
+1658678400704
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1658692800222
+1658692800782
+World City Length Is 1978
+1658707200144
+1658707200678
+1658707200822
+1658707201334
+1658707201334
+1658707201439
+1658707202439
+1658707202550
+1658714400200
+1658714400761
+1658721600243
+1658721600817
+World City Length Is 1979
+1658736000199
+1658736000779
+1658750400250
+1658750400802
+1658754000102
+1658754000326
+1658754000560
+1658754000674
+1658754001621
+1658754001717
+1658757600215
+1658757600702
+1658757600809
+1658757601355
+Duiplicated Hero Of { xCoord: 480, yCoord: 42, idHero: 4270014, attackTask: 0 }
+1658761200172
+1658761200760
+1658764800174
+1658764800748
+1658770200122
+1658770200129
+1658770200130
+1658770200130
+1658770201069
+1658770202023
+1658770202127
+1658770202242
+1658770202351
+1658770202744
+1658770202847
+1658770203356
+World City Length Is 1980
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+World City Length Is 1980
+1658775600107
+1658775600107
+1658775600599
+1658775601136
+1658775601242
+1658775601670
+1658775601671
+1658775601811
+1658775601812
+1658775603227
+1658775603327
+1658775603438
+1658779200251
+1658779200790
+1658793600115
+1658793600541
+1658793600744
+1658793600745
+1658793600880
+1658793601866
+1658793602432
+1658793602540
+World City Length Is 1980
+1658800800179
+1658800800757
+1658808000215
+1658808000772
+1658822400199
+1658822400763
+1658836800248
+1658836800802
+1658840400102
+1658840400107
+1658840400998
+1658840401099
+1658840401200
+1658840401733
+1658844000173
+1658844000625
+1658844000776
+1658844001304
+1658847600193
+1658847600778
+1658851200225
+1658851200789
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1658865600206
+1658865600768
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+[ '', 'api', 'AItemBoxUse', 'useResourcePacks' ] [Object: null prototype] {
+  server: '1',
+  idPlayerV: '3452',
+  Item: 'metal_d',
+  amount: '100',
+  idCity: '34512',
+  token: '689153-96972-595972-888062-726901'
+}
+1658880000282
+1658880000941
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+1658887200189
+1658887200791
+1658894400219
+1658894400799
+1658908800248
+1658908800824
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+1658923200210
+1658923200761
+1658926800093
+1658926800298
+1658926800648
+1658926800868
+1658926801159
+1658926801672
+1658930400183
+1658930400662
+1658930400773
+1658930401292
+1658934000231
+1658934000776
+1658937600197
+1658937600743
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1658952000216
+1658952000802
+1658966400390
+1658966400995
+1658973600181
+1658973600756
+1658980800214
+1658980800770
+1658995200189
+1658995200769
+Duiplicated Hero Of { xCoord: 316, yCoord: 450, idHero: 12117031, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 316, yCoord: 450, idHero: 12117064, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 316, yCoord: 450, idHero: 12117031, attackTask: 0 }
+1659009600273
+1659009600842
+1659013200093
+1659013200094
+1659013200766
+1659013201073
+1659013201176
+1659013201720
+1659016800215
+1659016800727
+1659016800848
+1659016801377
+1659020400205
+1659020400770
+1659024000157
+1659024000739
+Army Type Error [Object: null prototype] {
+  server: '1',
+  idPlayerV: '12044',
+  idHero: '12043019',
+  amount: '2940',
+  idCity: '120431',
+  ArmyPlace: 'b_1',
+  ArmyType: 'army_a',
+  token: '212600-131678-231557-470404-309741',
+  idPlayer: '12044'
+}
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1659038400167
+1659038400742
+Duiplicated Hero Of { xCoord: 149, yCoord: 409, idHero: 4900211, attackTask: '0' }
+1659052800380
+1659052800996
+1659060000190
+1659060000763
+1659067200218
+1659067200770
+1659081600178
+1659081600733
+1659096000236
+1659096000800
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+Duiplicated Hero Of { xCoord: 26, yCoord: 454, idHero: 5106091, attackTask: '0' }
+1659099600101
+1659099600112
+1659099600113
+1659099601139
+1659099601657
+1659099601787
+1659103200267
+1659103200723
+1659103200872
+1659103201389
+1659106800169
+1659106800734
+1659110400200
+1659110400782
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+World City Length Is 1980
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+Duiplicated Hero Of { xCoord: 26, yCoord: 454, idHero: 5106450, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 26, yCoord: 454, idHero: 5106450, attackTask: '0' }
+1659124800169
+1659124800770
+World City Length Is 1981
+1659139200375
+1659139200991
+1659146400244
+1659146400809
+1659153600195
+1659153600754
+1659168000227
+1659168000766
+World City Length Is 1981
+World City Length Is 1982
+1659182400191
+1659182400779
+1659186000107
+1659186000363
+1659186000363
+1659186000693
+1659186001456
+1659186001761
+1659189600185
+1659189600682
+1659189600785
+1659189601304
+1659193200208
+1659193200778
+Duiplicated Hero Of { xCoord: 97, yCoord: 467, idHero: 5106057, attackTask: '0' }
+1659196800206
+1659196800766
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1659211200198
+1659211200800
+Duiplicated Hero Of { xCoord: 97, yCoord: 417, idHero: 5106057, attackTask: '0' }
+1659225600379
+1659225601023
+1659232800188
+1659232800782
+1659240000221
+1659240000832
+Duiplicated Hero Of { xCoord: 98, yCoord: 417, idHero: 5106057, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 98, yCoord: 417, idHero: 5106193, attackTask: '0' }
+Item Fetched
+1659254400219
+1659254400790
+1659268800229
+1659268800832
+1659272400100
+1659272400517
+1659272400518
+1659272400626
+1659272401571
+1659272401689
+1659276000172
+1659276000668
+1659276000788
+1659276001332
+1659279600215
+1659279600784
+1659283200249
+1659283200801
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1659297600170
+1659297600764
+World City Length Is 1982
+1659312000111
+1659312000814
+1659312000961
+1659312001205
+1659312001451
+1659312001599
+1659312002115
+1659312002657
+1659319200198
+1659319200791
+1659326400260
+1659326400827
+1659340800169
+1659340800754
+1659355200210
+1659355200800
+1659358800099
+1659358800100
+1659358800945
+1659358801045
+1659358801145
+1659358801664
+1659362400229
+1659362400730
+1659362400842
+1659362401361
+1659366000167
+1659366000747
+1659369600225
+1659369600765
+World City Length Is 1983
+1659375000159
+1659375000160
+1659375000170
+1659375001098
+1659375001098
+1659375001098
+1659375001427
+1659375001754
+1659375001861
+1659375003188
+1659375003288
+1659375003395
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1659380400122
+1659380400704
+1659380400710
+1659380400711
+1659380400711
+1659380400711
+1659380400711
+1659380403021
+1659380403125
+1659380403231
+1659380403334
+1659380403450
+1659384000230
+1659384000792
+1659398400122
+1659398400516
+1659398400808
+1659398400809
+1659398400948
+1659398402319
+1659398402453
+1659398402563
+1659405600203
+1659405600775
+1659412800225
+1659412800782
+1659427200198
+1659427200773
+1659441600253
+1659441600864
+1659445200098
+1659445200680
+1659445200686
+1659445200923
+1659445201226
+1659445201741
+1659448800211
+1659448800708
+1659448800822
+1659448801357
+1659452400214
+1659452400792
+1659456000202
+1659456000771
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1659470400215
+1659470400785
+World City Length Is 1984
+1659484800284
+1659484800875
+1659492000189
+1659492000782
+1659499200250
+1659499200803
+1659513600189
+1659513600756
+1659528000260
+1659528000841
+1659531600098
+1659531600099
+1659531600531
+1659531601069
+1659531601166
+1659531601702
+World City Length Is 1985
+1659535200215
+1659535200707
+1659535200819
+1659535201357
+1659538800184
+1659538800757
+1659542400172
+1659542400755
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1659556800207
+1659556800809
+1659571200337
+1659571200988
+1659578400152
+1659578400730
+1659585600199
+1659585600761
+1659600000208
+1659600000774
+1659614400211
+1659614400807
+1659618000136
+1659618000143
+1659618000143
+1659618001122
+1659618001618
+1659618001718
+World City Length Is 1986
+1659621600256
+1659621600830
+1659621600830
+1659621601360
+1659625200205
+1659625200783
+1659628800181
+1659628800789
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1659643200221
+1659643200766
+1659657600355
+1659657601025
+1659664800175
+1659664800760
+1659672000209
+1659672000774
+1659686400172
+1659686400744
+World City Length Is 1987
+1659700800226
+1659700800826
+1659704400097
+1659704400103
+1659704400965
+1659704401068
+1659704401169
+1659704401695
+1659708000230
+1659708000712
+1659708000816
+1659708001321
+1659711600189
+1659711600753
+1659715200154
+1659715200710
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1659729600185
+1659729600739
+1659744000339
+1659744000945
+Duiplicated Hero Of { xCoord: 334, yCoord: 414, idHero: 307084, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 82, yCoord: 299, idHero: 307014, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 82, yCoord: 299, idHero: 307096, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 82, yCoord: 299, idHero: 307013, attackTask: '0' }
+Hero City Error Mor Hero Count  3073
+Duiplicated Hero Of { xCoord: 97, yCoord: 417, idHero: 307073, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 97, yCoord: 417, idHero: 307075, attackTask: '0' }
+Hero City Error Mor Hero Count  3074
+World City Length Is 1987
+World City Length Is 1987
+World City Length Is 1987
+World City Length Is 1987
+1659751200202
+1659751200803
+1659758400185
+1659758400781
+1659772800174
+1659772800767
+1659787200208
+1659787200789
+1659790800096
+1659790800344
+1659790800552
+1659790800675
+1659790801615
+1659790801730
+1659794400215
+1659794400787
+1659794400788
+1659794401289
+World City Length Is 1988
+1659798000185
+1659798000728
+1659801600183
+1659801600726
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+RowDataPacket { id_player: 264 } Prize List Length : 0
+1659816000218
+1659816000779
+1659830400352
+1659830400962
+1659837600181
+1659837600740
+1659844800246
+1659844800779
+1659859200222
+1659859200820
+World City Length Is 1989
+1659873600226
+1659873600779
+1659877200092
+1659877200112
+1659877200694
+1659877200694
+1659877201206
+1659877201760
+World City Length Is 1990
+World City Length Is 1990
+World City Length Is 1991
+World City Length Is 1991
+1659880800218
+1659880800675
+1659880800780
+1659880801299
+1659884400186
+1659884400769
+1659888000206
+1659888000803
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1659902400154
+1659902400742
+1659916800112
+1659916800405
+1659916800406
+1659916800666
+1659916800813
+1659916802019
+1659916802120
+1659916802444
+1659924000147
+1659924000750
+World City Length Is 1992
+1659931200217
+1659931200819
+1659945600228
+1659945600846
+1659960000203
+1659960000766
+1659963600094
+1659963600108
+1659963600361
+1659963600940
+1659963601457
+1659963601822
+1659967200195
+1659967200666
+1659967200791
+1659967201310
+World City Length Is 1993
+1659970800190
+1659970800762
+1659974400216
+1659974400799
+1659979800131
+1659979800406
+1659979800749
+1659979801192
+1659979801294
+1659979801294
+1659979801294
+1659979801294
+1659979803087
+1659979803190
+1659979803303
+1659979803435
+World City Length Is 1994
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+RowDataPacket { id_player: 264 } Prize List Length : 0
+1659985200110
+1659985200395
+1659985200765
+1659985201199
+1659985201199
+1659985201306
+1659985201326
+1659985201326
+1659985202280
+1659985202387
+1659985203339
+1659985203443
+1659988800192
+1659988800769
+World City Length Is 1995
+1660003200143
+1660003200155
+1660003200155
+1660003201036
+1660003201145
+1660003201711
+1660003202259
+1660003202567
+1660010400185
+1660010400757
+1660017600165
+1660017600736
+1660032000220
+1660032000766
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+World City Length Is 1995
+1660046400230
+1660046400813
+1660050000113
+1660050000345
+1660050000556
+1660050000660
+1660050001618
+1660050001729
+1660053600216
+1660053600744
+1660053600846
+1660053601371
+1660057200257
+1660057200823
+1660060800202
+1660060800791
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4248 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1660075200224
+1660075200825
+1660089600331
+1660089600986
+1660096800165
+1660096800736
+1660104000177
+1660104000732
+1660118400205
+1660118400777
+1660132800219
+1660132800770
+1660136400105
+1660136400120
+1660136400408
+1660136400749
+1660136401663
+1660136401762
+1660140000192
+1660140000664
+1660140000780
+1660140001312
+1660143600201
+1660143600777
+World City Length Is 1996
+1660147200185
+1660147200753
+World City Length Is 1997
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4248 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1660161600198
+1660161600765
+World City Length Is 1998
+1660176000316
+1660176000968
+1660183200157
+1660183200704
+1660190400219
+1660190400804
+1660204800225
+1660204800783
+1660219200237
+1660219200817
+1660222800102
+1660222800103
+1660222800576
+1660222801072
+1660222801189
+1660222801735
+1660226400207
+1660226400718
+1660226400821
+1660226401345
+1660230000207
+1660230000754
+1660233600211
+1660233600750
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4248 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1660248000216
+1660248000775
+1660262400378
+1660262401003
+1660269600215
+1660269600773
+1660276800266
+1660276800820
+1660291200172
+1660291200721
+1660305600225
+1660305600784
+1660309200093
+1660309200100
+1660309200559
+1660309201060
+1660309201167
+1660309201690
+1660312800207
+1660312800625
+1660312800752
+1660312801269
+1660316400179
+1660316400720
+1660320000191
+1660320000754
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4248 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+1660334400211
+1660334400804
+1660348800285
+1660348800923
+1660356000207
+1660356000765
+1660363200198
+1660363200752
+1660377600208
+1660377600795
+2
+1659067200750
+Duiplicated Hero Of { xCoord: 478, yCoord: 21, idHero: 18247167, attackTask: 0 }
+1659081600183
+1659081600748
+Duiplicated Hero Of { xCoord: 88, yCoord: 467, idHero: 30178065, attackTask: '0' }
+1659096000115
+1659096000561
+1659096000673
+1659096001199
+1659099600084
+1659099600103
+1659099600340
+1659099600677
+1659099601376
+1659099601716
+World City Length Is 1172
+World City Length Is 1172
+World City Length Is 1172
+World City Length Is 1172
+World City Length Is 1172
+1659103200219
+1659103200715
+1659103200833
+1659103201339
+Army Type Error [Object: null prototype] {
+  server: '2',
+  idPlayerV: '32875',
+  idHero: '32874003',
+  amount: '1666',
+  idCity: '328741',
+  ArmyPlace: 'f_1',
+  ArmyType: 'army_d',
+  token: '747199-499820-821124-880159-81467',
+  idPlayer: '32875'
+}
+1659106800171
+1659106800746
+World City Length Is 1172
+World City Length Is 1172
+1659110400176
+1659110400732
+[ '', 'api', 'AArenaChallange', 'getFightList' ] [Object: null prototype] {
+  server: '2',
+  idPlayerV: '15601',
+  token: '793909-931022-182684-650881-321777'
+}
+[ '', 'api', 'AArenaChallange', 'getFightList' ] [Object: null prototype] {
+  server: '2',
+  idPlayerV: '15601',
+  token: '793909-931022-182684-650881-321777'
+}
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+RowDataPacket { id_player: 30313 } Prize List Length : 0
+1659124800186
+1659124800780
+Duiplicated Hero Of { xCoord: 300, yCoord: 390, idHero: 30178028, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178121, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178117, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178068, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178020, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178020, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 135, yCoord: 158, idHero: 30178146, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 84, yCoord: 301, idHero: 30178064, attackTask: '0' }
+Hero City Error Mor Hero Count  300263
+Duiplicated Hero Of { xCoord: 137, yCoord: 158, idHero: 30178060, attackTask: '0' }
+1659139200309
+1659139200911
+Duiplicated Hero Of { xCoord: 478, yCoord: 21, idHero: 30178145, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 478, yCoord: 21, idHero: 30178143, attackTask: 0 }
+World City Length Is 1172
+1659146400241
+1659146400831
+1659153600192
+1659153600751
+1659168000225
+1659168000811
+Duiplicated Hero Of { xCoord: 78, yCoord: 300, idHero: 30178137, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 86, yCoord: 465, idHero: 30178110, attackTask: '0' }
+1659182400197
+1659182400785
+World City Length Is 1172
+World City Length Is 1172
+1659186000104
+1659186000350
+1659186000557
+1659186000658
+1659186001596
+1659186001715
+1659189600179
+1659189600695
+1659189600806
+1659189601340
+1659193200211
+1659193200783
+1659196800216
+1659196800781
+World City Length Is 1173
+World City Length Is 1174
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+RowDataPacket { id_player: 30313 } Prize List Length : 0
+1659211200182
+1659211200768
+Duiplicated Hero Of { xCoord: 100, yCoord: 170, idHero: 30178114, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 100, yCoord: 310, idHero: 30178014, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 20, yCoord: 310, idHero: 30178020, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 20, yCoord: 310, idHero: 30178020, attackTask: 0 }
+World City Length Is 1175
+1659225600372
+1659225601038
+1659232800186
+1659232800762
+1659240000212
+1659240000809
+Item Fetched
+1659254400208
+1659254400751
+World City Length Is 1175
+World City Length Is 1175
+World City Length Is 1175
+World City Length Is 1175
+World City Length Is 1176
+Duiplicated Hero Of { xCoord: 180, yCoord: 170, idHero: 30026086, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 391, yCoord: 220, idHero: 30178087, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178097, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 391, yCoord: 220, idHero: 30026062, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30026074, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30026071, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30026067, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30026069, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30026094, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30026094, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 84, yCoord: 301, idHero: 30178105, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 89, yCoord: 461, idHero: 30026038, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 325, yCoord: 415, idHero: 30026061, attackTask: '0' }
+World City Length Is 1177
+1659268800125
+1659268800584
+1659268800691
+1659268801193
+1659272400110
+1659272400351
+1659272400548
+1659272400688
+1659272401212
+1659272401752
+1659276000180
+1659276000665
+1659276000777
+1659276001312
+1659279600198
+1659279600733
+1659283200245
+1659283200814
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+RowDataPacket { id_player: 30313 } Prize List Length : 0
+World City Length Is 1178
+World City Length Is 1178
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178107, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178072, attackTask: '0' }
+1659297600162
+1659297600732
+Duiplicated Hero Of { xCoord: 392, yCoord: 213, idHero: 30026046, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 180, yCoord: 170, idHero: 30026078, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 20, yCoord: 470, idHero: 30026041, attackTask: 0 }
+Hero City Error Mor Hero Count  300264
+Duiplicated Hero Of { xCoord: 380, yCoord: 230, idHero: 30178041, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 380, yCoord: 230, idHero: 30178082, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 380, yCoord: 230, idHero: 30178034, attackTask: 0 }
+1659312000137
+1659312000769
+1659312000893
+1659312001130
+1659312001131
+1659312001445
+1659312002458
+1659312002577
+1659319200183
+1659319200768
+1659326400241
+1659326400818
+1659340800166
+1659340800785
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1178
+1659355200111
+1659355200594
+1659355200713
+1659355201281
+World City Length Is 1178
+World City Length Is 1178
+World City Length Is 1179
+1659358800112
+1659358800327
+1659358800598
+1659358800706
+1659358801659
+1659358801795
+World City Length Is 1179
+World City Length Is 1179
+World City Length Is 1179
+World City Length Is 1179
+1659362400226
+1659362400698
+1659362400804
+1659362401327
+1659366000170
+1659366000718
+1659369600227
+1659369600795
+World City Length Is 1180
+1659375000159
+1659375000187
+1659375000442
+1659375000442
+1659375000442
+1659375000442
+1659375000991
+1659375002196
+1659375003089
+1659375003196
+1659375003314
+1659375003436
+Error: ER_LOCK_DEADLOCK: Deadlock found when trying to get lock; try restarting transaction
+    at Query.Sequence._packetToError (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (events.js:315:20)
+    at addChunk (internal/streams/readable.js:309:12)
+    --------------------
+    at Protocol._enqueue (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/elkaisar/WebSocket/Lib/LBase.js:24:20
+    at Ping.onOperationComplete (/home/elkaisar/WebSocket/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Ping._callback (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:488:16)
+    at Ping.Sequence.end (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10) {
+  code: 'ER_LOCK_DEADLOCK',
+  errno: 1213,
+  sqlMessage: 'Deadlock found when trying to get lock; try restarting transaction',
+  sqlState: '40001',
+  index: 0,
+  sql: 'UPDATE battel SET time_end = time_end + 300 WHERE x_coord = 400 AND y_coord = 230'
+}
+uncaughtException
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+1659380400114
+1659380400118
+1659380400119
+1659380401659
+1659380401764
+1659380401881
+1659380401890
+1659380401890
+1659380401890
+1659380403305
+1659380403409
+1659380403528
+Duiplicated Hero Of { xCoord: 300, yCoord: 390, idHero: 30178007, attackTask: 0 }
+1659384000228
+1659384000807
+Hero City Error Mor Hero Count  301781
+Hero City Error Mor Hero Count  301781
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178102, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178111, attackTask: '0' }
+Hero City Error Mor Hero Count  301783
+Hero City Error Mor Hero Count  301783
+Hero City Error Mor Hero Count  301783
+Hero City Error Mor Hero Count  301784
+Hero City Error Mor Hero Count  301784
+Hero City Error Mor Hero Count  301781
+Hero City Error Mor Hero Count  301781
+Hero City Error Mor Hero Count  301783
+Hero City Error Mor Hero Count  301783
+Duiplicated Hero Of { xCoord: 89, yCoord: 466, idHero: 30178081, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178087, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178111, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178050, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178136, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 388, yCoord: 218, idHero: 30178063, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178097, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178115, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178094, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178088, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178080, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178076, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178072, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178057, attackTask: '0' }
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+Duiplicated Hero Of { xCoord: 89, yCoord: 461, idHero: 30026117, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 89, yCoord: 461, idHero: 30026111, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 89, yCoord: 461, idHero: 30026040, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 325, yCoord: 415, idHero: 30026023, attackTask: '0' }
+1659398400151
+1659398400479
+1659398400479
+1659398400784
+1659398400886
+1659398401834
+1659398401966
+1659398402527
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30026086, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30026091, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30026091, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30026074, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30026079, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30026079, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30026020, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30026028, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30026082, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30026094, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30026066, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30026066, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30026066, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30026068, attackTask: '0' }
+World City Length Is 1180
+World City Length Is 1180
+1659405600206
+1659405600815
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+1659412800227
+1659412800807
+1659427200218
+1659427200808
+Hero City Error Mor Hero Count  309533
+Duiplicated Hero Of { xCoord: 78, yCoord: 300, idHero: 30178137, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 380, yCoord: 230, idHero: 30178043, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 79, yCoord: 298, idHero: 30178121, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178115, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178040, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 84, yCoord: 301, idHero: 30178105, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178092, attackTask: '0' }
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+Error: ER_LOCK_DEADLOCK: Deadlock found when trying to get lock; try restarting transaction
+    at Query.Sequence._packetToError (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (events.js:315:20)
+    at addChunk (internal/streams/readable.js:309:12)
+    --------------------
+    at Protocol._enqueue (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/elkaisar/WebSocket/Lib/LBase.js:56:20
+    at Ping.onOperationComplete (/home/elkaisar/WebSocket/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Ping._callback (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:488:16)
+    at Ping.Sequence.end (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10) {
+  code: 'ER_LOCK_DEADLOCK',
+  errno: 1213,
+  sqlMessage: 'Deadlock found when trying to get lock; try restarting transaction',
+  sqlState: '40001',
+  index: 0,
+  sql: 'DELETE FROM battel_member WHERE id_battel = 831'
+}
+uncaughtException
+Duiplicated Hero Of { xCoord: 388, yCoord: 218, idHero: 30178134, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178111, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178097, attackTask: '0' }
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+World City Length Is 1180
+1659441600121
+1659441600611
+1659441600723
+1659441600733
+1659441601627
+1659441601746
+World City Length Is 1180
+1659445200101
+1659445200104
+1659445200324
+1659445201073
+1659445201178
+1659445201707
+1659448800209
+1659448800707
+1659448800813
+1659448801378
+1659452400212
+1659452400806
+World City Length Is 1180
+1659456000188
+1659456000761
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+1659470400224
+1659470400829
+World City Length Is 1181
+Duiplicated Hero Of { xCoord: 78, yCoord: 300, idHero: 30178137, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 78, yCoord: 300, idHero: 30178021, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 78, yCoord: 300, idHero: 30178021, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 380, yCoord: 390, idHero: 30178083, attackTask: 0 }
+Hero City Error Mor Hero Count  301782
+Hero City Error Mor Hero Count  301782
+Hero City Error Mor Hero Count  301782
+World City Length Is 1182
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178068, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178132, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178121, attackTask: '0' }
+1659484800287
+1659484800893
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178109, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30026082, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30026090, attackTask: '0' }
+Hero City Error Mor Hero Count  300262
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30026120, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30026018, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30026065, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30026081, attackTask: '0' }
+1659492000176
+1659492000748
+World City Length Is 1182
+1659499200235
+1659499200787
+1659513600192
+1659513600784
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178133, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178080, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178074, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178057, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178072, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178076, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178080, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178088, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178094, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178117, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178096, attackTask: '0' }
+World City Length Is 1183
+1659528000131
+1659528000132
+1659528000991
+1659528001095
+1659528001199
+1659528001719
+1659531600101
+1659531600110
+1659531600769
+1659531601070
+1659531601178
+1659531601731
+Hero Dub Here [Object: null prototype] {
+  server: '2',
+  idPlayerV: '30069',
+  idBattel: '1157',
+  idHero: '30068030',
+  side: '0',
+  token: '124969-335719-804436-566828-403663'
+}
+Hero Dub Here [Object: null prototype] {
+  server: '2',
+  idPlayerV: '30069',
+  idBattel: '1157',
+  idHero: '30068030',
+  side: '0',
+  token: '124969-335719-804436-566828-403663'
+}
+World City Length Is 1184
+1659535200183
+1659535200654
+1659535200758
+1659535201251
+1659538800168
+1659538800761
+1659542400169
+1659542400738
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+World City Length Is 1185
+1659556800222
+1659556800800
+Duiplicated Hero Of { xCoord: 300, yCoord: 390, idHero: 30178006, attackTask: 0 }
+Hero City Error Mor Hero Count  301785
+Hero City Error Mor Hero Count  301785
+Hero City Error Mor Hero Count  301785
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178110, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178039, attackTask: '0' }
+Hero City Error Mor Hero Count  301781
+Hero City Error Mor Hero Count  301781
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178079, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178129, attackTask: '0' }
+World City Length Is 1185
+World City Length Is 1185
+World City Length Is 1185
+World City Length Is 1185
+World City Length Is 1185
+World City Length Is 1185
+World City Length Is 1185
+World City Length Is 1185
+1659571200325
+1659571200959
+World City Length Is 1185
+1659578400150
+1659578400759
+World City Length Is 1185
+World City Length Is 1185
+Error: ER_LOCK_DEADLOCK: Deadlock found when trying to get lock; try restarting transaction
+    at Query.Sequence._packetToError (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (events.js:315:20)
+    at addChunk (internal/streams/readable.js:309:12)
+    --------------------
+    at Protocol._enqueue (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/elkaisar/WebSocket/Lib/LBase.js:56:20
+    at Ping.onOperationComplete (/home/elkaisar/WebSocket/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Ping._callback (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:488:16)
+    at Ping.Sequence.end (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10) {
+  code: 'ER_LOCK_DEADLOCK',
+  errno: 1213,
+  sqlMessage: 'Deadlock found when trying to get lock; try restarting transaction',
+  sqlState: '40001',
+  index: 0,
+  sql: 'DELETE FROM battel_member WHERE id_battel = 2526'
+}
+uncaughtException
+World City Length Is 1185
+World City Length Is 1185
+1659585600193
+1659585600777
+1659600000211
+1659600000791
+Duiplicated Hero Of { xCoord: 240, yCoord: 116, idHero: 30240017, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 240, yCoord: 116, idHero: 30240017, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 90, yCoord: 467, idHero: 30178047, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178039, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178087, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178094, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178094, attackTask: '0' }
+1659614400114
+1659614400617
+1659614400715
+1659614401215
+Duiplicated Hero Of { xCoord: 89, yCoord: 466, idHero: 30178081, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 89, yCoord: 466, idHero: 30178081, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 133, yCoord: 166, idHero: 30178094, attackTask: '0' }
+Hero City Error Mor Hero Count  326544
+Hero City Error Mor Hero Count  326544
+Hero City Error Mor Hero Count  326544
+Hero City Error Mor Hero Count  326544
+1659618000126
+1659618000549
+1659618000550
+1659618000669
+1659618001617
+1659618001722
+1659621600246
+1659621600720
+1659621600840
+1659621601357
+1659625200203
+1659625200800
+1659628800184
+1659628800733
+Duiplicated Hero Of { xCoord: 249, yCoord: 114, idHero: 30240027, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 243, yCoord: 118, idHero: 30240027, attackTask: '0' }
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+World City Length Is 1185
+[ '', 'api', 'AWorld', 'getWorldCity' ] [Object: null prototype] {
+  server: '2',
+  idPlayerV: '15263',
+  token: '657504-660641-927133-959511-105451',
+  idPlayer: '15263'
+}
+1659643200228
+1659643200789
+Hero City Error Mor Hero Count  301781
+1659657600322
+1659657600882
+Duiplicated Hero Of { xCoord: 479, yCoord: 60, idHero: 30178140, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178083, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178079, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178083, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 393, yCoord: 215, idHero: 30178093, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 89, yCoord: 466, idHero: 30178140, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178144, attackTask: '0' }
+World City Length Is 1185
+1659664800188
+1659664800799
+1659672000203
+1659672000778
+Duiplicated Hero Of { xCoord: 184, yCoord: 101, idHero: 18247175, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 184, yCoord: 101, idHero: 18247178, attackTask: '0' }
+1659686400164
+1659686400734
+World City Length Is 1186
+Duiplicated Hero Of { xCoord: 91, yCoord: 453, idHero: 32654050, attackTask: '0' }
+1659700800095
+1659700800589
+1659700800700
+1659700801234
+1659704400097
+1659704400108
+1659704400568
+1659704401086
+1659704401194
+1659704401703
+World City Length Is 1187
+1659708000189
+1659708000676
+1659708000789
+1659708001303
+World City Length Is 1188
+World City Length Is 1189
+1659711600183
+1659711600752
+1659715200151
+1659715200709
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+World City Length Is 1189
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+1659729600188
+1659729600760
+World City Length Is 1190
+Duiplicated Hero Of { xCoord: 78, yCoord: 300, idHero: 30178150, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 78, yCoord: 300, idHero: 30178150, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 180, yCoord: 470, idHero: 30178067, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 20, yCoord: 310, idHero: 30178107, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 140, yCoord: 230, idHero: 30178114, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 140, yCoord: 230, idHero: 30178114, attackTask: 0 }
+Hero City Error Mor Hero Count  301781
+Hero City Error Mor Hero Count  301781
+Hero City Error Mor Hero Count  301781
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178131, attackTask: '0' }
+1659744000316
+1659744000976
+Duiplicated Hero Of { xCoord: 395, yCoord: 211, idHero: 30260102, attackTask: '0' }
+World City Length Is 1190
+World City Length Is 1190
+1659751200179
+1659751200727
+Duiplicated Hero Of { xCoord: 86, yCoord: 445, idHero: 30240055, attackTask: '1' }
+Duiplicated Hero Of { xCoord: 86, yCoord: 445, idHero: 30240055, attackTask: '1' }
+1659758400183
+1659758400746
+1659772800180
+1659772800760
+1659787200130
+1659787200609
+1659787200730
+1659787201252
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178133, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178083, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178123, attackTask: '0' }
+1659790800124
+1659790800375
+1659790800375
+1659790800727
+1659790801669
+1659790801794
+1659794400218
+1659794400757
+1659794400861
+1659794401409
+1659798000196
+1659798000763
+1659801600198
+1659801600766
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+1659816000223
+1659816000798
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178039, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178122, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178133, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178131, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 135, yCoord: 158, idHero: 30178074, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178096, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178051, attackTask: '0' }
+1659830400363
+1659830400993
+World City Length Is 1190
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178068, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178129, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178076, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178119, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178096, attackTask: '0' }
+World City Length Is 1190
+World City Length Is 1190
+World City Length Is 1191
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178087, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178083, attackTask: '0' }
+1659837600201
+1659837600795
+1659844800212
+1659844800785
+1659859200219
+1659859200791
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+World City Length Is 1191
+1659873600099
+1659873600575
+1659873600680
+1659873601209
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178096, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 84, yCoord: 301, idHero: 30178136, attackTask: '0' }
+World City Length Is 1192
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178050, attackTask: '0' }
+1659877200092
+1659877200102
+1659877200931
+1659877201038
+1659877201153
+1659877201724
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178117, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178117, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178110, attackTask: '0' }
+World City Length Is 1193
+1659880800216
+1659880800724
+1659880800834
+1659880801366
+1659884400163
+1659884400761
+1659888000224
+1659888000810
+World City Length Is 1194
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+1659902400160
+1659902400784
+Duiplicated Hero Of { xCoord: 392, yCoord: 213, idHero: 30178027, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 20, yCoord: 470, idHero: 30178065, attackTask: 0 }
+World City Length Is 1195
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178051, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178118, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178104, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178055, attackTask: '0' }
+1659916800142
+1659916800748
+1659916800749
+1659916800861
+1659916801307
+1659916801897
+1659916802005
+1659916802546
+World City Length Is 1195
+1659924000149
+1659924000731
+1659931200195
+1659931200751
+1659945600218
+1659945600859
+1659960000195
+1659960000732
+TypeError: Cannot read property 'title_1' of undefined
+    at /home/elkaisar/WebSocket/modules/lib/Player.js:16:36
+    at Query.<anonymous> (/home/elkaisar/WebSocket/Lib/LBase.js:9:17)
+    at Query.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Query._callback (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:488:16)
+    at Query.Sequence.end (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Query._handleFinalResultPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Query.js:149:8)
+    at Query.EofPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Query.js:133:8)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:43:10)
+uncaughtException
+TypeError: Cannot read property 'title_1' of undefined
+    at /home/elkaisar/WebSocket/modules/lib/Player.js:16:36
+    at Query.<anonymous> (/home/elkaisar/WebSocket/Lib/LBase.js:9:17)
+    at Query.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Query._callback (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:488:16)
+    at Query.Sequence.end (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Query._handleFinalResultPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Query.js:149:8)
+    at Query.EofPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Query.js:133:8)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:43:10)
+uncaughtException
+1659963600117
+1659963600379
+1659963600599
+1659963600710
+1659963601429
+1659963601801
+1659967200176
+1659967200641
+1659967200759
+1659967201290
+1659970800187
+1659970800741
+1659974400169
+1659974400725
+1659979800180
+1659979800200
+1659979800446
+1659979800875
+1659979800875
+1659979800876
+1659979801202
+1659979801337
+1659979803145
+1659979803253
+1659979803365
+1659979803484
+Error: ER_LOCK_DEADLOCK: Deadlock found when trying to get lock; try restarting transaction
+    at Query.Sequence._packetToError (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (events.js:315:20)
+    at addChunk (internal/streams/readable.js:309:12)
+    --------------------
+    at Protocol._enqueue (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/elkaisar/WebSocket/Lib/LBase.js:24:20
+    at Ping.onOperationComplete (/home/elkaisar/WebSocket/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Ping._callback (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:488:16)
+    at Ping.Sequence.end (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10) {
+  code: 'ER_LOCK_DEADLOCK',
+  errno: 1213,
+  sqlMessage: 'Deadlock found when trying to get lock; try restarting transaction',
+  sqlState: '40001',
+  index: 0,
+  sql: 'UPDATE battel SET time_end = time_end + 300 WHERE x_coord = 255 AND y_coord = 266'
+}
+uncaughtException
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+1659985200143
+1659985200430
+1659985200818
+1659985200819
+1659985201244
+1659985201245
+1659985201245
+1659985201371
+1659985202378
+1659985203111
+1659985203225
+1659985203542
+1659988800202
+1659988800776
+Duiplicated Hero Of { xCoord: 300, yCoord: 390, idHero: 30178005, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 78, yCoord: 300, idHero: 30178090, attackTask: 0 }
+Hero City Error Mor Hero Count  301783
+Hero City Error Mor Hero Count  301783
+Duiplicated Hero Of { xCoord: 89, yCoord: 466, idHero: 30178140, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178055, attackTask: '0' }
+World City Length Is 1196
+Duiplicated Hero Of { xCoord: 388, yCoord: 218, idHero: 30178089, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 391, yCoord: 220, idHero: 30178039, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178144, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 84, yCoord: 301, idHero: 30178108, attackTask: '0' }
+1660003200143
+1660003200160
+1660003200822
+1660003201241
+1660003201363
+1660003201517
+1660003202504
+1660003202623
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178131, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178133, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178111, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178072, attackTask: '0' }
+1660010400183
+1660010400728
+1660017600162
+1660017600727
+1660032000223
+1660032000779
+Duiplicated Hero Of { xCoord: 100, yCoord: 30, idHero: 32654039, attackTask: 0 }
+1660046400233
+1660046400803
+1660050000121
+1660050000122
+1660050000590
+1660050001125
+1660050001227
+1660050001788
+World City Length Is 1197
+1660053600207
+1660053600687
+1660053600795
+1660053601316
+1660057200229
+1660057200823
+1660060800215
+1660060800756
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+1660075200227
+1660075200802
+Duiplicated Hero Of { xCoord: 20, yCoord: 470, idHero: 30178095, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178114, attackTask: '0' }
+1660089600299
+1660089600924
+1660096800158
+1660096800741
+1660104000186
+1660104000734
+1660118400198
+1660118400777
+Duiplicated Hero Of { xCoord: 340, yCoord: 470, idHero: 30953154, attackTask: 0 }
+1660132800234
+1660132800794
+1660136400108
+1660136400401
+1660136400402
+1660136400740
+1660136401678
+1660136401793
+1660140000178
+1660140000672
+1660140000768
+1660140001265
+1660143600224
+1660143600783
+World City Length Is 1198
+1660147200180
+1660147200761
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+1660161600213
+1660161600762
+1660176000305
+1660176000918
+Duiplicated Hero Of { xCoord: 392, yCoord: 216, idHero: 30178046, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178130, attackTask: '0' }
+1660183200162
+1660183200734
+1660190400198
+1660190400748
+1660204800222
+1660204800784
+Hero City Error Mor Hero Count  301785
+Hero City Error Mor Hero Count  301785
+Hero City Error Mor Hero Count  301785
+1660219200235
+1660219200823
+1660222800131
+1660222800364
+1660222800590
+1660222800698
+1660222801661
+1660222801797
+1660226400216
+1660226400690
+1660226400793
+1660226401308
+World City Length Is 1198
+World City Length Is 1198
+1660230000200
+1660230000788
+1660233600213
+1660233600774
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+World City Length Is 1198
+World City Length Is 1198
+World City Length Is 1198
+1660248000219
+1660248000770
+World City Length Is 1198
+Duiplicated Hero Of { xCoord: 136, yCoord: 160, idHero: 30178056, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 136, yCoord: 160, idHero: 30178060, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 325, yCoord: 416, idHero: 30178126, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178114, attackTask: '0' }
+World City Length Is 1199
+World City Length Is 1200
+1660262400375
+1660262401006
+World City Length Is 1201
+World City Length Is 1202
+World City Length Is 1203
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178083, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30178094, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178125, attackTask: '0' }
+1660269600215
+1660269600766
+1660276800236
+1660276800803
+1660291200168
+1660291200796
+Duiplicated Hero Of { xCoord: 392, yCoord: 213, idHero: 30178032, attackTask: 0 }
+1660305600201
+1660305600776
+1660309200106
+1660309200118
+1660309200356
+1660309200702
+1660309201623
+1660309201788
+1660312800200
+1660312800697
+1660312800799
+1660312801318
+1660316400191
+1660316400760
+1660320000201
+1660320000773
+RowDataPacket { id_player: 15251 } Prize List Length : 10
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 17664 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+1660334400190
+1660334400800
+Duiplicated Hero Of { xCoord: 77, yCoord: 302, idHero: 30178125, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 388, yCoord: 218, idHero: 30178093, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 89, yCoord: 466, idHero: 30178140, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 89, yCoord: 466, idHero: 30178135, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 89, yCoord: 466, idHero: 30178081, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178083, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178051, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178130, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 88, yCoord: 467, idHero: 30178144, attackTask: '0' }
+1660348800301
+1660348800921
+1660356000210
+1660356000787
+1660363200169
+1660363200774
+1660377600218
+1660377600766
+Is 1741
+World City Length Is 1741
+Duiplicated Hero Of { xCoord: 78, yCoord: 458, idHero: 74043, attackTask: '0' }
+World City Length Is 1741
+World City Length Is 1741
+1660140000236
+1660140000692
+1660140000810
+1660140001325
+[ '', 'api', 'AArenaChallange', 'getFightList' ] [Object: null prototype] {
+  server: '3',
+  idPlayerV: '88',
+  token: '726929-645302-256354-600791-236548'
+}
+[ '', 'api', 'AWorld', 'getWorldCity' ] [Object: null prototype] {
+  server: '3',
+  idPlayerV: '88',
+  token: '726929-645302-256354-600791-236548',
+  idPlayer: '88'
+}
+World City Length Is 1742
+1660143600241
+1660143600791
+World City Length Is 1743
+World City Length Is 1743
+1660147200210
+1660147200754
+RowDataPacket { id_player: 7 } Prize List Length : 8
+RowDataPacket { id_player: 23 } Prize List Length : 8
+RowDataPacket { id_player: 27 } Prize List Length : 8
+RowDataPacket { id_player: 28 } Prize List Length : 8
+RowDataPacket { id_player: 75 } Prize List Length : 8
+RowDataPacket { id_player: 88 } Prize List Length : 8
+RowDataPacket { id_player: 13 } Prize List Length : 7
+RowDataPacket { id_player: 203 } Prize List Length : 7
+RowDataPacket { id_player: 199 } Prize List Length : 7
+RowDataPacket { id_player: 425 } Prize List Length : 7
+RowDataPacket { id_player: 3 } Prize List Length : 0
+World City Length Is 1744
+World City Length Is 1745
+World City Length Is 1746
+World City Length Is 1747
+World City Length Is 1748
+World City Length Is 1749
+1660161600223
+1660161600767
+Duiplicated Hero Of { xCoord: 81, yCoord: 453, idHero: 22018, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 81, yCoord: 453, idHero: 22002, attackTask: '0' }
+World City Length Is 1750
+World City Length Is 1750
+World City Length Is 1750
+World City Length Is 1751
+World City Length Is 1752
+World City Length Is 1753
+World City Length Is 1754
+World City Length Is 1755
+World City Length Is 1756
+World City Length Is 1757
+World City Length Is 1758
+World City Length Is 1759
+World City Length Is 1760
+World City Length Is 1761
+World City Length Is 1762
+World City Length Is 1763
+World City Length Is 1763
+World City Length Is 1763
+World City Length Is 1763
+1660176000505
+1660176001079
+World City Length Is 1763
+1660183200148
+1660183200697
+1660190400248
+1660190400820
+1660204800246
+1660204800797
+World City Length Is 1763
+World City Length Is 1763
+World City Length Is 1763
+World City Length Is 1763
+1660219200253
+1660219200814
+Duiplicated Hero Of { xCoord: 84, yCoord: 439, idHero: 40037, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 84, yCoord: 439, idHero: 40037, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 84, yCoord: 439, idHero: 40035, attackTask: '0' }
+World City Length Is 1763
+World City Length Is 1763
+World City Length Is 1763
+World City Length Is 1763
+1660222800264
+1660222800683
+1660222800683
+1660222800823
+1660222801727
+1660222801844
+Hero City Error Mor Hero Count  61
+Hero City Error Mor Hero Count  61
+Duiplicated Hero Of { xCoord: 404, yCoord: 42, idHero: 921043, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 404, yCoord: 42, idHero: 921012, attackTask: '0' }
+1660226400253
+1660226400691
+1660226400820
+1660226401329
+1660230000238
+1660230000811
+World City Length Is 1763
+World City Length Is 1763
+World City Length Is 1763
+World City Length Is 1763
+World City Length Is 1763
+World City Length Is 1763
+1660233600236
+1660233600792
+Duiplicated Hero Of { xCoord: 395, yCoord: 326, idHero: 22089, attackTask: '0' }
+World City Length Is 1764
+World City Length Is 1765
+World City Length Is 1766
+RowDataPacket { id_player: 7 } Prize List Length : 8
+RowDataPacket { id_player: 23 } Prize List Length : 8
+RowDataPacket { id_player: 27 } Prize List Length : 8
+RowDataPacket { id_player: 28 } Prize List Length : 8
+RowDataPacket { id_player: 39 } Prize List Length : 8
+RowDataPacket { id_player: 75 } Prize List Length : 8
+RowDataPacket { id_player: 13 } Prize List Length : 7
+RowDataPacket { id_player: 203 } Prize List Length : 7
+RowDataPacket { id_player: 26 } Prize List Length : 7
+RowDataPacket { id_player: 38 } Prize List Length : 7
+RowDataPacket { id_player: 199 } Prize List Length : 7
+RowDataPacket { id_player: 3 } Prize List Length : 0
+World City Length Is 1766
+World City Length Is 1766
+World City Length Is 1766
+World City Length Is 1766
+World City Length Is 1766
+World City Length Is 1766
+World City Length Is 1767
+World City Length Is 1768
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+1660248000243
+1660248000792
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+World City Length Is 1769
+Duiplicated Hero Of { xCoord: 85, yCoord: 441, idHero: 232038, attackTask: '0' }
+World City Length Is 1770
+World City Length Is 1770
+World City Length Is 1770
+Duiplicated Hero Of { xCoord: 395, yCoord: 326, idHero: 22052, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 395, yCoord: 326, idHero: 22052, attackTask: '0' }
+World City Length Is 1771
+[ '', 'api', 'AHeroArmy', 'transArmyFromHeroToHero' ] [Object: null prototype] {
+  server: '3',
+  idPlayerV: '90',
+  amount: '3333',
+  idCity: '891',
+  idHeroFrom: '89008',
+  idHeroTo: '89008',
+  ArmyPlaceFrom: 'f_2',
+  ArmyPlaceTo: 'f_3',
+  token: '342213-208759-228621-234117-996362',
+  idPlayer: '90'
+}
+World City Length Is 1772
+World City Length Is 1773
+World City Length Is 1773
+World City Length Is 1773
+World City Length Is 1773
+1660262400439
+1660262401034
+World City Length Is 1773
+World City Length Is 1773
+World City Length Is 1773
+World City Length Is 1773
+World City Length Is 1774
+World City Length Is 1775
+World City Length Is 1776
+World City Length Is 1776
+1660269600213
+1660269600767
+1660276800279
+1660276800818
+Item Fetched
+Item Fetched
+Item Fetched
+Item Fetched
+World City Length Is 1777
+World City Length Is 1777
+Item Fetched
+Item Fetched
+Item Fetched
+World City Length Is 1778
+World City Length Is 1779
+World City Length Is 1780
+World City Length Is 1780
+1660291153899
+1660291154461
+1660291200205
+1660291200761
+World City Length Is 1780
+World City Length Is 1780
+World City Length Is 1781
+World City Length Is 1782
+World City Length Is 1783
+World City Length Is 1784
+World City Length Is 1785
+1660305600249
+1660305600837
+World City Length Is 1785
+1660309200261
+1660309200530
+1660309200531
+1660309200843
+1660309201569
+1660309201923
+Item Fetched
+World City Length Is 1785
+World City Length Is 1785
+1660312800274
+1660312800754
+1660312800874
+1660312801401
+World City Length Is 1786
+World City Length Is 1787
+1660316400228
+1660316400784
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+1660320000230
+1660320000802
+[ '', 'api', 'AWorld', 'getWorldCity' ] [Object: null prototype] {
+  server: '3',
+  idPlayerV: '47',
+  token: '816633-799210-834499-981621-293764',
+  idPlayer: '47'
+}
+RowDataPacket { id_player: 7 } Prize List Length : 8
+RowDataPacket { id_player: 23 } Prize List Length : 8
+RowDataPacket { id_player: 27 } Prize List Length : 8
+RowDataPacket { id_player: 28 } Prize List Length : 8
+RowDataPacket { id_player: 39 } Prize List Length : 8
+RowDataPacket { id_player: 75 } Prize List Length : 8
+RowDataPacket { id_player: 13 } Prize List Length : 7
+RowDataPacket { id_player: 203 } Prize List Length : 7
+RowDataPacket { id_player: 26 } Prize List Length : 7
+RowDataPacket { id_player: 38 } Prize List Length : 7
+RowDataPacket { id_player: 199 } Prize List Length : 7
+RowDataPacket { id_player: 3 } Prize List Length : 0
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+Duiplicated Hero Of { xCoord: 436, yCoord: 41, idHero: 38039, attackTask: '0' }
+World City Length Is 1787
+World City Length Is 1787
+1660334400235
+1660334400794
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+World City Length Is 1787
+1660348800404
+1660348800955
+World City Length Is 1787
+World City Length Is 1787
+1660356000204
+1660356000752
+1660363200226
+1660363200826
+1660377600249
+1660377600782
+World City Length Is 1788
+World City Length Is 1788
+World City Length Is 1789

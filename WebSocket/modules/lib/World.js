@@ -31,7 +31,7 @@ exports.refreshWorldColonizedCities();
 
 
 
-exports.updateWorldPrize = function (con, msgObject) {
+exports.updateWorldPrize = async function (con, msgObject) {
 
     
     var unitLvl = msgObject.unitLvl;
@@ -42,108 +42,76 @@ exports.updateWorldPrize = function (con, msgObject) {
     var Item = msgObject.Item;
     var isSpecilPrize = msgObject.isSp;
 
-    var MoreTypes = msgObject.MoreTypes.split(",");
-    var MoreLvls = msgObject.MoreLvls.split(",");
-
-console.log(MoreTypes.some(i => i > 0))
+    var MoreTypes = msgObject.MoreTypes.split(",").filter(i => i > 0 );
+    var MoreLvls = msgObject.MoreLvls.split(",").filter(i => i > 0 );
+    
+    if(msgObject.isForAllLv == true){
+        MoreLvls = [];
+        let maxLvl = Elkaisar.World.WorldUnitData[unitType].maxLvl;
+        for(let iii  = 1; iii <= maxLvl; iii++)
+            MoreLvls.push(iii);
+    }
+    
+    if(MoreLvls.length <= 0)
+        MoreLvls = [unitLvl];
+    
+    if(MoreTypes.length <= 0)
+        MoreTypes = [unitType];
 
     if (msgObject.isWin == true) {
-        console.log(msgObject)
-        
-        if (MoreTypes.length && MoreLvls.length && MoreTypes.some(i => i > 0)) {
-            for (var ii of MoreTypes) {
-                for (var i of MoreLvls) {
-                    Elkaisar.DB.Insert(
-                            "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?",
-                            "world_unit_prize",
-                            [ii, i, Item, amountMin, amountMax, winRate], function () {
-                        Elkaisar.World.refreshWorldUnitPrize();
-                        console.log("das", MoreTypes, MoreLvls);
-                    });
-                }
+        for (var ii of MoreTypes) {
+            for (var i of MoreLvls) {
+                await Elkaisar.DB.AInsert(
+                        "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?", "world_unit_prize",
+                        [ii, i, Item, amountMin, amountMax, winRate], function () {
+                    Elkaisar.World.refreshWorldUnitPrize();
+                });
             }
-        } else {
-            Elkaisar.DB.Insert(
-                    "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?",
-                    "world_unit_prize",
-                    [unitType, unitLvl, Item, amountMin, amountMax, winRate], function () {
-                Elkaisar.World.refreshWorldUnitPrize();
-            });
         }
     }
 
 
     if (msgObject.isLose == true) {
-        if (MoreTypes.length && MoreLvls.length && MoreTypes.some(i => i > 0)) {
-            for (var ii of MoreTypes) {
-                for (var i of MoreLvls) {
-                    Elkaisar.DB.Insert(
-                            "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?",
-                            "world_unit_prize_lose",
-                            [ii, i, Item, amountMin, amountMax, winRate], function () {
-                        Elkaisar.World.refreshWorldUnitPrize();
-                    });
-                }
+        for (var ii of MoreTypes) {
+            for (var i of MoreLvls) {
+                await Elkaisar.DB.AInsert(
+                        "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?",
+                        "world_unit_prize_lose",
+                        [ii, i, Item, amountMin, amountMax, winRate]);
             }
-        } else {
-            Elkaisar.DB.Insert(
-                    "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?",
-                    "world_unit_prize_lose",
-                    [unitType, unitLvl, Item, amountMin, amountMax, winRate], function () {
-                Elkaisar.World.refreshWorldUnitPrize();
-            });
         }
+        Elkaisar.World.refreshWorldUnitPrize();
     }
 
 
     if (msgObject.isSp == true) {
-        if (MoreTypes.length && MoreLvls.length && MoreTypes.some(i => i > 0)) {
-            for (var ii of MoreTypes) {
-                for (var i of MoreLvls) {
-                    Elkaisar.DB.Insert(
-                            "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?",
-                            "world_unit_prize_sp",
-                            [ii, i, Item, amountMin, amountMax, winRate], function () {
-                        Elkaisar.World.refreshWorldUnitPrize();
-                    });
-                }
+        for (var ii of MoreTypes) {
+            for (var i of MoreLvls) {
+                await Elkaisar.DB.AInsert(
+                        "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?",
+                        "world_unit_prize_sp",
+                        [ii, i, Item, amountMin, amountMax, winRate]);
             }
-        } else {
-            Elkaisar.DB.Insert(
-                    "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?",
-                    "world_unit_prize_sp",
-                    [unitType, unitLvl, Item, amountMin, amountMax, winRate], function () {
-                Elkaisar.World.refreshWorldUnitPrize();
-            });
         }
+        Elkaisar.World.refreshWorldUnitPrize();
     }
 
 
     if (msgObject.isPlunder == true) {
-        if (MoreTypes.length && MoreLvls.length && MoreTypes.some(i => i > 0)) {
-            for (var ii of MoreTypes) {
-                for (var i of MoreLvls) {
-                    Elkaisar.DB.Insert(
-                            "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?",
-                            "world_unit_prize_plunder",
-                            [ii, i, Item, amountMin, amountMax, winRate], function () {
-                        Elkaisar.World.refreshWorldUnitPrize();
-                    });
-                }
+        for (var ii of MoreTypes) {
+            for (var i of MoreLvls) {
+                await Elkaisar.DB.AInsert(
+                        "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?",
+                        "world_unit_prize_plunder",
+                        [ii, i, Item, amountMin, amountMax, winRate]);
             }
-        } else {
-            Elkaisar.DB.Insert(
-                    "unitType = ?, lvl = ?, prize = ?, amount_min = ?, amount_max = ?, win_rate = ?",
-                    "world_unit_prize_plunder",
-                    [unitType, unitLvl, Item, amountMin, amountMax, winRate], function () {
-                Elkaisar.World.refreshWorldUnitPrize();
-            });
         }
+        Elkaisar.World.refreshWorldUnitPrize();
     }
 
 
 
-
+    setTimeout(Elkaisar.World.refreshWorldUnitPrize, 1000);
 
 
     con.sendUTF(JSON.stringify({
@@ -153,32 +121,67 @@ console.log(MoreTypes.some(i => i > 0))
 };
 
 
-exports.removeWorldPrize = function (con, msgObject) {
+exports.removeWorldPrize = async function (con, msgObject) {
 
 
-    var idPrize = msgObject.idPrize;
-    var PrizeFor = msgObject.PrizeFor;
+    var idPrize    = msgObject.idPrize;
+    var PrizeFor   = msgObject.PrizeFor;
+    var isForAllLv = msgObject.isForAllLv;
+    if(isForAllLv){
+        
+        let Prize = await Elkaisar.DB.ASelectFrom("*", "world_unit_prize", "id_prize = ?", [idPrize]);
+        let UT = Prize[0].unitType, UL = Prize[0].lvl, UP =  Prize[0].prize;
+        let maxLvl = Elkaisar.World.WorldUnitData[UT].maxLvl;
+        for(let Lvl  = 1; Lvl <= maxLvl; Lvl++){
+            
+            if (PrizeFor == "Win")
+                Elkaisar.DB.Delete("world_unit_prize", "unitType = ? AND lvl = ? AND prize = ?", [UT,Lvl,UP], function () {
+                    Elkaisar.World.refreshWorldUnitPrize();
+                });
 
+            if (PrizeFor == "Lose")
+                Elkaisar.DB.Delete("world_unit_prize_lose", "unitType = ? AND lvl = ? AND prize = ?", [UT,Lvl,UP], function () {
+                    Elkaisar.World.refreshWorldUnitPrize();
+                });
 
-    if (PrizeFor == "Win")
-        Elkaisar.DB.Delete("world_unit_prize", "id_prize = ?", [idPrize], function () {
-            Elkaisar.World.refreshWorldUnitPrize();
-        });
+            if (PrizeFor == "Sp")
+                Elkaisar.DB.Delete("world_unit_prize_sp", "unitType = ? AND lvl = ? AND prize = ?", [UT,Lvl,UP], function () {
+                    Elkaisar.World.refreshWorldUnitPrize();
+                });
 
-    if (PrizeFor == "Lose")
-        Elkaisar.DB.Delete("world_unit_prize_lose", "id_prize = ?", [idPrize], function () {
-            Elkaisar.World.refreshWorldUnitPrize();
-        });
+            if (PrizeFor == "Plunder")
+                Elkaisar.DB.Delete("world_unit_prize_plunder", "unitType = ? AND lvl = ? AND prize = ?", [UT,Lvl,UP], function () {
+                    Elkaisar.World.refreshWorldUnitPrize();
+                });
+            
+        }
+        
+    }else{
+        
+        if (PrizeFor == "Win")
+            Elkaisar.DB.Delete("world_unit_prize", "id_prize = ?", [idPrize], function () {
+                Elkaisar.World.refreshWorldUnitPrize();
+            });
 
-    if (PrizeFor == "Sp")
-        Elkaisar.DB.Delete("world_unit_prize_sp", "id_prize = ?", [idPrize], function () {
-            Elkaisar.World.refreshWorldUnitPrize();
-        });
+        if (PrizeFor == "Lose")
+            Elkaisar.DB.Delete("world_unit_prize_lose", "id_prize = ?", [idPrize], function () {
+                Elkaisar.World.refreshWorldUnitPrize();
+            });
 
-    if (PrizeFor == "Plunder")
-        Elkaisar.DB.Delete("world_unit_prize_plunder", "id_prize = ?", [idPrize], function () {
-            Elkaisar.World.refreshWorldUnitPrize();
-        });
+        if (PrizeFor == "Sp")
+            Elkaisar.DB.Delete("world_unit_prize_sp", "id_prize = ?", [idPrize], function () {
+                Elkaisar.World.refreshWorldUnitPrize();
+            });
+
+        if (PrizeFor == "Plunder")
+            Elkaisar.DB.Delete("world_unit_prize_plunder", "id_prize = ?", [idPrize], function () {
+                Elkaisar.World.refreshWorldUnitPrize();
+            });
+    }
+    
+    
+
+    
 
 
 

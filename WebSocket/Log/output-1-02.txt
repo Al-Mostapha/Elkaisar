@@ -1,0 +1,40 @@
+1645700922771
+Error: listen EADDRINUSE: address already in use :::8081
+    at Server.setupListenHandle [as _listen2] (node:net:1311:16)
+    at listenInCluster (node:net:1359:12)
+    at Server.listen (node:net:1446:7)
+    at Object.<anonymous> (/home/elkaisar/WebSocket/server.js:203:8)
+    at Module._compile (node:internal/modules/cjs/loader:1092:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1121:10)
+    at Module.load (node:internal/modules/cjs/loader:972:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:813:14)
+    at Module.require (node:internal/modules/cjs/loader:996:19)
+    at require (node:internal/modules/cjs/helpers:92:18) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 8081
+}
+uncaughtException
+World City Length Is 1745
+1645700923434
+HerosLen is 285253
+1645704000311
+1645704001012
+1645707600122
+1645707600957
+1645707600971
+1645707601297
+1645707601701
+1645707602355
+1645711200458
+1645711201077
+1645714800221
+1645714800920
+1645718400232
+1645718400778
+1645718400939
+1645718401595
+1645732800218
+1645732800873

@@ -84,9 +84,12 @@ class CPSendPrize {
     
     async sendPlayerOffer(){
         
-        const idPlayer = Elkaisar.Base.validateId(this.Parm.idPlayer);
+        const idUser = Elkaisar.Base.validateId(this.Parm.idPlayer);
         const idOffer  = Elkaisar.Base.validateId(this.Parm.idOffer);
-        
+        const player = await Elkaisar.DB.ASelectFrom("id_player", "player", "id_user = ?", [idUser]);
+        if(!player.length)
+            return;
+        const idPlayer = player[0].id_player;
         
         const Offer = await Elkaisar.DB.ASelectFrom("*", "server_offer", "id_offer = ?", [idOffer]);
         

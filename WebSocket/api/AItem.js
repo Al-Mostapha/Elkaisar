@@ -8,6 +8,7 @@ class AItem {
     }
 
     async buyItem() {
+        
         const idItem = Elkaisar.Base.validateGameNames(this.Parm.item);
         const amount = Elkaisar.Base.validateId(this.Parm.amount);
         const Item = Elkaisar.Lib.LItem.ItemList[idItem];
@@ -24,8 +25,6 @@ class AItem {
             state: "ok",
             "PlayerItem": await Elkaisar.DB.ASelectFrom("*", "player_item", "id_player = ?", [this.idPlayer])
         };
-
-
     }
 
     async openItemBox() {

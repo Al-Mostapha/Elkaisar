@@ -185,6 +185,8 @@ class LPlayer {
             Player.GodGate[Gate.cell_1_type] += Gate.cell_1_score;
             Player.GodGate[Gate.cell_2_type] += Gate.cell_2_score;
             Player.GodGate[Gate.cell_3_type] += Gate.cell_3_score;
+            if(Gate.cell_4_type && Player.GodGate[Gate.cell_4_type])
+                Player.GodGate[Gate.cell_4_type] += Gate.cell_4_score;
 
             Elkaisar.DB.SelectFrom(
                 `FIND_IN_SET(gate_${GateIndex}, ( SELECT GROUP_CONCAT( gate_${GateIndex} ORDER BY gate_${GateIndex} DESC ) FROM god_gate ) ) AS rank`,

@@ -21,7 +21,8 @@ class ABattel {
             return 5;
         } else if (Elkaisar.Lib.LWorldUnit.isSeaCity(type))
             return 200;
-
+        else if(Elkaisar.Lib.LWorldUnit.isRepelCastle(type) || Elkaisar.Lib.LWorldUnit.isQueenCity(type)) 
+            return 100;
         return 750;
     }
 
@@ -35,6 +36,21 @@ class ABattel {
 
 
         return false;
+    }
+    
+    async canPlayerJoinDef(Battel){
+        if(Elkaisar.Lib.LWorldUnit.isArmyCapital(Battel.ut)){
+            return ELip.LWUArmyCapital.canDefend(this.idPlayer, Battel.x_coord, Battel.y_coord);
+        }
+            
+        return true;
+    }
+    
+    async canPlayerJoinAttack(Battel){
+        if(Elkaisar.Lib.LWorldUnit.isArmyCapital(Battel.ut)){
+            return Battel.id_player == this.idPlayer;
+        }
+        return true;
     }
 
     async joinBattel() {
@@ -56,7 +72,6 @@ class ABattel {
        
         
         Elkaisar.Lib.LBattel.HeroListInBattel[idHero] = Battel[0].time_end;
-       
         
         if (Elkaisar.Lib.LWorldUnit.limitedHero(Battel[0]["ut"])){
             if (await this.reachedLimitHero(Battel[0], side))
@@ -67,7 +82,12 @@ class ABattel {
             if (!(await Elkaisar.Lib.ALGuild.canDefenceGuildWar(this.idPlayer, Battel[0])) && side == Elkaisar.Config.BATTEL_SIDE_DEF)
                 return {"state": "error_5_1"};
         }
-
+        
+        if(side == Elkaisar.Config.BATTEL_SIDE_DEF && !this.canPlayerJoinDef(Battel[0]))
+            return {"state": "error_8_1"};
+        if(side == Elkaisar.Config.BATTEL_SIDE_ATT && !this.canPlayerJoinAttack(Battel[0]))
+            return {"state": "error_8_2"};
+        
         if (side == Elkaisar.Config.BATTEL_SIDE_DEF && !Elkaisar.Lib.LWorldUnit.isDefencable(Battel[0]["ut"]))
             return {"state": "error_8"};
         if (!(await Elkaisar.Lib.LBattelUnit.takeJoinPrice(this.idPlayer, Battel[0]["ut"])))

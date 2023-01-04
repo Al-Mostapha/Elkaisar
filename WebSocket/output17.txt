@@ -1,0 +1,752 @@
+1658077430375
+World City Length Is 1072
+1658077430943
+Item Fetched
+HerosLen is 285253WRowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9World City Length Is 398
+World City Length Is 399
+World City Length Is 400
+World City Length Is 401
+World City Length Is 402
+World City Length Is 403
+World City Length Is 404
+1658088000182
+1658088000759
+World City Length Is 404
+World City Length Is 404
+W1658102400107
+1658102400108
+1658102400675
+1658102400871
+1658102400985
+1658102401355
+1658102402296
+1658102402401
+Duiplicated Hero Of { xCoord: 465, yCoord: 329, idHero: 3698012, attackTask: '0' }
+1658109600226
+1658109600803
+1658116800179
+1658116800744
+1658131200216
+1658131200733
+1658145600191
+1658145600774
+1658149200098
+1658149200113
+1658149200887
+1658149201197
+1658149201198
+1658149201718
+1658152800219
+1658152800786
+1658152800786
+1658152801307
+1658156400190
+1658156400715
+1658160000208
+1658160000749
+1658165400139
+1658165400142
+1658165400423
+1658165400807
+1658165400914
+1658165401235
+1658165401632
+1658165402049
+1658165402177
+1658165402285
+1658165403191
+1658165403293
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+1658170800102
+1658170800352
+1658170800352
+1658170800352
+1658170800587
+1658170800728
+1658170802388
+1658170802488
+1658170802598
+1658170802811
+1658170802920
+1658170803461
+1658174400250
+1658174400815
+World City Length Is 1964
+World City Length Is 1965
+1658188800115
+1658188800116
+1658188800116
+1658188801022
+1658188801433
+1658188801533
+1658188801874
+1658188802421
+1658196000198
+1658196000743
+1658203200212
+1658203200758
+1658217600194
+1658217600740
+1658232000274
+1658232000846
+1658235600083
+1658235600099
+1658235600646
+1658235600836
+1658235601133
+1658235601621
+1658239200218
+1658239200705
+1658239200803
+1658239201330
+1658242800180
+1658242800720
+1658246400217
+1658246400745
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+1658260800207
+1658260800759
+1658275200307
+1658275200937
+World City Length Is 1966
+1658282400170
+1658282400722
+1658289600245
+1658289600803
+1658304000216
+1658304000747
+World City Length Is 1967
+1658318400227
+1658318400821
+World City Length Is 1968
+1658322000097
+1658322000344
+1658322000345
+1658322000640
+1658322001599
+1658322001715
+1658325600229
+1658325600697
+1658325600814
+1658325601365
+1658329200179
+1658329200739
+1658332800195
+1658332800767
+Duiplicated Hero Of { xCoord: 480, yCoord: 42, idHero: 4270012, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 480, yCoord: 42, idHero: 4270038, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 480, yCoord: 42, idHero: 4270015, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 480, yCoord: 42, idHero: 4270040, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 480, yCoord: 42, idHero: 4270020, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 480, yCoord: 42, idHero: 4270044, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 480, yCoord: 42, idHero: 4270085, attackTask: 0 }
+RowDataPacket { id_player: 54 } Prize List Length : 9
+RowDataPacket { id_player: 1897 } Prize List Length : 9
+RowDataPacket { id_player: 3484 } Prize List Length : 9
+RowDataPacket { id_player: 3603 } Prize List Length : 9
+RowDataPacket { id_player: 3690 } Prize List Length : 9
+RowDataPacket { id_player: 3917 } Prize List Length : 9
+RowDataPacket { id_player: 4358 } Prize List Length : 9
+RowDataPacket { id_player: 4370 } Prize List Length : 9
+RowDataPacket { id_player: 4901 } Prize List Length : 9
+RowDataPacket { id_player: 5100 } Prize List Length : 9
+RowDataPacket { id_player: 5107 } Prize List Length : 9
+RowDataPacket { id_player: 12118 } Prize List Length : 9
+RowDataPacket { id_player: 12149 } Prize List Length : 9
+RowDataPacket { id_player: 3452 } Prize List Length : 6
+RowDataPacket { id_player: 264 } Prize List Length : 0
+RowDataPacket { id_player: 3798 } Prize List Length : 0
+rying to get lock; try restarting transaction
+    at Query.Sequence._packetToError (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (events.js:315:20)
+    at addChunk (internal/streams/readable.js:309:12)
+    --------------------
+    at Protocol._enqueue (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/elkaisar/WebSocket/Lib/LBase.js:56:20
+    at Ping.onOperationComplete (/home/elkaisar/WebSocket/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Ping._callback (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:488:16)
+    at Ping.Sequence.end (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10) {
+  code: 'ER_LOCK_DEADLOCK',
+  errno: 1213,
+  sqlMessage: 'Deadlock found when trying to get lock; try restarting transaction',
+  sqlState: '40001',
+  index: 0,
+  sql: 'DELETE FROM battel_member WHERE id_battel = 1898'
+}
+uncaughtException
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City World City Length Is 581
+Army Type Error [Object: null prototype] {
+  server: '3',
+  idPlayerV: '28',
+  idHero: '27001',
+  amount: '3008',
+  idCity: '271',
+  ArmyPlace: 'b_2',
+  ArmyType: 'army_d',
+  token: '654566-391112-2World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City LWorld City Length Is 583
+Army Type Error[ '', 'api', 'AWorld', 'getWorldCity' ] [Object: null prototype] {
+  server: '2',
+  idPlayerV: '15601',
+  token: '39583-940416-624028-582836-479231',
+  idPlayer: '15601'
+}
+1658188800168
+1658188800718
+1658188800719
+1658188800719
+1658188800844
+1658188802229
+1658188802370
+1658188802479
+Hero Dub Here [Object: null prototype] {
+  server: '2',
+  idPlayerV: '18248',
+  idBattel: '2770',
+  idHero: '18247014',
+  side: '0',
+  token: '894150-70192-520313-86069-82623'
+}
+1658196000215
+1658196000750
+1658203200216
+1658203200798
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+World City Length Is 1093
+1658217600160
+1658217600719
+1658232000260
+1658232000808
+World City Length Is 1094
+1658235600092
+1658235600313
+1658235600313
+1658235600659
+1658235601147
+1658235601635
+World City Length Is 1095
+1658239200223
+1658239200712
+1658239200817
+1658239201325
+World City Length Is 1095
+World City Length Is 1096
+1658242800186
+1658242800728
+1658246400219
+1658246400777
+Duiplicated Hero Of { xCoord: 427, yCoord: 337, idHero: 30953159, attackTask: 0 }
+World City Length Is 1096
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30300 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30987 } Prize List Length : 10
+RowDataPacket { id_player: 32768 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+World City Length Is 1096
+1658260800186
+1658260800731
+Hero City Error Mor Hero Count  301785
+Hero City Error Mor Hero Count  301785
+Duiplicated Hero Of { xCoord: 131, yCoord: 160, idHero: 30178060, attackTask: '0' }
+World City Length Is 1097
+Duiplicated Hero Of { xCoord: 140, yCoord: 230, idHero: 30178019, attackTask: 0 }
+Duiplicated Hero Of { xCoord: 380, yCoord: 230, idHero: 32654050, attackTask: 0 }
+World City Length Is 1098
+Army Type Error [Object: null prototype] {
+  server: '2',
+  idPlayerV: '32875',
+  idHero: '32874002',
+  amount: '142',
+  idCity: '328741',
+  ArmyPlace: 'f_2',
+  ArmyType: 'army_d',
+  token: '244301-430115-896917-151802-434978',
+  idPlayer: '32875'
+}
+Army Type Error [Object: null prototype] {
+  server: '2',
+  idPlayerV: '32875',
+  idHero: '32874002',
+  amount: '142',
+  idCity: '328741',
+  ArmyPlace: 'f_2',
+  ArmyType: 'army_d',
+  token: '244301-430115-896917-151802-434978',
+  idPlayer: '32875'
+}
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30178087, attackTask: '0' }
+Error: ER_LOCK_DEADLOCK: Deadlock found when trying to get lock; try restarting transaction
+    at Query.Sequence._packetToError (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (events.js:315:20)
+    at addChunk (internal/streams/readable.js:309:12)
+    --------------------
+    at Protocol._enqueue (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/elkaisar/WebSocket/Lib/LBase.js:56:20
+    at Ping.onOperationComplete (/home/elkaisar/WebSocket/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:526:10)
+    at Ping._callback (/home/elkaisar/WebSocket/node_modules/mysql/lib/Connection.js:488:16)
+    at Ping.Sequence.end (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/elkaisar/WebSocket/node_modules/mysql/lib/protocol/Parser.js:433:10) {
+  code: 'ER_LOCK_DEADLOCK',
+  errno: 1213,
+  sqlMessage: 'Deadlock found when trying to get lock; try restarting transaction',
+  sqlState: '40001',
+  index: 0,
+  sql: 'DELETE FROM battel_member WHERE id_battel = 2027'
+}
+uncaughtException
+Duiplicated Hero Of { xCoord: 137, yCoord: 158, idHero: 30026053, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 93, yCoord: 463, idHero: 30026050, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 93, yCoord: 463, idHero: 30026038, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30026034, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 389, yCoord: 221, idHero: 30026036, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30026043, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30178097, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 79, yCoord: 303, idHero: 30178139, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 323, yCoord: 416, idHero: 30178075, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 287, yCoord: 474, idHero: 18247044, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 96, yCoord: 466, idHero: 30026089, attackTask: '0' }
+Duiplicated Hero Of { xCoord: 138, yCoord: 164, idHero: 30026087, attackTask: '0' }
+1658275200310
+1658275200934
+World City Length Is 1099
+Duiplicated Hero Of { xCoord: 391, yCoord: 220, idHero: 30026070, attackTask: '0' }
+World City Length Is 1100
+World City Length Is 1101
+1658282400185
+1658282400730
+1658289600243
+1658289600790
+World City Length Is 1102
+1658304000219
+1658304000788
+World City Length Is 1103
+World City Length Is 1104
+World City Length Is 1105
+1658318400245
+1658318400818
+World City Length Is 1106
+World City Length Is 1107
+1658322000109
+1658322000366
+1658322000592
+1658322000713
+1658322001623
+1658322001727
+1658325600232
+1658325600677
+1658325600818
+1658325601333
+World City Length Is 1108
+World City Length Is 1109
+1658329200164
+1658329200722
+World City Length Is 1110
+World City Length Is 1111
+World City Length Is 1112
+World City Length Is 1113
+1658332800172
+1658332800757
+Error: connect ETIMEDOUT 172.66.43.113:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.43.113',
+  port: 80
+}
+uncaughtException
+RowDataPacket { id_player: 15263 } Prize List Length : 10
+RowDataPacket { id_player: 15683 } Prize List Length : 10
+RowDataPacket { id_player: 15740 } Prize List Length : 10
+RowDataPacket { id_player: 15967 } Prize List Length : 10
+RowDataPacket { id_player: 18248 } Prize List Length : 10
+RowDataPacket { id_player: 30300 } Prize List Length : 10
+RowDataPacket { id_player: 30954 } Prize List Length : 10
+RowDataPacket { id_player: 30987 } Prize List Length : 10
+RowDataPacket { id_player: 32768 } Prize List Length : 10
+RowDataPacket { id_player: 30018 } Prize List Length : 7
+RowDataPacket { id_player: 30313 } Prize List Length : 7
+RowDataPacket { id_player: 30875 } Prize List Length : 7
+RowDataPacket { id_player: 30876 } Prize List Length : 7
+RowDataPacket { id_player: 30914 } Prize List Length : 7
+RowDataPacket { id_player: 30915 } Prize List Length : 7
+RowDataPacket { id_player: 30950 } Prize List Length : 7
+RowDataPacket { id_player: 30958 } Prize List Length : 7
+RowDataPacket { id_player: 32047 } Prize List Length : 7
+RowDataPacket { id_player: 18244 } Prize List Length : 6
+RowDataPacket { id_player: 30874 } Prize List Length : 6
+RowDataPacket { id_player: 30935 } Prize List Length : 6
+City Length Is 750
+World City Length Is 751
+World City Length Is 752
+World City Length Is 753
+World City Length Is 754
+World City Length Is 755
+World City Length Is 756
+World City Length Is 757
+World City Length Is 758
+World City Length Is 759
+World City Length Is 760
+World City Length Is 761
+World City Length Is 762
+World City Length Is 763
+World City Length Is 764
+World City Length Is 765
+World City Length Is 766
+World City Length Is 767
+World City Length Is 768
+World City Length Is 769
+1658318400243
+1658318400830
+World City Length Is 769
+World City Length Is 769
+[ '', 'api', 'AItemBoxUse', 'useResourcePacks' ] [Object: null prototype] {
+  server: '3',
+  idPlayerV: '233',
+  Item: 'wood_a',
+  amount: '336',
+  idCity: '2321',
+  token: '675272-468856-117552-570060-480186'
+}
+World City Length Is 770
+World City Length Is 771
+World City Length Is 772
+World City Length Is 773
+World City Length Is 774
+World City Length Is 775
+World City Length Is 776
+World City Length Is 777
+World City Length Is 778
+World City Length Is 779
+World City Length Is 780
+1658322000130
+1658322000141
+1658322000353
+1658322000710
+1658322001626
+1658322001729
+World City Length Is 781
+World City Length Is 781
+World City Length Is 781
+World City Length Is 781
+1658325600232
+1658325600666
+1658325600792
+1658325601320
+World City Length Is 782
+World City Length Is 783
+World City Length Is 784
+World City Length Is 785
+1658329200184
+1658329200708
+World City Length Is 786
+World City Length Is 787
+World City Length Is 788
+World City Length Is 789
+World City Length Is 790
+World City Length Is 791
+World City Length Is 792
+World City Length Is 793
+World City Length Is 794
+World City Length Is 795
+World City Length Is 796
+World City Length Is 797
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.43.113:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.43.113',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.43.113:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.43.113',
+  port: 80
+}
+uncaughtException
+World City Length Is 798
+1658332800192
+1658332800750
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+World City Length Is 799
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+World City Length Is 799
+World City Length Is 799
+World City Length Is 799
+World City Length Is 799
+Error: connect ETIMEDOUT 172.66.43.113:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.43.113',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.43.113:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.43.113',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.43.113:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.43.113',
+  port: 80
+}
+uncaughtException
+Error: connect ETIMEDOUT 172.66.43.113:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.43.113',
+  port: 80
+}
+uncaughtException
+RowDataPacket { id_player: 13 } Prize List Length : 8
+RowDataPacket { id_player: 203 } Prize List Length : 8
+RowDataPacket { id_player: 370 } Prize List Length : 8
+RowDataPacket { id_player: 20 } Prize List Length : 7
+RowDataPacket { id_player: 23 } Prize List Length : 7
+RowDataPacket { id_player: 27 } Prize List Length : 7
+RowDataPacket { id_player: 39 } Prize List Length : 7
+RowDataPacket { id_player: 3 } Prize List Length : 7
+RowDataPacket { id_player: 2 } Prize List Length : 0
+[ '', 'api', 'AWorld', 'getWorldCity' ] [Object: null prototype] {
+  server: '3',
+  idPlayerV: '27',
+  token: '620083-950532-276756-801274-762719',
+  idPlayer: '27'
+}
+[ '', 'api', 'AArenaChallange', 'getArenaData' ] [Object: null prototype] {
+  server: '3',
+  idPlayerV: '47',
+  token: '75578-686681-20476-842907-422560'
+}
+World City Length Is 800
+World City Length Is 801
+World City Length Is 802
+Error: connect ETIMEDOUT 172.66.40.143:80
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) {
+  errno: -110,
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  address: '172.66.40.143',
+  port: 80
+}
+uncaughtException
+World City Length Is 803
+World City Length Is 804

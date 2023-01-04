@@ -145,6 +145,7 @@ class LAfterFight {
     }
 
     async setRank() {
+        
         var This = this, Arena;
         if (this.Battel.Battel["task"] != Elkaisar.Config.BATTEL_TASK_CHALLANGE)
             return;

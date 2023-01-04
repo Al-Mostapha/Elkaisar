@@ -1,11 +1,17 @@
 
 
 Elkaisar.Cron.schedule(`${Math.floor(Math.random() * 59)} 7 * * *`, async  function () {
+    Elkaisar.DB.QueryExc(`DELETE FROM arena_guild_challange WHERE id_guild NOT IN (SELECT  id_guild FROM guild);`);
+    Elkaisar.DB.QueryExc(`DELETE FROM arena_team_challange WHERE id_team NOT IN (SELECT id_team FROM team);`);
     Elkaisar.DB.QueryExc(`SET @r=0; UPDATE arena_player_challange SET rank= @r:= (@r+1) ORDER BY rank ASC;`);
     Elkaisar.DB.QueryExc(`SET @r=0; UPDATE arena_team_challange SET rank= @r:= (@r+1) ORDER BY rank ASC;`);
     Elkaisar.DB.QueryExc(`SET @r=0; UPDATE arena_guild_challange SET rank= @r:= (@r+1) ORDER BY rank ASC;`);
     Elkaisar.DB.QueryExc(`UPDATE guild SET id_leader = (SELECT id_player FROM guild_member WHERE guild_member.id_guild = guild.id_guild AND rank = ? LIMIT 1)`, [Elkaisar.Config.GUILD_R_LEADER]);
     
+     /*$Users = selectFromTableIndex("id_user, user_name", "game_user", "rech_code = NULL");
+        foreach ($Users as $one){
+            updateTableIndex("rech_code = :rc", "game_user", "id_user = :idu", ["rc" => HLogIn::genRechCode($one["id_user"]), "idu" => $one["id_user"]]);
+        }*/
 });
 
 

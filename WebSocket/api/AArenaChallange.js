@@ -137,11 +137,12 @@ class AArenaChallange {
                 ]);
         const Battel = await Elkaisar.Lib.LBattelUnit.getBattelById(idBattel.insertId);
         Elkaisar.Lib.LBattel.newBattelStarted(Battel);
-        AttackHeros.forEach(function (Hero) {
-            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_ATT);
+        
+        AttackHeros.forEach(function (Hero, HeroIndex){
+            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_ATT, HeroIndex);
         });
-        DefenceHeros.forEach(function (Hero) {
-            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_DEF);
+        DefenceHeros.forEach(function (Hero, HeroIndex){
+            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_DEF, HeroIndex);
         });
 
         return {"state": "ok"};
@@ -190,11 +191,12 @@ class AArenaChallange {
                 ]);
         const Battel = await Elkaisar.Lib.LBattelUnit.getBattelById(idBattel.insertId);
         Elkaisar.Lib.LBattel.newBattelStarted(Battel);
-        AttackHeros.forEach(function (Hero) {
-            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_ATT);
+        
+        AttackHeros.forEach(function (Hero, HeroIndex){
+            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_ATT, HeroIndex);
         });
-        DefenceHeros.forEach(function (Hero) {
-            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_DEF);
+        DefenceHeros.forEach(function (Hero, HeroIndex){
+            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_DEF, HeroIndex);
         });
 
         return {"state": "ok"};
@@ -242,11 +244,12 @@ class AArenaChallange {
                 ]);
         const Battel = await Elkaisar.Lib.LBattelUnit.getBattelById(idBattel.insertId);
         Elkaisar.Lib.LBattel.newBattelStarted(Battel);
-        AttackHeros.forEach(function (Hero) {
-            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_ATT);
+        
+        AttackHeros.forEach(function (Hero, HeroIndex){
+            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_ATT, HeroIndex);
         });
-        DefenceHeros.forEach(function (Hero) {
-            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_DEF);
+        DefenceHeros.forEach(function (Hero, HeroIndex){
+            Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero, Elkaisar.Config.BATTEL_SIDE_DEF, HeroIndex);
         });
 
         return {"state": "ok"};
@@ -312,7 +315,7 @@ class AArenaChallange {
 
     async saveHeroListForTeam() {
 
-        const idHeros = Elkaisar.Base.validateGameNames(this.Parm["HeroList"]).split("-");
+        const idHeros = Elkaisar.Base.validateGameNames(this.Parm["HeroList"]).split("-").map(e => Number(e));
         var ord = 0, approved = 0, refused = 0, iii = 0, Arena = [], AllTeamPlayers = {}, HeroArmy;
         const PlayerTeam = await Elkaisar.DB.ASelectFrom("*", "team_member", "id_player = ?", [this.idPlayer]);
         if (PlayerTeam.length) {
@@ -328,10 +331,12 @@ class AArenaChallange {
             return {"state": "error_1"};
 
         if (PlayerTeam[0].rank >= Elkaisar.Config.TEAM_R_LEADER)
-            Elkaisar.DB.ADelete("arena_team_challange_hero", "id_team = ?", [PlayerTeam[0].id_team]);
+            await Elkaisar.DB.ADelete("arena_team_challange_hero", "id_team = ?", [PlayerTeam[0].id_team]);
         else
-            Elkaisar.DB.ADelete("arena_team_challange_hero", "id_player = ?", [this.idPlayer]);
-
+            await Elkaisar.DB.ADelete("arena_team_challange_hero", "id_player = ?", [this.idPlayer]);
+        const ExistHero = Object.values(await Elkaisar.DB.ASelectFrom("id_hero", "arena_team_challange_hero", "id_team = ?", [PlayerTeam[0].id_team])).map(Number);
+        if((new Set([...ExistHero, ...idHeros])).length > Arena[0]["lvl"] * 3)
+             return {"state": "error_1"};
         for (; iii < idHeros.length; iii++) {
             const idHero = Number(idHeros[iii]);
             if (!idHero)
@@ -354,7 +359,7 @@ class AArenaChallange {
 
     async saveHeroListForGuild() {
 
-        const idHeros = Elkaisar.Base.validateGameNames(this.Parm["HeroList"]).split("-");
+        const idHeros = Elkaisar.Base.validateGameNames(this.Parm["HeroList"]).split("-").map(e => Number(e));
         var ord = 0, approved = 0, refused = 0, iii = 0, Arena = [], AllTeamPlayers = [], HeroArmy;
         const PlayerGuild = await Elkaisar.DB.ASelectFrom("*", "guild_member", "id_player = ?", [this.idPlayer]);
         if (PlayerGuild.length) {
@@ -373,7 +378,9 @@ class AArenaChallange {
             Elkaisar.DB.ADelete("arena_guild_challange_hero", "id_guild = ?", [PlayerGuild[0].id_guild]);
         else
             Elkaisar.DB.ADelete("arena_guild_challange_hero", "id_player = ?", [this.idPlayer]);
-
+        const ExistHero = Object.values(await Elkaisar.DB.ASelectFrom("id_hero", "arena_guild_challange_hero", "id_guild = ?", [PlayerGuild[0].id_guild])).map(Number);
+        if((new Set([...ExistHero, ...idHeros])).length > Arena[0]["lvl"] * 3)
+             return {"state": "error_1"};
         for (; iii < idHeros.length; iii++) {
             const idHero = Number(idHeros[iii]);
             if (!idHero)
@@ -405,7 +412,7 @@ class AArenaChallange {
                     b_1_type = ?, b_1_num = ?, b_2_type = ?, b_2_num = ?, b_3_type = ?, b_3_num = ?`,
                     Arena,
                     [
-                        this.idPlayer, HeroArmy.id_hero, HeroArmy.ord,
+                        HeroArmy.id_player, HeroArmy.id_hero, HeroArmy.ord,
                         HeroArmy["f_1_type"], HeroArmy["f_1_num"], HeroArmy["f_2_type"], HeroArmy["f_2_num"],
                         HeroArmy["f_3_type"], HeroArmy["f_3_num"], HeroArmy["b_1_type"], HeroArmy["b_1_num"],
                         HeroArmy["b_2_type"], HeroArmy["b_2_num"], HeroArmy["b_3_type"], HeroArmy["b_3_num"]

@@ -18,4 +18,5 @@ Elkaisar.Lib.LBattelReport = require('./Lib/LBattelReport');
 Elkaisar.Lib.LCity = require('./Lib/LCity');
 Elkaisar.Lib.LCityBuilding = require('./Lib/LCityBuilding');
 Elkaisar.Lib.LSchadular = require('./Lib/LSchadular');
+Elkaisar.Lib.LWUArmyCapital = require('./Lib/LWUArmyCapital');
 Elkaisar.Lib.LItem = require('./Lib/LItem');

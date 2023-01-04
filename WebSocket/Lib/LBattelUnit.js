@@ -127,6 +127,7 @@ class LBattelUnit {
 
     static calAttackTime(City, Unit, slowestSpeed) {
 
+        
         if (
             Elkaisar.Lib.LWorldUnit.isAsianSquads(Unit.ut) || Elkaisar.Lib.LWorldUnit.isGangStar(Unit.ut)
             || Elkaisar.Lib.LWorldUnit.isCarthagianArmies(Unit.ut) || Elkaisar.Lib.LWorldUnit.isArenaChallange(Unit.ut)
@@ -191,15 +192,17 @@ class LBattelUnit {
         Elkaisar.Base.broadcast(msg);
     }
 
-    static join(idPlayer, Battel, Hero, side) {
-        const Ord = Date.now() / 1000;
+    static join(idPlayer, Battel, Hero, side, Ord = -1) {
+        if(Ord == -1)
+            Ord = Date.now() / 1000;
+        
         if (side == Elkaisar.Config.BATTEL_SIDE_ATT)
             Elkaisar.DB.Update("attackNum = attackNum + 1", "battel", "id_battel = ?", [Battel["id_battel"]]);
         else if (side == Elkaisar.Config.BATTEL_SIDE_DEF)
             Elkaisar.DB.Update("defenceNum = defenceNum + 1", "battel", "id_battel = ?", [Battel["id_battel"]]);
         Hero.side = side;
         Elkaisar.Lib.LBattel.heroJoinedBattel(Hero, Battel);
-        Elkaisar.DB.Insert(
+        return Elkaisar.DB.AInsert(
             "id_battel = ? , id_player = ? ,id_hero = ?, id_city = ?,  side = ? , ord = ?", "battel_member",
             [Battel["id_battel"], idPlayer, Hero["id_hero"], Hero["id_city"], side, Ord]
         );
