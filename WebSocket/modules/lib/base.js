@@ -64,6 +64,7 @@ module.exports.isJson = function (str){
            json =  JSON.parse(str);
         } catch (e) {
             console.log("Json Parse Error",str);
+            console.log(e);
             return false;
         }
         return json;
@@ -127,44 +128,6 @@ exports.rand = function (min, max){
 
 
 
-module.exports.Request.postReq(
-        {
-            server: Elkaisar.CONST.SERVER_ID
-        },
-        `${Elkaisar.CONST.BASE_URL}/ws/api/AServer/getServerData`,
-        function (data) {
-
-            var serverData = Elkaisar.Base.isJson(data);
-            if (!serverData)
-                return console.log(data);
-
-            Elkaisar.Base.ServerData = serverData;
-
-            if (parseInt(serverData.open_status) === 0) {
-                console.log("Server is Closed So You cant start");
-                process.exit(0);
-            }
-
-
-            if (parseInt(serverData.under_main) === 1) {
-                console.log("Server is Under maintain So You cant start")
-                process.exit(0);
-            }
-
-
-        }
-);
-
-module.exports.Request.postReq(
-        {
-            SERVER_JUST_OPPENED: true,
-            server: Elkaisar.CONST.SERVER_ID
-        },
-        `${Elkaisar.CONST.BASE_URL}/ws/api/AServer/serverJustOppend`,
-        function (data) {
-            //console.log(data);
-        }
-);
 
 
 

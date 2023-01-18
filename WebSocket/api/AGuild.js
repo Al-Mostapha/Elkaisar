@@ -41,11 +41,16 @@ class AGuild {
             });
             Elkaisar.Base.broadcast(msg);
         }
-
-
-
         return {"state": "ok"};
+    }
 
+    async getGuildData(){
+      const idGuild = await Elkaisar.DB.ASelectFrom("id_guild", "guild_member", "id_player = ?", [this.idPlayer]);
+      if (!idGuild.length) return {"state": "noGuild"};
+      return {
+        "state": "ok",
+        "Guild": await Elkaisar.Lib.LGuild.getGuildData(idGuild[0]["id_guild"])
+      }
     }
 
 }

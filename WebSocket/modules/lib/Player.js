@@ -25,22 +25,9 @@ module.exports.online = function (con) {
 
 };
 
-module.exports.offline = function (con) {
-    
-    Elkaisar.Base.Request.postReq(
-            {
-                "server": con.idGameServer,
-                "token": con.token,
-                idLog: con.idLog
-            }, `${Elkaisar.CONST.BASE_URL}/api/APlayer/offline`,
-            function (data) {
-
-            }
-
-    );
-
-
-
+module.exports.offline = async function (con) {
+  Elkaisar.DB.AUpdate("`online` = 0  , last_seen = ? ", "player", "id_player = ?", [Math.floor(Date.now()/1000), con.idPlayer])
+  Elkaisar.DB.AUpdate("time_leave = CURRENT_TIME ", "player_logs", "id_log = ?", [con.idLog]);  
 };
 
 

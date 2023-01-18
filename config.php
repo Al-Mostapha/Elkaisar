@@ -40,7 +40,7 @@ define("BASE_URL", "http://localhost/Elkaisar");
 define("PAY_URL", "http://localhost/ElkaisarPay");
 define("WEB_SOCKET_HOST", "localhost");
 
-define("URL_LANDMARK_INDEX", 1);
+define("URL_LANDMARK_INDEX", 2);
 define('BASE_BATH',      dirname(__FILE__) . DIRECTORY_SEPARATOR);
 
 define("PLAYER_LIMIT_CITY_COUNT", 5);

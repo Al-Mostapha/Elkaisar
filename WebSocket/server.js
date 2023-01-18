@@ -3,12 +3,15 @@
 var webSocketServer = require('websocket').server;
 var Http = require('http');
 const QueryString = require('querystring');
+const DotEnv = require('dotenv');
+const jwt = require("jsonwebtoken")
 Elkaisar.URL = require('url');
 var MySql = require('mysql');
 Elkaisar.ZLib = require('zlib');
 Elkaisar.Event = require('events');
 Elkaisar.Cron = require('node-cron');
 
+DotEnv.config();
 
 
 
@@ -36,13 +39,22 @@ Elkaisar.MysqlBattelReplay = MySql.createPool({
     multipleStatements: true
 });
 
-
+Elkaisar.MysqlHome = MySql.createPool({
+  connectionLimit: 100,
+  host: "localhost",
+  user: process.env.HomeDBUser,
+  password: process.env.HomeDBPass,
+  database: process.env.HomeDBName,
+  charset: 'utf8mb4',
+  multipleStatements: true
+});
 
 Elkaisar.Arr = {};
 Elkaisar.data = {};
 Elkaisar.Arr.Players = {};
 Elkaisar.Arr.BattelWatchList = {};
 Elkaisar.DB = {};
+Elkaisar.HomeDB = {};
 Elkaisar.Config = {};
 Elkaisar.AllWorldCity = [];
 Elkaisar.AllWorldCityColonized = [];
@@ -68,17 +80,17 @@ Elkaisar.CP = {};
 Elkaisar.Base = require('./modules/lib/base');
 Elkaisar.data = require('./modules/util/world/unitData');
 
-require("./ImportLib");
+require("./Import/ImportLib");
 
 Elkaisar.Config.CHero = require('./Config/CHero');
 Elkaisar.Config.CArmy = require('./Config/CArmy');
 Elkaisar.Config.CPlayer = require('./Config/CPlayer');
 Elkaisar.Config.CItem = require('./Config/CItem');
 
-require("./ImportWsLib");
-require("./ImportApiLib");
-require("./ImportApi");
-require("./ImportCp");
+require("./Import/ImportWsLib");
+require("./Import/ImportApiLib");
+require("./Import/ImportApi");
+require("./Import/ImportCp");
 
 
 
@@ -90,79 +102,41 @@ require("./ImportCp");
 
 
 /* inf Loops */
-require("./ImportLoop");
+require("./Import/ImportLoop");
+require("./PreLoad")
+require("./Cach")
 
 
-
-Elkaisar.Base.Request.postReq(
-        {
-            server: Elkaisar.CONST.SERVER_ID
-        },
-        `${Elkaisar.CONST.BASE_URL}/ws/api/AServer/getServerData`,
-        function (data) {
-
-            var serverData = Elkaisar.Base.isJson(data);
-            if (!serverData)
-                return console.log(data);
-
-            Elkaisar.Base.ServerData = serverData;
-
-            if (parseInt(serverData.open_status) === 0) {
-                console.log("Server is Closed So You cant start");
-                process.exit(0);
-            }
-
-
-            if (parseInt(serverData.under_main) === 1) {
-                console.log("Server is Under maintain So You cant start")
-                process.exit(0);
-            }
-
-
-        }
-);
-
-Elkaisar.Base.Request.postReq(
-        {
-            SERVER_JUST_OPPENED: true,
-            server: Elkaisar.CONST.SERVER_ID
-        },
-        `${Elkaisar.CONST.BASE_URL}/ws/api/AServer/serverJustOppend`,
-        function (data) {
-            //console.log(data);
-        }
-);
-
-
-
-var BusyPlayers = {};
-setInterval(function () {
-    BusyPlayers = {};
-}, 60 * 1000);
 
 Elkaisar.Base.HandleReq = async function(Path, Parm){
     
     var Res  = ""; 
-    if (BusyPlayers[Parm.idPlayer]) {
+   
+    let User = null;
+    try {
+      User = jwt.verify(Parm.token, process.env.JWT_SECRET)
+    } catch (error) {
+      
+    }
+    const idPlayer = User.idPlayer || User.idUser;
+    const ReqId = JSON.stringify(Path) + idPlayer;
+    console.log(Parm, User);
+    if (Elkaisar.Cach.BusyPlayers[ReqId]) {
         Res = JSON.stringify({state: "SysBusy"});
     } else {
-        BusyPlayers[Parm.idPlayer] = true;
-        
+      Elkaisar.Cach.BusyPlayers[ReqId] = true;
         if (Path[1] == "api") {
-            
-            const Player = await Elkaisar.DB.ASelectFrom("id_player, panned", "player_auth", "auth_token = ?", [Parm.token]);
-            if(!Player.length)
-                return console.log(Path, Parm);
-            if(Player[0].panned > Date.now()/1000)
-                return console.log(Date(), "Panned Player Try To Open", Path, Parm);
-            Res = JSON.stringify(await (new Elkaisar.API[Path[2]](Player[0].id_player, Parm))[Path[3]]());
-
+          if(!User)
+            return console.log("Error No User Found", Path, Parm);
+          if(User.panned > Date.now()/1000)
+              return console.log(Date(), "Panned Player Try To Open", Path, Parm);
+          Res = JSON.stringify(await (new Elkaisar.API[Path[2]](idPlayer, Parm))[Path[3]]());
         } else if(Path[1] == "cp") {
             Res = JSON.stringify(await (new Elkaisar.CP[Path[2]](Parm))[Path[3]]());
         }
 
 
-        BusyPlayers[Parm.idPlayer] = false;
+        Elkaisar.Cach.BusyPlayers[ReqId] = false;
     }
     
     return Res;
@@ -247,7 +221,7 @@ wsServer.on('request', function (request) {
 
         if (connection.idPlayer && connection.idPlayer > 0)
             Elkaisar.WsLib.Player.offline(connection);
-        delete BusyPlayers[connection.idPlayer];
+        delete Elkaisar.Cach.BusyPlayers[connection.idPlayer];
     });
 });
 

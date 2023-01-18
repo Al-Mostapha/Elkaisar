@@ -29,8 +29,6 @@ class Router {
         if ($result === '') {
             return '/';
         }
-
-        
         return explode("?", $result)[0];
     }
 
@@ -57,11 +55,7 @@ class Router {
             return;
         }
         echo call_user_func_array($method, array($this->request));*/
-        
-        
-        
-        
-        
+
     }
 
     function __destruct() {

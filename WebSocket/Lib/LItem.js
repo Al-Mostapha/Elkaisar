@@ -4,40 +4,20 @@ class LItem {
     static EquipList = {};
 
     static getItemData(callBack) {
-        Elkaisar.Base.Request.getReq(
-                {
-                    server: Elkaisar.CONST.SERVER_ID
-                },
-                `${Elkaisar.CONST.BASE_URL}/js/json/ItemLang/ar.json`,
-                function (data) {
-                    LItem.ItemList = JSON.parse(data);
-                    Elkaisar.DB.SelectFrom("*", "item", "1", [], function (Items) {
-                        Items.forEach(function (OneItem) {
-                            if (LItem.ItemList[OneItem.id_item])
-                                LItem.ItemList[OneItem.id_item].gold = OneItem.gold;
-                        });
-                    });
-                    console.log("Item Fetched");
-                    if (callBack)
-                        callBack();
-                }
-        );
+      LItem.ItemList = require(`${process.env.BasePath}/js${process.env.JsVersion}/json/ItemLang/ar.json`);
+      Elkaisar.DB.SelectFrom("*", "item", "1", [], function (Items) {
+          Items.forEach(function (OneItem) {
+              if (LItem.ItemList[OneItem.id_item])
+                  LItem.ItemList[OneItem.id_item].gold = OneItem.gold;
+          });
+      });
+      if (callBack)
+        callBack();
     }
     static getEquipData(callBack) {
-
-        Elkaisar.Base.Request.getReq(
-                {
-                    server: Elkaisar.CONST.SERVER_ID
-                },
-                `${Elkaisar.CONST.BASE_URL}/js/json/equipment/ar.json`,
-                function (data) {
-                    LItem.EquipList = JSON.parse(data);
-                    if (callBack)
-                        callBack();
-                }
-        );
-
-
+      LItem.EquipList = require(`${process.env.BasePath}/js${process.env.JsVersion}/json/equipment/ar.json`);
+      if (callBack)
+        callBack();
     }
 
     static addItem(idPlayer, idItem, amount = 1) {

@@ -1,39 +1,31 @@
 
 
-exports.newMessageSent = function (con, msgObj) {
+exports.newMessageSent = async function (con, msgObj) {
+  const guildPlayers = await Elkaisar.DB.ASelectFrom(
+    "player.id_player", 
+    "player JOIN guild_member ON guild_member.id_player = player.id_player",
+    "guild_member.id_guild = ?  AND player.online = 1", [
+      msgObj.id_guild
+    ])
 
+    if (!guildPlayers.length)
+        return;
 
-    Elkaisar.Base.Request.postReq(
-            {
-                "GUILD_ONLINE_PLAYER": true,
-                "id_guild": msgObj.id_guild,
-                "server": con.idGameServer,
-                "token": con.token
-            },
-            `${Elkaisar.CONST.BASE_URL}/api/AGuildMember/getOnlineMember`,
-            function (data) {
-                var guildPlayers = Elkaisar.Base.isJson(data);
+    var msg = JSON.stringify({
+        "classPath": "Guild.msgSent"
+    });
+    var ii;
+    var player;
 
-                if (!guildPlayers)
-                    return;
+    for (ii in guildPlayers) {
 
-                var msg = JSON.stringify({
-                    "classPath": "Guild.msgSent"
-                });
-                var ii;
-                var player;
+        player = Elkaisar.Base.getPlayer(guildPlayers[ii].id_player);
+        if (!player)
+            continue;
 
-                for (ii in guildPlayers) {
+        player.connection.sendUTF(msg);
 
-                    player = Elkaisar.Base.getPlayer(guildPlayers[ii].id_player);
-                    if (!player)
-                        continue;
-
-                    player.connection.sendUTF(msg);
-
-                }
-            }
-    );
+    }
 
 };
 

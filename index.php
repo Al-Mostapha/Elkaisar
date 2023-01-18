@@ -19,8 +19,7 @@ $idServer = 0;
 $formatedRoute = explode("/", rtrim($router->formatRoute($router->request->requestUri) , "/"));
 $UrlLandMark = strtolower($formatedRoute[URL_LANDMARK_INDEX]);
 
-
-    
+print_r($router->request);
 if($UrlLandMark == "api"){
     $Token = "";
     $Player = [];

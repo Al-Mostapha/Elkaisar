@@ -11,6 +11,10 @@ class AWorld{
     getWorldCity(){
         return Elkaisar.AllWorldCity
     }
+
+    async getWorldUnitPrize(){
+      return Elkaisar.World.AllWorldUnitPrize;
+    }
     
 }
 

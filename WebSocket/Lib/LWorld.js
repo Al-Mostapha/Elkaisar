@@ -66,17 +66,9 @@ Elkaisar.World.getUnitPrize = function (Battel) {
 };
 
 Elkaisar.World.getUnitData = function (callBack) {
-    Elkaisar.Base.Request.getReq(
-            {
-                server: Elkaisar.CONST.SERVER_ID
-            },
-            `${Elkaisar.CONST.BASE_URL}/js/json/worldUnitData.json`,
-            function (data) {
-                Elkaisar.World.WorldUnitData = JSON.parse(data);
-                if (callBack)
-                    callBack();
-            }
-    );
+  Elkaisar.World.WorldUnitData = require(`${process.env.BasePath}/js${process.env.JsVersion}/json/worldUnitData.json`);
+  if (callBack)
+    callBack();
 };
 
 Elkaisar.World.refreshWorldUnitHeros = function (callBack) {
@@ -145,7 +137,20 @@ Elkaisar.World.refreshWorldUnitEquip = function (callBack) {
     });
 };
 
-Elkaisar.World.refreshWorldUnitPrize = function (callBack) {
+
+
+Elkaisar.World.refreshWorldUnitPrize = async function (callBack) {
+
+  // "Win" => selectFromTable("*", "world_unit_prize", "1"),
+  // "Lose" => selectFromTable("*", "world_unit_prize_lose", "1"),
+  // "Sp" => selectFromTable("*", "world_unit_prize_sp", "1"),
+  // "Plunder" => selectFromTable("*", "world_unit_prize_plunder", "1")
+  Elkaisar.World.AllWorldUnitPrize = {
+    Win: await Elkaisar.DB.ASelectFrom("*", "world_unit_prize", "1", []),
+    Lose: await Elkaisar.DB.ASelectFrom("*", "world_unit_prize_lose", "1", []),
+    Sp: await Elkaisar.DB.ASelectFrom("*", "world_unit_prize_sp", "1", []),
+    Plunder: await Elkaisar.DB.ASelectFrom("*", "world_unit_prize_plunder", "1", [])
+  };
 
     Elkaisar.DB.SelectFrom("*", "world_unit_prize", "1", [], function (Res) {
         Elkaisar.DB.SelectFrom("*", "world_unit_prize_lose", "1", [], function (LP) {

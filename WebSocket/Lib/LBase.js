@@ -1,3 +1,5 @@
+Elkaisar.DB = Elkaisar.DB || {};
+Elkaisar.Base = Elkaisar.Base || {};
 Elkaisar.DB.SelectFrom = function (Query, Table, Where, Parmter, ComFunc) {
     Elkaisar.Mysql.getConnection(function (err, connection) {
         if (err)
@@ -195,7 +197,7 @@ Elkaisar.DB.AExist = function (Table, Where, Parmter, ComFunc) {
 };
 
 
-module.exports.MakeStringId = function (Len) {
+Elkaisar.Base.MakeStringId = function (Len) {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
@@ -210,6 +212,19 @@ module.exports.MakeStringId = function (Len) {
 Elkaisar.Base.validateId = function (id) {
     return Number(id);
 }
+
+Elkaisar.Base.validateFloat = function (id) {
+    return Number(id);
+}
+
+Elkaisar.Base.validateCount = function (id) {
+    return Number(id);
+}
+
+Elkaisar.Base.validateAmount = function (id) {
+    return Math.max(Number(id), 0);
+}
+
 Elkaisar.Base.validateGameNames = function (id) {
     return id;
 }
@@ -261,3 +276,8 @@ Elkaisar.Base.playerWinPrize = function (idPlayer, Title, PrizeList){
 Elkaisar.Base.TryToHack = function (){
     
 };
+
+
+Elkaisar.Base.validateEmail = function (email){
+  return email;
+}
