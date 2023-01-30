@@ -6,7 +6,7 @@ module.exports = class ACity {
 
   async getAllCities(){
     return await  Elkaisar.DB.ASelectFrom( "*",
-      "city", "id_player = ? LIMIT 5", [idPlayer]);
+      "city", "id_player = ? LIMIT 5", [this.idPlayer]);
   }
 
   async resetCityHelper()
@@ -52,7 +52,7 @@ module.exports = class ACity {
       const armyAmount = (await Elkaisar.DB.ASelectFrom("`"+armyType+"`", "city_wounded", "id_player = ? AND id_city = ?", [this.idPlayer, idCity]))[0][armyType];
       
       await Elkaisar.Lib.LSaveState.saveCityState(idCity);
-      if(!await Elkaisar.Lib.LCity.isResourceTaken({coin: cureUnitPrice*armyAmount}, idCity))
+      if(!await Elkaisar.Lib.LCity.isResourceTaken({coin: cureUnitPrice*armyAmount}, this.idPlayer, idCity))
         return {state: "error_1", coinAmount: cureUnitPrice*armyAmount};
       Elkaisar.DB.AUpdate("`"+armyType+"` = 0 ", "city_wounded", "id_city = ?  AND id_player = ?", [idCity, this.idPlayer]);
       Elkaisar.DB.AUpdate("`"+armyType+"` = `"+armyType+"` + ?", "city", "id_city = ? AND id_player = ?", [armyAmount, idCity, this.idPlayer]);
@@ -88,7 +88,7 @@ module.exports = class ACity {
     Elkaisar.Lib.LCity.addResource(GainRes, this.idPlayer, idCity);
     Elkaisar.DB.AUpdate("`"+armyType+"` = 0 ", "city_wounded", "id_city = ?  AND id_player = ?", [idCity, this.idPlayer]);
    
-    Elkaisar.DB.AInsertInto("id_player = ?, id_city = ?, army_type = ?, amount = ?", "city_wounded_fired", [this.idPlayer, idCity, armyType, ArmyAmount[0][armyType]]);
+    Elkaisar.DB.AInsert("id_player = ?, id_city = ?, army_type = ?, amount = ?", "city_wounded_fired", [this.idPlayer, idCity, armyType, ArmyAmount[0][armyType]]);
     Elkaisar.Lib.LSaveState.saveCityState(idCity);
     return {
       state: "ok",
@@ -143,3 +143,5 @@ module.exports = class ACity {
   }
 
 };
+
+module.exports = City;

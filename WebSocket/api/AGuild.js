@@ -7,6 +7,42 @@ class AGuild {
         this.idPlayer = idPlayer;
     }
 
+    async create() {
+        
+      const guildName = Elkaisar.Base.validatePlayerWord(this.Parm["guildName"]);
+      const slogTop = Elkaisar.Base.validateAmount(this.Parm["slogTop"]);
+      const slogMiddle = Elkaisar.Base.validateAmount(this.Parm["slogMiddle"]);
+      const slogBottom = Elkaisar.Base.validateAmount(this.Parm["slogBottom"]);
+      const idCity = Elkaisar.Base.validateId(this.Parm["idCity"]);
+      const guildWithSameName = await Elkaisar.DB.ASelectFrom("COUNT(*) AS c", "guild", "name = ?", [guildName]);
+      const PlayerGuildMem = await Elkaisar.DB.ASelectFrom("COUNT(*) AS C", "guild_member", "id_player = ?", [this.idPlayer]);
+      
+      if(guildName.length > 15) return {"state": "error_0"};
+      if(guildWithSameName[0]["c"] > 0) return {"state": "error_1"};
+      if(PlayerGuildMem[0]["C"] > 0)          return {"state": "error_2"};
+      if(!await Elkaisar.Lib.LCity.isResourceTaken({"coin": 1e5}, this.idPlayer, idCity)) return {"state": "error_3"};
+      
+      const idGuild = await Elkaisar.DB.AInsert(
+        "id_leader = ?, name = ?, slog_top = ?, slog_cnt = ?, slog_btm = ?", "guild",
+        [this.idPlayer, guildName, slogTop, slogMiddle, slogBottom]);
+      Elkaisar.DB.AUpdate("guild_num = (SELECT COUNT(*) FROM guild), city_num = (SELECT count(*) from city )", "server_data", "1");
+      await Elkaisar.DB.AInsert("id_guild = ?, rank = ?", "arena_guild_challange", 
+      [idGuild, (await Elkaisar.DB.ASelectFrom('COUNT(*) AS c', "arena_guild_challange", '1'))[0]["c"] + 1]);
+      const GuildData = await Elkaisar.Lib.LGuild.getGuildData(idGuild);
+
+      if(!GuildData)
+          return {"state": "error_4"};
+      
+      await Elkaisar.Lib.LGuild.addPlayer(idGuild, this.idPlayer, Elkaisar.Config.GUILD_R_LEADER);
+      const PlayerGuild = await Elkaisar.Lib.LGuild.getPlayerGuildData(this.idPlayer);
+      const Guild = {"state": "ok"};
+      if (PlayerGuild) Guild["PlayerGuild"] = PlayerGuild;
+      if (GuildData) Guild["GuildData"] = GuildData;
+      Guild["Player"] = await Elkaisar.Lib.LPlayer.getData();
+      return Guild;
+  }
+
+
     async changeGuildName() {
 
         const idPlayer = Elkaisar.Base.validateId(this.Parm["idPlayer"]);

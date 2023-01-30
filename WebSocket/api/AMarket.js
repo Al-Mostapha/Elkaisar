@@ -27,7 +27,7 @@ class AMarket{
       let totalPrice = 0;
       let buyerPrice = 0;
       if(amountNeed > quantity - totalDone){
-        Elkaisar.DB.AUpdateTable(`done = done  + ${Math.max(quantity - totalDone, 0)}`, "market_deal", `id_deal = ${idDeal}`);
+        Elkaisar.DB.AUpdate(`done = done  + ${Math.max(quantity - totalDone, 0)}`, "market_deal", `id_deal = ${idDeal}`);
         amountToSend = Math.max(quantity - totalDone, 0);
         totalPrice = Math.floor((quantity - totalDone)*unitPrice);
         buyerPrice = amountToSend*buyerUnitPrice;
@@ -134,7 +134,7 @@ class AMarket{
     const RemainRes = Math.max(CityRes[0][Resource] - quantity, 0);
     const RemainCoin = Math.max(CityRes[0].coin - fees, 0);
     const Quary = `  ${Resource}  = ${RemainRes} , coin  =  ${RemainCoin}`;
-    await Elkaisar.Base.AUpdateTable(Quary, "city", "id_city = ? AND id_player = ?", [idCity, this.idPlayer]);
+    await Elkaisar.Base.AUpdate(Quary, "city", "id_city = ? AND id_player = ?", [idCity, this.idPlayer]);
     this.sellOffer(unitPrice, Resource, quantity);
     return {
       state:"ok",

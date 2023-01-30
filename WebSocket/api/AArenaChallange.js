@@ -484,7 +484,7 @@ class AArenaChallange {
     const Item = Elkaisar.Base.validateGameNames(this.Parm["Item"]);
     const ArenaFor = Elkaisar.Base.validateGameNames(this.Parm["ArenaFor"]);
 
-    if (!await Elkaisar.Lib.LItem.useItem(this.idPlayer, Item))
+    if (!await Elkaisar.Lib.LItem.useItem(this.idPlayer, Item, 1))
       return { "state": "error_0" };
 
     let amount = 0;
@@ -516,7 +516,7 @@ class AArenaChallange {
     const Item = Elkaisar.Base.validateGameNames(this.Parm["Item"]);
     const ArenaFor = Elkaisar.Base.validateGameNames(this.Parm["ArenaFor"]);
 
-    if(Elkaisar.Lib.LItem.useItem(this.idPlayer, Item))
+    if(Elkaisar.Lib.LItem.useItem(this.idPlayer, Item, 1))
       return { "state": "error_0" };
     amount = 0;
 

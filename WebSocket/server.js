@@ -84,6 +84,7 @@ require("./Import/ImportLib");
 
 Elkaisar.Config.CHero = require('./Config/CHero');
 Elkaisar.Config.CArmy = require('./Config/CArmy');
+Elkaisar.Config.CCity = require('./Config/CCity');
 Elkaisar.Config.CPlayer = require('./Config/CPlayer');
 Elkaisar.Config.CItem = require('./Config/CItem');
 

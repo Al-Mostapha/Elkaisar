@@ -108,7 +108,7 @@ class AWorldUnit{
         var PrizeList = selectFromTable("*", "world_unit_prize_plunder", "unitType = ? ORDER BY RAND()", [Unit["ut"]]);
 
         var PrizWin = [];
-         var ii, Luck, onePrize, amount;
+        var ii, Luck, onePrize, amount;
         for(ii = 0; ii < PrizeList.length; ii++){
             onePrize = PrizeList[ii];
             Luck = Elkaisar.Base.rand(1, 1000);

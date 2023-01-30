@@ -7,7 +7,6 @@ class ABattelRunning {
         global $idPlayer;
         $idHero = validateID($_POST["idHero"]);
         $side = validateID($_POST["side"]);
-       
         $idBattel = validateID($_POST["idBattel"]);
         $Hero = selectFromTable("id_city, in_city, id_player, id_hero", "hero", "id_hero = :idh AND id_player = :idp", ["idh" => $idHero, "idp" => $idPlayer]);
         $Battel = selectFromTable("*", "battel JOIN world ON world.x = battel.x_coord AND world.y = battel.y_coord ", "battel.id_battel = :idb", ["idb" => $idBattel]);

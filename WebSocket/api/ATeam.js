@@ -25,7 +25,7 @@ class ATeam {
             return {"state": "error_1"};
         if (PlayerGuildMem[0]["C"] > 0)
             return {"state": "error_2"};
-        if (!Elkaisar.Lib.ALCity.isResourceTaken(this.idPlayer, idCity, {"coin": 1e5}))
+        if (!Elkaisar.Lib.ALCity.isResourceTaken({"coin": 1e5}, this.idPlayer, idCity))
             return {"state": "error_3"};
         const idTeam = await Elkaisar.DB.AInsert(
                 "id_leader = ?, name = ?, slog_top = ?, slog_cnt = ?, slog_btm = ?",

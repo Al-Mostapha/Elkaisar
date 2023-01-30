@@ -17,12 +17,12 @@ class AArmyBatch {
 
     for (let oneBatch of allNextBatches) {
       let timeEnd = timeStart + (oneBatch.time_end - oneBatch.time_start);
-      await Elkaisar.DB.AUpdateTable("time_start = ? , time_end = ?", "build_army", "id = ?", [timeStart, timeEnd, oneBatch.id]);
+      await Elkaisar.DB.AUpdate("time_start = ? , time_end = ?", "build_army", "id = ?", [timeStart, timeEnd, oneBatch.id]);
       timeStart += (oneBatch.time_end - oneBatch.time_start);
     }
 
     this.#gainFromCanceling(Batch[0].id_city, Batch[0].army_type, Batch[0].amount);
-    await Elkaisar.DB.ADeleteFrom("build_army", "id = ? AND id_player = ?", [idBatch, this.idPlayer]);
+    await Elkaisar.DB.ADelete("build_army", "id = ? AND id_player = ?", [idBatch, this.idPlayer]);
     return {
       state: "ok",
       armyBatches: await Elkaisar.DB.ASelectFrom("*", "build_army", "id_city = ? AND id_player = ? AND place = ?", [Batch[0].id_city, this.idPlayer, Batch[0].place]),

@@ -221,7 +221,7 @@ class AItemBoxUse {
         }
 
         Elkaisar.Lib.LSaveState.saveCityState(idCity);
-        Elkaisar.Lib.LSaveState.coinOutState(idCity);
+        Elkaisar.Lib.LSaveState.coinOutState(this.idPlayer, idCity);
 
         return {
             "state": "ok"

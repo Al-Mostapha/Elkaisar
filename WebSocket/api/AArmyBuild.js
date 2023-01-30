@@ -7,45 +7,45 @@ class AArmyBuild {
 
   async buildArmy() {
 
-    const $idCity = Elkaisar.Base.validateId(this.Parm.idCity);
-    const $amount = Elkaisar.Base.validateAmount(this.Parm.amount);
-    const $armyType = Elkaisar.Base.validateGameNames(this.Parm.armyType);
-    const $buildingPlace = Elkaisar.Base.validateGameNames(this.Parm.buildingPlace);
-    const $worshipPlace = Elkaisar.Base.validateGameNames(this.Parm.templePlace);
-    const $divideBy = Elkaisar.Base.validateGameNames(this.Parm.divideBy);
-    const $resNeeded = Elkaisar.LArmy.neededResources($armyType);
+    const idCity = Elkaisar.Base.validateId(this.Parm.idCity);
+    const amount = Elkaisar.Base.validateAmount(this.Parm.amount);
+    const armyType = Elkaisar.Base.validateGameNames(this.Parm.armyType);
+    const buildingPlace = Elkaisar.Base.validateGameNames(this.Parm.buildingPlace);
+    const worshipPlace = Elkaisar.Base.validateGameNames(this.Parm.templePlace);
+    const divideBy = Elkaisar.Base.validateGameNames(this.Parm.divideBy);
+    const resNeeded = Elkaisar.LArmy.neededResources(armyType);
 
     const Res = {
-      food: $resNeeded.food * $amount, wood: $resNeeded.wood * $amount,
-      stone: $resNeeded.stone * $amount, metal: $resNeeded.metal * $amount,
-      pop: $resNeeded.pop * $amount, coin: $resNeeded.coin * $amount
+      food: resNeeded.food * amount, wood: resNeeded.wood * amount,
+      stone: resNeeded.stone * amount, metal: resNeeded.metal * amount,
+      pop: resNeeded.pop * amount, coin: resNeeded.coin * amount
     };
 
     if (this.idPlayer) return { "state": "error_0" };
-    if (!$idCity) return { "state": "error_1" };
-    if (!($armyType == "army_a" || $armyType == "army_b" || $armyType == "army_c" ||
-      $armyType == "army_d" || $armyType == "army_e" || $armyType == "army_f" ||
-      $armyType == "wall_a" || $armyType == "wall_b" || $armyType == "wall_c" ||
-      $armyType == "spies"))
+    if (!idCity) return { "state": "error_1" };
+    if (!(armyType == "army_a" || armyType == "army_b" || armyType == "army_c" ||
+      armyType == "army_d" || armyType == "army_e" || armyType == "army_f" ||
+      armyType == "wall_a" || armyType == "wall_b" || armyType == "wall_c" ||
+      armyType == "spies"))
       return { "state": "error_2", "TryToHack": Elkaisar.Base.TryToHack(this) };
-    if (!($divideBy == "none" || $divideBy == "time" || $divideBy == "amount"))
+    if (!(divideBy == "none" || divideBy == "time" || divideBy == "amount"))
       return { "state": "error_3", "TryToHack": Elkaisar.Base.TryToHack(this) };
-    if (!Number($amount) || $amount <= 0)
+    if (!Number(amount) || amount <= 0)
       return { "state": "error_4", "TryToHack": Elkaisar.Base.TryToHack(this) };
-    if (!await Elkaisar.Lib.LCity.isResourceTaken(Res, $idCity))
+    if (!await Elkaisar.Lib.LCity.isResourceTaken(Res, this.idPlayer, idCity))
       return { "state": "error_5", "TryToHack": Elkaisar.Base.TryToHack(this) };
 
-    const $bBuilding = await this.#checkBuilding($resNeeded["condetion"][0], $buildingPlace, $idCity);
-    const $bStudy = this.#checkEdu($resNeeded["condetion"][1]);
-    if ($bBuilding !== true) return $bBuilding;
-    if ($bStudy !== true) return $bStudy;
+    const bBuilding = await this.#checkBuilding(resNeeded["condetion"][0], buildingPlace, idCity);
+    const bStudy = this.#checkEdu(resNeeded["condetion"][1]);
+    if (bBuilding !== true) return bBuilding;
+    if (bStudy !== true) return bStudy;
 
-    if ($divideBy == "none")
-      return this.#buildArmyDiviedByNone($armyType, $amount, $idCity, $buildingPlace, $worshipPlace);
-    if ($divideBy == "time")
-      return this.#buildArmyDiviedByTime($armyType, $amount, $idCity, $worshipPlace);
-    if ($divideBy == "amount")
-      return this.#buildArmyDiviedByAmount($armyType, $amount, $idCity, $worshipPlace);
+    if (divideBy == "none")
+      return this.#buildArmyDiviedByNone(armyType, amount, idCity, buildingPlace, worshipPlace);
+    if (divideBy == "time")
+      return this.#buildArmyDiviedByTime(armyType, amount, idCity, worshipPlace);
+    if (divideBy == "amount")
+      return this.#buildArmyDiviedByAmount(armyType, amount, idCity, worshipPlace);
     Elkaisar.Base.TryToHack();
   }
 
@@ -76,26 +76,26 @@ class AArmyBuild {
 
   async #buildArmyDiviedByNone(armyType, amount, idCity, buildingPlace, worshipPlace) {
 
-    const buildingTrain = await Elkaisar.Lib.LCityBuilding.getBuildingAtPlace(buildingPlace, idCity);
+    const buildingTrain = await Elkaisar.Lib.LCityBuilding.getBuildingAtPlace(buildingPlace, this.idPlayer, idCity);
 
     if (Elkaisar.Config.CArmy.BuildingTypeForArmy[armyType] != buildingTrain["Type"])
       return {
         "state": "error_6", "armyBatches": [],
-        "City": (await Elkaisar.DB.ASelect("*", "city", "id_city = ?", [idCity]))[0]
+        "City": (await Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [idCity]))[0]
       };
 
-    const workingCount = (await Elkaisar.DB.ASelect("COUNT(*) AS c", "build_army", "id_city = ? AND place = ? AND id_player = ?", [idCity, buildingTrain["Place"], this.idPlayer]))[0]["c"];
+    const workingCount = (await Elkaisar.DB.ASelectFrom("COUNT(*) AS c", "build_army", "id_city = ? AND place = ? AND id_player = ?", [idCity, buildingTrain["Place"], this.idPlayer]))[0]["c"];
     if (workingCount >= Math.min(Elkaisar.Config.ARMY_MAX_NUM_BATCH, buildingTrain["Lvl"]))
       return {
         "state": "error_7", "armyBatches": [],
-        "City": (await Elkaisar.DB.ASelect("*", "city", "id_city = ?", [idCity]))[0]
+        "City": (await Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [idCity]))[0]
       };
 
     const templeEffect = await Elkaisar.Lib.LCityBuilding.getTempleEffectRateOnArmy(idCity, worshipPlace);
     return {
       "state": "ok",
       "armyBatches": [await this.#addArmyBatch(armyType, amount, idCity, buildingTrain, templeEffect)],
-      "City": (await Elkaisar.DB.ASelect("*", "city", "id_city = ?", [idCity]))[0]
+      "City": (await Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [idCity]))[0]
     }
   }
 
@@ -120,7 +120,7 @@ class AArmyBuild {
     return {
       "state": "ok",
       "armyBatches": batches,
-      "City": (await Elkaisar.DB.ASelect("*", "city", "id_city = ?", [idCity]))[0]
+      "City": (await Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [idCity]))[0]
     }
   }
 
@@ -138,7 +138,7 @@ class AArmyBuild {
     return {
       "state": "ok",
       "armyBatches": batches,
-      "City": (await Elkaisar.DB.ASelect("*", "city", "id_city = ?", [idCity]))[0]
+      "City": (await Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [idCity]))[0]
     }
 
   }
@@ -146,7 +146,7 @@ class AArmyBuild {
   async #checkEdu(Condetion) {
 
     if (Condetion["type"] == "study") return { "state": "error_6_0" };
-    const playerEdu = await Elkaisar.DB.ASelect(Condetion["study"], "player_edu", "id_player = ?", [this.idPlayer]);
+    const playerEdu = await Elkaisar.DB.ASelectFrom(Condetion["study"], "player_edu", "id_player = ?", [this.idPlayer]);
     if (playerEdu.length == 0) return { "state": "error_6_1" };
     if (playerEdu[0][Condetion["study"]] < Condetion["lvl"])
       return { "state": "error_6_2" };
@@ -157,7 +157,7 @@ class AArmyBuild {
   async #checkBuilding(Condetion, buildingPlace, idCity) {
 
     if (Condetion["type"] != "building") return { "state": "error_7_0" };
-    const Building = await Elkaisar.Lib.LCityBuilding.getBuildingAtPlace(buildingPlace, idCity);
+    const Building = await Elkaisar.Lib.LCityBuilding.getBuildingAtPlace(buildingPlace, this.idPlayer, idCity);
     if (Building["Lvl"] < Condetion["lvl"])
       return { "state": "error_7_1" };
     if (Building["Type"] != Condetion["buildingType"])
@@ -167,3 +167,6 @@ class AArmyBuild {
   }
 
 };
+
+
+Module.exports = AArmyBuild;

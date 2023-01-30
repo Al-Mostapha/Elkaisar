@@ -217,19 +217,17 @@ class LSaveState {
     }
 
 
-    static storeRatio(idCity) {
+    static async storeRatio(idCity) {
 
-        LSaveState.saveCityState(idCity);
-        Elkaisar.Lib.LCity.refreshStoreCap(idCity, function (Storage) {
-            Elkaisar.DB.SelectFrom("*", "city_storage", "id_city = ?", [idCity], function (CityStorage) {
-                var food_cap = CityStorage[0]["total_cap"] * CityStorage[0]["food_storage_ratio"] / 100;
-                var wood_cap = CityStorage[0]["total_cap"] * CityStorage[0]["wood_storage_ratio"] / 100;
-                var stone_cap = CityStorage[0]["total_cap"] * CityStorage[0]["stone_storage_ratio"] / 100;
-                var metal_cap = CityStorage[0]["total_cap"] * CityStorage[0]["metal_storage_ratio"] / 100;
-                var Quary = `food_cap = ${food_cap} , wood_cap = ${wood_cap} , metal_cap = ${metal_cap} , stone_cap = ${stone_cap}`;
-                Elkaisar.DB.Update(Quary, "city", "id_city = ?", [idCity]);
-            });
-        });
+        await LSaveState.saveCityState(idCity);
+        const CityStorage = await Elkaisar.DB.ASelectFrom("*", "city_storage", "id_city = ?", [idCity]);
+        await Elkaisar.Lib.LCity.refreshStoreCap(idCity);
+        var food_cap = CityStorage[0]["total_cap"] * CityStorage[0]["food_storage_ratio"] / 100;
+        var wood_cap = CityStorage[0]["total_cap"] * CityStorage[0]["wood_storage_ratio"] / 100;
+        var stone_cap = CityStorage[0]["total_cap"] * CityStorage[0]["stone_storage_ratio"] / 100;
+        var metal_cap = CityStorage[0]["total_cap"] * CityStorage[0]["metal_storage_ratio"] / 100;
+        var Quary = `food_cap = ${food_cap} , wood_cap = ${wood_cap} , metal_cap = ${metal_cap} , stone_cap = ${stone_cap}`;
+        await Elkaisar.DB.AUpdate(Quary, "city", "id_city = ?", [idCity]);
     }
 
 }

@@ -103,6 +103,14 @@ class LItem {
 
     }
 
+    static async getAmount(idPlayer, item)
+    {
+  
+        const itemCount = await Elkaisar.DB.ASelectFrom("amount", "player_item", "id_item = ? AND id_player = ?", [item, idPlayer]);
+        if(itemCount.length == 0)
+            return 0;
+        return itemCount[0]["amount"];
+    }
 }
 
 LItem.getItemData();

@@ -217,6 +217,10 @@ Elkaisar.Base.validateFloat = function (id) {
     return Number(id);
 }
 
+Elkaisar.Base.validateOffset = function (id) {
+    return Number(id);
+}
+
 Elkaisar.Base.validateCount = function (id) {
     return Number(id);
 }
