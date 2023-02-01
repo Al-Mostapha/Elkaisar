@@ -1,4 +1,4 @@
-module.exports = class APlayerEquip {
+class APlayerEquip {
   constructor(idPlayer, Param) {
     this.idPlayer = idPlayer;
     this.Param = Param;
@@ -16,3 +16,5 @@ module.exports = class APlayerEquip {
   }
 
 }
+
+module.exports = APlayerEquip;

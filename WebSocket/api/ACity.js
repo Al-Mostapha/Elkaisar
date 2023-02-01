@@ -1,4 +1,4 @@
-module.exports = class ACity {
+class ACity {
   constructor(idPlayer, Url) {
     this.Parm = Url;
     this.idPlayer = idPlayer;
@@ -144,4 +144,4 @@ module.exports = class ACity {
 
 };
 
-module.exports = City;
+module.exports = ACity;

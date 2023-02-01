@@ -59,7 +59,7 @@ class AGuildMember {
     if (!Elkaisar.Lib.LGuild.G_POSITION_MAX_NUM.hasOwnProperty(promotTo))
       return { state: "error_5", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
 
-    const posCount = await Elkaisar.DB.ASelectFrom("COUNT(*) AS poSC", "guild_member", "id_guild = ? AND rank = ?", [GuidMember[0]["id_guild"], promotTo])[0]["poSC"];
+    const posCount = (await Elkaisar.DB.ASelectFrom("COUNT(*) AS poSC", "guild_member", "id_guild = ? AND rank = ?", [GuidMember[0]["id_guild"], promotTo]))[0]["poSC"];
     if (posCount >= Elkaisar.Lib.LGuild.G_POSITION_MAX_NUM[promotTo])
       return { state: "error_6", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
 

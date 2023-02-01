@@ -1,4 +1,4 @@
-module.exports = class AExchange {
+class AExchange {
   constructor(idPlayer, Param) {
     this.idPlayer = idPlayer;
     this.Param = Param;
@@ -56,20 +56,52 @@ module.exports = class AExchange {
   }
 
   async #canHaveMore(Exchnage, Reword, Amount) {
-    
+
     let playerAmount = 0;
     if (Reword["type"] === "matrial")
       playerAmount = await Elkaisar.Lib.LItem.getAmount(this.idPlayer, Reword["matrial"]);
     else if (Reword["type"] === "equip")
       playerAmount = (await Elkaisar.DB.ASelectFrom("COUNT(*) AS c", "equip", "id_player = ? AND part = ? AND type = ?", [this.idPlayer, Reword['Part'], Reword["Equip"]]))[0]["c"];
 
-    if(playerAmount + Amount > Exchnage["max_to_have"])
+    if (playerAmount + Amount > Exchnage["max_to_have"])
       return false;
-    else if(Exchange["server_take"] + Amount > Exchange["server_max"] && Exchange["server_max"] !=  null)
+    else if (Exchange["server_take"] + Amount > Exchange["server_max"] && Exchange["server_max"] != null)
       return false;
-    else if(Exchange["take_times"] + Amount > Exchange["player_max"])
+    else if (Exchange["take_times"] + Amount > Exchange["player_max"])
       return false;
     return true;
   }
 
+  async #verifyReq(Exchnage, amountToTrade, idCity) {
+
+    const Req = JSON.parse(Exchnage["req"]);
+    if (!Req || !Req.length)
+      return false;
+
+    await Elkaisar.Lib.LSaveState.saveCityState(idCity);
+
+    for (let one of Req) {
+      const a = one["amount"] * amountToTrade;
+      if (one["type"] == "matrial") {
+        if(!await Elkaisar.Lib.LItem.useItem(this.idPlayer, one["matrial"], a))
+          return false;
+      } else if (one["type"] === "resource") {
+        if(!await Elkaisar.Lib.LCity.isResourceTaken({[one["resource_type"]]: a}, this.idPlayer, idCity))
+          return false;
+      } else if (one["type"] === "equip") {
+        const Equips = await Elkaisar.DB.ASelectFrom(
+        "*", "equip", "id_player = ? AND part = ? AND type = ? AND lvl = ? AND id_hero = NULL", [this.idPlayer, one["Part"], one["Equip"], one["lvl"]]);
+        if(Equips.length < a)
+          return false;
+        await Elkaisar.DB.ADelete("equip", "id_player = ? AND part = ? AND type = ? AND lvl = ? AND id_hero = NULL LIMIT ?", [this.idPlayer, one["Part"], one["Equip"], one["lvl"], a]);
+      } else if (one["type"] === "gold") {
+        if(!await Elkaisar.Lib.LPlayer.takePlayerGold(this.idPlayer, a))
+          return false;
+      }
+    }
+
+  }
+
 }
+
+module.exports = AExchange;

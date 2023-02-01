@@ -122,3 +122,5 @@ class AArmyBatch {
   
 
 }
+
+module.exports = AArmyBatch;

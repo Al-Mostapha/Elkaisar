@@ -9,10 +9,10 @@ class AMessage{
   async GetMsgNumbers(){
     return {
       state: "ok",
-      msg_out: await Elkaisar.DB.ASelectFrom("COUNT(*) AS msg_out", "msg_out", "id_from = ?", [this.idPlayer]) [0]["msg_out"],
-      msg_income: await Elkaisar.DB.ASelectFrom("COUNT(*) AS msg_income", "msg_income", "id_to = ?", [this.idPlayer]) [0]["msg_income"],
-      msg_diff: await Elkaisar.DB.ASelectFrom("COUNT(*) AS msg_diff", "msg_diff", "id_to = ?", [this.idPlayer]) [0]["msg_diff"],
-      report_player: await Elkaisar.DB.ASelectFrom("COUNT(DISTINCT id_report) AS report_player", "report_player", "id_player = ?", [this.idPlayer]) [0]["report_player"]
+      msg_out: (await Elkaisar.DB.ASelectFrom("COUNT(*) AS msg_out", "msg_out", "id_from = ?", [this.idPlayer])) [0]["msg_out"],
+      msg_income: (await Elkaisar.DB.ASelectFrom("COUNT(*) AS msg_income", "msg_income", "id_to = ?", [this.idPlayer]))[0]["msg_income"],
+      msg_diff: (await Elkaisar.DB.ASelectFrom("COUNT(*) AS msg_diff", "msg_diff", "id_to = ?", [this.idPlayer])) [0]["msg_diff"],
+      report_player: (await Elkaisar.DB.ASelectFrom("COUNT(DISTINCT id_report) AS report_player", "report_player", "id_player = ?", [this.idPlayer])) [0]["report_player"]
     };
   }
 
@@ -24,7 +24,7 @@ class AMessage{
       if(OneMessage["from_"] == 1){
         OneMessage ["name"] = "النظام";
       }else{
-        OneMessage ["name"] = await Elkaisar.DB.ASelectFrom("name", "player", "id_player = ?", [OneMessage ["id_from"]])[0]["name"];
+        OneMessage ["name"] = (await Elkaisar.DB.ASelectFrom("name", "player", "id_player = ?", [OneMessage ["id_from"]]))[0]["name"];
       }
       const ts = new Date(OneMessage["time_stamp"] * 1000);
       OneMessage["time_stamp"] = `${ts.getDay()}/${ts.getMonth()}/${ts.getFullYear()} ${ts.getHours()}:${ts.getMinutes()}`;
@@ -41,7 +41,7 @@ class AMessage{
       if(OneMsg["from_"] == 1){
         OneMsg ["name"] = "النظام";
       }else{
-        OneMsg ["name"] = await Elkaisar.DB.ASelectFrom("name", "player", "id_player = ?", [OneMsg ["id_from"]])[0]["name"];
+        OneMsg ["name"] = (await Elkaisar.DB.ASelectFrom("name", "player", "id_player = ?", [OneMsg ["id_from"]]))[0]["name"];
       }
       const ts = new Date(OneMsg["time_stamp"] * 1000);
       OneMsg["time_stamp"] = `${ts.getDay()}/${ts.getMonth()}/${ts.getFullYear()} ${ts.getHours()}:${ts.getMinutes()}`;
@@ -85,7 +85,7 @@ class AMessage{
       if(OneMsg["id_to"] == 0){
         OneMsg ["name"] = "النظام";
       }else{
-        OneMsg ["name"] = await Elkaisar.DB.ASelectFrom("name", "player", "id_player = ?", [OneMsg ["id_to"]])[0]["name"];
+        OneMsg ["name"] = (await Elkaisar.DB.ASelectFrom("name", "player", "id_player = ?", [OneMsg ["id_to"]]))[0]["name"];
       }
       const ts = new Date(OneMsg["time_stamp"] * 1000);
       OneMsg["time_stamp"] = `${ts.getDay()}/${ts.getMonth()}/${ts.getFullYear()} ${ts.getHours()}:${ts.getMinutes()}`;
@@ -101,7 +101,7 @@ class AMessage{
       if(OneMsg["id_to"] == 0){
         OneMsg ["name"] = "النظام";
       }else{
-        OneMsg ["name"] = await Elkaisar.DB.ASelectFrom("name", "player", "id_player = ?", [OneMsg ["id_to"]])[0]["name"];
+        OneMsg ["name"] = (await Elkaisar.DB.ASelectFrom("name", "player", "id_player = ?", [OneMsg ["id_to"]]))[0]["name"];
       }
       const ts = new Date(OneMsg["time_stamp"] * 1000);
       OneMsg["time_stamp"] = `${ts.getDay()}/${ts.getMonth()}/${ts.getFullYear()} ${ts.getHours()}:${ts.getMinutes()}`;
@@ -112,3 +112,5 @@ class AMessage{
 
   
 };
+
+module.exports = AMessage;

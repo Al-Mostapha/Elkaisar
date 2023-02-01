@@ -205,3 +205,5 @@ class ACityMarket {
   //     ];
   // }
 };
+
+module.exports = ACityMarket;

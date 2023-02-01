@@ -7,6 +7,10 @@ class AItem {
         this.idPlayer = idPlayer;
     }
 
+    async getAllItemPrice() {
+        return await Elkaisar.DB.ASelectFrom("*", "item", "1");
+    }
+
     async buyItem() {
         
         const idItem = Elkaisar.Base.validateGameNames(this.Parm.item);

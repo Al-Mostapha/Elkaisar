@@ -4,6 +4,35 @@ class ACityBuilding {
     this.idPlayer = idPlayer;
   }
 
+  async getAllCityBuilding() {
+
+    const idCities = await Elkaisar.DB.ASelectFrom("id_city", "city", "id_player = ?", [this.idPlayer]);
+    let playerCities = {};
+
+    for (let oneId of idCities) {
+      playerCities[oneId.id_city] = await this.getCityBuilding(oneId.id_city);
+    }
+    return playerCities;
+  }
+
+  async getCityBuilding(idCity = 0) {
+
+    if (!idCity)
+      idCity = Elkaisar.Base.validateId(this.Parm.idCity);
+    const CB = (await Elkaisar.DB.ASelectFrom("*", "city_building", "id_player = ? AND id_city = ?", [this.idPlayer, idCity]))[0];
+    const CBL = (await Elkaisar.DB.ASelectFrom("*", "city_building_lvl", "id_player = ? AND id_city = ?", [this.idPlayer, idCity]))[0];
+
+    delete CB.id_player;
+    delete CB.id_city;
+    delete CBL.id_player;
+    delete CBL.id_city;
+
+    return {
+      "lvl": CBL,
+      "type": CB
+    }
+
+  }
 
   async constructNewBuilding() {
     const idCity = Elkaisar.Base.validateId(this.Parm.idCity);
@@ -149,7 +178,7 @@ class ACityBuilding {
   }
 
   async explodeBuilding() {
-    
+
     const BuildingPlace = Elkaisar.Base.validateGameNames(this.Parm.BuildingPlace);
     const idCity = Elkaisar.Base.validateId(this.Parm.idCity);
     const Building = await Elkaisar.Lib.LCityBuilding.getBuildingAtPlace(BuildingPlace, this.idPlayer, idCity);
@@ -175,7 +204,7 @@ class ACityBuilding {
       "lvl_to": 0,
       "type": Building["Type"]
     };
-    
+
     Elkaisar.Lib.LBuilding.buildingUpgraded(BuildingTask);
     return { "state": "ok" };
   }

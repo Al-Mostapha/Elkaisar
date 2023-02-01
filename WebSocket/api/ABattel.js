@@ -132,7 +132,7 @@ class ABattel {
       "world_attack_queue JOIN world ON world.x = world_attack_queue.x_coord AND world.y = world_attack_queue.y_coord",
       `world_attack_queue.id_guild = ? AND world.ut IN ( ${Elkaisar.Config.WUT_REPLE_CASTLE_A}, ${Elkaisar.Config.WUT_REPLE_CASTLE_B}, ${Elkaisar.Config.WUT_REPLE_CASTLE_C})`,
       [PlayerGuild[0]["id_guild"]]);
-    const RoleCount = await Elkaisar.DB.ASelectFrom("COUNT(*) AS c", "world_attack_queue", "x_coord = ? AND y_coord = ?", [Unit["x"], Unit["y"]])[0]["c"];
+    const RoleCount = (await Elkaisar.DB.ASelectFrom("COUNT(*) AS c", "world_attack_queue", "x_coord = ? AND y_coord = ?", [Unit["x"], Unit["y"]]))[0]["c"];
 
     if (GuildRole.length > 0)
       return { "state": "error_0" };
@@ -170,7 +170,7 @@ class ABattel {
 
     }
     else {
-      const LastRole = await Elkaisar.DB.ASelectFrom("id, time_start", "world_attack_queue", "x_coord = ? AND y_coord = ? ORDER BY id DESC LIMIT 1", [Unit["x"], Unit["y"]])[0];
+      const LastRole = (await Elkaisar.DB.ASelectFrom("id, time_start", "world_attack_queue", "x_coord = ? AND y_coord = ? ORDER BY id DESC LIMIT 1", [Unit["x"], Unit["y"]]))[0];
       timeStart = LastRole["time_start"] + 24 * 60 * 60;
     }
     const timeEnd = timeStart + 60 * 60;

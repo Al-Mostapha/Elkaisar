@@ -29,7 +29,7 @@ class ACityHero {
       state: "ok",
       Hero: (await Elkaisar.DB.ASelectFrom("*", "hero", "id_hero = ?", [idNewHero]))[0],
       TheaterHeros: await Elkaisar.DB.ASelectFrom("hero_name as name, hero_lvl AS lvl, hero_image AS avatar, hero_theater.*", "hero_theater", "id_city = ?", [Hero[0]["id_city"]]),
-      City: await Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [Hero[0]["id_city"]])[0]
+      City: (await Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [Hero[0]["id_city"]]))[0]
     }
 
   }

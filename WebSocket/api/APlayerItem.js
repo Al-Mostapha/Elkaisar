@@ -1,4 +1,4 @@
-module.exports = class APlayerItem {
+class APlayerItem {
   constructor(idPlayer, Param) {
     this.idPlayer = idPlayer;
     this.Param = Param;
@@ -7,3 +7,5 @@ module.exports = class APlayerItem {
     return await Elkaisar.DB.ASelectFrom("*", "player_item", "id_player = ?", [this.idPlayer]);
   }
 }
+
+module.exports = APlayerItem;

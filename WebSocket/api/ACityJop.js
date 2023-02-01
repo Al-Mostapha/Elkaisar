@@ -1,4 +1,4 @@
-module.exports = class ACityJop {
+class ACityJop {
   Parm;
   idPlayer;
   constructor(idPlayer, Url) {
@@ -177,3 +177,5 @@ module.exports = class ACityJop {
     }
   }
 };
+
+module.exports = ACityJop;

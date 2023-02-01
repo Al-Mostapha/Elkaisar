@@ -5,8 +5,8 @@ class ACityPalace {
   }
 
   async getCityGarrison() {
-    let xCoord = validateID(this.Parm.xCoord);
-    let yCoord = validateID(this.Parm.yCoord);
+    let xCoord = Elkaisar.Base.validateCount(this.Parm.xCoord);
+    let yCoord = Elkaisar.Base.validateCount(this.Parm.yCoord);
     return await Elkaisar.Lib.LCity.getCityGarrison(xCoord, yCoord);
   }
 

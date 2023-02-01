@@ -38,7 +38,6 @@ class ABattelRunning {
                                 WHERE world_unit_garrison.id_player = ?`,
       [this.idPlayer, this.idPlayer, this.idPlayer]
     );
-    console.log("This should be array *****", Battels)
     return Battels;
   }
 

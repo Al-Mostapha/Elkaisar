@@ -179,3 +179,5 @@ class AMarket{
   }
 
 };
+
+module.exports = AMarket;

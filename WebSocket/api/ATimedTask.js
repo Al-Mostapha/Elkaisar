@@ -35,3 +35,5 @@ class ATimedTask {
   }
 
 };
+
+module.exports = ATimedTask;

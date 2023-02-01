@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-module.exports = class ALogin {
+class ALogin {
 
   idPlayer;
   Param;
@@ -82,6 +82,7 @@ module.exports = class ALogin {
         idUser: UserServer.idUser,
         idServer: UserServer.idServer,
         ServerData: Elkaisar.Config.ServerList[UserServer.idServer],
+        ApiHost: process.env.ApiHost,
         ApiUrl: process.env.ApiUrl,
         PhpApiUrl: process.env.PhpApiUrl,
       }
@@ -128,5 +129,6 @@ module.exports = class ALogin {
       }
     }
   };
-
 };
+
+module.exports = ALogin;

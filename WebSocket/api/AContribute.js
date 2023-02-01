@@ -136,3 +136,5 @@ class AContribute {
   }
 
 }
+
+module.exports = AContribute;

@@ -1,4 +1,4 @@
-module.exports = class APlayerEdu {
+class APlayerEdu {
   Parm;
   idPlayer;
   constructor(idPlayer, Url) {
@@ -92,3 +92,5 @@ module.exports = class APlayerEdu {
   }
 
 }
+
+module.exports = APlayerEdu;

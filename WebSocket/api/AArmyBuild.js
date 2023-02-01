@@ -169,4 +169,4 @@ class AArmyBuild {
 };
 
 
-Module.exports = AArmyBuild;
+module.exports = AArmyBuild;

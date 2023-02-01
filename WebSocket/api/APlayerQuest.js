@@ -85,7 +85,7 @@ class APlayerQuest {
         if (!await Elkaisar.Lib.LItem.useItem(this.idPlayer, one.item, one.amount))
           return false;
       } else if (one.type == "gold") {
-        if (!await Elkaisar.Lib.LPlayer.takeGold(this.idPlayer, one.amount))
+        if (!await Elkaisar.Lib.LPlayer.takePlayerGold(this.idPlayer, one.amount))
           return false;
       } else if (one.type == "resource") {
         if (!await Elkaisar.Lib.LCity.isResourceTaken({ [one.resourceType]: one.amount }, this.idPlayer, idCity))

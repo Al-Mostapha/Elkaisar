@@ -7,6 +7,29 @@ class AHeroEquip {
     this.idPlayer = idPlayer;
   }
 
+  async getHeroEquip(){
+    // const idHero = Elkaisar.Base.validateId(this.Parm.idHero);
+    // $id_hero   = validateId($_GET["id_hero"]);
+    // $id_player = validateId(cryptUserId(($_GET['token']), "d"));
+    
+    // $hero_equip = Equipment::retriveEquipByIdHero($id_hero, $id_player);
+    
+    // $boot["boot"]          = Equipment::retriveEquipByItsId($hero_equip["id_boot"]);
+    // $armor["armor"]        = Equipment::retriveEquipByItsId($hero_equip["id_armor"]);
+    // $shield["shield"]      = Equipment::retriveEquipByItsId($hero_equip["id_shield"]);
+    // $helmet["helmet"]      = Equipment::retriveEquipByItsId($hero_equip["id_helmet"]);
+    // $sword["sword"]        = Equipment::retriveEquipByItsId($hero_equip["id_sword"]);
+    // $belt["belt"]          = Equipment::retriveEquipByItsId($hero_equip["id_belt"]);
+    // $necklace["necklace"]  = Equipment::retriveEquipByItsId($hero_equip["id_necklace"]);
+    // $pendant["pendant"]    = Equipment::retriveEquipByItsId($hero_equip["id_pendant"]);
+    // $ring["ring"]          = Equipment::retriveEquipByItsId($hero_equip["id_ring"]);
+    // $steed["steed"]        = Equipment::retriveEquipByItsId($hero_equip["id_steed"]);
+    // $player["id_player"]   = $id_player;
+    // $player["id_hero"]     = $id_hero;
+   
+    // echo json_encode(array_merge($sword , $helmet , $shield , $armor , $boot , $player, $belt, $necklace, $pendant, $ring, $steed));
+  }
+
   async putEquipOnHero() {
 
     const idHero = Elkaisar.Base.validateId(this.Parm["idHero"]);
