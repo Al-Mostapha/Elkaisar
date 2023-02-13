@@ -84,7 +84,10 @@ class ALogin {
         ServerData: Elkaisar.Config.ServerList[UserServer.idServer],
         ApiHost: process.env.ApiHost,
         ApiUrl: process.env.ApiUrl,
+        WsHost: process.env.WsHost,
+        WsPort: process.env.WsPort,
         PhpApiUrl: process.env.PhpApiUrl,
+        AssetPath: process.env.AssetPath
       }
     } catch (e) {
       return { state: "error_0" };

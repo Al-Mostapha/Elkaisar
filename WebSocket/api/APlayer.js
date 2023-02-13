@@ -18,6 +18,10 @@ class APlayer {
 
   }
 
+  async getServerData(){
+    return (await Elkaisar.DB.ASelectFrom("*", "server_data", "id = 1"))[0];
+  }
+
   async changePlayerName() {
 
     const newName = Elkaisar.Base.validatePlayerWord(this.Parm.NewName);

@@ -6,7 +6,7 @@ class AMessage{
       this.idPlayer = idPlayer;
   }
 
-  async GetMsgNumbers(){
+  async getMsgNumbers(){
     return {
       state: "ok",
       msg_out: (await Elkaisar.DB.ASelectFrom("COUNT(*) AS msg_out", "msg_out", "id_from = ?", [this.idPlayer])) [0]["msg_out"],

@@ -12,6 +12,15 @@ class AGodGate {
     return Elkaisar.Lib.LPlayer.RANK_POINT_PLUSE;
   }
 
+  async getGlobalGateData(){
+    return {
+      "gate_1_count": (await Elkaisar.DB.ASelectFrom("COUNT(id_player) as count", "god_gate_1", "1"))[0]["count"],
+      "gate_2_count": (await Elkaisar.DB.ASelectFrom("COUNT(id_player) as count", "god_gate_2", "1"))[0]["count"],
+      "gate_3_count": (await Elkaisar.DB.ASelectFrom("COUNT(id_player) as count", "god_gate_3", "1"))[0]["count"],
+      "gate_4_count": (await Elkaisar.DB.ASelectFrom("COUNT(id_player) as count", "god_gate_4", "1"))[0]["count"]
+    }
+  }
+
   async getGodGateData() {
     const GodGateData = await Elkaisar.DB.ASelectFrom("*", "god_gate", "id_player = ?", [this.idPlayer]);
     const GodGate = {};
