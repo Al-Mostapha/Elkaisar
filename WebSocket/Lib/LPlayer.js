@@ -98,6 +98,7 @@ class LPlayer {
       "*", "(SELECT player.*, @row:=@row+1 as 'rank' FROM player,(SELECT @row:=0) r ORDER BY player.prestige DESC ) AS col ",
       "col.id_player = ?", [idPlayer]);
     delete Player[0]["p_token"];
+    console.log(Player);
     return Player[0];
   }
 

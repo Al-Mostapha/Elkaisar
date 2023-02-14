@@ -136,9 +136,7 @@ class APlayer {
   }
 
   async refreshPlayerData() {
-    const Player = await Elkaisar.DB.ASelectFrom("*", "player", "id_player = ?", [this.idPlayer]);
-    delete Player[0]["p_token"];
-    return Player[0];
+    return await Elkaisar.Lib.LPlayer.getData(this.idPlayer);
   }
 
   async searchPlayer() {
