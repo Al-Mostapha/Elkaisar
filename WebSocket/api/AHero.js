@@ -23,6 +23,24 @@ class AHero {
     }
   }
 
+  async getHeroReviewDetail() {
+    
+    const idHero = Elkaisar.Base.validateId(this.Parm.idHero);
+    const l_Hero = (await Elkaisar.DB.ASelectFrom("*", "hero", "id_hero = ?", [idHero]))[0];
+    l_Hero.Army = {
+      "f_1_type":0, "f_2_type":0, "f_3_type":0,
+      "b_1_type":0, "b_2_type":0, "b_3_type":0,
+      "f_1_num" :0, "f_2_num" :0, "f_3_num" :0,
+      "b_1_num" :0, "b_2_num" :0, "b_3_num" :0,
+    }
+    l_Hero.Equip = {};    
+    l_Hero.medal = {    
+      "ceaser_eagle": "0", "medal_ceasro": "0",
+      "medal_den":"0", "medal_leo": "0"
+    };
+    return l_Hero;
+  }
+
   async upgradeHeroLvl() {
 
     const idHero = Elkaisar.Base.validateId(this.Parm.idHero);

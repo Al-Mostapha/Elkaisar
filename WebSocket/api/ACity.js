@@ -133,6 +133,17 @@ class ACity {
       return {state: "error_0", "TryToHack": Elkaisar.Lib.Log.Hack(this)};
     return City[0];
   }
+  
+  async afterBattelFinishRefresh(){
+
+    const idCity = Elkaisar.Base.validateId(this.Parm.idCity);
+    await Elkaisar.Lib.LSaveState.saveCityState(idCity);
+    await Elkaisar.Lib.LSaveState.foodOutState(idPlayer, idCity);
+    return {
+      state: "ok",
+      City: (await Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [idCity]))[0]
+    }
+  }
 
   async searchCity()
   {
@@ -140,6 +151,15 @@ class ACity {
     return await Elkaisar.DB.ASelectFrom(
       "player.name AS PlayerName, player.id_player AS idPlayer, city.name AS CityName, city.id_city AS idCity, player.avatar",
       "city JOIN player ON city.id_player = player.id_player", "city.name LIKE ?", ["%"+NameSeg+"%"]);
+  }
+
+  async getDataByCoord(){
+    const xCoord = Elkaisar.Base.validateCount(this.Parm.xCoord);
+    const yCoord = Elkaisar.Base.validateCount(this.Parm.yCoord);
+    const City = await Elkaisar.DB.ASelectFrom(
+      "city.id_player, city.name, city.id_city, player.name AS p_name, player.prestige ,player.guild, player.avatar, player.id_guild ",
+      "player JOIN city ON city.x = ? AND city.y = ? AND city.id_player = player.id_player", [xCoord, yCoord]);
+    return City[0] || {};
   }
 
 };

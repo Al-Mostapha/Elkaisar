@@ -220,11 +220,12 @@ class AGodGate {
 
   async getGateRank() {
 
-    const gateIndex = Elkaisar.Base.validateId(this.Parm.gateIndex);
+    const gate = Elkaisar.Base.validateGameNames(this.Parm.gate);
     const offset = Elkaisar.Base.validateAmount(this.Parm.offset);
 
     const quary = "god_gate JOIN player ON player.id_player = god_gate.id_player";
-    return await Elkaisar.DB.ASelectFrom("player.name AS PlayerName, player.avatar, player.porm, player.id_player AS idPlayer, god_gate.`gate_${gateIndex}` AS score", quary, "1 ORDER BY god_gate.`gate_${gateIndex}` DESC, player.prestige DESC LIMIT 10 OFFSET ?", [offset]);
+    return await Elkaisar.DB.ASelectFrom("player.name AS PlayerName, player.avatar, player.porm, player.id_player AS idPlayer, god_gate.?? AS score", quary,
+     "1 ORDER BY god_gate.?? DESC, player.prestige DESC LIMIT 10 OFFSET ?", [gate, gate, offset]);
   }
 
   async getGodGateRankPointPlus() {

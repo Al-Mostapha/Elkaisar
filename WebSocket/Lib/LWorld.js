@@ -22,19 +22,20 @@ Elkaisar.World.refreshWorldUnit = async function (callBack) {
       Elkaisar.World.WorldUnits[Unit.x * 500 + Unit.y].s = Unit.s;
     }
   }
-  console.log(Date.now());
+  console.log("ًWorldUnit Refrehed...");
   if (callBack)
     callBack();
 };
 
 
 
-Elkaisar.World.getEquipPower = function (callBack) {
-  Elkaisar.DB.SelectFrom("*", "equip_power", "1", [], function (EquipList) {
-    for (var iii in EquipList) {
-      Elkaisar.Equip.EquipPower[`${EquipList[iii].equip}.${EquipList[iii].part}.${EquipList[iii].lvl}`] = EquipList[iii];
-    }
-  });
+Elkaisar.World.getEquipPower = async function (callBack) {
+  const EquipList = await Elkaisar.DB.ASelectFrom("*", "equip_power", "1", []);
+  for (var iii in EquipList) {
+    Elkaisar.Equip.EquipPower[`${EquipList[iii].equip}.${EquipList[iii].part}.${EquipList[iii].lvl}`] = EquipList[iii];
+  }
+  if (callBack)
+    callBack();
 };
 
 
@@ -65,76 +66,74 @@ Elkaisar.World.getUnitPrize = function (Battel) {
   return PrizeList;
 };
 
-Elkaisar.World.getUnitData = function (callBack) {
+Elkaisar.World.getUnitData = async function (callBack) {
   Elkaisar.World.WorldUnitData = require(`${process.env.BasePath}/js${process.env.JsVersion}/json/worldUnitData.json`);
   if (callBack)
     callBack();
 };
 
-Elkaisar.World.refreshWorldUnitHeros = function (callBack) {
-  Elkaisar.DB.SelectFrom("*", "world_unit_hero", "1", [], function (Res) {
-    console.log(`HerosLen is ${Res.length}`);
-    for (var ii in Res) {
+Elkaisar.World.refreshWorldUnitHeros = async function (callBack) {
+  const Res = await Elkaisar.DB.ASelectFrom("*", "world_unit_hero", "1", []);
+  console.log(`World HerosLen is ${Res.length}`);
+  for (var ii in Res) {
 
-      if (!Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitHero)
-        Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitHero = {};
-      if (!Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitHero[Res[ii].lvl])
-        Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitHero[Res[ii].lvl] = [];
-      Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitHero[Res[ii].lvl].push({
-        Hero: {
-          point_a: 0,
-          point_a_plus: 0,
-          point_b: 0,
-          point_b_plus: 0,
-          point_c: 0,
-          point_c_plus: 0,
-          id_player: 0,
-          medal_den: 0,
-          medal_leo: 0,
-          x: 0, y: 0,
-          id_hero: Res[ii].id_hero * -1,
-          id_city: 0,
-          avatar: Res[ii].avatar,
-          HeroName: Res[ii].name,
-          idHero: Res[ii].id_hero * -1
-        },
-        Army: {
-          id_hero: 0,
-          id_player: 0,
-          f_1_type: Res[ii].f_1_type,
-          f_2_type: Res[ii].f_2_type,
-          f_3_type: Res[ii].f_3_type,
-          f_1_num: Res[ii].f_1_num,
-          f_2_num: Res[ii].f_2_num,
-          f_3_num: Res[ii].f_3_num,
-          b_1_type: Res[ii].b_1_type,
-          b_2_type: Res[ii].b_2_type,
-          b_3_type: Res[ii].b_3_type,
-          b_1_num: Res[ii].b_1_num,
-          b_2_num: Res[ii].b_2_num,
-          b_3_num: Res[ii].b_3_num
-        }
-      });
-    }
-    if (callBack)
-      callBack();
-  });
+    if (!Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitHero)
+      Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitHero = {};
+    if (!Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitHero[Res[ii].lvl])
+      Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitHero[Res[ii].lvl] = [];
+    Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitHero[Res[ii].lvl].push({
+      Hero: {
+        point_a: 0,
+        point_a_plus: 0,
+        point_b: 0,
+        point_b_plus: 0,
+        point_c: 0,
+        point_c_plus: 0,
+        id_player: 0,
+        medal_den: 0,
+        medal_leo: 0,
+        x: 0, y: 0,
+        id_hero: Res[ii].id_hero * -1,
+        id_city: 0,
+        avatar: Res[ii].avatar,
+        HeroName: Res[ii].name,
+        idHero: Res[ii].id_hero * -1
+      },
+      Army: {
+        id_hero: 0,
+        id_player: 0,
+        f_1_type: Res[ii].f_1_type,
+        f_2_type: Res[ii].f_2_type,
+        f_3_type: Res[ii].f_3_type,
+        f_1_num: Res[ii].f_1_num,
+        f_2_num: Res[ii].f_2_num,
+        f_3_num: Res[ii].f_3_num,
+        b_1_type: Res[ii].b_1_type,
+        b_2_type: Res[ii].b_2_type,
+        b_3_type: Res[ii].b_3_type,
+        b_1_num: Res[ii].b_1_num,
+        b_2_num: Res[ii].b_2_num,
+        b_3_num: Res[ii].b_3_num
+      }
+    });
+  }
+  if (callBack)
+    callBack();
 };
 
 
-Elkaisar.World.refreshWorldUnitEquip = function (callBack) {
-  Elkaisar.DB.SelectFrom("*, world_unit_equip.equip AS type", "world_unit_equip", "1", [], function (Res) {
-    for (var ii in Res) {
-      if (!Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitEquip)
-        Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitEquip = {};
-      if (!Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitEquip[Res[ii].l])
-        Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitEquip[Res[ii].l] = [];
+Elkaisar.World.refreshWorldUnitEquip = async function (callBack) {
+  const Res = await Elkaisar.DB.ASelectFrom("*, world_unit_equip.equip AS type", "world_unit_equip", "1", []);
+  for (var ii in Res) {
+    if (!Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitEquip)
+      Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitEquip = {};
+    if (!Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitEquip[Res[ii].l])
+      Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitEquip[Res[ii].l] = [];
 
-      Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitEquip[Res[ii].l].push(Res[ii]);
-    }
-    if (callBack)
-      callBack();
-  });
+    Elkaisar.World.WorldUnits[Res[ii].x * 500 + Res[ii].y].UnitEquip[Res[ii].l].push(Res[ii]);
+  }
+  if (callBack)
+    callBack();
 };
 
 
@@ -179,20 +178,18 @@ Elkaisar.World.refreshWorldUnitPrize = async function (callBack) {
 
 };
 
+(async ()=>{
+  await Elkaisar.World.refreshWorldUnit();
+  await  Elkaisar.World.refreshWorldUnitHeros();
+  await Elkaisar.World.refreshWorldUnitEquip();
+  await Elkaisar.World.getUnitData();
+  await Elkaisar.World.refreshWorldUnitPrize();
+  Elkaisar.OnEvent.emit("OnServerReady");
+  await Elkaisar.DB.AUpdate("s = 0", "world", "1", []);
+  await Elkaisar.World.getEquipPower();
+  console.log("Server Data ReadyNow");
+})();
 
-Elkaisar.World.refreshWorldUnit(function () {
-  Elkaisar.World.refreshWorldUnitHeros(function () {
-    Elkaisar.World.refreshWorldUnitEquip(function () {
-      Elkaisar.World.getUnitData(function () {
-        Elkaisar.World.refreshWorldUnitPrize(function () {
-          Elkaisar.OnEvent.emit("OnServerReady");
-          Elkaisar.DB.Update("s = 0", "world", "1", []);
-          Elkaisar.World.getEquipPower();
-        });
-      });
-    });
-  });
-});
 
 
 

@@ -156,15 +156,56 @@ class LBattelReport
         if (Sum <= 0)
             return;
         Elkaisar.DB.Insert(`id_report = ${this.idReport}, id_player = ${Player.idPlayer}, 
-                             food  = ${Player["ResourcePrize"]["food"]  || 0}, 
-                             wood  = ${Player["ResourcePrize"]["wood"]  || 0}, 
-                             stone = ${Player["ResourcePrize"]["stone"] || 0}, 
-                             metal = ${Player["ResourcePrize"]["metal"] || 0}, 
-                             coin  = ${Player["ResourcePrize"]["coin"]  || 0} `, "report_res_prize");
+                        food  = ${Player["ResourcePrize"]["food"]  || 0}, 
+                        wood  = ${Player["ResourcePrize"]["wood"]  || 0}, 
+                        stone = ${Player["ResourcePrize"]["stone"] || 0}, 
+                        metal = ${Player["ResourcePrize"]["metal"] || 0}, 
+                        coin  = ${Player["ResourcePrize"]["coin"]  || 0} `, "report_res_prize");
+    }
 
-        
+
+    static async getReportHeros(idReport){
+      return await Elkaisar.DB.ASelectFrom(
+        "report_hero.* , player.name AS p_name , hero.name AS h_name , hero.avatar",
+        "report_hero  LEFT JOIN player ON report_hero.id_player = player.id_player"
+        + " LEFT JOIN hero ON hero.id_hero = report_hero.id_hero ",
+        "report_hero.id_report = ? ORDER BY ord ASC", [idReport]
+      );
+    }
+
+    static async getReportPrize(idPlayer, idReport){
+      let Prize = {};
+      Prize.Item = await Elkaisar.DB.ASelectFrom(
+        "prize, amount", "report_mat_prize",
+        "id_player = ? AND id_report = ?", [idPlayer, idReport]
+      )
+      const Res  = await Elkaisar.DB.ASelectFrom(
+        "*", "report_res_prize", "id_player = ? AND id_report = ?", [idPlayer, idReport]
+      );
+
+      Prize.Resource = Res[0] || {
+        food: 0, wood: 0, stone: 0, metal: 0, coin: 0
+      }
+      Prize.Honor = (await Elkaisar.DB.ASelectFrom(
+        "honor", "report_player", "id_player = ? AND id_report = ?",
+        [idPlayer, idReport]))[0].honor;
+
+      return Prize;
     }
     
+
+    static async getGeneralReportData(idReport)
+    {
+        return await Elkaisar.DB.ASelectFrom(
+          "round_num , side_win , name AS p_name , x, y, time_stamp, task",
+          " report_battel JOIN player ON  report_battel.id_report = ? AND player.id_player = report_battel.attacker ",
+          "1", [idReport]
+        );
+    }
+
+    static async getReportId(data){
+      return encodeURIComponent(Buffer.from(JSON.stringify(data)).toString('base64'));
+    }
 
 }
 

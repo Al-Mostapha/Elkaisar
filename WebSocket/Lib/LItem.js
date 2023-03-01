@@ -20,8 +20,8 @@ class LItem {
         callBack();
     }
 
-    static addItem(idPlayer, idItem, amount = 1) {
-        Elkaisar.DB.Update(
+    static async addItem(idPlayer, idItem, amount = 1) {
+        return Elkaisar.DB.AUpdate(
                 "amount = amount + ?",
                 "player_item",
                 "id_player = ? AND id_item = ?", [amount, idPlayer, idItem]);

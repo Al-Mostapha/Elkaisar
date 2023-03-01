@@ -63,7 +63,7 @@ class AArmyBuild {
       [this.idPlayer, idCity, buildingTrain["Place"], armyType, amount, amount * timePerUnit, timeStart, timeEnd]);
 
     return {
-      "id": idBatch,
+      "id": idBatch.insertId,
       "time_end": timeEnd,
       "time_start": timeStart,
       "amount": amount,

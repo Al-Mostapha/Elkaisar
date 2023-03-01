@@ -139,12 +139,6 @@ class ACityHero {
     }
   }
 
-
-  async getHeroArmy() {
-    const idHero = Elkaisar.Base.validateId(this.Parm.idHero);
-    return (await Elkaisar.DB.ASelectFrom("*", "hero_army", "id_hero = ? AND id_player = ?", [idHero, this.idPlayer]))[0];
-  }
-
 };
 
 module.exports = ACityHero;

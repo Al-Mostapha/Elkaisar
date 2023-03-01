@@ -100,11 +100,10 @@ class AExchange
                 if(!LCity::isResourceTaken([$one["resource_type"] => $a], $idCity))
                     return false;
             }else if($one["type"] == "equip"){
-                $Equips = selectFromTable("*", "equip", "id_player = :idp AND part = :p AND type = :t AND lvl = :l AND id_hero = NULL", ["idp"=>$idPlayer, "p"=>$one["Part"], "t"=>$one["Equip"], "l" => $one["lvl"]]);
+                $Equips = selectFromTable("*", "equip", "id_player = :idp AND part = :p AND type = :t AND lvl = :l AND id_hero IS NULL", ["idp"=>$idPlayer, "p"=>$one["Part"], "t"=>$one["Equip"], "l" => $one["lvl"]]);
                 if(count($Equips) < $a)
                     return false;
-                deleteTable("equip", "id_player = :idp AND part = :p AND type = :t AND lvl = :l AND id_hero = NULL LIMIT $a", ["idp"=>$idPlayer, "p"=>$one["Part"], "t"=>$one["Equip"], "l" => $one["lvl"]]);
-               
+                deleteTable("equip", "id_player = :idp AND part = :p AND type = :t AND lvl = :l AND id_hero IS NULL LIMIT $a", ["idp"=>$idPlayer, "p"=>$one["Part"], "t"=>$one["Equip"], "l" => $one["lvl"]]);
             }else if($one["type"] == "gold"){
                 if(!LPlayer::tekeGold($a))
                     return false;

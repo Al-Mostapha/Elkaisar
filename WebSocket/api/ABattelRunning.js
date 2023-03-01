@@ -77,7 +77,58 @@ class ABattelRunning {
     return await Elkaisar.DB.ASelectFrom("*", "spy", "id_player = ?", [this.idPlayer]);
   }
 
-  
+  async getBattelFieldData() {
+
+    const xCoord = Elkaisar.Base.validateCount(this.Parm.xCoord);
+    const yCoord = Elkaisar.Base.validateCount(this.Parm.yCoord);
+    const BattelList = await Elkaisar.DB.ASelectFrom(
+      "battel.id_battel , battel.x_city , battel.y_city, player.name AS player_name, city.name AS city_name",
+      "battel JOIN city on city.x = battel.x_coord AND city.y = battel.y_coord JOIN player ON player.id_player = city.id_player"
+      , "battel.x_coord = ? AND battel.y_coord = ?", [xCoord, yCoord]);
+    return BattelList;
+
+  }
+
+  async getBattelFieldDetail() {
+
+    const idBattel = Elkaisar.Base.validateId(this.Parm.idBattel);
+    const defenceNum = await Elkaisar.DB.ASelectFrom("COUNT(*) as r_c", "battel_member",
+      "id_battel = ? AND side = ?", [idBattel, Elkaisar.Config.SIDE_DEFANCE]);
+    const attackNum = await Elkaisar.DB.ASelectFrom("COUNT(*) as r_c", "battel_member",
+      "id_battel = ? AND side = ?", [idBattel, Elkaisar.Config.SIDE_ATTACK]);
+    return {
+      defenceNum: defenceNum[0]["r_c"],
+      attackNum: attackNum[0]["r_c"]
+    }
+
+  }
+
+
+  async getBattelFixedData() {
+
+    let idBattel = this.Parm.idBattel;
+    if (idBattel) {
+      idBattel = Elkaisar.Base.validateId(this.Parm.idBattel);
+      const Battel = await Elkaisar.DB.ASelectFrom(
+        "battel.id_battel , battel.time_end , battel.time_start , city.name",
+        "city ON city.x = battel.x_city AND city.y = battel.y_city",
+        "battel.id_battel = ?", [idBattel]
+      );
+      return Battel[0];
+    }
+
+    const xCoord = Elkaisar.Base.validateCount(this.Parm.xCoord);
+    const yCoord = Elkaisar.Base.validateCount(this.Parm.yCoord);
+
+    const BattelByCoord =  await Elkaisar.DB.ASelectFrom(
+      "battel.id_battel ,  battel.time_end , battel.time_start , city.name",
+      "city ON city.x = battel.x_city AND city.y = battel.y_city",
+      " battel.x_coord = ? AND battel.y_coord = ?", [xCoord, yCoord]
+    );
+
+    return BattelByCoord[0]
+  }
+
 
 }
 

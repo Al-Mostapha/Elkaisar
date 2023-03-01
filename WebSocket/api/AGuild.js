@@ -27,13 +27,13 @@ class AGuild {
       [this.idPlayer, guildName, slogTop, slogMiddle, slogBottom]);
     Elkaisar.DB.AUpdate("guild_num = (SELECT COUNT(*) FROM guild), city_num = (SELECT count(*) from city )", "server_data", "1");
     await Elkaisar.DB.AInsert("id_guild = ?, rank = ?", "arena_guild_challange",
-      [idGuild, (await Elkaisar.DB.ASelectFrom('COUNT(*) AS c', "arena_guild_challange", '1'))[0]["c"] + 1]);
-    const GuildData = await Elkaisar.Lib.LGuild.getGuildData(idGuild);
+      [idGuild.insertId, (await Elkaisar.DB.ASelectFrom('COUNT(*) AS c', "arena_guild_challange", '1'))[0]["c"] + 1]);
+    const GuildData = await Elkaisar.Lib.LGuild.getGuildData(idGuild.insertId);
 
     if (!GuildData)
       return { "state": "error_4" };
 
-    await Elkaisar.Lib.LGuild.addPlayer(idGuild, this.idPlayer, Elkaisar.Config.GUILD_R_LEADER);
+    await Elkaisar.Lib.LGuild.addPlayer(idGuild.insertId, this.idPlayer, Elkaisar.Config.GUILD_R_LEADER);
     const PlayerGuild = await Elkaisar.Lib.LGuild.getPlayerGuildData(this.idPlayer);
     const Guild = { "state": "ok" };
     if (PlayerGuild) Guild["PlayerGuild"] = PlayerGuild;

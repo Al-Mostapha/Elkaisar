@@ -5,6 +5,19 @@ class ARankingGuild {
     this.Parm = Url;
   }
 
+  async getRankGuildBySearch(){
+    const searchBy = Elkaisar.Base.validateGameName(this.Parm.searchBy);
+    const searchValue = Elkaisar.Base.validatePlayerWord(this.Parm.searchValue);
+    return await Elkaisar.DB.ASelectFrom(
+      "col.id_guild , col.mem_num , col.name , col.prestige , rank_g , col.honor , player.name as p_name", 
+      "(SELECT guild.*, @row:=@row+1 as 'rank_g' FROM guild , (SELECT @row:=0)"
+      + " r ORDER BY guild.prestige DESC ) AS col "
+      + " JOIN player ON col.?? LIKE ? "
+      + " AND col.id_leader = player.id_player",
+      "1 LIMIT 10", [searchBy, searchValue]
+    );
+  }
+
   async generalRank() {
 
     const offset = Elkaisar.Base.validateOffset(this.Parm.offset);

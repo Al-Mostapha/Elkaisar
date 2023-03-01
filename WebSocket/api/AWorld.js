@@ -13,6 +13,8 @@ class AWorld {
   }
 
   async getWorldUnitPrize() {
+    console.log(Elkaisar.World.AllWorldUnitPrize);
+    console.log("Test");
     return Elkaisar.World.AllWorldUnitPrize;
   }
 

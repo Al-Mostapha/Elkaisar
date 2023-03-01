@@ -207,8 +207,8 @@ class AGuild {
         deleteTable("guild_member", "id_guild = :idg", ["idg"=>$GuildMember[0]["id_guild"]]);
         updateTable("guild = NULL, id_guild = NULL"  , "player", "id_guild = :idg", ["idg" => $GuildMember[0]["id_guild"]]);
         deleteTable("guild", "id_leader = :idp", ["idp" => $idPlayer]);
-        deleteTable("arena_guild_challange_hero", "id_guild = :idg", ["idp" => $GuildMember[0]["id_guild"]]);
-        deleteTable("arena_guild_challange", "id_guild = :idg", ["idp" => $GuildMember[0]["id_guild"]]);
+        deleteTable("arena_guild_challange_hero", "id_guild = :idg", ["idg" => $GuildMember[0]["id_guild"]]);
+        deleteTable("arena_guild_challange", "id_guild = :idg", ["idg" => $GuildMember[0]["id_guild"]]);
         
         return [
             "state" => "ok",

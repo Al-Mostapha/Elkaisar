@@ -31,7 +31,6 @@ Elkaisar.API.AItemArmyPack    = require('../api/AItemArmyPack'   );
 Elkaisar.API.AItemBoxUse      = require('../api/AItemBoxUse'     );
 Elkaisar.API.AItemUse         = require('../api/AItemUse'        );
 Elkaisar.API.ALogin           = require('../api/ALogin'          );
-Elkaisar.API.AMarket          = require('../api/AMarket'         );
 Elkaisar.API.AMessage         = require('../api/AMessage'        );
 Elkaisar.API.APlayer          = require('../api/APlayer'         );
 Elkaisar.API.APlayerEdu       = require('../api/APlayerEdu'      );
@@ -52,4 +51,5 @@ Elkaisar.API.ATradeCenter     = require('../api/ATradeCenter'    );
 Elkaisar.API.AWorld           = require('../api/AWorld'          );
 Elkaisar.API.AWorldMap        = require('../api/AWorldMap'       );
 Elkaisar.API.AWorldUnit       = require('../api/AWorldUnit'      );
+Elkaisar.API.HSetting         = require('../api/HSetting'      );
 

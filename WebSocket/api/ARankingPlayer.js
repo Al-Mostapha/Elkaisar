@@ -5,6 +5,16 @@ class ARankingPlayer {
     this.Parm = Url;
   }
 
+  async getRankPlayerBySearch(){
+    const searchBy = Elkaisar.Base.validateGameName(this.Parm.searchBy);
+    const searchValue = Elkaisar.Base.validatePlayerWord(this.Parm.searchValue);
+    return await Elkaisar.DB.ASelectFrom(
+      "id_player , name , guild , porm , honor , prestige , rank",
+      "(SELECT player.*, @row:=@row+1 as 'rank' FROM player , (SELECT @row:=0) r ORDER BY player.prestige DESC  ) AS col ",
+      "col.?? LIKE ? LIMIT 10", [searchBy, searchValue]
+    );
+  }
+
   async generalRank() {
 
     const offset = Elkaisar.Base.validateOffset(this.Parm.offset);

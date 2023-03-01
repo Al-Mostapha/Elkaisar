@@ -47,7 +47,7 @@ class ALTeam {
         Elkaisar.Lib.ALTeam.refreshTeamData(idTeam);
         Elkaisar.DB.Delete("team_req", "id_player = ?", [idPlayer]);
         Elkaisar.DB.Delete("team_inv", "id_player = ?", [idPlayer]);
-        return Player;
+        return Player.insertId;
     }
     
     static async refreshTeamData(idTeam){

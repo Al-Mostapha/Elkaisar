@@ -10,7 +10,7 @@ class ALGuild {
         Elkaisar.DB.Update("mem_num = (SELECT COUNT(*) FROM guild_member WHERE id_guild = ?)", "guild", "id_guild = ?", [idGuild, idGuild]);
         Elkaisar.DB.Delete("guild_req", "id_player = ?", [idPlayer]);
         Elkaisar.DB.Delete("guild_inv", "id_player = ?", [idPlayer]);
-        return Player;
+        return Player.insertId;
     }
     
     static async RefreshPlayerGuild(){

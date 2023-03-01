@@ -6,16 +6,12 @@ class APlayer {
     this.idPlayer = idPlayer;
   }
 
-  async getPlayerData() {
-
-    const PlayerData = await Elkaisar.Lib.LPlayer.getData(this.idPlayer);
-    const guildData = await Elkaisar.Lib.LGuild.getPlayerGuildData(this.idPlayer);
-    if (guildData) {
-      PlayerData["guildData"] = guildData;
+  async getOtherPlayerData() {
+    const idOtherPlayer = Elkaisar.Base.validateId(this.Parm.idOtherPlayer)
+    return {
+      state: "ok",
+      Player: await Elkaisar.Lib.LPlayer.getOthersData(idOtherPlayer)
     }
-    PlayerData["playerState"] = (await Elkaisar.DB.ASelectFrom("*", "player_stat", "id_player = ?", [this.idPlayer]))[0];
-    return PlayerData;
-
   }
 
   async getServerData(){
@@ -44,6 +40,18 @@ class APlayer {
     }
   }
 
+  async changePlayerAvatar(){
+    const imageIndex = Elkaisar.Base.validateAmount(this.Parm.imageIndex);
+    
+    // updateTable("avatar = :ain", "player", "id_player = :idp", ["ain" => $image_index, "idp" => $id_player]);
+    await Elkaisar.DB.AUpdate("avatar = ?", "player", "id_player = ?", [imageIndex, this.Parm.idPlayer]);
+    // echo 'done';
+    return {
+      state: "ok",
+      Player: await Elkaisar.Lib.LPlayer.getData(this.idPlayer)
+    };
+  }
+
   async getPlayerState() {
     return (await Elkaisar.DB.ASelectFrom("*", "player_stat", "id_player = ?", [this.idPlayer]))[0];
   }
@@ -62,36 +70,7 @@ class APlayer {
     return await Elkaisar.DB.ASelectFrom("*", "hero", "id_player = ? ORDER BY id_city, ord", [this.idPlayer]);
   }
 
-  async offline() {
-    // global $idPlayer;
-    // $idLog = validateID($_POST["idLog"]);
-
-    // updateTable("`online` = 0  , last_seen = :n ", "player", "id_player = :idp", ["idp" => $idPlayer, "n" => time()]);
-    // updateTable("time_leave = CURRENT_TIME ", "player_logs", "id_log = :id", ["id" => $idLog]);
-  }
-
-  async online() {
-
-    // global $idPlayer;
-
-    // $ip = validatePlayerWord($_POST["ip"]);
-    // updateTable("`online` = 1", "player", "id_player = :idp", ["idp" => $idPlayer]);
-    // $idLog = insertIntoTable("id_player = :idp, ipv4 = :ip", "player_logs", ["idp" => $idPlayer, "ip" => $ip]);
-    // $q = "title_1, title_2, title_3, title_4, "
-    //         . "title_5, title_6, title_7, title_8, "
-    //         . "title_9, title_10";
-    // LPlayer::OnPlayerLogged();
-    // $Player = selectFromTable("*", "player", "id_player = :idp", ["idp" => $idPlayer])[0];
-    // $Player["p_token"] = selectFromTable("auth_token", "player_auth", "id_player = :idp", ["idp" => $idPlayer])[0]["auth_token"];
-
-    // return ([
-    //     "title" => array_filter(selectFromTable($q, "player_title", "id_player = :idp", ["idp" => $idPlayer])[0]),
-    //     "player" => $Player,
-    //     "isBadIp" => selectFromTable("COUNT(*) as c", "panned_ip", "ipv4 = :ip", ["ip" => $ip])[0]["c"],
-    //     "idLog" => $idLog,
-    //     "idPlayer" => $idPlayer
-    // ]);
-  }
+  
 
   async getAllNotif() {
 
@@ -137,6 +116,21 @@ class APlayer {
 
   async refreshPlayerData() {
     return await Elkaisar.Lib.LPlayer.getData(this.idPlayer);
+  }
+
+  async searchByName(){
+    const segment = Elkaisar.Base.validatePlayerWord(this.Parm.name);
+    const condetion = "";
+    let bind = [`%${segment}%`];
+    if(this.Parm.idGuildNo){
+      const idGuild = Elkaisar.Base.validateId(this.Parm.idGuild);
+      condetion = `AND id_guild IS NULL AND  player.id_player NOT IN (SELECT guild_inv.id_player FROM  guild_inv WHERE  guild_inv.id_guild = ? AND guild_inv.id_player = player.id_player )`;
+      bind.push(idGuild);
+    }
+    return await Elkaisar.DB.ASelectFrom(
+      "name,id_player , porm , avatar ", "player",
+      `name LIKE ?  ${condetion} ORDER BY prestige DESC LIMIT 7 `, bind
+    );
   }
 
   async searchPlayer() {

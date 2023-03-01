@@ -98,7 +98,12 @@ class LPlayer {
       "*", "(SELECT player.*, @row:=@row+1 as 'rank' FROM player,(SELECT @row:=0) r ORDER BY player.prestige DESC ) AS col ",
       "col.id_player = ?", [idPlayer]);
     delete Player[0]["p_token"];
-    console.log(Player);
+    return Player[0];
+  }
+
+  static async getOthersData(idPlayer){
+    const Player = await Elkaisar.DB.ASelectFrom("id_player , name , guild , porm , honor , prestige , rank , avatar",
+    "(SELECT player.*, @row:=@row+1 as 'rank' FROM player ,  (SELECT @row:=0) r ORDER BY player.prestige DESC  ) AS col", "col.id_player = ?", [idPlayer]);
     return Player[0];
   }
 
@@ -310,13 +315,13 @@ class LPlayer {
       return false;
     if (GoldAmount[0].gold < amount)
       return false;
-    Elkaisar.DB.Update("gold = gold - ?", "player", "id_player = ?", [amount, idPlayer]);
+    Elkaisar.DB.AUpdate("gold = gold - ?", "player", "id_player = ?", [amount, idPlayer]);
     return true;
 
   }
 
   static async givePlayerGold(idPlayer, amount) {
-    Elkaisar.DB.Update("gold = gold + ?", "player", "id_player = ?", [amount, idPlayer]);
+    Elkaisar.DB.AUpdate("gold = gold + ?", "player", "id_player = ?", [amount, idPlayer]);
     return true;
   }
 
