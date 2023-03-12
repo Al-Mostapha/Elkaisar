@@ -164,7 +164,7 @@ class ACityMarket {
 
 
   async speedUpDealTrans() {
-    const idTrans = Elkaisar.Base.validateId(this.Parm.idOffer);
+    const idTrans = Elkaisar.Base.validateId(this.Parm.idDeal);
     const Trans = await Elkaisar.DB.ASelectFrom("*", "market_buy_transmit", "id_deal = ? AND id_player_to = ?", [idTrans, this.idPlayer]);
     if (!Trans.length)
       return { state: "error_0", TryToHack: Elkaisar.Base.TryToHack(this) };

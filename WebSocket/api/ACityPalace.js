@@ -93,7 +93,7 @@ class ACityPalace {
     if (!await Elkaisar.Lib.LItem.useItem(this.idPlayer, "expan_plan", Math.pow(2, City[0]["lvl"])))
       return { "state": "error_2", "TryToHack": Elkaisar.Base.TryToHack(this) };
 
-    const Palace = await Elkaisar.Lib.LCityBuilding.getBuildingAtPlace("palace", idCity);
+    const Palace = await Elkaisar.Lib.LCityBuilding.getBuildingAtPlace("palace", this.idPlayer, idCity);
     if (Palace["Lvl"] < (City[0]["lvl"] + 1) * 4)
       return { "state": "error_3", "TryToHack": Elkaisar.Base.TryToHack(this) };
 

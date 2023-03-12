@@ -1,11 +1,9 @@
 global.Elkaisar = {};
-Elkaisar.CONST = {};
-Elkaisar.CONST.BASE_URL   = "";
-Elkaisar.CONST.SERVER_ID  = 1;
-Elkaisar.CONST.ServerPort = 8081;
-Elkaisar.CONST.HOST = "localhost";
-Elkaisar.CONST.DBName = "elkaisar";
-Elkaisar.CONST.DBUserName = "root";
-Elkaisar.CONST.DBPassWord = "";
 
+const DotEnv = require('dotenv');
+DotEnv.config();
+Elkaisar.CONST = {};
+Elkaisar.CONST.SERVER_ID  = 3;
+Elkaisar.CONST.ServerPort = process.env.Server1Port;
+Elkaisar.CONST.DBName = process.env.Server1DBName;
 require('../server');

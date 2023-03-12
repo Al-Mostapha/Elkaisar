@@ -4,7 +4,7 @@ class LItem {
     static EquipList = {};
 
     static getItemData(callBack) {
-      LItem.ItemList = require(`${process.env.BasePath}/js${process.env.JsVersion}/json/ItemLang/ar.json`);
+      LItem.ItemList = require(`${process.env.BasePath}/jsGame${process.env.JsVersion}/json/ItemLang/ar.json`);
       Elkaisar.DB.SelectFrom("*", "item", "1", [], function (Items) {
           Items.forEach(function (OneItem) {
               if (LItem.ItemList[OneItem.id_item])
@@ -15,7 +15,7 @@ class LItem {
         callBack();
     }
     static getEquipData(callBack) {
-      LItem.EquipList = require(`${process.env.BasePath}/js${process.env.JsVersion}/json/equipment/ar.json`);
+      LItem.EquipList = require(`${process.env.BasePath}/jsGame${process.env.JsVersion}/json/equipment/ar.json`);
       if (callBack)
         callBack();
     }

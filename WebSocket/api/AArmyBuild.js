@@ -13,7 +13,7 @@ class AArmyBuild {
     const buildingPlace = Elkaisar.Base.validateGameNames(this.Parm.buildingPlace);
     const worshipPlace = Elkaisar.Base.validateGameNames(this.Parm.templePlace);
     const divideBy = Elkaisar.Base.validateGameNames(this.Parm.divideBy);
-    const resNeeded = Elkaisar.LArmy.neededResources(armyType);
+    const resNeeded = Elkaisar.Lib.LArmy.neededResources(armyType);
 
     const Res = {
       food: resNeeded.food * amount, wood: resNeeded.wood * amount,
@@ -21,7 +21,7 @@ class AArmyBuild {
       pop: resNeeded.pop * amount, coin: resNeeded.coin * amount
     };
 
-    if (this.idPlayer) return { "state": "error_0" };
+    if (!this.idPlayer) return { "state": "error_0" };
     if (!idCity) return { "state": "error_1" };
     if (!(armyType == "army_a" || armyType == "army_b" || armyType == "army_c" ||
       armyType == "army_d" || armyType == "army_e" || armyType == "army_f" ||
@@ -36,7 +36,7 @@ class AArmyBuild {
       return { "state": "error_5", "TryToHack": Elkaisar.Base.TryToHack(this) };
 
     const bBuilding = await this.#checkBuilding(resNeeded["condetion"][0], buildingPlace, idCity);
-    const bStudy = this.#checkEdu(resNeeded["condetion"][1]);
+    const bStudy = await this.#checkEdu(resNeeded["condetion"][1]);
     if (bBuilding !== true) return bBuilding;
     if (bStudy !== true) return bStudy;
 
@@ -53,7 +53,7 @@ class AArmyBuild {
 
     amount = Math.floor(amount);
     const timeStart = await Elkaisar.Lib.LArmy.getLastbatchArmyBuilding(idCity, buildingTrain["Place"]);
-    let timePerUnit = Elkaisar.LArmy.neededResources(armyType)["time"];
+    let timePerUnit = Elkaisar.Lib.LArmy.neededResources(armyType)["time"];
     timePerUnit = timePerUnit - (timePerUnit * buildingTrain["Lvl"] * Elkaisar.Config.ARMY_TRAIN_BUILDING_T_FAC / 100);
     timePerUnit = timePerUnit - (timePerUnit * templeEffect);
 
@@ -100,11 +100,10 @@ class AArmyBuild {
   }
 
   async #buildArmyDiviedByTime(armyType, amount, idCity, worshipPlace) {
-
-    const BuildingList = await Elkaisar.Lib.LCityBuilding.canBuildArmy(idPlayer, idCity, armyType);
+    const BuildingList = await Elkaisar.Lib.LCityBuilding.canBuildArmy(this.idPlayer, idCity, armyType);
     const templeEffect = await Elkaisar.Lib.LCityBuilding.getTempleEffectRateOnArmy(idCity, worshipPlace);
     let batches = [];
-    const timePerUnit = Elkaisar.LArmy.neededResources(armyType)["time"];
+    const timePerUnit = Elkaisar.Lib.LArmy.neededResources(armyType)["time"];
     for (let oneBuilding of BuildingList)
       oneBuilding["TimePerUnit"] = (timePerUnit - timePerUnit * templeEffect - timePerUnit * oneBuilding["Lvl"] * Elkaisar.Config.ARMY_TRAIN_BUILDING_T_FAC / 100);
     const totalTime = BuildingList.reduce((a, b) => a + b["TimePerUnit"], 0);
@@ -126,7 +125,7 @@ class AArmyBuild {
 
   async #buildArmyDiviedByAmount(armyType, amount, idCity, worshipPlace) {
 
-    const BuildingList = await Elkaisar.Lib.LCityBuilding.canBuildArmy(idPlayer, idCity, armyType);
+    const BuildingList = await Elkaisar.Lib.LCityBuilding.canBuildArmy(this.idPlayer, idCity, armyType);
     const templeEffect = await Elkaisar.Lib.LCityBuilding.getTempleEffectRateOnArmy(idCity, worshipPlace);
     let batches = [];
     const amountFactor = amount / BuildingList.length;
@@ -145,7 +144,7 @@ class AArmyBuild {
 
   async #checkEdu(Condetion) {
 
-    if (Condetion["type"] == "study") return { "state": "error_6_0" };
+    if (Condetion["type"] != "study") return { "state": "error_6_0" };
     const playerEdu = await Elkaisar.DB.ASelectFrom(Condetion["study"], "player_edu", "id_player = ?", [this.idPlayer]);
     if (playerEdu.length == 0) return { "state": "error_6_1" };
     if (playerEdu[0][Condetion["study"]] < Condetion["lvl"])
@@ -163,7 +162,6 @@ class AArmyBuild {
     if (Building["Type"] != Condetion["buildingType"])
       return { "state": "error_7_2" };
     return true;
-
   }
 
 };

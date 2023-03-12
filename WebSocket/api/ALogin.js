@@ -59,7 +59,6 @@ class ALogin {
     try {
       const User = jwt.verify(this.Param.LoginToken, process.env.JWT_SECRET);
       Elkaisar.HomeDB.AUpdate("auth_token = ?", "user_auth", "id_user = ?", ["", User.idUser]);
-      console.log(User);
       return { state: "ok" };
     } catch (e) {
       return { state: "error_0" };
@@ -77,17 +76,19 @@ class ALogin {
       if (Auth[0].id_user != User.idUser)
         return { state: "error_1" };
       const UserServer = jwt.verify(this.Param.UserToken, process.env.JWT_SECRET);
+      const ServerData = Elkaisar.Config.ServerList[UserServer.idServer] || Object.values(Elkaisar.Config.ServerList)[0];
       return {
         state: "ok",
         idUser: UserServer.idUser,
         idServer: UserServer.idServer,
-        ServerData: Elkaisar.Config.ServerList[UserServer.idServer],
+        ServerData: ServerData,
         ApiHost: process.env.ApiHost,
         ApiUrl: process.env.ApiUrl,
         WsHost: process.env.WsHost,
-        WsPort: process.env.WsPort,
+        WsPort: ServerData.port,
         PhpApiUrl: process.env.PhpApiUrl,
-        AssetPath: process.env.AssetPath
+        AssetPath: process.env.AssetPath,
+        JsVersion: process.env.JsVersion
       }
     } catch (e) {
       return { state: "error_0" };
@@ -123,7 +124,6 @@ class ALogin {
         OuthToken: Token,
         idCities: idCities,
         PayLink: process.env.PayUrl,
-        JsVersion: process.env.JsVersion,
         RechCode: (await Elkaisar.HomeDB.ASelectFrom("rech_code", "game_user", "id_user = ?", [User.idUser]))[0]["rech_code"]
       }
     } catch (error) {

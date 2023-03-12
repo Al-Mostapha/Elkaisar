@@ -1,0 +1,188 @@
+{
+    "meta": {
+        "format": "RGBA8888",
+        "image": "mainCityBGDH.png.png",
+        "size": {
+            "w": 1026,
+            "h": 1397
+        },
+        "scale": 1
+    },
+    "frames": [
+        {
+            "frame": {
+                "x": 3,
+                "y": 440,
+                "w": 1020,
+                "h": 424
+            },
+            "rotated": "false",
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1020,
+                "h": 424
+            },
+            "sourceSize": {
+                "w": 1020,
+                "h": 424
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "MainCityBG_11_1"
+        },
+        {
+            "frame": {
+                "x": 3,
+                "y": 3,
+                "w": 1020,
+                "h": 433
+            },
+            "rotated": "false",
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1020,
+                "h": 433
+            },
+            "sourceSize": {
+                "w": 1020,
+                "h": 433
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "MainCityBG_12_1"
+        },
+        {
+            "frame": {
+                "x": 3,
+                "y": 868,
+                "w": 1020,
+                "h": 135
+            },
+            "rotated": "false",
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1020,
+                "h": 135
+            },
+            "sourceSize": {
+                "w": 1020,
+                "h": 135
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "MainCityBG_13_1"
+        },
+        {
+            "frame": {
+                "x": 3,
+                "y": 1140,
+                "w": 1020,
+                "h": 50
+            },
+            "rotated": "false",
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1020,
+                "h": 50
+            },
+            "sourceSize": {
+                "w": 1020,
+                "h": 50
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "MainCityBG_14_1"
+        },
+        {
+            "frame": {
+                "x": 3,
+                "y": 1007,
+                "w": 1020,
+                "h": 129
+            },
+            "rotated": "false",
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1020,
+                "h": 129
+            },
+            "sourceSize": {
+                "w": 1020,
+                "h": 129
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "MainCityBG_15_1"
+        },
+        {
+            "frame": {
+                "x": 214,
+                "y": 1194,
+                "w": 130,
+                "h": 69
+            },
+            "rotated": "true",
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 130,
+                "h": 69
+            },
+            "sourceSize": {
+                "w": 130,
+                "h": 69
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "MainCityBG_16_1"
+        },
+        {
+            "frame": {
+                "x": 3,
+                "y": 1194,
+                "w": 200,
+                "h": 207
+            },
+            "rotated": "true",
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 200,
+                "h": 207
+            },
+            "sourceSize": {
+                "w": 200,
+                "h": 207
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "MainCityBG_19_1"
+        }
+    ]
+}

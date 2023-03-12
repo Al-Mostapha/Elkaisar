@@ -111,7 +111,7 @@ class LArmy {
   }
 
   static async getLastbatchArmyBuilding(idPlayer, idCity, buildingPlace) {
-    const lastBatchTime = await Elkaisar.DB.SelectFrom(
+    const lastBatchTime = await Elkaisar.DB.ASelectFrom(
       "time_end", "build_army",
       "id_player = ? AND place = ? AND id_city = ? ORDER BY time_end DESC LIMIT 1",
       [idPlayer, buildingPlace, idCity]);

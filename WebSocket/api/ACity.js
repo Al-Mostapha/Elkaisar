@@ -138,7 +138,7 @@ class ACity {
 
     const idCity = Elkaisar.Base.validateId(this.Parm.idCity);
     await Elkaisar.Lib.LSaveState.saveCityState(idCity);
-    await Elkaisar.Lib.LSaveState.foodOutState(idPlayer, idCity);
+    await Elkaisar.Lib.LSaveState.foodOutState(this.idPlayer, idCity);
     return {
       state: "ok",
       City: (await Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [idCity]))[0]

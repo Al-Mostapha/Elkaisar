@@ -167,7 +167,7 @@ Elkaisar.DB.AQueryExc = function (Query, Parmter) {
     return new Promise((resolve, reject) => {
         Elkaisar.Mysql.query(Query, Parmter, (error, Result) => {
             if (error) {
-                return reject(error);
+              return reject(error);
             }
             return resolve(Result);
         });

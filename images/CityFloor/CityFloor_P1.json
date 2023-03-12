@@ -1,0 +1,34 @@
+{
+    "frames": [
+        {
+            "filename": "MainCityBG_01_pre",
+            "rotated": false,
+            "trimmed": true,
+            "sourceSize": {
+                "w": 1020,
+                "h": 1020
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1020,
+                "h": 1020
+            },
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 1020,
+                "h": 1020
+            }
+        }
+    ],
+    "meta": {
+        "image": "mainCityBGHall_1_pre",
+        "format": "RGBA8888",
+        "size": {
+            "w": 1024,
+            "h": 1024
+        },
+        "scale": "1"
+    }
+}

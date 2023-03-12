@@ -1,0 +1,23 @@
+UPFADE {
+
+  -webkit-animation-name: upfade;  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1.5s;  /* Safari 4.0 - 8.0 */ 
+  -webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */
+  animation-name: upfade;
+  animation-duration: 2s;  
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+  animation-iteration-count : infinite;
+  -webkit-animation-iteration-count : infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes upfade {
+  from {margin-top: 35px; opacity: 1}
+  to {margin-top: -20px; opacity: 0}
+}
+
+@keyframes upfade {
+  from {margin-top: 35px; opacity: 1}
+  to {margin-top: -20px; opacity: 0}
+}

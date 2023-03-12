@@ -1,0 +1,38 @@
+{
+    "meta": {
+        "format": "RGBA8888",
+        "image": "mainCityBGHall_20.png.png",
+        "size": {
+            "w": 204,
+            "h": 1024
+        },
+        "scale": 1
+    },
+    "frames": [
+        {
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 200,
+                "h": 1020
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 200,
+                "h": 1020
+            },
+            "sourceSize": {
+                "w": 200,
+                "h": 1020
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "MainCityBG_20"
+        }
+    ]
+}

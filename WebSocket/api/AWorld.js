@@ -13,8 +13,6 @@ class AWorld {
   }
 
   async getWorldUnitPrize() {
-    console.log(Elkaisar.World.AllWorldUnitPrize);
-    console.log("Test");
     return Elkaisar.World.AllWorldUnitPrize;
   }
 
@@ -23,7 +21,7 @@ class AWorld {
     const xCoord = Elkaisar.Base.validateCount(this.Parm.xCoord);
     const yCoord = Elkaisar.Base.validateCount(this.Parm.yCoord);
 
-    const Barr = await Elkaisar.Base.selectFromTable(
+    const Barr = await Elkaisar.DB.ASelectFrom(
       "p.name as PlayerName, p.id_player AS idPlayer ,p.guild AS GuildName ,  p.id_guild , c.name as CityName , c.x , c.y",
       "player p, city_bar b, city c",
       "c.id_player = p.id_player  AND b.x_coord = ? AND b.y_coord = ? AND b.id_city = c.id_city ", [xCoord, yCoord]);
@@ -32,7 +30,7 @@ class AWorld {
     if (!Barr[0].id_guild)
       return Barr;
 
-    const Guild = await Elkaisar.Base.selectFromTable(
+    const Guild = await Elkaisar.DB.ASelectFrom(
       "name AS GuildName, slog_top, slog_btm, slog_cnt",
       "guild", "id_guild = ? ", [Barr[0].id_guild]);
     if (!Guild.length)
@@ -92,7 +90,7 @@ class AWorld {
   async refreshWorldUnitLvl() {
     const xCoord = Elkaisar.Base.validateCount(this.Parm.xCoord);
     const yCoord = Elkaisar.Base.validateCount(this.Parm.yCoord);
-    return Elkaisar.Lib.LWorldUnit.getUnit(xCoord, yCoord);
+    return Elkaisar.World.getUnit(xCoord, yCoord);
   }
 
 

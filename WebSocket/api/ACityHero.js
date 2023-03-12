@@ -5,33 +5,28 @@ class ACityHero {
   }
 
   async addFromTheater() {
-
     const idHero = Elkaisar.Base.validateId(this.Parm.idHero);
     const Hero = await Elkaisar.DB.ASelectFrom("*", "hero_theater", "id_hero = ?", [idHero]);
     const HeroCount = (await Elkaisar.DB.ASelectFrom("COUNT(*) AS c", "hero", "id_city = ?", [Hero[0]["id_city"]]))[0]["c"];
     if (!Hero.length)
       return { "state": "error_0", "TryToHack": Elkaisar.Config.TryToHack(this) };
-
     if (HeroCount > Elkaisar.Config.CITY_HERO_MAX_COUNT)
       return { "state": "error_1", "MaxCount": Elkaisar.Config.CITY_HERO_MAX_COUNT };
-    const idNewHero = await Elkaisar.Hero.LHero.addNew(
+    const idNewHero = await Elkaisar.Lib.LHero.addNew(
       this.idPlayer, Hero[0].id_city, Hero[0]["hero_lvl"], Hero[0]["hero_image"],
-      Elkaisar.Config.CHero.HeroNames[$Hero[0]["hero_name"]],
+      Elkaisar.Config.CHero.HeroNames[Hero[0]["hero_name"]],
       Hero[0]["ultra_p"]);
     if (!idNewHero)
       return { "state": "error_2" };
-
     Elkaisar.DB.ADelete("hero_theater", "id_hero = ?", [idHero]);
-    await Elkaisar.Lib.LSavaState.saveCityState(Hero[0]["id_city"]);
-    await Elkaisar.Lib.LSavaState.coinOutState(this.idPlayer, Hero[0]["id_city"]);
-
+    await Elkaisar.Lib.LSaveState.saveCityState(Hero[0].id_city);
+    await Elkaisar.Lib.LSaveState.coinOutState(this.idPlayer, Hero[0]["id_city"]);
     return {
       state: "ok",
       Hero: (await Elkaisar.DB.ASelectFrom("*", "hero", "id_hero = ?", [idNewHero]))[0],
       TheaterHeros: await Elkaisar.DB.ASelectFrom("hero_name as name, hero_lvl AS lvl, hero_image AS avatar, hero_theater.*", "hero_theater", "id_city = ?", [Hero[0]["id_city"]]),
       City: (await Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [Hero[0]["id_city"]]))[0]
     }
-
   }
 
   async getHeroTheater() {

@@ -126,36 +126,6 @@ setInterval(function () {
             Elkaisar.DB.Delete("hero_back", "id_hero = ?", [Hero.id_hero]);
         });
     });
-
-    /* Elkaisar.Base.Request.postReq(
-     {
-     server: Elkaisar.CONST.SERVER_ID
-     },
-     `${Elkaisar.CONST.BASE_URL}/ws/api/AHeroBack/Back`,
-     function (data) {
-     
-     var Heros = Elkaisar.Base.isJson(data);
-     if(!Heros)
-     return console.log("heroBackLoop: ", data);
-     
-     var player;
-     var ii;
-     var hero;
-     
-     for(ii in Heros){
-     hero = Heros[ii];
-     Heros[ii].classPath = "Hero.Back";
-     player = Elkaisar.Base.getPlayer(hero.idPlayer);
-     
-     if(player)
-     player.connection.sendUTF(JSON.stringify(Heros[ii]));
-     
-     
-     }
-     
-     }
-     );*/
-
 }, 1000);
 
 

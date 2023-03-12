@@ -1,0 +1,38 @@
+{
+    "meta": {
+        "format": "RGBA8888",
+        "image": "mainCityBGHall_15.png",
+        "size": {
+            "w": 697,
+            "h": 1024
+        },
+        "scale": 1
+    },
+    "frames": [
+        {
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 1020,
+                "h": 693
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1020,
+                "h": 693
+            },
+            "sourceSize": {
+                "w": 1020,
+                "h": 693
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "MainCityBG_15"
+        }
+    ]
+}

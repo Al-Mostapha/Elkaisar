@@ -41,7 +41,7 @@ class ACityBuilding {
     const Building = await Elkaisar.Lib.LCityBuilding.getBuildingAtPlace(buildingPlace, this.idPlayer, idCity);
     if (Building["Type"] != 0)
       return { "state": "error_4", "TryToHack": TryToHack() };
-    if (Elkaisar.Lib.LCityBuilding.buildingPlaceExist(idCity, buildingType)["Lvl"] > 0)
+    if (Elkaisar.Lib.LCityBuilding.buildingPlaceExist(this.idPlayer, idCity, buildingType)["Lvl"] > 0)
       return { "state": "error_6", "TryToHack": TryToHack() };
     if (buildingType == Elkaisar.Config.CITY_BUILDING_HOSPITAL && Elkaisar.Lib.LCityBuilding.buildingWithHeighestLvl(idCity, buildingType)["Lvl"] > 0)
       return { "state": "error_6", "TryToHack": TryToHack() };
@@ -65,7 +65,7 @@ class ACityBuilding {
     const countBuilder = (await Elkaisar.DB.ASelectFrom("COUNT(*) AS c", "city_worker", "id_city = ?", [idCity]))[0]["c"];
     const motiv = (await Elkaisar.DB.ASelectFrom("motiv", "player_stat", "id_player = ?", [this.idPlayer]))[0]["motiv"];
     const upgradeReq = await Elkaisar.Lib.LBuilding.fulfillCondition(this.idPlayer, idCity, Building);
-    const lvlReq = await Elkaisar.DB.ASelectFrom("*", "building_upgrade_req", "building_type = ? AND building_lvl = ?", [Building["Type"], Building["Lvl"]]);
+    const lvlReq = await Elkaisar.Lib.LBuilding.getBuildingUpgradeReq(Building.Type, Building.Lvl);
 
     if (countBuilder >= 3)
       return { "state": "error_0", "TryToHack": Elkaisar.Base.TryToHack(this) };
@@ -74,7 +74,7 @@ class ACityBuilding {
     if (upgradeReq == false) return { "state": "error_2", "TryToHack": Elkaisar.Base.TryToHack(this) };
     if (Building["Lvl"] >= 30) return { "state": "error_3", "TryToHack": Elkaisar.Base.TryToHack(this) };
 
-    const timeRequired = JSON.parse(lvlReq[0]["lvl_req"])["time"];
+    const timeRequired = Number(JSON.parse(lvlReq[0]["lvl_req"])["time"]);
     if (TempleHelper == Elkaisar.Config.CITY_HELPER_BUILD)
       timeRequired -= timeRequired * Temple["Lvl"] * Elkaisar.Config.CITY_HELPER_BUILD_RATE / 100;
     const TotalTime = Math.floor(Date.now() / 1000) + timeRequired;
@@ -99,8 +99,7 @@ class ACityBuilding {
     const motiv = (await Elkaisar.DB.ASelectFrom("motiv", "player_stat", "id_player = ?", [this.idPlayer]))[0]["motiv"];
     const Temple = await Elkaisar.Lib.LCityBuilding.getBuildingAtPlace(templePlace, this.idPlayer, idCity);
     const TempleHelper = (await Elkaisar.DB.ASelectFrom("helper", "city", "id_city = ?", [idCity]))[0]["helper"];
-    const lvlReq = await Elkaisar.DB.ASelectFrom("*", "building_upgrade_req", "building_type = ? AND building_lvl = ?", [Building["Type"], Math.min(Building["Lvl"] - 1, 29)]);
-
+    const lvlReq = await Elkaisar.Lib.LBuilding.getBuildingUpgradeReq(Building.Type, Math.min(Building.Lvl - 1, 29));
     if (!lvlReq.length)
       return { "state": "error_0", "TryToHack": Elkaisar.Base.TryToHack(this) };
     if (countBuilder >= 3)
@@ -148,7 +147,7 @@ class ACityBuilding {
     else if (itemUsed == "archit_d") equation = `time_end - (time_end - ${now})*0.9`;
     else return { "state": "error_1" };
 
-    await Elkaisar.DB.AUpdate("time_end = $equation", "city_worker",
+    await Elkaisar.DB.AUpdate(`time_end = ${equation}`, `city_worker`,
       "id_city = ? AND id_player = ? AND id = ?", [idCity, this.idPlayer, idWorking]);
     return {
       "state": "ok",
@@ -161,7 +160,8 @@ class ACityBuilding {
 
     const idWorking = Elkaisar.Base.validateId(this.Parm.idWorking);
     const upgaradingBuild = await Elkaisar.DB.ASelectFrom("*", "city_worker", "id = ?", [idWorking]);
-    const lvlReq = JSON.parse((await Elkaisar.DB.ASelectFrom("*", "building_upgrade_req", "building_type = ? AND building_lvl = ?", [upgaradingBuild[0]["type"], upgaradingBuild[0]["lvl_to"] - 1]))[0]["lvl_req"]);
+    const BuildingReq = await Elkaisar.Lib.LBuilding.getBuildingUpgradeReq(upgaradingBuild[0]["type"], upgaradingBuild[0]["lvl_to"] - 1);
+    const lvlReq = Object.assign({}, BuildingReq[0]["lvl_req"]);
     delete lvlReq["condetion"];
     delete lvlReq["time"];
     if (!upgaradingBuild.length)
@@ -184,7 +184,7 @@ class ACityBuilding {
     const Building = await Elkaisar.Lib.LCityBuilding.getBuildingAtPlace(BuildingPlace, this.idPlayer, idCity);
     const CurrentUpgrade = await Elkaisar.DB.ASelectFrom("*", "city_worker", "id_player = ? AND id_city = ? AND place = ?", [this.idPlayer, idCity, BuildingPlace]);
 
-    if (!await Elkaisar.Lib.LCityBuilding.buildingPlaceExist(idPlayer, idCity, BuildingPlace))
+    if (!await Elkaisar.Lib.LCityBuilding.buildingPlaceExist(this.idPlayer, idCity, BuildingPlace))
       return { "state": "error_2", "TryToHack": Elkaisar.Base.TryToHack(this) };
     if (CurrentUpgrade.length > 0)
       return { "state": "error_2", "TryToHack": Elkaisar.Base.TryToHack(this) };
@@ -197,6 +197,8 @@ class ACityBuilding {
     await Elkaisar.DB.AUpdate(`${BuildingPlace} = 0`, "city_building", "id_city = ?", [idCity]);
     await Elkaisar.DB.AUpdate(`${BuildingPlace} = 0`, "city_building_lvl", "id_city = ?", [idCity]);
     await Elkaisar.DB.ADelete("build_army", "id_city = ? AND place = ?", [idCity, BuildingPlace]);
+    await Elkaisar.DB.ADelete("build_army", "id_city = ? AND place = ?", [idCity, BuildingPlace]);
+
 
     const BuildingTask = {
       "state": "down",

@@ -14,8 +14,8 @@ class APlayerEdu {
 
     const idStudy = Elkaisar.Base.validateGameNames(this.Parm.idStudy);
     const idCity = Elkaisar.Base.validateId(this.Parm.idCity);
-    const Study = await Elkaisar.DB.ASelectFrom("player_edu.`$idStudy` AS studyLvl", "player_edu", "id_player = ?", [this.idPlayer]);
-    const StudyReq = await Elkaisar.Edu.fulfillCondition(idCity, { Type: idStudy, Lvl: Study[0]["studyLvl"] });
+    const Study = await Elkaisar.DB.ASelectFrom("player_edu.?? AS studyLvl", "player_edu", "id_player = ?", [this.Parm.idStudy, this.idPlayer]);
+    const StudyReq = await Elkaisar.Lib.LEdu.fulfillCondition(this.idPlayer, idCity, { Type: idStudy, Lvl: Study[0]["studyLvl"] });
     const countSTP = (await Elkaisar.DB.ASelectFrom("COUNT(*) AS c", "study_tasks", "id_player = ? AND study = ?", [this.idPlayer, idStudy]))[0]["c"];
     const countSTC = (await Elkaisar.DB.ASelectFrom("COUNT(*) AS c", "study_tasks", "id_city = ? AND study_in = ?", [idCity, StudyReq["study_in"]]))[0]["c"];
 

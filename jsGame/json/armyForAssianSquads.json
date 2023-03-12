@@ -1,0 +1,104 @@
+{
+    "32": {
+        "type_1": "army_c",
+        "amount_1": 16002,
+        "type_2": "army_f",
+        "amount_2": 4002
+    },
+    "33": {
+        "type_1": "army_c",
+        "amount_1": 24006,
+        "type_2": "army_f",
+        "amount_2": 6006
+    },
+    "34": {
+        "type_1": "army_c",
+        "amount_1": 32004,
+        "type_2": "army_f",
+        "amount_2": 8004
+    },
+    "35": {
+        "type_1": "army_c",
+        "amount_1": 40002,
+        "type_2": "army_f",
+        "amount_2": 10002
+    },
+    "36": {
+        "type_1": "army_c",
+        "amount_1": 56010,
+        "type_2": "army_f",
+        "amount_2": 14010
+    },
+    "37": {
+        "type_1": "army_c",
+        "amount_1": 64089,
+        "type_2": "army_f",
+        "amount_2": 16029
+    },
+    "38": {
+        "type_1": "army_c",
+        "amount_1": 72006,
+        "type_2": "army_f",
+        "amount_2": 18006
+    },
+    "39": {
+        "type_1": "army_c",
+        "amount_1": 80007,
+        "type_2": "army_f",
+        "amount_2": 20010
+    },
+    "40": {
+        "type_1": "army_c",
+        "amount_1": 95772,
+        "type_2": "army_f",
+        "amount_2": 23952
+    },
+    "41": {
+        "type_1": "army_c",
+        "amount_1": 104466,
+        "type_2": "army_f",
+        "amount_2": 26124
+    },
+    "42": {
+        "type_1": "army_c",
+        "amount_1": 112335,
+        "type_2": "army_f",
+        "amount_2": 28095
+    },
+    "43": {
+        "type_1": "army_c",
+        "amount_1": 120009,
+        "type_2": "army_f",
+        "amount_2": 30012
+    },
+    "44": {
+        "type_1": "army_c",
+        "amount_1": 132996,
+        "type_2": "army_f",
+        "amount_2": 34011
+    },
+    "45": {
+        "type_1": "army_c",
+        "amount_1": 144162,
+        "type_2": "army_f",
+        "amount_2": 36051
+    },
+    "46": {
+        "type_1": "army_c",
+        "amount_1": 152772,
+        "type_2": "army_f",
+        "amount_2": 38208
+    },
+    "47": {
+        "type_1": "army_c",
+        "amount_1": 165615,
+        "type_2": "army_f",
+        "amount_2": 41424
+    },
+    "48": {
+        "type_1": "army_c",
+        "amount_1": 248427,
+        "type_2": "army_f",
+        "amount_2": 62130
+    }
+}

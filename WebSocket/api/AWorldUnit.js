@@ -105,7 +105,7 @@ class AWorldUnit{
         if (playerGuild[0]["time_join"] + 3 * 24 * 60 * 60 > Date.now()/1000)
                 return {"state" : "error_1_4"};
 
-        var PrizeList = selectFromTable("*", "world_unit_prize_plunder", "unitType = ? ORDER BY RAND()", [Unit["ut"]]);
+        var PrizeList = await Elkaisar.DB.ASelectFrom("*", "world_unit_prize_plunder", "unitType = ? ORDER BY RAND()", [Unit["ut"]]);
 
         var PrizWin = [];
         var ii, Luck, onePrize, amount;

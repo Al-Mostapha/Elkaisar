@@ -4,7 +4,7 @@ class LHero {
 
     ultraPoint = ultraPoint || 0;
     const Points = LHero.pointsForLvl(lvl);
-    const lastOrder = await Elkaisar.DB.ASelectFrom("hero", "ord", "id_city = ? ORDER BY ord DESC LIMIT 1", [idCity]);
+    const lastOrder = await Elkaisar.DB.ASelectFrom("ord", "hero", "id_city = ? ORDER BY ord DESC LIMIT 1", [idCity]);
     const power = Math.min(150, 50 + lvl);
     const ord = lastOrder.length > 0 ? lastOrder[0].ord + 1 : 0;
     const idHero = await LHero.getNewHeroId(idPlayer);
@@ -23,10 +23,10 @@ class LHero {
   }
 
   static pointsForLvl(lvl) {
-    points = {};
+    let points = {};
     points["pba"] = Elkaisar.Base.rand(0, 25);
     points["pbb"] = Elkaisar.Base.rand(0, 25);
-    pointsSum = Elkaisar.Base.rand(50, 60);
+    let pointsSum = Elkaisar.Base.rand(50, 60);
     points["pbc"] = pointsSum - (points["pba"] + points["pbb"]);
     points["pointA"] = points["pba"] + (lvl * 1);
     points["pointB"] = points["pbb"] + (lvl * 1);
@@ -36,21 +36,20 @@ class LHero {
   }
 
   static async getNewHeroId(idPlayer) {
-
-    // global $idPlayer;
-    const HeroCount = (await Elkaisar.DB.ASelectFrom("hero", "COUNT(*) AS c", "id_player = ?", [$idPlayer]))[0].c;
+    
+    const HeroCount = (await Elkaisar.DB.ASelectFrom("COUNT(*) AS c", "hero", "id_player = ?", [idPlayer]))[0].c;
     const idHero = (idPlayer - 1) * 1000 + HeroCount + 1;
     if (HeroCount == 0)
       return idHero;
-    const LastHeroId = (await Elkaisar.DB.ASelectFrom("hero", "id_hero", "id_player = ? ORDER BY id_hero DESC LIMIT 1", [$idPlayer]))[0].id_hero;
+    const LastHeroId = (await Elkaisar.DB.ASelectFrom("id_hero", "hero", "id_player = ? ORDER BY id_hero DESC LIMIT 1", [idPlayer]))[0].id_hero;
     if (LastHeroId >= idHero) {
-      const idHeroGap = (await Elkaisar.DB.AQueryExe(`SELECT 
+      const idHeroGap = (await Elkaisar.DB.AQueryExc(`SELECT 
               id_hero + 1 AS idHero
               FROM hero mo WHERE
                       NOT EXISTS ( SELECT NULL FROM hero mi WHERE mi.id_hero = mo.id_hero + 1 ) 
                   AND id_player = ?
-                  ORDER BY id_hero  LIMIT 1`, [idPlayer]))["Rows"][0]["idHero"]
-      if (idHeroGap > ($idPlayer - 1) * 1000 && idHeroGap < ($idPlayer) * 1000)
+                  ORDER BY id_hero  LIMIT 1`, [idPlayer]))[0]["idHero"]
+      if (idHeroGap > (idPlayer - 1) * 1000 && idHeroGap < (idPlayer) * 1000)
         return idHeroGap;
     }
     return Math.max(idHero, LastHeroId + 1);

@@ -1,0 +1,38 @@
+{
+    "meta": {
+        "format": "RGBA8888",
+        "image": "mainCityBGHall_27.png.png",
+        "size": {
+            "w": 1024,
+            "h": 201
+        },
+        "scale": 1
+    },
+    "frames": [
+        {
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 1020,
+                "h": 197
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1020,
+                "h": 197
+            },
+            "sourceSize": {
+                "w": 1020,
+                "h": 197
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "MainCityBG_27"
+        }
+    ]
+}

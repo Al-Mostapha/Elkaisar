@@ -2,15 +2,15 @@
 <html>
     <head>
         <title>Elkaisar CP</title>
-        <link rel="icon" type="image/png" href="<?= RESOURCE_BATH ?>/images/favicon.png" sizes="128×128">
+        <link rel="icon" type="image/png" href="/images/favicon.png" sizes="128×128">
         <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-        <link rel="stylesheet" href="<?=RESOURCE_BATH?>/css/all.css"/>
+        <link rel="stylesheet" href="/css/all.css"/>
     </head>
     <body>
         <div id="main">
             <div id="header"> <a href="#" class="logo"><img src="../images/Logo-wow.png" width="101" height="29" alt="" /></a>
                 <ul id="top-navigation">
-                    <?= LCPBase::getTabs("WorldUnitPrize")?>  
+                  {{GetTaps("WorldUnitPrize")}}  
                 </ul>
             </div>
             <div id="middle">

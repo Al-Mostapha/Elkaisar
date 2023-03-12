@@ -6,8 +6,8 @@ const ServerList = {
   },
   "2": {
     name: "TestServer",
-    port: process.env.Server2Port,
-    DBName: process.env.Server2DBName,
+    port: process.env.Server1Port,
+    DBName: process.env.Server1DBName,
   },
 };
 

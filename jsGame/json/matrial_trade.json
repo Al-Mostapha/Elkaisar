@@ -1,0 +1,81 @@
+{
+   "truce_pack": {
+        "image": "images/items/Trans.pacification.jpg",
+        "name": "حزمة الهدنة",
+        "cat":"trade-daily",
+        "porm":3,
+        "prize":{
+            "type": "matrial",
+            "matrial": "truce_pack",
+            "amount": 1,
+            "mat_tab": "matrial_flags"
+        },
+        "req": [
+            {
+                "type": "resource",
+                "amount": 10000,
+                "resource_type": "coin"
+            },
+            {
+                "type": "resource",
+                "amount": 10000,
+                "resource_type": "wood"
+            },
+            {
+                "type": "resource",
+                "amount": 10000,
+                "resource_type": "stone"
+            }
+        ],
+        "max_limit":10,
+        "max_to_have":10
+    },
+    "marcus_scheme": {
+        "porm":1,
+        "image": "images/items/item005.jpg",
+        "name": "مخطط ماركوس",
+        "cat":"trade-daily",
+        "prize":{
+            "type": "matrial",
+            "matrial": "marcus_scheme",
+            "amount": 1,
+            "mat_tab": "matrial_main"
+        },
+        "req": [{
+            "type": "matrial",
+            "matrial": "t_map",
+            "amount": 10,
+            "mat_tab": "matrial_box_plus"
+        }],
+        "max_limit":10,
+        "max_to_have":20
+    },
+    "prestige_slogan": {
+        "porm":1,
+        "image":  "images/items/prestige1.jpg",
+        "name": "شعار البرستيج",
+        "cat":"trade-daily",
+        "prize":{
+            "type": "matrial",
+            "matrial": "prestige_slogan",
+            "amount": 1,
+            "mat_tab": "matrial_flags"
+        },
+        "req": [
+            {
+                "type": "matrial",
+                "matrial": "flag_macdoni",
+                "amount": 6,
+                "mat_tab": "matrial_flags"
+            },
+            {
+                "type": "matrial",
+                "matrial": "necklace_5",
+                "amount": 5,
+                "mat_tab": "matrial_box"
+            }
+        ],
+        "max_limit":2,
+        "max_to_have":20
+    }
+}

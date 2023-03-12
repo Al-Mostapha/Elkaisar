@@ -67,7 +67,7 @@ Elkaisar.World.getUnitPrize = function (Battel) {
 };
 
 Elkaisar.World.getUnitData = async function (callBack) {
-  Elkaisar.World.WorldUnitData = require(`${process.env.BasePath}/js${process.env.JsVersion}/json/worldUnitData.json`);
+  Elkaisar.World.WorldUnitData = require(`${process.env.BasePath}/jsGame${process.env.JsVersion}/json/worldUnitData.json`);
   if (callBack)
     callBack();
 };

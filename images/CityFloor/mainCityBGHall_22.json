@@ -1,0 +1,38 @@
+{
+    "meta": {
+        "format": "RGBA8888",
+        "image": "mainCityBGHall_22.png.png",
+        "size": {
+            "w": 201,
+            "h": 204
+        },
+        "scale": 1
+    },
+    "frames": [
+        {
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 200,
+                "h": 197
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 200,
+                "h": 197
+            },
+            "sourceSize": {
+                "w": 200,
+                "h": 197
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "MainCityBG_22"
+        }
+    ]
+}

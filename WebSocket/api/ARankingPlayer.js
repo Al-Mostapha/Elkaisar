@@ -18,7 +18,7 @@ class ARankingPlayer {
   async generalRank() {
 
     const offset = Elkaisar.Base.validateOffset(this.Parm.offset);
-    return await Elkaisar.Base.selectFromTable(
+    return await Elkaisar.DB.ASelectFrom(
       "player.name , player.prestige , player.guild ,player.honor, "
       + "player.avatar, player.id_player , player.porm, "
       + "player_title.*, guild.slog_top, guild.slog_cnt, guild.slog_btm, "
@@ -32,7 +32,7 @@ class ARankingPlayer {
   async honorRank() {
 
     const offset = Elkaisar.Base.validateOffset(this.Parm.offset);
-    return await Elkaisar.Base.selectFromTable(
+    return await Elkaisar.DB.ASelectFrom(
       "player.name , player.prestige , player.guild ,player.honor, "
       + "player.avatar, player.id_player , player.porm, "
       + "player_title.*, guild.slog_top, guild.slog_cnt, guild.slog_btm, "
@@ -81,7 +81,6 @@ class ARankingPlayer {
       "player JOIN player_title ON player.id_player = player_title.id_player LEFT JOIN guild "
       + "ON guild.id_guild = player.id_guild",
       " 1 ORDER BY porm DESC , prestige DESC   LIMIT 1 OFFSET ?", [rank]);
-
   }
 
 }

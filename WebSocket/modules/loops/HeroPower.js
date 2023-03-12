@@ -28,37 +28,4 @@ setInterval(function () {
                 }));
         }
     });
-
-    /*Elkaisar.Base.Request.postReq(
-            {
-                server: Elkaisar.CONST.SERVER_ID
-            },
-            `${Elkaisar.CONST.BASE_URL}/ws/api/AHero/addPower`,
-            function (data) {
-                
-                var Players = Elkaisar.Base.isJson(data);
-                if(!Players)
-                    return console.log("Add power Error", data);
-                
-                var spy;
-                var ii;
-                var player;
-               
-                
-                for(ii in Players)
-                {
-                    player = Elkaisar.Base.getPlayer(ii);
-                    if(player)
-                        player.connection.sendUTF(JSON.stringify({
-                            "classPath" : "Hero.Power.Added",
-                            "Heros"     : Players[ii]
-                        }));
-                    
-                }
-                
-
-            }
-    );*/
-
-
 }, 6*60*1000);

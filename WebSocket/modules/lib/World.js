@@ -262,7 +262,6 @@ exports.refreshWorldUnit = function (con, msgObject) {
                 Elkaisar.DB.SelectFrom("*", "world", "x = ? AND y = ?", [Unit.x, Unit.y], function (WorldUnit) {
                     Elkaisar.World.WorldUnits[Number(Unit.x * 500) + Number(Unit.y)] = WorldUnit[0];
                     WorldNewUnits.push(WorldUnit[0]);
-
                     if (WorldNewUnits.length === msgObject.Units.length) {
                         var msg = JSON.stringify({
                             classPath: "World.RefereshWorldUnit",

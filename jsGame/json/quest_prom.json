@@ -1,0 +1,1894 @@
+{
+    "promotion": [
+
+        {
+            "listOfNeed": [
+                {
+                    "type": "promotion",
+                    "promotion": 0
+                },
+                {
+                    "type": "matrial",
+                    "matrial": "luxury_1",
+                    "amount": 10
+                },
+                {
+                    "type": "matrial",
+                    "matrial": "luxury_2",
+                    "amount": 5
+                },
+                {
+                    "type": "resource",
+                    "amount": 20000,
+                    "resource_type": "coin"
+                },
+                {
+                    "type": "prestige",
+                    "amount": 2000
+                }
+            ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archit_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archim_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "polit_a"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 100
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 1
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_2",
+                            "amount": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_3",
+                            "amount": 5
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 50000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 15000
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archit_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archim_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "polit_a"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 1000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 2
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_3",
+                            "amount": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_4",
+                            "amount": 5
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 100000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 100000
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archit_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archim_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "polit_a"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 5000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 3
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_4",
+                            "amount": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_5",
+                            "amount": 5
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 200000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 500000
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archit_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archim_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "polit_a"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 10000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 4
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_5",
+                            "amount": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 5
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 400000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 1000000
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archit_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archim_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "polit_a"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 15000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 5
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 8000000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 2500000
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archit_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archim_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "polit_a"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 25000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 6
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 5
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 1000000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 4000000
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archit_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archim_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "polit_a"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 50000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 5
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 2000000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 5500000
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archit_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archim_a"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "polit_a"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 75000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 8
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 10
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 5000000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 7000000
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archit_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archim_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "polit_b"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 100000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_1",
+                            "amount": 1
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 5100000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 7500000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 8,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archit_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archim_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "polit_b"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 125000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_1",
+                            "amount": 1
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 5200000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 8000000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 8,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real":
+                        [
+                            {
+                                "type": "matrial",
+                                "amount": 1,
+                                "matrial": "archit_b"
+                            },
+                            {
+                                "type": "matrial",
+                                "amount": 1,
+                                "matrial": "archim_b"
+                            },
+                            {
+                                "type": "matrial",
+                                "amount": 1,
+                                "matrial": "polit_b"
+                            },
+                            {
+                                "type": "prestige",
+                                "amount": 150000
+                            }
+                        ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_1",
+                            "amount": 1
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 5300000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 8500000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 8,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archit_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archim_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "polit_b"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 175000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 12
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 5
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 10
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_1",
+                            "amount": 1
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 5400000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 9000000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 8,
+                            "building_type": 12
+                        }
+                    ],
+
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archit_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archim_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "polit_b"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 200000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 13
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 12
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_1",
+                            "amount": 3
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 5500000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 9500000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 9,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archit_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archim_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "polit_b"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 200000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 14
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 12
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_1",
+                            "amount": 3
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 5600000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 10000000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 9,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archit_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archim_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "polit_b"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 200000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 15
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 12
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_1",
+                            "amount": 5
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 5700000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 10500000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 9,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archit_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archim_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "polit_b"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 200000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 16
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 12
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_1",
+                            "amount": 5
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 5800000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 11000000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 9,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archit_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archim_b"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "polit_b"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 200000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 17
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 7
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 12
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_1",
+                            "amount": 5
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 5900000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 11500000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 9,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archit_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archim_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "polit_c"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 200000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 18
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 14
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_1",
+                            "amount": 5
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 6000000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 12000000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 9,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archit_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archim_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "polit_c"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 200000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 19
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 14
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_2",
+                            "amount": 2
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 6100000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 13600000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 14,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archit_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archim_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "polit_c"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 225000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 20
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 14
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_2",
+                            "amount": 2
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 6200000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 15200000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 14,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archit_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archim_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "polit_c"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 225000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 21
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 14
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_2",
+                            "amount": 2
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 6300000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 16800000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 14,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archit_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archim_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "polit_c"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 225000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 22
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 9
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 14
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_2",
+                            "amount": 2
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 6400000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 18400000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 14,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archit_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archim_c"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "polit_c"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 225000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 23
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 16
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_2",
+                            "amount": 2
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 6500000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 20000000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 14,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archit_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "archim_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 1,
+                        "matrial": "polit_d"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 250000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 24
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 16
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_3",
+                            "amount": 2
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 6600000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 21000000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 19,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archit_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archim_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "polit_d"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 250000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 25
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 16
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_3",
+                            "amount": 2
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 6700000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 22000000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 19,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archit_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archim_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "polit_d"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 250000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 26
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 16
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_3",
+                            "amount": 2
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 6800000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 23000000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 19,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archit_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "archim_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 2,
+                        "matrial": "polit_d"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 250000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed":
+                    [
+                        {
+                            "type": "promotion",
+                            "promotion": 27
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_6",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_7",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_8",
+                            "amount": 11
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "luxury_9",
+                            "amount": 16
+                        },
+                        {
+                            "type": "matrial",
+                            "matrial": "law_3",
+                            "amount": 2
+                        },
+                        {
+                            "type": "resource",
+                            "amount": 6900000,
+                            "resource_type": "coin"
+                        },
+                        {
+                            "type": "prestige",
+                            "amount": 24000000
+                        },
+                        {
+                            "type": "building",
+                            "lvl": 19,
+                            "building_type": 12
+                        }
+                    ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archit_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archim_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "polit_d"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 250000
+                    }
+                ]
+            }
+        },
+        {
+            "listOfNeed": [
+                {
+                    "type": "promotion",
+                    "promotion": 28
+                },
+                {
+                    "type": "matrial",
+                    "matrial": "luxury_6",
+                    "amount": 12
+                },
+                {
+                    "type": "matrial",
+                    "matrial": "luxury_7",
+                    "amount": 12
+                },
+                {
+                    "type": "matrial",
+                    "matrial": "luxury_8",
+                    "amount": 12
+                },
+                {
+                    "type": "matrial",
+                    "matrial": "luxury_9",
+                    "amount": 18
+                },
+                {
+                    "type": "matrial",
+                    "matrial": "law_3",
+                    "amount": 5
+                },
+                {
+                    "type": "resource",
+                    "amount": 7000000,
+                    "resource_type": "coin"
+                },
+                {
+                    "type": "prestige",
+                    "amount": 25000000
+                },
+                {
+                    "type": "building",
+                    "lvl": 19,
+                    "building_type": 12
+                }
+            ],
+            "reword": {
+                "real": [
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archit_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "archim_d"
+                    },
+                    {
+                        "type": "matrial",
+                        "amount": 3,
+                        "matrial": "polit_d"
+                    },
+                    {
+                        "type": "prestige",
+                        "amount": 500000
+                    }
+                ]
+            }
+        }
+    ]
+}

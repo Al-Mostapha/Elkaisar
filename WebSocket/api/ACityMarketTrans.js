@@ -5,12 +5,12 @@ class ACityMarketTrans {
   }
 
   async getCityTransportResource() {
-    const idCity = Elkaisar.Base.ValidateId(this.Parm.idCity);
+    const idCity = Elkaisar.Base.validateId(this.Parm.idCity);
     return Elkaisar.Lib.LCityMarket.getTransList(idCity);
   }
 
   async getCityTransportBackResource() {
-    const idCity = Elkaisar.Base.ValidateId($_GET["idCity"]);
+    const idCity = Elkaisar.Base.validateId($_GET["idCity"]);
     return Elkaisar.Lib.LCityMarket.getTransBackList(idCity);
   }
 

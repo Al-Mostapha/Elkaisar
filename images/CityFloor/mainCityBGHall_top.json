@@ -1,0 +1,288 @@
+{
+    "meta": {
+        "format": "RGBA8888",
+        "image": "mainCityBGHall_top.png.png",
+        "size": {
+            "w": 1968,
+            "h": 2025
+        },
+        "scale": 1
+    },
+    "frames": [
+        {
+            "frame": {
+                "x": 2,
+                "y": 1969,
+                "w": 54,
+                "h": 1020
+            },
+            "rotated": true,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 54,
+                "h": 1020
+            },
+            "sourceSize": {
+                "w": 54,
+                "h": 1020
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "BG_add_01"
+        },
+        {
+            "frame": {
+                "x": 472,
+                "y": 942,
+                "w": 493,
+                "h": 56
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 493,
+                "h": 56
+            },
+            "sourceSize": {
+                "w": 493,
+                "h": 56
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "BG_add_02"
+        },
+        {
+            "frame": {
+                "x": 472,
+                "y": 1001,
+                "w": 16,
+                "h": 437
+            },
+            "rotated": true,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 16,
+                "h": 437
+            },
+            "sourceSize": {
+                "w": 16,
+                "h": 437
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "BG_add_03"
+        },
+        {
+            "frame": {
+                "x": 1025,
+                "y": 1969,
+                "w": 691,
+                "h": 14
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 691,
+                "h": 14
+            },
+            "sourceSize": {
+                "w": 691,
+                "h": 14
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "BG_add_04"
+        },
+        {
+            "frame": {
+                "x": 1499,
+                "y": 2,
+                "w": 1024,
+                "h": 467
+            },
+            "rotated": true,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 467
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 467
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "BG_hall_far_1"
+        },
+        {
+            "frame": {
+                "x": 2,
+                "y": 1499,
+                "w": 1024,
+                "h": 467
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 467
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 467
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "BG_hall_far_2"
+        },
+        {
+            "frame": {
+                "x": 1029,
+                "y": 942,
+                "w": 1024,
+                "h": 467
+            },
+            "rotated": true,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 467
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 467
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "BG_hall_far_3"
+        },
+        {
+            "frame": {
+                "x": 472,
+                "y": 472,
+                "w": 1024,
+                "h": 467
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 467
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 467
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "BG_hall_far_4"
+        },
+        {
+            "frame": {
+                "x": 472,
+                "y": 2,
+                "w": 1024,
+                "h": 467
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 467
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 467
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "BG_hall_far_5"
+        },
+        {
+            "frame": {
+                "x": 2,
+                "y": 1029,
+                "w": 1024,
+                "h": 467
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 467
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 467
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "BG_hall_far_6"
+        },
+        {
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 1024,
+                "h": 467
+            },
+            "rotated": true,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 467
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 467
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "filename": "BG_hall_far_7"
+        }
+    ]
+}

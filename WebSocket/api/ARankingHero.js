@@ -29,7 +29,7 @@ class ARankingHero {
 
     const offset = Elkaisar.Base.validateOffset(this.Parm.offset);
 
-    return await Elkaisar.Base.selectFromTable(
+    return await Elkaisar.DB.ASelectFrom(
       "hero.name , hero.id_hero , hero.lvl , hero.point_a , hero.point_b , "
       + "hero.point_c , player.name AS lord_name, player.avatar, hero.avatar AS heroAvatar",
       "hero JOIN player  ON player.id_player = hero.id_player",
@@ -40,7 +40,7 @@ class ARankingHero {
     
     const offset = Elkaisar.Base.validateOffset(this.Parm.offset);
     
-    return await Elkaisar.Base.selectFromTable(
+    return await Elkaisar.DB.ASelectFrom(
       "hero.name , hero.id_hero , hero.lvl , hero.point_a , hero.point_b , "
       + "hero.point_c , player.name AS lord_name, player.avatar, hero.avatar AS heroAvatar",
       "hero JOIN player  ON player.id_player = hero.id_player",
@@ -51,7 +51,7 @@ class ARankingHero {
     
     const offset = Elkaisar.Base.validateOffset(this.Parm.offset);
     
-    return await Elkaisar.Base.selectFromTable(
+    return await Elkaisar.DB.ASelectFrom(
       "hero.name , hero.id_hero , hero.lvl , hero.point_a , hero.point_b , "
       + "hero.point_c , player.name AS lord_name, player.avatar, hero.avatar AS heroAvatar",
       "hero JOIN player  ON player.id_player = hero.id_player",
@@ -62,7 +62,7 @@ class ARankingHero {
     
     const offset = Elkaisar.Base.validateOffset(this.Parm.offset);
     
-    return await Elkaisar.Base.selectFromTable(
+    return await Elkaisar.DB.ASelectFrom(
       "hero.name , hero.id_hero , hero.lvl , hero.point_a , hero.point_b , "
       + "hero.point_c , player.name AS lord_name, player.avatar, hero.avatar AS heroAvatar",
       "hero JOIN player  ON player.id_player = hero.id_player",
@@ -71,7 +71,7 @@ class ARankingHero {
 
   async searchByHeroName() {
     const heroName = Elkaisar.Base.validatePlayerWord(this.Parm.heroName);
-    return await Elkaisar.Base.selectFromTable(
+    return await Elkaisar.DB.ASelectFrom(
       "hero.name , hero.id_hero , hero.lvl , hero.point_a , hero.point_b , "
       + "hero.point_c , player.name AS lord_name, player.avatar, hero.avatar AS heroAvatar",
       "hero JOIN player  ON player.id_player = hero.id_player",
@@ -80,7 +80,7 @@ class ARankingHero {
 
   async searchByPlayerName() {
     const playerName = Elkaisar.Base.validatePlayerWord(this.Parm.playerName);
-    return await Elkaisar.Base.selectFromTable(
+    return await Elkaisar.DB.ASelectFrom(
       "hero.name , hero.id_hero , hero.lvl , hero.point_a , hero.point_b , "
       + "hero.point_c , player.name AS lord_name, player.avatar, hero.avatar AS heroAvatar",
       "hero JOIN player  ON player.id_player = hero.id_player",

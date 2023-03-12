@@ -109,40 +109,4 @@ setInterval(function () {
         });
         
     });
-
-    /*Elkaisar.Base.Request.postReq(
-            {
-                MARKET_TRANSPORT: true,
-                server: Elkaisar.CONST.SERVER_ID
-            },
-            `${Elkaisar.CONST.BASE_URL}/ws/api/AMarket/marketTrans`,
-            function (data) {
-                
-                var transports = Elkaisar.Base.isJson(data);
-                if(!transports)
-                    return console.log("marketTrans", data);
-                
-                var playerFrom;
-                var player;
-                var ii;
-                var transport;
-                
-                for(ii in transports){
-                    
-                    transport  = transports[ii];
-                    player = Elkaisar.Base.getPlayer(transport.idPlayer);
-                    
-                    if(player){
-                        playerFrom.connection.sendUTF(JSON.stringify({
-                            "classPath" : "Market.Trans.Arrived",
-                            "idCity"    : transport.idCity
-                        }));
-                    }
-                    
-                    
-                }
-                
-            }
-    );*/
-
 }, 1000);

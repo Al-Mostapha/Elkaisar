@@ -74,7 +74,7 @@ class APlayer {
 
   async getAllNotif() {
 
-    const Q = await Elkaisar.DB.AQueryExe(`SELECT
+    const Q = await Elkaisar.DB.AQueryExc(`SELECT
       (SELECT COUNT(*) FROM msg_income WHERE msg_income.id_to = ${this.idPlayer} AND seen = 0) AS msg_in,
       (SELECT COUNT(*) FROM msg_diff WHERE msg_diff.id_to = ${this.idPlayer} AND seen = 0) AS msg_diff,
       (SELECT COUNT(*) FROM report_player WHERE report_player.id_player = ${this.idPlayer} AND seen = 0) AS msg_report,

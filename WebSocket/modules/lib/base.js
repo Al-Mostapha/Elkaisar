@@ -2,58 +2,8 @@
 
 var http = require('http');
 var querystring = require('querystring');
-
-var Request = {};
 var WorldUnitCity = {};
 
-
-Request.postReq = function (Qurary, url, callBack) {
-    Request.req(Qurary, url , "POST", callBack);
-    
-};
-
-Request.getReq = function (Qurary, url, callBack) {
-    Request.req(Qurary, url , "GET", callBack);
-    
-};
-
-
-
-Request.req = function (Qurary, url, method, callBack){
-    
-    var data = querystring.stringify(Qurary);
-
-    var post_options = {
-        port: '80',
-        path: url,
-        host: Elkaisar.CONST.HOST,
-        method: method,
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-            'Content-Length': Buffer.byteLength(data)
-        }
-    };
-
-    // Set up the request
-    var post_req = http.request(post_options, function(res) {
-        res.setEncoding('utf8');
-        var Str = "";
-        res.on('data', function (chunk) {
-            Str += chunk;
-            
-        });
-        res.on('end', function () {
-            if(callBack)
-                callBack(Str);
-        });
-    });
-
-    // post the data
-    post_req.write(data);
-    post_req.end();
-};
-
-module.exports.Request = Request;
 module.exports.WorldUnitCity = WorldUnitCity;
 module.exports.ServerData  = {};
 

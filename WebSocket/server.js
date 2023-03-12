@@ -3,7 +3,6 @@
 var webSocketServer = require('websocket').server;
 var Http = require('http');
 const QueryString = require('querystring');
-const DotEnv = require('dotenv');
 const jwt = require("jsonwebtoken")
 Elkaisar.URL = require('url');
 var MySql = require('mysql');
@@ -12,7 +11,7 @@ Elkaisar.ZLib = require('zlib');
 Elkaisar.Event = require('events');
 Elkaisar.Cron = require('node-cron');
 
-DotEnv.config();
+
 
 
 
@@ -22,8 +21,8 @@ const startTime = Date.now();
 Elkaisar.Mysql = MySql.createPool({
   connectionLimit: 100,
   host: "localhost",
-  user: Elkaisar.CONST.DBUserName,
-  password: Elkaisar.CONST.DBPassWord,
+  user: process.env.DBUser,
+  password: process.env.DBPass,
   database: Elkaisar.CONST.DBName,
   charset: 'utf8mb4',
   multipleStatements: true
@@ -33,8 +32,8 @@ Elkaisar.Mysql = MySql.createPool({
 Elkaisar.MysqlBattelReplay = MySql.createPool({
   connectionLimit: 100,
   host: "localhost",
-  user: Elkaisar.CONST.DBUserName,
-  password: Elkaisar.CONST.DBPassWord,
+  user: process.env.DBUser,
+  password: process.env.DBPass,
   database: "elkaisar_battel_replay",
   charset: 'utf8mb4',
   multipleStatements: true
@@ -43,8 +42,8 @@ Elkaisar.MysqlBattelReplay = MySql.createPool({
 Elkaisar.MysqlHome = MySql.createPool({
   connectionLimit: 100,
   host: "localhost",
-  user: process.env.HomeDBUser,
-  password: process.env.HomeDBPass,
+  user: process.env.DBUser,
+  password: process.env.DBPass,
   database: process.env.HomeDBName,
   charset: 'utf8mb4',
   multipleStatements: true
@@ -88,6 +87,7 @@ Elkaisar.Config.CArmy = require('./Config/CArmy');
 Elkaisar.Config.CCity = require('./Config/CCity');
 Elkaisar.Config.CPlayer = require('./Config/CPlayer');
 Elkaisar.Config.CItem = require('./Config/CItem');
+Elkaisar.Config.CJop = require('./Config/CJop');
 
 require("./Import/ImportWsLib");
 require("./Import/ImportApiLib");
@@ -123,11 +123,12 @@ Elkaisar.Base.HandleReq = async function (Path, Parm) {
     console.log("Error JWT", Path, Parm)
   }
   const idPlayer = User.idPlayer || User.idUser;
-  const ReqId = JSON.stringify(Path) + idPlayer;
+  const ReqId = `${Path[1]}-${Path[2]}-${Path[3]}-${idPlayer}`;
 
   try {
     if (Elkaisar.Cach.BusyPlayers[ReqId]) {
       Res = JSON.stringify({ state: "SysBusy" });
+      console.log("DublicateRequestFor:", Path.join("/"))
     } else {
       Elkaisar.Cach.BusyPlayers[ReqId] = true;
       if (Path[1] == "api") {
@@ -139,13 +140,12 @@ Elkaisar.Base.HandleReq = async function (Path, Parm) {
       } else if (Path[1] == "cp") {
         Res = JSON.stringify(await (new Elkaisar.CP[Path[2]](Parm))[Path[3]]());
       }
-
-
-      Elkaisar.Cach.BusyPlayers[ReqId] = false;
     }
-  } catch (e) { console.log("Error", e, Path, Parm) }
+  } catch (e) {
+    console.log("Error", e, Path, Parm)
+  }
 
-
+  Elkaisar.Cach.BusyPlayers[ReqId] = false;
   return Res;
 };
 
@@ -192,7 +192,7 @@ var wsServer = new webSocketServer({ httpServer: server });
 wsServer.on('request', function (request) {
 
   var connection = request.accept(null, request.origin);
- 
+
   connection.idGameServer = request.resourceURL.query.server;
   connection.ComeFrom = request.origin;
   connection.ComeFromHeader = request.httpRequest.headers;
@@ -202,28 +202,28 @@ wsServer.on('request', function (request) {
   try {
     Player = jwt.verify(request.resourceURL.query.token, process.env.JWT_SECRET)
   } catch (error) {
-    console.log("Error JWT", error)
+    console.log("Error JWT", error);
+    return;
   }
   connection.idPlayer = Player.idPlayer || Player.idUser;
 
 
-  connection.on('message', function (message) {
+  connection.on('message', async function (message) {
     if (message.type === 'utf8') {
       var msg = JSON.parse(message.utf8Data);
 
-      if (!msg.url && !msg.uRL) {
-        console.log(msg);
-      } else if (!msg.uRL) {
-
-      }
-      var url = (msg.url || msg.uRL).split("/");
-
+      const url = msg.url.split("/");
+      const ReqId = `Ws-${url[0]}-${url[1]}-${connection.idPlayer}`;
+      if (Elkaisar.Cach.BusyPlayers[ReqId])
+        return console.log("WsBusy", ReqId)
+      Elkaisar.Cach.BusyPlayers[ReqId] = true;
       try {
-        Elkaisar.WsLib[url[0]][url[1]](connection, msg.data);
+        await Elkaisar.WsLib[url[0]][url[1]](connection, msg.data);
       } catch (e) {
-        console.log(message);
-        console.log(e);
+        console.log("Error Websocket Message", message, e);
       }
+
+      Elkaisar.Cach.BusyPlayers[ReqId] = false;
     }
 
 

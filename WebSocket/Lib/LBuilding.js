@@ -1,8 +1,23 @@
 class LBuilding {
 
+  static BuildingUpgradeReq = {};
+
+  static async getBuildingUpgradeReq(buildingType, buildingLvl) {
+    const idReq = `${buildingType}.${buildingLvl}`;
+    if (LBuilding.BuildingUpgradeReq[idReq])
+      return LBuilding.BuildingUpgradeReq[idReq];
+
+    const BuildingReq = await Elkaisar.DB.ASelectFrom("*", "building_upgrade_req", "building_type = ? AND building_lvl = ?", [buildingType, buildingLvl]);
+    if (BuildingReq.length == 0)
+      return console.log("This building Has Req = ", buildingType, "++++", buildingLvl);
+    LBuilding.BuildingUpgradeReq[idReq] = BuildingReq;
+    return LBuilding.BuildingUpgradeReq[idReq];
+
+  }
+
   static async isConditionsTrue(idCity, Building) {
-    const lvlReq = await Elkaisar.DB.ASelectFrom("*", "building_upgrade_req", "building_type = ? AND building_lvl = ?", [Building.Type, Building.Lvl]);
-    if (!lvlReq.length)
+    const lvlReq = await LBuilding.getBuildingUpgradeReq(Building.Type, Building.Lvl);
+    if (!lvlReq)
       return false;
     const condetion = JSON.parse(lvlReq[0]["lvl_req"]);
     for (let one of condetion["condetion"]) {
@@ -23,18 +38,13 @@ class LBuilding {
   }
 
   static async fulfillCondition(idPlayer, idCity, Building) {
-    //     if(!static::isConditionsTrue($idCity, $Building))
-    //         return false;
     if (!(await LBuilding.isConditionsTrue(idCity, Building)))
       return false;
-
-
-    const lvlReq = await Elkaisar.DB.ASelectFrom("*", "building_upgrade_req", "building_type = ? AND building_lvl = ?", [Building.Type, Building.Lvl]);
+    const lvlReq = await LBuilding.getBuildingUpgradeReq(Building.Type, Building.Lvl);
     const condetion = JSON.parse(lvlReq[0]["lvl_req"]);
-    const ReqRes = condetion;
+    const ReqRes = Object.assign({}, condetion);
     delete ReqRes["condetion"];
     delete ReqRes["time"];
-
     if (!(await Elkaisar.Lib.LCity.isResourceTaken(ReqRes, idPlayer, idCity)))
       return false;
     for (let one of condetion["condetion"]) {

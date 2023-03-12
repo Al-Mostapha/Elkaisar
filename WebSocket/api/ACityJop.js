@@ -56,8 +56,8 @@ class ACityJop {
     const buildingPlace = Elkaisar.Base.validateGameNames(this.Parm.buildingPlace);
     const idCity = Elkaisar.Base.validateId(this.Parm.idCity);
     const amountToHire = Elkaisar.Base.validateId(this.Parm.amountToHire);
-    const JopPlace = await Elkaisar.Lib.LCity.getBuildingAtPlace(buildingPlace, this.idPlayer, idCity);
-    let UnitReq = Elkaisar.Config.CJop.JopReq[JopPlace["Place"]];
+    const JopPlace = await Elkaisar.Lib.LCityBuilding.getBuildingAtPlace(buildingPlace, this.idPlayer, idCity);
+    let UnitReq = Object.assign({}, Elkaisar.Config.CJop.JopReq[JopPlace["Place"]]);
 
     if (amountToHire <= 0) return { "state": "error_0", "TryToHack": Elkaisar.Base.TryToHack(this) };
     if (!UnitReq) return { "state": "error_1", "TryToHack": Elkaisar.Base.TryToHack(this) };
@@ -76,7 +76,7 @@ class ACityJop {
 
     const now = Math.floor(Date.now() / 1000);
     await Elkaisar.DB.AInsert(
-      "id_city = ?, id_player = ?, jop_place = ?, num = ?, time_end = ?, time_start = ?, time_end_org = ?",
+      "id_player = ?, id_city = ?, jop_place = ?, num = ?, time_end = ?, time_start = ?, time_end_org = ?",
       "city_jop_hiring",
       [this.idPlayer, idCity, JopPlace["Place"], amountToHire, now + totalTime, now, now + totalTime]);
     await Elkaisar.Lib.LSaveState.saveCityState(idCity);
@@ -94,7 +94,7 @@ class ACityJop {
     const JopTask = await Elkaisar.DB.ASelectFrom("id_city, jop_place, num", "city_jop_hiring", "id = ? AND id_player = ?", [idTask, this.idPlayer]);
     if (!JopTask.length) return { "state": "error_0", "TryToHack": Elkaisar.Base.TryToHack(this) };
 
-    let UnitReq = Elkaisar.Config.CJop.JopReq[JopTask[0]["jop_place"]];
+    let UnitReq = Object.assign({}, Elkaisar.Config.CJop.JopReq[JopTask[0]["jop_place"]]);
     UnitReq.food *= JopTask[0]["num"] * Elkaisar.Config.JOP_CANCELING_GAIN_RATE;
     UnitReq.wood *= JopTask[0]["num"] * Elkaisar.Config.JOP_CANCELING_GAIN_RATE;
     UnitReq.stone *= JopTask[0]["num"] * Elkaisar.Config.JOP_CANCELING_GAIN_RATE;

@@ -6,7 +6,9 @@ const QueryString = require('querystring');
 var MySql = require('mysql');
 const express = require('express');
 const jwt = require('jsonwebtoken');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+const path = require('path');
+const expressHbs = require('express-handlebars').engine;
 
 
 
@@ -22,8 +24,8 @@ const ServerList = require("./Run/ServerList").ServerList;
 Elkaisar.MysqlHome = MySql.createPool({
   connectionLimit: 100,
   host: "localhost",
-  user: process.env.HomeDBUser || "root",
-  password: process.env.HomeDBPass,
+  user: process.env.DBUser || "root",
+  password: process.env.DBPass,
   database: process.env.HomeDBName,
   charset: 'utf8mb4',
   multipleStatements: true
@@ -39,6 +41,20 @@ require("./Import/ImportHomeApi");
 
 const HomeApp = express();
 
+HomeApp.engine('hbs', expressHbs({
+  helpers:{
+    GetTabs(tab){
+      console.log(tab)
+      return tab
+    }
+  } 
+}));
+HomeApp.set('view engine', 'hbs');
+HomeApp.set('views', '../CPanal/Views');
+HomeApp.use(express.static("../CPanal/Views/Public"));
+HomeApp.use(express.static(path.join(process.env.BasePath)));
+HomeApp.use(express.static(path.join(process.env.BasePath, `images`)));
+console.log(path.join(process.env.BasePath, `jsGame${process.env.JsVersion}`))
 HomeApp.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
@@ -62,8 +78,6 @@ HomeApp.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 
 HomeApp.get('/home/Config',async (req, res) => {
-
-  console.log("Config");
   res.send(JSON.stringify({
     "state": "ok",
     "Config": {
@@ -91,7 +105,11 @@ HomeApp.post('/HomeApi/*', ReqHandler);
 
 HomeApp.get('/HomeApi/*', ReqHandler);
 
+HomeApp.get("/CP/*", function(req, res){
+  res.render("PWorldUnitPrize", {layout: false, ...process.env, OuthToken: "Token"});
+})
+
 
 HomeApp.listen(port, () => {
-  console.log(`Home app listening at http://localhost:${port}`);
+  console.log(`Home app listening at http://:${port}`);
 });

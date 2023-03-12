@@ -1,0 +1,751 @@
+.flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+#PlayerTeamWrapper{
+    
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    left: 200px;
+    bottom: 212px;
+    z-index: 100;
+    
+}
+#PlayerTeamWrapper .slog{
+    width: 64px;
+    height: 64px;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#PlayerTeamWrapper .NoTeamIcon{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: url(../images/btns/PlayerTeamBtn-n.png);
+    position: absolute;
+    background-size: 90% auto;
+    background-repeat: no-repeat;
+    background-position: center
+}
+#PlayerTeamWrapper .NoTeamIcon:hover{
+    background-image: url(../images/btns/PlayerTeamBtn-h.png);
+}
+#PlayerTeamWrapper .NoTeamIcon:active{
+    background-image: url(../images/btns/PlayerTeamBtn-a.png);
+}
+
+#TeamBox{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row;
+}
+#TeamBoxLeft{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+
+
+#TeamProfileBox{
+    width: 100%;
+    height: 50%;
+    background-image: url(../images/skins/solidSquare.png);
+    background-size: 100% 100%;
+}
+#TeamProfileBox .ProfileData{
+    height: 77%;
+    background-size: 100% 100%;
+    display: flex;
+    flex-flow: row;
+    width: 95%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+
+#TeamProfileBox .TeamSlog{
+    height: 100%;
+    width: 45%;
+}
+#TeamProfileBox .SlogContainer{
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/background/frame.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#TeamProfileBox .SlogContainer .slog{
+    width: 100%;
+    height: 150px;
+    background-position: center;
+    background-size: 80% auto;
+    background-repeat: no-repeat;
+}
+
+#TeamProfileBox .TeamListData{
+    width: 55%;
+    height: 100%;
+    
+}
+
+#TeamProfileBox .TeamListData ul{
+    width: 100%;
+}
+
+#TeamProfileBox .TeamListData ul li{
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 5px;
+    line-height: 32px;
+    height: 32px;
+    background-image: url(../images/background/profile_data.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-flow: row;
+}
+
+#TeamProfileBox .TeamListData ul li .icon{
+    width: 25%;
+    height: 100%;
+    background-position: center;
+    background-size: 60% auto;
+    background-repeat: no-repeat;
+}
+
+#TeamProfileBox .TeamListData ul li .title{
+    font-size: 14px;
+    margin-left: 5px;
+    color: white;
+}
+
+
+#TeamProfileBox .TeamName .name{
+    width: 60%;
+    display: block;
+    margin: auto;
+    background-image: url(../images/background/p_name_n.png);
+    height: 32px;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+#TeamProfileBox .TeamName .name div{
+    margin-top: -8px;
+    font-size: 18px;
+}
+
+#TeamIntroBox{
+    width: 100%;
+    height: 50%;
+    background-image: url(../images/skins/solidSquare.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+#TeamIntroBox .Header{
+    background-image: url(../images/border/border-h_.png);
+    background-size: 100% 100%;
+    width: 94%;
+    height: 24px;
+    margin: auto;
+    margin-top: 7px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 16px;
+}
+#TeamIntroBox .Body {
+    width: 94%;
+    margin: auto;
+    text-align: center;
+}
+
+
+#TeamBoxRight{
+    width: 65%;
+    height: 100%;
+    background-image: url(../images/skins/desc-rect.png);
+    background-size: 100% 107%;
+    background-position-y: -25px;
+}
+#TeamBoxRight .PlayerList{
+    width: 100%;
+    height: 100%;
+}
+#TeamBoxRight .PlayerList .Header{
+    background-image: url(../images/border/border-h_.png);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+#TeamBoxRight .PlayerList .Body .LeaderLi .LPlayerAvaterBg{
+    width: 124px;
+    height: 124px;
+    margin: auto;
+    background-image: url(../images/background/frame.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: auto;
+}
+
+#TeamBoxRight .PlayerList .Body .LeaderLi .LPlayerAvater{
+    width: 82%;
+    height: 82%;
+    border-radius: 50%;
+    background-image: url(../images/player/faceA10_.jpg);
+    background-size: 100% 100%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#TeamBoxRight .PlayerList .Body .LeaderLi .LPlayerTitle{
+    margin-top: -14px;;
+    background-image: url(../images/bars/title-bg.png);
+    background-size: 100% 700%;
+    width: 80px;
+    float: right;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    height: 24px;
+}
+
+#TeamBoxRight .PlayerList .Body .LeaderLi .LPlayerName{
+    width: 150px;
+    height: 36px;
+    background-image: url(../images/background/p_name_n.png);
+    text-align: center;
+    line-height: 24px;
+    margin:auto;
+}
+#TeamBoxRight .PlayerList .Body .TeamMateLi{
+    flex-flow: row;
+    justify-content: center;
+    margin-top: 30px;
+}
+#TeamBoxRight .PlayerList .Body .TeamMateLi li{
+    margin: 0px 10px;
+}
+#TeamBoxRight .PlayerList .Body .TeamMateLi .PlayerAvaterBg{
+    width: 124px;
+    height: 62px;
+    background-image: url(../images/border/RectBorder_n.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+#TeamBoxRight .PlayerList .Body .TeamMateLi .PlayerAvater{
+    width: 124px;
+    height: 100%;
+    border-radius: 5px;
+    background-size: 100% 100%;
+    margin: auto;
+}
+
+#TeamBoxRight .PlayerList .Body .TeamMateLi .PlayerTitle{
+    margin-top: -22px;
+    background-image: url(../images/bars/title-bg.png);
+    background-size: 100% 700%;
+    width: 80px;
+    float: right;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    height: 24px;
+}
+
+#TeamBoxRight .PlayerList .Body .TeamMateLi .PlayerName{
+    width: 150px;
+    height: 30px;
+    background-image: url(../images/btns/ui_timer.png);
+    text-align: center;
+    line-height: 30px;
+    margin: auto;
+    background-size: 100% 100%;
+    margin-top: 10px;
+}
+
+
+
+#TeamBoxRight .TeamEneFrieList .tr{
+    height: 40px !important;
+}
+
+#TeamBoxRight .tc-team{
+    width: 25%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#TeamBoxRight .team-name{
+    width: 60%;
+    height: 100%;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+#TeamBoxRight .team-slog{
+    height: 100%;
+    width: 40%; 
+}
+#TeamBoxRight .team-slog .slog{
+    background-size: auto 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+#TeamBoxRight .tc-leader{
+    width: 25%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#TeamBoxRight .tc-leader .image{
+    width: 35%;
+    height: 100%;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#TeamBoxRight .tc-leader .image .border{
+    width: 100%;
+    height: 100%;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/border/RectBorder_a.png);
+}
+#TeamBoxRight .tc-leader .name{
+    width: 65%;
+    height: 100%;
+    line-height: 40px;
+    text-align: center;
+}
+#TeamBoxRight .tc-pres{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+}
+#TeamBoxRight .tc-honor{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+}
+#TeamBoxRight .tc-memNum{
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+}
+ #TeamBoxRight .tc-show{
+    width: 20%;
+    height: 100%;
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+#TeamBoxRight .tc-show .btn{
+    width: 40%;
+    line-height: 25px;
+}
+
+
+#TeamBoxLeft .TeamInvJoinBox{
+    width: 100%;
+    height: 50%;
+    background-image: url(../images/skins/solidSquare.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+#TeamBoxLeft .TeamInvJoinBox .Header{
+    background-image: url(../images/border/border-h_.png);
+    background-size: 100% 100%;
+    width: 94%;
+    height: 24px;
+    margin: auto;
+    margin-top: 7px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 16px;
+}
+#TeamBoxLeft .TeamInvJoinBox .Body {
+    width: 94%;
+    margin: auto;
+    text-align: center;
+}
+
+#TeamBoxLeft .TeamInvJoinBox .Body .tr{
+    height: 32px !important;
+}
+
+#TeamBoxLeft .TeamInvJoinBox .tc-player-avater{
+    width: 20%;
+    height: 100%;
+    background-size: 90% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#TeamBoxLeft .TeamInvJoinBox .tc-player-avater{
+    width: 20%;
+    height: 100%;
+    background-size: 90% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#TeamBoxLeft .TeamInvJoinBox .tc-player-name{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#TeamBoxLeft .TeamInvJoinBox .tc-edit-req{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+#TeamBoxLeft .TeamInvJoinBox .tc-edit-req .btn{
+    line-height: 24px;
+    width: 30%;;
+}
+
+#RankList{
+    width: 100%;
+}
+
+#RankList.RankPage .tc-team{
+    width: 20%;
+}
+
+#RankList.RankPage .tr{
+    height: 37px !important;
+}
+#RankList.RankPage .tc-rank , #RankList.RankPage .tc-show{
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#RankList.RankPage .tc-leader{
+    width: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#RankList.RankPage .tc-pres, #RankList.RankPage .tc-honor , #RankList.RankPage .tc-memNum{
+    width: 14%;
+}
+
+
+#RankList.RankPage .tc-leader .image{
+    width: 30%;
+    height: 80%;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+#RankList.RankPage .tc-show .btn{
+    width: 80%;
+    display: block;
+}
+
+#DialBoxHeader{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+}
+#BesideNavBtns{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+#BesideNavBtns .NavContBtns{
+    width: 780px;
+    height: 34px;
+    margin-top: -9px;
+    background-image: url(../images/background/sitenav-bar-bg.jpg);
+    background-size: 100% 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#BesideNavBtns .NavContBtns .nav-arrows{
+    align-items: center;
+}
+
+#goToBtnRankCo .btn{
+    width: 60px;
+    height: 28px;
+}
+#goToBtnRankCo .input{
+    height: 22px;
+    width: 44px;
+}
+
+#RankSearchSelect .select-input{
+    height: 24px;
+    min-height: 24px;
+    line-height: 24px;
+    min-width: 100px;
+    width: 100px;
+}
+
+#RankList .Header{
+    background-image: url(../images/border/border-h_.png);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+#RankList .tr{
+    height: 37px !important;
+}
+
+#RankList .tc-team{
+    width: 25%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#RankList .team-name{
+    width: 60%;
+    height: 100%;
+    line-height: 40px;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+#RankList .team-slog{
+    height: 100%;
+    width: 40%; 
+}
+#RankList .team-slog .slog{
+    background-size: auto 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+#RankList .tc-leader{
+    width: 25%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#RankList .tc-leader .image{
+    width: 35%;
+    height: 100%;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#RankList .tc-leader .image .border{
+    width: 100%;
+    height: 100%;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/border/RectBorder_a.png);
+}
+#RankList .tc-leader .name{
+    width: 65%;
+    height: 100%;
+    line-height: 40px;
+    text-align: center;
+}
+#RankList .tc-pres{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+}
+#RankList .tc-honor{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+}
+#RankList .tc-memNum{
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+}
+ #RankList .tc-show{
+    width: 20%;
+    height: 100%;
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#RankList .tc-hero-lvl{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50% auto;
+
+}
+
+#RankList .tr .tc-hero-lvl{
+    color: white;
+    font-weight: bold;
+    background-image: url(../images/hero/icon_Lv.png);
+}
+
+#RankList .tc-hero-point_a{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #008c10;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#RankList .tc-hero-point_b{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #b43d02;
+}
+
+#RankList .tc-hero-point_c{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0065ac;
+}
+
+
+#RankList .tc-show .btn{
+    width: 40%;
+    line-height: 25px;
+}
+
+
+#TeamNavBarList .drop-list{
+    margin-top:  54px;
+}
+#TeamNavBarList .btn{
+    margin-top:  25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#save-t-intro{
+    width: 100px;
+    margin: auto;
+}
+
+
+#PlayerTeamInvList .btnList, #PlayerTeamReqList .btnList{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+#PlayerTeamInvList .btn, #PlayerTeamReqList .btn{
+    height: 22px;
+    width:  40px;
+}
+
+
+#send-team-req .full-btn{
+    padding: 0px 15px;
+}
+
+.team-ann{
+    color: #074206;
+    font-size: 14px;
+}
+
+
+.PlayerAvater .playerSettingIcon{
+    height: 30px;
+    margin-bottom: -30px;
+}
+.PlayerAvater .playerSettingIcon .btn{
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/btn-small/setting-n.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    margin-right: 3px;
+    margin-top: 3px;
+}
+.PlayerAvater .playerSettingIcon .btn:hover{
+     background-image: url(../images/btn-small/setting-h.png);
+}
+.PlayerAvater .playerSettingIcon .btn:active{
+     background-image: url(../images/btn-small/setting-a.png);
+}
+
+
+
+.PlayerAvater .settingList{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 90px;
+    margin-top: 30px;
+    display: none;
+}
