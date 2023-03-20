@@ -51,22 +51,22 @@ function getReports(offset) {
       }
 
       if (reports) {
-
+        console.log(reports)
         var header = "";
         for (var iii = 0; iii < 10; iii++) {
           if (reports[iii]) {
             header += `<div class="tr  ${parseInt(reports[iii].seen) === 0 ? "not-seen" : ""}" id_report="${reports[iii]["id_report"]}"  id_msg="${reports[iii]["id_report"]}" 
-                                            table="report_player" db_offset="${parseInt(offset) + iii}" data-x-coord="${reports[iii].x}" 
-                                             data-y-coord="${reports[iii].y}" data-time-stamp="${reports[iii].time_stamp}" data-report-for="${reports[iii].type}"
-                                            data-seen="${reports[iii].seen}">
-                                            <div class="td_1">
-                                                <input name="msg_sel" id="check_${iii}" class="msg-action" type="checkbox" style="display:none">
-                                                <label for="check_${iii}" class="checker"></label>
-                                            </div>
-                                            <div class="td_3">${getReportTitle(reports[iii]["t"], reports[iii]["lvl"], reports[iii]["x"], reports[iii]["y"])}</div>
-                                            <div class="td_5">${reports[iii]["time_stamp"]}</div>
-                                            <div class="td_6"><div class="full-btn full-btn-3x show_battel_report">${Translate.Button.MenuList.View[UserLag.language]}</div></div>
-                                        </div>`;
+                            table="report_player" db_offset="${parseInt(offset) + iii}" data-x-coord="${reports[iii].x}" 
+                             data-y-coord="${reports[iii].y}" data-time-stamp="${reports[iii].time_stamp}" data-report-for="${reports[iii].type}"
+                            data-seen="${reports[iii].seen}">
+                            <div class="td_1">
+                                <input name="msg_sel" id="check_${iii}" class="msg-action" type="checkbox" style="display:none">
+                                <label for="check_${iii}" class="checker"></label>
+                            </div>
+                            <div class="td_3">${getReportTitle(reports[iii]["t"], reports[iii]["lvl"], reports[iii]["x"], reports[iii]["y"])}</div>
+                            <div class="td_5">${reports[iii]["time_stamp"]}</div>
+                            <div class="td_6"><div class="full-btn full-btn-3x show_battel_report">${Translate.Button.MenuList.View[UserLag.language]}</div></div>
+                        </div>`;
           } else {
             header += `<div class="tr"></div>`;
           }
@@ -282,7 +282,7 @@ var message = {
                                                 <div class="upper">
                                                     <ol>
                                                         <li>
-                                                             <span>: المرسل </span><span> ${msg_data[0].name}</span> 
+                                                             <span>: المرسل </span><span style="max-width: 120px;"> ${msg_data[0].name}</span> 
                                                         </li>
                                                         <li>
                                                               <span>  : الموضوع  </span><span style="width: 256px;">${msg_data[0].head}</span>
@@ -539,7 +539,7 @@ var message = {
                                               <div class="upper">
                                                 <ol>
                                                   <li>
-                                                    <span>: المرسل </span><span> ${msg_data[0].name}</span> 
+                                                    <span>: المرسل </span><span style="max-width: 120px;"> ${msg_data[0].name}</span> 
                                                   </li>
                                                   <li>
                                                     <span>  : الموضوع  </span><span>${msg_data[0].head}</span>
@@ -586,90 +586,77 @@ var message = {
    *  
    */
   dialogBoxcontent_msgWrite: function (to, subject) {
-    var msg_data;
-
     var single_meassage = `  <div class="box_content for_msg">
-                                    <div class="left-content full">
-                                        <div class="upper">
-                                            <ol>
-                                                <li>
-                                                     <span>: المرسل </span><span> ${player.name}</span> 
-                                                </li>
-                                                <li>
-                                                      <span>  : الموضوع  </span><input type="text" class="input" value="${subject || ''}" style=" width: 76% ;" id="subject_to_mail"/>
-                                                </li>
-                                                <li>
-                                                    <span> : المستقبل</span>
-                                                    <input type="text" class="input" value="${to ? to.name : ''}" style=" width: 59%;" ${to ? (to.id === null ? "" : `id_player="${to.id}"`) : ""} id="${to ? (to.id === null ? "" : "search_by_name") : "search_by_name"}" />
-                                                </li>
-                                            </ol>
-                                            ${to ? "" : ` <div id="search_result" class="search_res">
-                                                                <ul>
-
-                                                                </ul>
-                                                            </div>`}
-                                        </div>
-                                        <div class="msg_body">
-                                            
-                                            <textarea class ="selectable"></textarea>
-                                           
-                                        </div>
-
-                                    </div>
-                                    <div class="right-content-footer" rank_for="players">  
-                                        <div class="buttons">  
-                                            <ul>  
-                                                <li id="back_to_msg" style=" float: right; width: 85px; margin-right: 50px;">  
-                                                    <button class="full-btn full-btn-3x full" id="get-out-of-msgout">
-                                                        عودة
-                                                    </button>
-                                                </li>
-                                                <li  style=" float: right; width: 85px; margin-right: 10px;">  
-                                                    <button class="full-btn full-btn-3x full" id="${to ? (to.id === null ? "send_mail_to_guild" : "send_mail_to") : "send_mail_to"}">
-                                                        ارسال
-                                                    </button>
-                                                </li>
-
-                                            </ul>  
-                                        </div>  
-                                    </div> 
-                                </div>`;
+                                <div class="left-content full">
+                                  <div class="upper">
+                                    <ol>
+                                        <li>
+                                          <span>: المرسل </span><span style="max-width: 120px;"> ${Elkaisar.DPlayer.Player.name}</span> 
+                                        </li>
+                                        <li>
+                                          <span>  : الموضوع  </span><input type="text" class="input" value="${subject || ''}" style=" width: 76% ;" id="subject_to_mail"/>
+                                        </li>
+                                        <li>
+                                          <span> : المستقبل</span>
+                                          <input type="text" class="input" value="${to ? to.name : ''}" style=" width: 59%;" ${to ? (to.id === null ? "" : `id_player="${to.id}"`) : ""} id="${to ? (to.id === null ? "" : "search_by_name") : "search_by_name"}" />
+                                        </li>
+                                    </ol>
+                                    ${to ? "" : ` 
+                                      <div id="search_result" class="search_res">
+                                        <ul></ul>
+                                      </div>`}
+                                  </div>
+                                  <div class="msg_body">
+                                    <textarea class ="selectable"></textarea>
+                                  </div>
+                              </div>
+                              <div class="right-content-footer" rank_for="players">  
+                                  <div class="buttons">  
+                                      <ul>  
+                                        <li id="back_to_msg" style=" float: right; width: 85px; margin-right: 50px;">  
+                                          <button class="full-btn full-btn-3x full" id="get-out-of-msgout">
+                                            عودة
+                                          </button>
+                                        </li>
+                                        <li  style=" float: right; width: 85px; margin-right: 10px;">  
+                                          <button class="full-btn full-btn-3x full" id="${to ? (to.id === null ? "send_mail_to_guild" : "send_mail_to") : "send_mail_to"}">
+                                            ارسال
+                                          </button>
+                                        </li>
+                                      </ul>  
+                                  </div>  
+                              </div> 
+                            </div>`;
     return single_meassage;
   },
   footer: function (table, offset) {
-
     var footer = `   <div class="right-content-footer" msg_for="${table}">  
                             <div class="buttons">  
-                                <ul style="overflow: auto; height: 100%;">  
-                                    <li>  
-                                        <div class="full-btn full-btn-3x" id="select_msg_all">  
-                                            ${Translate.Button.MenuList.ToggelAll[UserLag.language]}   
-                                        </div>  
-                                    </li> 
-                                    
-
-                                    <li id="nav_input">  
-                                        <div class="full-btn full-btn-3x full" id="del_selected">  
-                                            ${Translate.Button.MenuList.DeleteSelected[UserLag.language]}   
-                                        </div> 
-                                    </li>
-
-                                    <li id="delete-all">  
-                                        <button class="full-btn full-btn-3x full">  
-                                            ${Translate.Button.MenuList.DeleteAll[UserLag.language]}   
-                                        </button> 
-                                    </li>
-                                    ${table !== undefined ?
-        `<li>
-                                            <div id="move_msg_left" msg_type="${table}"  class="left pull-L move_msg left-btn"> </div>
-                                            <h1 class="pull-L" id="msg-navigator"> <span>${getArabicNumbers(parseInt(offset) / 10 + 1)}</span>/${getArabicNumbers(Math.ceil(MSG_NUM[table] / 10) || 0)}</h1>
-                                            <div id="move_msg_right" msg_type="${table}" class="right pull-R move_msg right-btn" ></div>
-                                        </li>` : ""
-
-      }
-                                </ul>  
+                              <ul style="overflow: auto; height: 100%;">  
+                                <li>  
+                                  <div class="full-btn full-btn-3x" id="select_msg_all">  
+                                    ${Translate.Button.MenuList.ToggelAll[UserLag.language]}   
+                                  </div>  
+                                </li> 
+                                <li id="nav_input">  
+                                  <div class="full-btn full-btn-3x full" id="del_selected">  
+                                    ${Translate.Button.MenuList.DeleteSelected[UserLag.language]}   
+                                  </div> 
+                                </li>
+                                <li id="delete-all">  
+                                  <button class="full-btn full-btn-3x full">  
+                                    ${Translate.Button.MenuList.DeleteAll[UserLag.language]}   
+                                  </button> 
+                                </li>
+                                ${table !== undefined ?
+                                    `<li>
+                                      <div id="move_msg_left" msg_type="${table}"  class="left pull-L move_msg left-btn"> </div>
+                                      <h1 class="pull-L" id="msg-navigator"> <span>${getArabicNumbers(parseInt(offset) / 10 + 1)}</span>/${getArabicNumbers(Math.ceil(MSG_NUM[table] / 10) || 0)}</h1>
+                                      <div id="move_msg_right" msg_type="${table}" class="right pull-R move_msg right-btn" ></div>
+                                    </li>` : ""
+                                }
+                              </ul>  
                             </div>  
-
                         </div> `;
     return footer;
   }
@@ -1863,25 +1850,19 @@ $(document).on("click", ".show_spy_report", function () {
  * @returns {Boolean}  true if winner 
  */
 function checkWinner(id_player, heros, side_win) {
-
   for (var jjj = 0; jjj < heros.length; jjj++) {
-
     if (parseInt(heros[jjj].id_player) === parseInt(id_player) &&
       parseInt(heros[jjj].side) === parseInt(side_win)) {
-
       return true;
-
     }
-
   }
   return false;
-
-
 }
 
 
 //الملك ${detail.general_data.p_name} انشئ ${parseInt(detail.general_data.task) === 0 ? "غزو" : "استيلاء"} الى جبل [ ${getArabicNumbers(data_obj.y_coord)} , ${getArabicNumbers(data_obj.x_coord)} ]
 function getReportContent(detail, data_obj, offset) {
+  console.log(arguments)
   var cont = `<div class="box_content for_msg for_Br " id="battel-report-msg">
                     <div class="left-content full">
                         <div id="battel_r_upper">
@@ -1911,27 +1892,27 @@ function getReportContent(detail, data_obj, offset) {
                             </div>
                             <div class="prize-row flex">
                                 <ul>`;
-  for (var iii in detail.prize.matrial) {
+  for (var iii in detail.prize.Item) {
 
     cont += `<li>
-                                            <img src="${Matrial.image(detail.prize.Item[iii].prize)}">
-                                            <div class="amount stroke">${detail.prize.Item[iii].amount}</div>
-                                        </li>`;
+                <img src="${Matrial.image(detail.prize.Item[iii].prize)}">
+                <div class="amount stroke">${detail.prize.Item[iii].amount}</div>
+            </li>`;
 
   }
 
 
   cont += `</ul>
-                                    <p>جولات: ${getArabicNumbers(detail.general_data.round_num)}, شرف: ${getArabicNumbers(detail.prize.Honor || 0)}</p>
-                                </div>
-                            </div>`;
+                  <p>جولات: ${getArabicNumbers(detail.general_data.round_num)}, شرف: ${getArabicNumbers(detail.prize.Honor || 0)}</p>
+              </div>
+          </div>`;
 
 
   cont += `<div id="battel-detail">
                             <div class="your_side">
                                 <ul>`;
   for (var jjj = 0; jjj < detail.heros.length; jjj++) {
-    if (detail.heros[jjj]["side"] === "1") {
+    if (detail.heros[jjj]["side"] == 1) {
       var tr_1 = "";
       var tr_2 = "";
       for (var iii = 1; iii <= 3; iii++) {
@@ -1939,12 +1920,12 @@ function getReportContent(detail, data_obj, offset) {
         var f_post = "f_" + iii + "_post";
         var f_type = "f_" + iii + "_type";
 
-        if (detail["heros"][jjj][f_pre] !== "0") {
+        if (detail["heros"][jjj][f_pre] != 0) {
           tr_1 += ` <li>
-                                                             ${army_icon[detail["heros"][jjj][f_type]]}
-                                                            <div class="pre-amount stroke">${getArabicNumbers(detail["heros"][jjj][f_pre])}</div>
-                                                            <div class="post-amount">${getArabicNumbers(detail["heros"][jjj][f_post])}</div>
-                                                        </li>`;
+                      ${army_icon[detail["heros"][jjj][f_type]]}
+                      <div class="pre-amount stroke">${getArabicNumbers(detail["heros"][jjj][f_pre])}</div>
+                      <div class="post-amount">${getArabicNumbers(detail["heros"][jjj][f_post])}</div>
+                    </li>`;
         }
       }
       for (var kkk = 1; kkk <= 3; kkk++) {
@@ -1952,42 +1933,40 @@ function getReportContent(detail, data_obj, offset) {
         var b_pre = "b_" + kkk + "_pre";
         var b_post = "b_" + kkk + "_post";
         var b_type = "b_" + kkk + "_type";
-        if (detail["heros"][jjj][b_pre] !== "0") {
+        if (detail["heros"][jjj][b_pre] != 0) {
           tr_2 += ` <li>
-                                                             ${army_icon[detail["heros"][jjj][b_type]]}
-                                                            <div class="pre-amount stroke">${getArabicNumbers(detail["heros"][jjj][b_pre])}</div>
-                                                            <div class="post-amount">${getArabicNumbers(detail["heros"][jjj][b_post])}</div>
-                                                        </li>`;
+                       ${army_icon[detail["heros"][jjj][b_type]]}
+                      <div class="pre-amount stroke">${getArabicNumbers(detail["heros"][jjj][b_pre])}</div>
+                      <div class="post-amount">${getArabicNumbers(detail["heros"][jjj][b_post])}</div>
+                  </li>`;
         }
       }
       cont += `<li>
-                                                    <div class="hero">
-                                                        <div class="name">
-                                                            ${detail.heros[jjj].h_name ? detail.heros[jjj].h_name : "بطل النظام"}
-                                                        </div>
-                                                        ${Number(detail.heros[jjj].id_player) === Number(Elkaisar.DPlayer.Player.id_player) ?
-          `<div class="image">
-                                                            <img src="${Elkaisar.BaseData.HeroAvatar[detail.heros[jjj].avatar] || "images/icons/hero/eq-bg.png"}" />
-                                                            <div class="xp stroke">+${getArabicNumbers(detail["heros"][jjj]["xp"])}</div>
-                                                        </div>`: ""
-
-        }
-                                                    </div>
-                                                    <div class="army">
-                                                        <ol>
-                                                        ${tr_1}
-                                                        ${tr_2}
-                                                        </ol>
-                                                    </div>
-                                                </li>`;
+                <div class="hero">
+                    <div class="name">
+                        ${detail.heros[jjj].h_name ? detail.heros[jjj].h_name : "بطل النظام"}
+                    </div>
+                    ${Number(detail.heros[jjj].id_player) === Number(Elkaisar.DPlayer.Player.id_player) ?
+                    `<div class="image">
+                          <img src="${Elkaisar.BaseData.HeroAvatar[detail.heros[jjj].avatar] || "images/icons/hero/eq-bg.png"}" />
+                          <div class="xp stroke">+${getArabicNumbers(detail["heros"][jjj]["xp"])}</div>
+                      </div>`: ""}
+                      </div>
+                      <div class="army">
+                          <ol>
+                          ${tr_1}
+                          ${tr_2}
+                          </ol>
+                      </div>
+                  </li>`;
     }
   }
   cont += `</ul>
-                            </div>
-                            <div class="enemy_side">
-                                <ul>`;
+          </div>
+          <div class="enemy_side">
+              <ul>`;
   for (var jjj = 0; jjj < detail.heros.length; jjj++) {
-    if (detail.heros[jjj]["side"] === "0") {
+    if (detail.heros[jjj]["side"] == 0) {
       var tr_1 = "";
       var tr_2 = "";
       for (var iii = 1; iii <= 3; iii++) {
@@ -1995,12 +1974,12 @@ function getReportContent(detail, data_obj, offset) {
         var f_post = "f_" + iii + "_post";
         var f_type = "f_" + iii + "_type";
 
-        if (detail["heros"][jjj][f_pre] !== "0") {
+        if (detail["heros"][jjj][f_pre] != 0) {
           tr_1 += ` <li>
-                                                             ${army_icon[detail["heros"][jjj][f_type]]}
-                                                            <div class="pre-amount stroke">${getArabicNumbers(detail["heros"][jjj][f_pre])}</div>
-                                                            <div class="post-amount">${getArabicNumbers(detail["heros"][jjj][f_post])}</div>
-                                                        </li>`;
+                        ${army_icon[detail["heros"][jjj][f_type]]}
+                        <div class="pre-amount stroke">${getArabicNumbers(detail["heros"][jjj][f_pre])}</div>
+                        <div class="post-amount">${getArabicNumbers(detail["heros"][jjj][f_post])}</div>
+                    </li>`;
         }
       }
       for (var kkk = 1; kkk <= 3; kkk++) {
@@ -2008,34 +1987,32 @@ function getReportContent(detail, data_obj, offset) {
         var b_pre = "b_" + kkk + "_pre";
         var b_post = "b_" + kkk + "_post";
         var b_type = "b_" + kkk + "_type";
-        if (detail["heros"][jjj][b_pre] !== "0") {
+        if (detail["heros"][jjj][b_pre] != 0) {
           tr_2 += ` <li>
-                                                            ${army_icon[detail["heros"][jjj][b_type]]}
-                                                            <div class="pre-amount stroke">${getArabicNumbers(detail["heros"][jjj][b_pre])}</div>
-                                                            <div class="post-amount">${getArabicNumbers(detail["heros"][jjj][b_post])}</div>
-                                                        </li>`;
+                      ${army_icon[detail["heros"][jjj][b_type]]}
+                      <div class="pre-amount stroke">${getArabicNumbers(detail["heros"][jjj][b_pre])}</div>
+                      <div class="post-amount">${getArabicNumbers(detail["heros"][jjj][b_post])}</div>
+                  </li>`;
         }
       }
       cont += `<li>
-                                                    <div class="hero">
-                                                        <div class="name">
-                                                            ${detail.heros[jjj].h_name ? detail.heros[jjj].h_name : "بطل النظام"}
-                                                        </div>
-                                                        ${Number(detail.heros[jjj].id_player) === Number(Elkaisar.DPlayer.Player.id_player) ?
-          `<div class="image">
-                                                                <img src="${Elkaisar.BaseData.HeroAvatar[detail.heros[jjj].avatar] || "images/icons/hero/eq-bg.png"}"/>
-                                                                <div class="xp stroke">+${getArabicNumbers(detail["heros"][jjj]["xp"])}</div>
-                                                            </div>`: ""
-
-        }
-                                                    </div>
-                                                    <div class="army">
-                                                        <ol>
-                                                        ${tr_1}
-                                                        ${tr_2}
-                                                        </ol>
-                                                    </div>
-                                                </li>`;
+                  <div class="hero">
+                      <div class="name">
+                          ${detail.heros[jjj].h_name ? detail.heros[jjj].h_name : "بطل النظام"}
+                      </div>
+                      ${Number(detail.heros[jjj].id_player) === Number(Elkaisar.DPlayer.Player.id_player) ?
+                `<div class="image">
+                    <img src="${Elkaisar.BaseData.HeroAvatar[detail.heros[jjj].avatar] || "images/icons/hero/eq-bg.png"}"/>
+                    <div class="xp stroke">+${getArabicNumbers(detail["heros"][jjj]["xp"])}</div>
+                </div>`: ""}
+                  </div>
+                  <div class="army">
+                      <ol>
+                      ${tr_1}
+                      ${tr_2}
+                      </ol>
+                  </div>
+              </li>`;
     }
   }
   cont += ` </ul>
@@ -2055,7 +2032,6 @@ function getReportContent(detail, data_obj, offset) {
                                         <a   href="battel.php?report=${detail.encId}&server=${Elkaisar.Config.idServer}" target="_blank">استعراض المعارك</a>
                                     </button>
                                 </li>
-
                             </ul>  
                         </div>  
                     </div>
@@ -2072,12 +2048,12 @@ $(document).on("click", "#show-battel-animated", function () {
 /*<button class="full-btn full" id="msg-reply" data-id-player="${msg_data[0].id_from}" data-player-name="${msg_data[0].name}">  رد </button>*/
 
 $(document).on("click", "#msg-reply", function () {
-
   var id_player = $(this).attr("data-id-player");
   var player_name = $(this).attr("data-player-name");
   var subject = "رد " + $(this).attr("data-msg-head");
-
-  $(".for_msg").replaceWith(message.dialogBoxcontent_msgWrite({ name: player_name, id: id_player }, subject));
-
-
+  $(".for_msg").replaceWith(
+    message.dialogBoxcontent_msgWrite(
+      { name: player_name, id: id_player }, subject
+      )
+    );
 });

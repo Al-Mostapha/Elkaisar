@@ -1098,13 +1098,12 @@
 }
 
 .for_guild .left-content .tr .drop-down-li{
-
-    width: 130px !important;
-    color: white;
-    height: auto !important;
-    margin-top: 30px;
-    position: absolute
-
+  width: 130px !important;
+  color: white;
+  height: auto !important;
+  margin-top: 30px;
+  position: absolute;
+  z-index: 10001;
 }
 .for_guild .left-content .tr .drop-down-li div{
 

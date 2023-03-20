@@ -6,17 +6,12 @@ function showInVitedMembers() {
 
     url: `${Elkaisar.Config.NodeUrl}/api/AGuild/getGuildInvReq`,
     data: {
-      token: Elkaisar.Config.OuthToken,
-      server: Elkaisar.Config.idServer
-
+      token: Elkaisar.Config.OuthToken
     },
     type: 'GET',
     success: function (data, textStatus, jqXHR) {
-
       if (!Elkaisar.LBase.isJson(data))
         return Elkaisar.LBase.Error(data);
-
-
       var json_data = JSON.parse(data);
       Elkaisar.Guild.Requests = json_data.GuildReq;
       Elkaisar.Guild.Invetaions = json_data.GuildInv;
@@ -24,55 +19,41 @@ function showInVitedMembers() {
       var total_req_list = "";
 
       for (var index in Elkaisar.Guild.Invetaions) {
-
         var Inv = Elkaisar.Guild.Invetaions[index];
-        total_inv_list += ` <li data-id-player="${Inv.id_player}" data-player-name="${Inv.name}"> 
-                                    <div class="pull-L">
-                                        <img src="${Elkaisar.BaseData.HeroAvatar[Inv.avatar]}">
-                                    </div>
-                                    <h1 class="pull-L">${Inv.name}</h1>
-                                    <div class="select-button">
-                                        <button class="show-player-profile full-btn full-btn-1x ellipsis pull-R" data-id-player="${Inv.id_player}">${Translate.Button.MenuList.View[UserLag.language]}</button>
-                                        <button class="full-btn full-btn-1x pull-L cansel-inv-action ellipsis" ${parseInt(Elkaisar.DPlayer.GuildData.rank) < 4 ? "disabled" : ""}>${Translate.Button.General.Cancel[UserLag.language]}</button>
-                                        
-                                    </div>
-                                </li>`;
-
+        total_inv_list +=
+          ` <li data-id-player="${Inv.id_player}" data-player-name="${Inv.name}"> 
+            <div class="pull-L">
+              <img src="${Elkaisar.BaseData.HeroAvatar[Inv.avatar]}">
+            </div>
+            <h1 class="pull-L">${Inv.name}</h1>
+            <div class="select-button">
+              <button class="show-player-profile full-btn full-btn-1x ellipsis pull-R" data-id-player="${Inv.id_player}">${Translate.Button.MenuList.View[UserLag.language]}</button>
+              <button class="full-btn full-btn-1x pull-L cansel-inv-action ellipsis" ${parseInt(Elkaisar.DPlayer.GuildData.rank) < 4 ? "disabled" : ""}>${Translate.Button.General.Cancel[UserLag.language]}</button>
+            </div>
+        </li>`;
       }
       $("#AFTER-AJAX-invited-mem").html(total_inv_list);
       $("#AFTER-AJAX-invited-mem").niceScroll(SCROLL_BAR_PROP);
-
-
-
-
       for (var index in Elkaisar.Guild.Requests) {
-
         var Req = Elkaisar.Guild.Requests[index];
         total_req_list += ` <li data-id-player="${Req.id_player}" data-player-name="${Req.name}"> 
-                                    <div class="pull-L">
-                                        <img src="${Elkaisar.BaseData.HeroAvatar[Req.avatar]}">
+                                  <div class="pull-L">
+                                    <img src="${Elkaisar.BaseData.HeroAvatar[Req.avatar]}">
+                                  </div>
+                                  <h1 class="pull-L">${Req.name}</h1>
+                                  <div class="select-button">
+                                    <button class="show-player-profile full-btn  full-btn-1x  full-btn-1x pull-R" data-id-player="${Req.id_player}">${Translate.Button.MenuList.View[UserLag.language]}</button>
+                                    <button class="full-btn full-btn-1x pull-L select-req-action ellipsis" ${parseInt(Elkaisar.DPlayer.GuildData.rank) < Guild.RANK_DATA.MENSTER ? "disabled" : ""}>اختيار</button>
+                                    <div class="drop-down-li">
+                                      ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= Guild.RANK_DATA.MENSTER ? `<div class="accept-guild-req">قبول</div>` : ""}
+                                      ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= Guild.RANK_DATA.DEPUTY ? ` <div class="cansel-guild-req">الغاء</div>` : ""}
                                     </div>
-                                    <h1 class="pull-L">${Req.name}</h1>
-                                    <div class="select-button">
-                                        <button class="show-player-profile full-btn  full-btn-1x  full-btn-1x pull-R" data-id-player="${Req.id_player}">${Translate.Button.MenuList.View[UserLag.language]}</button>
-                
-                                        
-                                        <button class="full-btn full-btn-1x pull-L select-req-action ellipsis" ${parseInt(Elkaisar.DPlayer.GuildData.rank) < Guild.RANK_DATA.MENSTER ? "disabled" : ""}>اختيار</button>
-                                        
-                                        <div class="drop-down-li">
-                                            ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= Guild.RANK_DATA.MENSTER ? `<div class="accept-guild-req">قبول</div>` : ""}
-                                            ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= Guild.RANK_DATA.DEPUTY ? ` <div class="cansel-guild-req">الغاء</div>` : ""}
-                                        </div>
-                                    </div>
+                                  </div>
                                 </li>`;
       }
       $("#AFTER-AJAX-join-req-mem").html(total_req_list);
       $("#AFTER-AJAX-join-req-mem").niceScroll(SCROLL_BAR_PROP);
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-
     }
-
   });
 
 }
@@ -454,9 +435,7 @@ var Guild = {
   },
 
   guild_click: function () {
-    Guild.getGuildData();
     if (!Elkaisar.DPlayer.GuildData || !Elkaisar.DPlayer.GuildData.id_guild) {
-
       var box = ` <div id="select_from">
                             <div class="head_bar">
                                 <img src="images/style/head_bar.png" class="banner">
@@ -515,109 +494,67 @@ var Guild = {
       $("body").append(box);
 
     } else {
-
-
       var content = Guild.content_forGuild_data();
       var dialog_box = Guild.dialogBox(Translate.Button.Chat.League[UserLag.language], NavBar.League, content);
-
       dialogBoxShow(dialog_box);
-
-
     }
-
   },
 
   unJoinedPlayer: function () {
-
     $.ajax({
-
       url: `${Elkaisar.Config.NodeUrl}/api/AGuild/getUnJoinedPlayerData`,
       data: {
         token: Elkaisar.Config.OuthToken
       },
       type: 'GET',
-      beforeSend: function (xhr) {
-
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-
-        console.log(errorThrown);
-
-      },
       success: function (data, textStatus, jqXHR) {
-
-        if (isJson(data)) {
-          var json_data = JSON.parse(data);
-        } else {
-          Elkaisar.LBase.Error(data);
-          return;
-        }
-
-
-        console.log(json_data)
-
+        if (!Elkaisar.LBase.isJson(data))
+          return Elkaisar.LBase.Error(data);
+        var json_data = JSON.parse(data);
         if (json_data.guild_req.length > 0) {
-
           var guild = `<div class="td_1" style="width: 70%;">${json_data.guild_req[0].name}</div>
                                 <div class="td_2" style="width: 30%;">
                                     <button  class="full-btn full-btn-1x ellipsis" style="width: 80%; margin: auto" id="cansel-guild_req" data-id-guild="${json_data.guild_req[0].id_guild}">${Translate.Button.General.Cancel[UserLag.language]}</button>
                                 </div>`;
           $("#A-A-guild_req-list").html(guild);
-
-
         }
         if (json_data.guild_inv.length > 0) {
-
           var guilds = "";
           for (var iii = 0; iii < 5; iii++) {
-
             if (json_data.guild_inv[iii]) {
               guilds += `  <div class="tr" data-id_guild="${json_data.guild_inv[iii].id_guild}">
-                                            <div class="td_1" style="width: 50%;">${json_data.guild_inv[iii].name}</div>
-                                            <div class="td_2" style="width: 48%; margin-right: 2%">
-                                                <button  class="full-btn full-btn-1x pull-R ellipsis" style="width: 30%;" id="cansel-guild_inv" data-id-guild="${json_data.guild_inv[iii].id_guild}">الغاء</button>
-                                                <button  class="full-btn full-btn-1x ellipsis" style="width: 30%; display: inline-block; " class="accept-guild-inv" data-id-guild="${json_data.guild_inv[iii].id_guild}" >قبول</button>
-                                                <button  class="full-btn full-btn-1x pull-R show-guild-prev ellipsis" style="width: 30%; margin-right:3%" >${Translate.Button.MenuList.View[UserLag.language]}</button>
-                                            </div>
-                                        </div>`;
+                              <div class="td_1" style="width: 50%;">${json_data.guild_inv[iii].name}</div>
+                              <div class="td_2" style="width: 48%; margin-right: 2%">
+                                <button  class="full-btn full-btn-1x pull-R ellipsis" style="width: 30%;" id="cansel-guild_inv" data-id-guild="${json_data.guild_inv[iii].id_guild}">الغاء</button>
+                                <button  class="full-btn full-btn-1x ellipsis" style="width: 30%; display: inline-block; " class="accept-guild-inv" data-id-guild="${json_data.guild_inv[iii].id_guild}" >قبول</button>
+                                <button  class="full-btn full-btn-1x pull-R show-guild-prev ellipsis" style="width: 30%; margin-right:3%" >${Translate.Button.MenuList.View[UserLag.language]}</button>
+                              </div>
+                            </div>`;
             } else {
-
-
               guilds += `<div class="tr">
-                                            <div class="td_1"></div>
-                                            <div class="td_2"></div>
-                                        </div>`;
-
+                            <div class="td_1"></div>
+                            <div class="td_2"></div>
+                          </div>`;
             }
-
           }
-
           $("#A-A-guild_inv-list").html(guilds);
-
         }
       }
-
     });
-
   },
 
   create: function () {
-
     if ($("#guild-name").val() === "") {
       alert_box.confirmMessage(" لا يمكن ان يكون اسم الحلف خالى");
       return;
     } else if (player.guild_data !== false) {
       return;
     } else if ($("#guild-name").val().length < 5) {
-
       alert_box.confirmMessage("اسم الحلف اقل من 5 حروف");
       return;
-
     } else if ($("#guild-name").val().length > 20) {
-
       alert_box.confirmMessage("يجب ان لا يتعدى اسم الحلف عن 20 حرف");
       return;
-
     } else {
       var idCity = Elkaisar.CurrentCity.City.id_city;
       $.ajax({
@@ -633,22 +570,15 @@ var Guild = {
         },
         type: 'POST',
         success: function (data, textStatus, jqXHR) {
-
           if (!Elkaisar.LBase.isJson(data))
             return Elkaisar.LBase.Error(data);
-
           var JsonObject = JSON.parse(data);
-
           if (JsonObject.state === "ok") {
-
             $(".close-alert_container").trigger("click");
-
-
             Player_profile.getPlayerGuildData();
             Guild.getGuildData();
             Player_profile.refresh_player_data();
             alert_box.succesMessage(`تم انشاء حلف ${JsonObject.GuildData.GuildData.name} بنجاح`);
-
           } else if (JsonObject.state == "error_0")
             return alert_box.confirmMessage("لا يوجد إسم للحلف");
           else if (JsonObject.state == "error_1")
@@ -659,60 +589,39 @@ var Guild = {
             return alert_box.confirmMessage("لا يوجد لديك موارد كافية لإنشاء حلف");
           else if (JsonObject.state == "error_4")
             return alert_box.confirmMessage("حدث خطاء ما اثناء إنشاء حلف"); else {
-
             Elkaisar.LBase.Error(data);
-
           }
-
         },
         error: function (jqXHR, textStatus, errorThrown) {
-
         }
       });
-
     }
 
   },
   getGuildData: function () {
-
-
-
     return $.ajax({
       url: `${Elkaisar.Config.NodeUrl}/api/AGuild/getGuildData`,
       data: {
-        token: Elkaisar.Config.OuthToken,
-        server: Elkaisar.Config.idServer
+        token: Elkaisar.Config.OuthToken
       },
       type: 'GET',
       success: function (data, textStatus, jqXHR) {
-
         if (!Elkaisar.LBase.isJson(data))
           return Elkaisar.LBase.Error(data);
-
         var JsonObject = JSON.parse(data);
-
         if (JsonObject.state == "ok") {
           Elkaisar.Guild.GuildData = JsonObject.Guild.GuildData;
           Elkaisar.Guild.LeaderName = JsonObject.Guild.leaderName;
           Elkaisar.Guild.Allay = JsonObject.Guild.Allay;
           Elkaisar.Guild.prizeShare = JsonObject.Guild.prizeShare;
         }
-
-
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-
       }
     });
   },
   content_forGuild_data: function () {
-
-
     this.getGuildData();
-
     var all_allaies = "";
     var allaies_count = 0;
-
     for (var iii = 0; iii < Elkaisar.Guild.Allay.length; iii++) {
 
 
@@ -845,70 +754,53 @@ var Guild = {
 
       },
       success: function (data, textStatus, jqXHR) {
-
-        if (isJson(data)) {
-          var guild_data = JSON.parse(data);
-        } else {
-          Elkaisar.LBase.Error(data);
-          return;
-        }
-        if (guild_data.length < 1) {
-          return;
-        }
+        if (!Elkaisar.LBase.isJson(data))
+          return Elkaisar.LBase.Error(data);
+        const guild_data = JSON.parse(data);
         var all_member = "";
         for (var iii = 0; iii < guild_data.length; iii++) {
           all_member += ` <div class="tr" data-offset="${offset + iii}" 
-                                        data-id-member="${guild_data[iii].id_player}" 
-                                        data-member-rank="${guild_data[iii].rank}"
-                                        data-prize-share="${guild_data[iii].prize_share}">
-                    
-                                        <div class="td_1 ellipsis" style="width : 17%">${guild_data[iii].name}</div>
-                                        <div class="td_2 ellipsis" style="width : 12%">${guild_ranks[guild_data[iii].rank].ar_title}</div>
-                                        <div class="td_3 ellipsis" style="width : 14%">${guild_data[iii].prize_share}%</div>
-                                        <div class="td_4 ellipsis" style="width : 13%">${Elkaisar.BaseData.Promotion[guild_data[iii].porm].Title}</div>
-                                        <div class="td_5 ellipsis" style="width : 16%"> ${getArabicNumbers(guild_data[iii].prestige)}</div>
-
-                                        <div class="td_6 ellipsis" style="width : 12%">${Number(guild_data[iii].online) === 1 ? "<span style='color:#34740e'>متصل الان</span>" : lastSeen(guild_data[iii].last_seen)}</div>
-                                        <div class="td_7 ellipsis" style="width : 16%">
-                                            <button class="full-btn full-btn-1x pull-L show-player-profile ellipsis" data-id-player=${guild_data[iii].id_player}>${Translate.Button.MenuList.View[UserLag.language]} </button>
-                                            <button class="full-btn full-btn-1x pull-R guild-mem-action-for_admins ellipsis" ${parseInt(Elkaisar.DPlayer.GuildData.rank) < 2 ? "disabled" : ""}>${Translate.Button.General.Action[UserLag.language]}</button>
-                                            <div class="drop-down-li">
-                    
-                                                ${parseInt(Elkaisar.DPlayer.GuildData.rank) > parseInt(guild_data[iii].rank) && parseInt(guild_data[iii].rank) > 0 ? `<div id="isolate-guild-member">عزل من المنصب</div>` : ""}
-                                                
-                                                ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= 5 &&
+                                          data-id-member="${guild_data[iii].id_player}" 
+                                          data-member-rank="${guild_data[iii].rank}"
+                                          data-prize-share="${guild_data[iii].prize_share}">
+                      
+                                          <div class="td_1 ellipsis" style="width : 17%">${guild_data[iii].name}</div>
+                                          <div class="td_2 ellipsis" style="width : 12%">${guild_ranks[guild_data[iii].rank].ar_title}</div>
+                                          <div class="td_3 ellipsis" style="width : 14%">${guild_data[iii].prize_share}%</div>
+                                          <div class="td_4 ellipsis" style="width : 13%">${Elkaisar.BaseData.Promotion[guild_data[iii].porm].Title}</div>
+                                          <div class="td_5 ellipsis" style="width : 16%"> ${getArabicNumbers(guild_data[iii].prestige)}</div>
+  
+                                          <div class="td_6 ellipsis" style="width : 12%">${Number(guild_data[iii].online) === 1 ? "<span style='color:#34740e'>متصل الان</span>" : lastSeen(guild_data[iii].last_seen)}</div>
+                                          <div class="td_7 ellipsis" style="width : 16%">
+                                              <button class="full-btn full-btn-1x pull-L show-player-profile ellipsis" data-id-player=${guild_data[iii].id_player}>${Translate.Button.MenuList.View[UserLag.language]} </button>
+                                              <button class="full-btn full-btn-1x pull-R guild-mem-action-for_admins ellipsis" ${parseInt(Elkaisar.DPlayer.GuildData.rank) < 2 ? "disabled" : ""}>${Translate.Button.General.Action[UserLag.language]}</button>
+                                              <div class="drop-down-li">
+                      
+                                                  ${parseInt(Elkaisar.DPlayer.GuildData.rank) > parseInt(guild_data[iii].rank) && parseInt(guild_data[iii].rank) > 0 ? `<div id="isolate-guild-member">عزل من المنصب</div>` : ""}
+                                                  
+                                                  ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= 5 &&
               parseInt(guild_data[iii].rank) < 6 &&
               parseInt(Elkaisar.DPlayer.Player.id_player) !== parseInt(guild_data[iii].id_player) ?
               `<div id="promote-guild-member">ترقية    &nbsp;&nbsp;&#8618;</div>` : ""}
-                                                
-                                                ${parseInt(Elkaisar.DPlayer.GuildData.rank) > parseInt(guild_data[iii].rank) ? `<div id="trade-guild-position">تبادل المناصب</div>` : ""}
-                                                ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= Number(Guild.RANK_DATA.LEADER) ? `<div class="mem-prize-percent">نسبة الجوائز</div>` : ""}
-                                                ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= 4 && parseInt(guild_data[iii].rank) === 0 ? ` <div id="fire-guild-mamber">${Translate.Button.Hero.Dismiss[UserLag.language]}</div>` : ""}
-                                                ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= 1 && parseInt(guild_data[iii].id_player) === parseInt(Elkaisar.DPlayer.Player.id_player) && parseInt(Elkaisar.DPlayer.GuildData.rank) !== 6 ? ` <div id="stepdown-guild-mamber">تنحى من المنصب</div>` : ""}
-                                                ${parseInt(guild_data[iii].id_player) === parseInt(Elkaisar.DPlayer.Player.id_player) ? ` <div id="get-out-guild">خروج</div>` : ""}
-                                                
-                                                
-                                            </div>
-                                        </div>
-                                    </div>`;
+                                                  
+                                                  ${parseInt(Elkaisar.DPlayer.GuildData.rank) > parseInt(guild_data[iii].rank) ? `<div id="trade-guild-position">تبادل المناصب</div>` : ""}
+                                                  ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= Number(Guild.RANK_DATA.LEADER) ? `<div class="mem-prize-percent">نسبة الجوائز</div>` : ""}
+                                                  ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= 4 && parseInt(guild_data[iii].rank) === 0 ? ` <div id="fire-guild-mamber">${Translate.Button.Hero.Dismiss[UserLag.language]}</div>` : ""}
+                                                  ${parseInt(Elkaisar.DPlayer.GuildData.rank) >= 1 && parseInt(guild_data[iii].id_player) === parseInt(Elkaisar.DPlayer.Player.id_player) && parseInt(Elkaisar.DPlayer.GuildData.rank) !== 6 ? ` <div id="stepdown-guild-mamber">تنحى من المنصب</div>` : ""}
+                                                  ${parseInt(guild_data[iii].id_player) === parseInt(Elkaisar.DPlayer.Player.id_player) ? ` <div id="get-out-guild">خروج</div>` : ""}
+                                                  
+                                                  
+                                              </div>
+                                          </div>
+                                      </div>`;
         }
+
 
         for (var iii = 0; iii < 10 - guild_data.length; iii++) {
-          all_member += ` <div class="tr" >
-
-                                    </div>`;
+          all_member += ` <div class="tr" ></div>`;
         }
-
         $("#AFTER-AJAX-allMember").html(all_member);
-
-        /*show invited list*/
-
-
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-
       }
-
     });
   },
   content_forRelation: function () {
@@ -2053,25 +1945,17 @@ $(document).on("click", "#send-guild-req button", function () {
     data: {
       idGuild: id_guild,
       token: Elkaisar.Config.OuthToken,
-      server: Elkaisar.Config.idServer
     },
     type: 'POST',
     success: function (data, textStatus, jqXHR) {
-
       if (!Elkaisar.LBase.isJson(data))
         return Elkaisar.LBase.Error(data);
-
       var JsonObject = JSON.parse(data);
-
       if (JsonObject.state === "ok") {
-
         alert_box.succesMessage("تم ارسال الدعوة الى المسؤلين للانضمام للحلف");
         $(".close_use_menu").click();
       } else if (JsonObject.state == "error_0")
         alert_box.failMessage("لست منضم فى أى حلف");
-
-
-
     },
     error: function (jqXHR, textStatus, errorThrown) {
 
@@ -2613,8 +2497,7 @@ $(document).on("click", '#get-out-guild , #leave-g', function () {
   alert_box.confirmDialog("تاكيد الخروج من الحلف", function () {
 
     $.ajax({
-
-      url: `${Elkaisar.Config.NodeUrl}/api/AGuild/quitFromGuild`,
+      url: `${Elkaisar.Config.NodeUrl}/api/AGuildMember/quitFromGuild`,
       data: {
         token: Elkaisar.Config.OuthToken,
         server: Elkaisar.Config.idServer
@@ -2627,11 +2510,8 @@ $(document).on("click", '#get-out-guild , #leave-g', function () {
 
         if (!Elkaisar.LBase.isJson(data))
           return Elkaisar.LBase.Error(data);
-
         var JsonObject = JSON.parse(data);
-
         if (JsonObject.state === "ok") {
-
           $(".close_dialog").click();
           Player_profile.getPlayerGuildData();
           Player_profile.getPlayerBaseData();
@@ -2662,7 +2542,7 @@ $(document).on("click", "#stepdown-guild-mamber , #resignation-g", function () {
 
     $.ajax({
 
-      url: `${Elkaisar.Config.NodeUrl}/api/AGuild/resignFromPosition`,
+      url: `${Elkaisar.Config.NodeUrl}/api/AGuildMember/resignFromPosition`,
       data: {
         token: Elkaisar.Config.OuthToken,
         server: Elkaisar.Config.idServer

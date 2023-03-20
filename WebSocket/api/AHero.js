@@ -45,7 +45,7 @@ class AHero {
 
     const idHero = Elkaisar.Base.validateId(this.Parm.idHero);
     const Hero = await Elkaisar.DB.ASelectFrom("id_hero, lvl, exp, b_lvl, ultra_p, in_city, id_city", "hero", "id_hero = ? AND id_player = ?", [idHero, this.idPlayer]);
-    const reqExp = Elkaisar.Lib.LHero.reqExp(this.idPlayer, Hero[0].lvl);
+    const reqExp = await Elkaisar.Lib.LHero.reqExp(this.idPlayer, Hero[0].lvl);
 
     if (!Hero.length)
       return { state: "error_0", TryToHack: Elkaisar.Base.TryToHack(this) };
@@ -183,16 +183,16 @@ class AHero {
       return { state: "error_1", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (!await Elkaisar.Lib.LItem.useItem(this.idPlayer, itemToUse, 1))
       return { state: "error_2", TryToHack: Elkaisar.Base.TryToHack(this) };
-
-    if (itemToUse == "luxury_1") $amount = 5;
-    else if (itemToUse == "luxury_2") $amount = 10;
-    else if (itemToUse == "luxury_3") $amount = 15;
-    else if (itemToUse == "luxury_4") $amount = 20;
-    else if (itemToUse == "luxury_5") $amount = 25;
-    else if (itemToUse == "luxury_6") $amount = 30;
-    else if (itemToUse == "luxury_7") $amount = 35;
-    else if (itemToUse == "luxury_8") $amount = 40;
-    else if (itemToUse == "luxury_9") $amount = 45;
+    let amount  = 0;
+    if (itemToUse == "luxury_1") amount = 5;
+    else if (itemToUse == "luxury_2") amount = 10;
+    else if (itemToUse == "luxury_3") amount = 15;
+    else if (itemToUse == "luxury_4") amount = 20;
+    else if (itemToUse == "luxury_5") amount = 25;
+    else if (itemToUse == "luxury_6") amount = 30;
+    else if (itemToUse == "luxury_7") amount = 35;
+    else if (itemToUse == "luxury_8") amount = 40;
+    else if (itemToUse == "luxury_9") amount = 45;
     else
       return { state: "error_3", TryToHack: Elkaisar.Base.TryToHack(this) };
 
@@ -283,7 +283,7 @@ class AHero {
 
     if (!Hero.length)
       return { state: "error_0", TryToHack: Elkaisar.Base.TryToHack(this) };
-    if (Elkaisar.Lib.LHero.InBattle(idHero))
+    if (Elkaisar.Lib.LHero.InBattel(idHero))
       return { state: "error_1" };
 
     await Elkaisar.DB.AUpdate("console = 0", "hero", "id_city = ?", [Hero[0].id_city]);
@@ -305,7 +305,7 @@ class AHero {
 
   async removeConsole() {
 
-    const idCity = ELkaisar.Base.validateId(this.Parm.idCity);
+    const idCity = Elkaisar.Base.validateId(this.Parm.idCity);
     await Elkaisar.DB.AUpdate("console = 0", "hero", "id_city = ?", [idCity]);
     await Elkaisar.DB.AUpdate("console = NULL", "city", "id_city = ?", [idCity]);
 
@@ -352,7 +352,7 @@ class AHero {
       return { state: "error_3", TryToHack: Elkaisar.Base.TryToHack(this) };
     }
 
-    if (!await Elkaisar.Lib.LItem.useItem(medalToUse, 10))
+    if (!await Elkaisar.Lib.LItem.useItem(this.idPlayer, medalToUse, 10))
       return { state: "error_4", TryToHack: Elkaisar.Base.TryToHack(this) };
 
     await Elkaisar.DB.AUpdate("`" + pointFor + "` = GREATEST(0 , LEAST(`" + pointFor + "` + ? , 10) )", "hero",

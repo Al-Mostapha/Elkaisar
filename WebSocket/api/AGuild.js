@@ -44,8 +44,6 @@ class AGuild {
 
 
   async changeGuildName() {
-
-    const idPlayer = Elkaisar.Base.validateId(this.Parm["idPlayer"]);
     const slog_top = Elkaisar.Base.validateId(this.Parm["slog_top"]);
     const slog_cnt = Elkaisar.Base.validateId(this.Parm["slog_cnt"]);
     const slog_btm = Elkaisar.Base.validateId(this.Parm["slog_btm"]);
@@ -89,13 +87,21 @@ class AGuild {
     }
   }
 
+  async getGuildInvReq(){
+    const GuildMember =  await Elkaisar.DB.ASelectFrom("id_guild", "guild_member", "id_player = ?", [this.idPlayer]);
+    if(GuildMember.length == 0)
+      return {state: "error", TryToHack: Elkaisar.Base.TryToHack(this)};
+    const idGuild = GuildMember[0].id_guild;
+    return await Elkaisar.Lib.LGuild.getGuildInvReq(idGuild);
+  }
+
   async getGuildDetail() {
 
     const idGuild = Elkaisar.Base.validateId(this.Parm["idGuild"]);
     return (await Elkaisar.DB.ASelectFrom(
       "col.*, rank_g , player.name as p_name",
-      "(SELECT guild.*, @row:=@row+1 as 'rank_g' FROM guild , (SELECT @row:=0) r  )"
-      + " AS col JOIN player ON col.id_guild = :idg  AND col.id_leader = player.id_player", "1", [idGuild]))[0];
+      "(SELECT guild.*, @row:=@row+1 as 'rank_g' FROM guild ,(SELECT @row:=0) r  )"
+      + " AS col JOIN player ON col.id_guild = ? AND col.id_leader = player.id_player", "1", [idGuild]))[0];
   }
 
   async getUnJoinedPlayerData() {

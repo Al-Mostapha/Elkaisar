@@ -314,8 +314,8 @@ $(document).on("click" , "#change-city-pro-rate" , function (){
         },
         type: 'POST',
         beforeSend: function (xhr) {
-            $("#change-city-pro-rate").attr("disabled" , "disabled");
-            waitCursor();
+          $("#change-city-pro-rate").attr("disabled" , "disabled");
+          waitCursor();
         },
         success: function (data, textStatus, jqXHR) {
             

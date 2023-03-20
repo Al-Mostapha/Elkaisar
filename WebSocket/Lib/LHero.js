@@ -307,7 +307,7 @@ class LHero {
     let studyEffect = 0;
 
     if (studyLvl[0]["scholership"] >= 20)
-      rstudyEffect = 0.3 + 0.2 + (studyLvl[0]["scholership"] - 20) * 0.015;
+      studyEffect = 0.3 + 0.2 + (studyLvl[0]["scholership"] - 20) * 0.015;
     else if (studyLvl[0]["scholership"] >= 10)
       studyEffect = 0.3 + (studyLvl[0]["scholership"] - 10) * 0.02;
     else

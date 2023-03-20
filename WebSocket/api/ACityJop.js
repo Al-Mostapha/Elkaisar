@@ -147,7 +147,7 @@ class ACityJop {
     const buildingPlace = Elkaisar.Base.validateGameNames(this.Parm.buildingPlace);
     const amountToFire = Elkaisar.Base.validateGameNames(this.Parm.amountToFire);
     const JopPlace = await Elkaisar.Libs.LCityBuilding.getBuildingAtPlace(buildingPlace, this.idPlayer, idCity);
-    const UnitReq = Elkaisar.Config.CJop.JopReq[JopPlace["Place"]];
+    let UnitReq = Object.assign({}, Elkaisar.Config.CJop.JopReq[JopPlace["Place"]]);
 
     if (amountToFire <= 0)
       return { "state": "error_0", "TryToHack": Elkaisar.Base.TryToHack(this) };

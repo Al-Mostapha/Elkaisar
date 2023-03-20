@@ -71,18 +71,18 @@ class ACity {
     const idCity = Elkaisar.Base.validateId(this.Parm.idCity);
     const armyType = Elkaisar.Base.validateGameNames(this.Parm.armyType);
     
-    if(!Elkaisar.Config.CArmy.ResourcseNeeded[armyType])
+    if(!Elkaisar.Lib.LArmy.neededResources(armyType))
         return {state: "error_0"};
     const ArmyAmount = ASelectFrom("`"+armyType+"`", "city_wounded", "id_player = ? AND id_city = ?", [this.idPlayer, idCity]);
     if(!ArmyAmount.length)
         return {state: "error_1"};
 
     const GainRes = {
-      food: Elkaisar.Config.CArmy.ResourcseNeeded[armyType].food * ArmyAmount[0][armyType]/3,
-      wood: Elkaisar.Config.CArmy.ResourcseNeeded[armyType].wood * ArmyAmount[0][armyType]/3,
-      stone: Elkaisar.Config.CArmy.ResourcseNeeded[armyType].stone * ArmyAmount[0][armyType]/3,
-      metal: Elkaisar.Config.CArmy.ResourcseNeeded[armyType].metal * ArmyAmount[0][armyType]/3,
-      coin: Elkaisar.Config.CArmy.ResourcseNeeded[armyType].coin * ArmyAmount[0][armyType]/3
+      food:  Elkaisar.Lib.LArmy.neededResources(armyType).food  * ArmyAmount[0][armyType]/3,
+      wood:  Elkaisar.Lib.LArmy.neededResources(armyType).wood  * ArmyAmount[0][armyType]/3,
+      stone: Elkaisar.Lib.LArmy.neededResources(armyType).stone * ArmyAmount[0][armyType]/3,
+      metal: Elkaisar.Lib.LArmy.neededResources(armyType).metal * ArmyAmount[0][armyType]/3,
+      coin:  Elkaisar.Lib.LArmy.neededResources(armyType).coin  * ArmyAmount[0][armyType]/3
     };
     Elkaisar.Lib.LSaveState.saveCityState(idCity);
     Elkaisar.Lib.LCity.addResource(GainRes, this.idPlayer, idCity);

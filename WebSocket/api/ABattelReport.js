@@ -17,10 +17,11 @@ class ABattelReport {
         continue;
       const WorldUnit = Object.assign({}, Elkaisar.World.getUnit(Report[0]["x"], Report[0]["y"]));
       const time_stamp = new Date(Report[0]["time_stamp"] * 1000);
-      WorldUnit["time_stamp"] = `${time_stamp.getDay()}/${time_stamp.getMonth()}/${time_stamp.getFullYear()}`;
+      WorldUnit["time_stamp"] = `${time_stamp.getDay() + 1}/${time_stamp.getMonth()}/${time_stamp.getFullYear()}`;
       WorldUnit["id_report"] = Report[0]["id_report"];
       WorldUnit["type"] = "battel";
       WorldUnit["seen"] = OneReport["seen"];
+      WorldUnit.lvl = Report[0].lvl
       ReportList.push(WorldUnit);
     }
     return ReportList;

@@ -54,8 +54,8 @@ class AArmyBuild {
     amount = Math.floor(amount);
     const timeStart = await Elkaisar.Lib.LArmy.getLastbatchArmyBuilding(idCity, buildingTrain["Place"]);
     let timePerUnit = Elkaisar.Lib.LArmy.neededResources(armyType)["time"];
-    timePerUnit = timePerUnit - (timePerUnit * buildingTrain["Lvl"] * Elkaisar.Config.ARMY_TRAIN_BUILDING_T_FAC / 100);
-    timePerUnit = timePerUnit - (timePerUnit * templeEffect);
+    timePerUnit -= timePerUnit * buildingTrain["Lvl"] * Elkaisar.Config.ARMY_TRAIN_BUILDING_T_FAC / 100;
+    timePerUnit -= timePerUnit * templeEffect;
 
     const timeEnd = timeStart + (amount * timePerUnit);
     const idBatch = await Elkaisar.DB.AInsert(
@@ -91,7 +91,7 @@ class AArmyBuild {
         "City": (await Elkaisar.DB.ASelectFrom("*", "city", "id_city = ?", [idCity]))[0]
       };
 
-    const templeEffect = await Elkaisar.Lib.LCityBuilding.getTempleEffectRateOnArmy(idCity, worshipPlace);
+    const templeEffect = await Elkaisar.Lib.LCityBuilding.getTempleEffectRateOnArmy(this.idPlayer, idCity, worshipPlace);
     return {
       "state": "ok",
       "armyBatches": [await this.#addArmyBatch(armyType, amount, idCity, buildingTrain, templeEffect)],
@@ -101,7 +101,7 @@ class AArmyBuild {
 
   async #buildArmyDiviedByTime(armyType, amount, idCity, worshipPlace) {
     const BuildingList = await Elkaisar.Lib.LCityBuilding.canBuildArmy(this.idPlayer, idCity, armyType);
-    const templeEffect = await Elkaisar.Lib.LCityBuilding.getTempleEffectRateOnArmy(idCity, worshipPlace);
+    const templeEffect = await Elkaisar.Lib.LCityBuilding.getTempleEffectRateOnArmy(this.idPlayer, idCity, worshipPlace);
     let batches = [];
     const timePerUnit = Elkaisar.Lib.LArmy.neededResources(armyType)["time"];
     for (let oneBuilding of BuildingList)
@@ -126,7 +126,7 @@ class AArmyBuild {
   async #buildArmyDiviedByAmount(armyType, amount, idCity, worshipPlace) {
 
     const BuildingList = await Elkaisar.Lib.LCityBuilding.canBuildArmy(this.idPlayer, idCity, armyType);
-    const templeEffect = await Elkaisar.Lib.LCityBuilding.getTempleEffectRateOnArmy(idCity, worshipPlace);
+    const templeEffect = await Elkaisar.Lib.LCityBuilding.getTempleEffectRateOnArmy(this.idPlayer, idCity, worshipPlace);
     let batches = [];
     const amountFactor = amount / BuildingList.length;
     for (let oneBuilding of BuildingList) {

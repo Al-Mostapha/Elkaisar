@@ -7,7 +7,7 @@ class LAfterFight {
     this.Battel = Battel;
   }
 
-  updateLvl() {
+  async updateLvl() {
 
     var Unit = Elkaisar.World.getUnit(this.Battel.Battel.x_coord, this.Battel.Battel.y_coord);
 
@@ -21,7 +21,7 @@ class LAfterFight {
       Elkaisar.Lib.LWorldUnit.isStatueWalf(Unit["ut"]) ||
       Elkaisar.Lib.LWorldUnit.isStatueWar(Unit["ut"])) {
 
-      Elkaisar.DB.Update("l = l + 1", "world", "x = ? AND y = ? AND l <= ? ", [Unit.x, Unit.y, Elkaisar.World.WorldUnitData[Unit.ut].maxLvl]);
+      await Elkaisar.DB.AUpdate("l = l + 1", "world", "x = ? AND y = ? AND l <= ? ", [Unit.x, Unit.y, Elkaisar.World.WorldUnitData[Unit.ut].maxLvl]);
       Unit.l++;
       Elkaisar.Base.broadcast(JSON.stringify({
         classPath: "World.UnitUpdate",

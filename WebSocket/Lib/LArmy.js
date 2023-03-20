@@ -106,7 +106,7 @@ class LArmy {
 
   static neededResources(armyType) {
     if (!Elkaisar.Config.CArmy.ResourcseNeeded[armyType])
-      console.log("Error: No resorce for ", armyType);
+      console.log("Error: No resource for ", armyType);
     return Elkaisar.Config.CArmy.ResourcseNeeded[armyType];
   }
 

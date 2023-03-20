@@ -1027,6 +1027,7 @@
 .for_msg .td_3{
     width: 33.3% ;
     text-align: center;
+    overflow: hidden;
 }
 .for_building .left-content{
     direction: rtl;

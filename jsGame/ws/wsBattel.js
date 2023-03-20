@@ -178,16 +178,12 @@ WsBattel.announceHonorGained = function (data) {
 };
 
 WsBattel.announceAttackerName = function (data) {
-
     var name = '';
     data.playersName.forEach(function (player) {
-
-        if (Number(player.id_player) === Number(data.attacker)) {
-            name = player.name;
+        if (Number(player.id_player) == Number(data.attacker)) {
+          name = player.name;
         }
-
     });
-
     return name;
 };
 

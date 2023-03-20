@@ -15,6 +15,7 @@ module.exports.isJson = function (str){
         } catch (e) {
             console.log("Json Parse Error",str);
             console.log(e);
+            throw e
             return false;
         }
         return json;
@@ -53,23 +54,16 @@ exports.escapeHtml = function (text) {
 
 
 exports.arrayChunk = function (arr, chunkSize = 50){
-    
     var index = 0;
     var arrayLength = arr.length;
     var tempArray = [];
-    
     for (index = 0; index < arrayLength; index += chunkSize) {
         myChunk = myArray.slice(index, index+chunkSize);
-        // Do something if you want with the group
         tempArray.push(myChunk);
     }
-
     return tempArray;  
     
 };
-
-
-
 
 exports.rand = function (min, max){
     return Math.floor(Math.random() * (max - min + 1) ) + min;

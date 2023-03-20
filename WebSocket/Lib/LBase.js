@@ -218,7 +218,7 @@ Elkaisar.Base.validateFloat = function (id) {
 }
 
 Elkaisar.Base.validateOffset = function (id) {
-    return Number(id);
+    return Math.max(Number(id), 0);
 }
 
 Elkaisar.Base.validateCount = function (id) {

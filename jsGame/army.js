@@ -2143,12 +2143,10 @@ $(document).on("click", ".hero_up_lvl", function () {
   var id_hero = Elkaisar.CurrentHero.Hero.id_hero;
   var lvl = parseInt(Elkaisar.CurrentHero.Hero.lvl);
   var idCity = Elkaisar.CurrentCity.City.id_city;
-
+  const l_Self = $(this);
   if (!heroAvailableForTask(id_hero)) {
-
     return;
   }
-
 
   if (getReqHeroXp(Elkaisar.CurrentHero.Hero.lvl) > Elkaisar.CurrentHero.Hero.exp) {
     alert_box.confirmMessage("لا توجد خبرة كافية مع البطل");
@@ -2160,6 +2158,7 @@ $(document).on("click", ".hero_up_lvl", function () {
    * وهو بيجيب من الداتا بيز البطل المطابق للمواصفات دى لو  حد فكر يلعب فى الليفل او البطل 
    * كدة مش هيحصل تطابق فى البطل الى فى الداتا بيز
    */
+
   $.ajax({
     url: `${Elkaisar.Config.NodeUrl}/api/AHero/upgradeHeroLvl`,
     data: {
@@ -2169,10 +2168,12 @@ $(document).on("click", ".hero_up_lvl", function () {
     },
     type: 'POST',
     beforeSend: function (xhr) {
-
+      l_Self.attr("disabled", "disabled");
+      waitCursor();
     },
     success: function (data, textStatus, jqXHR) {
-
+      l_Self.removeAttr("disabled");
+      unwaitCursor();
       if (isJson(data)) {
         var json_data = JSON.parse(data);
       } else {
@@ -2797,7 +2798,6 @@ $(document).on("click", "#learn-hero-point", function () {
       medalToUse: meddal,
       pointFor: point_for,
       token: Elkaisar.Config.OuthToken,
-      server: Elkaisar.Config.idServer
 
     },
     type: 'POST',
@@ -2805,40 +2805,40 @@ $(document).on("click", "#learn-hero-point", function () {
 
     },
     success: function (data, textStatus, jqXHR) {
-
       if (!Elkaisar.LBase.isJson(data))
         Elkaisar.LBase.Error(data);
-
       var jsonObject = JSON.parse(data);
       if (jsonObject.state === "ok") {
-
         if (jsonObject.PointAdded === 0) {
-
           var msg = `فشل عملية تعليم البطل, حصلت على  ${getArabicNumbers(jsonObject.PointAdded)} 
                                     من ${points_ar_title} , ولم تخسر نقاط,و قد استهلكت ١٠ ${Elkaisar.BaseData.Items[meddal].name}  خلال هذة العملية`;
           alert_box.succesMessage(msg);
           Matrial.takeFrom(meddal, 10);
 
         } else if (jsonObject.PointAdded > 0) {
-
           var msg = `نجحت عملية تعليم البطل, حصلت على  ${getArabicNumbers(jsonObject.PointAdded)} 
                                     من ${points_ar_title} ,و قد استهلكت ١٠  ${Elkaisar.BaseData.Items[meddal].name} خلال هذة العملية`;
           alert_box.succesMessage(msg);
           Matrial.takeFrom(meddal, 10);
-
         } else if (jsonObject.PointAdded < 0) {
-
           var msg = `فشل عملية تعليم البطل, خسرت  ${getArabicNumbers(jsonObject.PointAdded * -1)} 
                                     من ${points_ar_title} ,و قد استهلكت ١٠  ${Elkaisar.BaseData.Items[meddal].name} خلال هذة العملية`;
           alert_box.failMessage(msg);
           Matrial.takeFrom(meddal, 10);
-
         }
-      }
+        Elkaisar.Hero.getHero(idHero).Hero = jsonObject.Hero;
+        Elkaisar.City.getCity(idCity).City = jsonObject.City;
+      } else if (jsonObject.state == "error_0")
+        alert_box.failMessage("النقط غير معروفة")
+      else if (jsonObject.state == "error_1")
+        alert_box.failMessage("البطل غير معروف")
+      else if (jsonObject.state == "error_2")
+        alert_box.failMessage("البطل ليس فى المدينة")
+      else if (jsonObject.state == "error_3")
+        alert_box.failMessage("الميادلية غير معروفة")
+      else if (jsonObject.state == "error_4")
+        alert_box.failMessage("عدد المواد غير كافى")
 
-
-      Elkaisar.Hero.getHero(idHero).Hero = jsonObject.Hero;
-      Elkaisar.City.getCity(idCity).City = jsonObject.City;
       $(".hero_dial .hero-profile").replaceWith(army.middle_content(Elkaisar.CurrentHero));
       $("#medal_amount_player").html(getArabicNumbers(Matrial.getPlayerAmount(meddal)));
       city_profile.refresh_resource_view();

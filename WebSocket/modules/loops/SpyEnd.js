@@ -93,9 +93,9 @@ Elkaisar.Helper.spyOnBarray = async function (Spy)
 Elkaisar.Helper.SPyOnCity = async function (Spy) {
 
 
-    const vectimSpy = await ELkaisar.DB.ASelectFrom("spies , id_player , id_city, name", 'city', "x = ?   AND y = ?", [Spy["x_to"], Spy["y_to"]]);
-    const study_victim = await ELkaisar.DB.ASelectFrom("riding, spying", "edu_acad", `id_player = ${vectimSpy[0]["id_player"]}`)[0];
-    const studyPlayer = await ELkaisar.DB.ASelectFrom("riding, spying", "edu_acad", `id_player = ${Spy["id_player"]}`)[0];
+    const vectimSpy = await Elkaisar.DB.ASelectFrom("spies , id_player , id_city, name", 'city', "x = ?   AND y = ?", [Spy["x_to"], Spy["y_to"]]);
+    const study_victim = await Elkaisar.DB.ASelectFrom("riding, spying", "edu_acad", `id_player = ${vectimSpy[0]["id_player"]}`)[0];
+    const studyPlayer = await Elkaisar.DB.ASelectFrom("riding, spying", "edu_acad", `id_player = ${Spy["id_player"]}`)[0];
 
     const victim_point = Number(vectimSpy[0]["spies"]) + vectimSpy[0]["spies"] * study_victim["riding"];
     const player_point = Number(Spy["spy_num"]) + Spy["spy_num"] * studyPlayer["riding"];

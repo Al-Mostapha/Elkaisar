@@ -1124,6 +1124,7 @@
     font-size: 16px;
     float: right;
     color: white;
+    overflow: hidden;
 }
 .for_msg .left-content .upper ol li span:first-child{
     width: 72px;

@@ -181,11 +181,11 @@ class LBattelReport {
 
 
   static async getGeneralReportData(idReport) {
-    return await Elkaisar.DB.ASelectFrom(
+    return (await Elkaisar.DB.ASelectFrom(
       "round_num , side_win , name AS p_name , x, y, time_stamp, task",
       " report_battel JOIN player ON  report_battel.id_report = ? AND player.id_player = report_battel.attacker ",
       "1", [idReport]
-    );
+    ))[0];
   }
 
   static async getReportId(data) {

@@ -104,7 +104,7 @@ class APlayerQuest {
       else if (one.type == "prestige")
         await Elkaisar.Lib.LPlayer.addPrestige(this.idPlayer, one.amount);
       else if (one.type == "resource")
-        await Elkaisar.Lib.LCity.addResource(this.idPlayer, { [one.resourceType]: one.amount }, idCity);
+        await Elkaisar.Lib.LCity.addResource({ [one.resourceType]: one.amount }, this.idPlayer, idCity);
       else if (one.type == "population")
         await Elkaisar.DB.AUpdate("pop = pop + ?", "city", "id_city = ?", [one.amount, idCity]);
       else if (one.type == "equip") {

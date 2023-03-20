@@ -82,8 +82,7 @@ class AGuildInvReq {
     Mems.forEach(function (P) {
       Elkaisar.Base.sendMsgToPlayer(P.id_player, Msg);
     });
-
-
+    Elkaisar.DB.ADelete("guild_inv", "id_player = ?", [this.idPlayer]);
     return { state: "ok" };
   }
 
@@ -114,12 +113,13 @@ class AGuildInvReq {
   }
 
   async sendGuildRequest() {
-    const idGuild = Elkaisar.Base.validateId(this.Parm["idGuild"]);
+    const idGuild = Elkaisar.Base.validateId(this.Parm.idGuild);
     const GuildMember = await Elkaisar.DB.ASelectFrom("*", "guild_member", "id_player = ?", [this.idPlayer]);
     if (GuildMember.length > 0)
       return { "state": "error_0" };
+
     await Elkaisar.DB.ADelete("guild_req", "id_player = ?", [this.idPlayer]);
-    Elkaisar.DB.Insert("id_player = ?, id_guild = ?, time_stamp = ?", "guild_req", [this.idPlayer, idGuild, Date.now() / 1000]);
+    Elkaisar.DB.AInsert("id_player = ?, id_guild = ?, time_stamp = ?", "guild_req", [this.idPlayer, idGuild, Date.now() / 1000]);
     var Mems = await Elkaisar.DB.ASelectFrom("id_player", "guild_member", "id_guild = ?", [idGuild]);
     Mems.push({ id_player: this.idPlayer });
     const Msg = JSON.stringify({

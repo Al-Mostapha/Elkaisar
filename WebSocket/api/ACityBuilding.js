@@ -161,7 +161,7 @@ class ACityBuilding {
     const idWorking = Elkaisar.Base.validateId(this.Parm.idWorking);
     const upgaradingBuild = await Elkaisar.DB.ASelectFrom("*", "city_worker", "id = ?", [idWorking]);
     const BuildingReq = await Elkaisar.Lib.LBuilding.getBuildingUpgradeReq(upgaradingBuild[0]["type"], upgaradingBuild[0]["lvl_to"] - 1);
-    const lvlReq = Object.assign({}, BuildingReq[0]["lvl_req"]);
+    const lvlReq = JSON.parse(BuildingReq[0]["lvl_req"])
     delete lvlReq["condetion"];
     delete lvlReq["time"];
     if (!upgaradingBuild.length)

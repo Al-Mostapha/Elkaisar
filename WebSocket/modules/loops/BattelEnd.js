@@ -22,8 +22,6 @@ setInterval(function () {
     var Unit = Elkaisar.World.getUnit(Battel.Battel.x_coord, Battel.Battel.y_coord);
     if (Unit.l > Elkaisar.World.WorldUnitData[Unit.ut].maxLvl && Elkaisar.World.WorldUnitData[Unit.ut].lvlChange)
       return AFterFight.lastLvlDone();
-
-
     Battel.Fight = Fight;
     Fight.prepareFight();
     Fight.startFight();

@@ -67,7 +67,7 @@ class LGuild {
   }
 
 
-  static async getGuildReqInv(idGuild) {
+  static async getGuildInvReq(idGuild) {
 
     return {
       "GuildReq": await Elkaisar.DB.ASelectFrom("guild_req.*, player.name, player.porm, player.avatar", "guild_req JOIN player ON player.id_player = guild_req.id_player", "guild_req.id_guild = ?", [idGuild]),
@@ -89,7 +89,7 @@ class LGuild {
     return await Elkaisar.DB.ASelectFrom(
       "player.name , guild_member.rank , guild_member.prize_share ,player.prestige , player.id_player , player.`online`, player.last_seen, player.porm",
       "player JOIN  guild_member ON player.id_player = guild_member.id_player",
-      "guild_member.id_guild = ? ORDER BY guild_member.rank DESC, player.prestige DESC LIMIT 15 OFFSET ?", [idGuild, offset]);
+      "guild_member.id_guild = ? ORDER BY guild_member.rank DESC, player.prestige DESC LIMIT 10 OFFSET ?", [idGuild, offset]);
 
   }
 
