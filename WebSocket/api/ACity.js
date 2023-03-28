@@ -158,7 +158,7 @@ class ACity {
     const yCoord = Elkaisar.Base.validateCount(this.Parm.yCoord);
     const City = await Elkaisar.DB.ASelectFrom(
       "city.id_player, city.name, city.id_city, player.name AS p_name, player.prestige ,player.guild, player.avatar, player.id_guild ",
-      "player JOIN city ON city.x = ? AND city.y = ? AND city.id_player = player.id_player", [xCoord, yCoord]);
+      "player JOIN city ON city.x = ? AND city.y = ? AND city.id_player = player.id_player","1" , [xCoord, yCoord]);
     return City[0] || {};
   }
 

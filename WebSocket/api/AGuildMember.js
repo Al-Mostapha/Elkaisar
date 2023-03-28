@@ -18,13 +18,13 @@ class AGuildMember {
     const GuildMember = await Elkaisar.DB.ASelectFrom("id_guild, rank", "guild_member", "id_player = ?", [this.idPlayer]);
     const MemberRank = await Elkaisar.DB.ASelectFrom("id_guild, rank", "guild_member", "id_player = ?", [idMember]);
     if (!GuildMember.length)
-      return { state: "error_0", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_0", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (!MemberRank.length)
-      return { state: "error_1", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_1", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (GuildMember[0]["id_guild"] != MemberRank[0]["id_guild"])
-      return { state: "error_2", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_2", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (GuildMember[0]["rank"] <= MemberRank[0]["rank"])
-      return { state: "error_3", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_3", TryToHack: Elkaisar.Base.TryToHack(this) };
     await Elkaisar.DB.AUpdate("rank = 0", "guild_member", "id_player = ? AND id_guild = ?", [idMember, GuildMember[0]["id_guild"]]);
     return {
       state: "ok",
@@ -39,20 +39,20 @@ class AGuildMember {
     const GuildMember = await Elkaisar.DB.ASelectFrom("id_guild, rank", "guild_member", "id_player = ?", [this.idPlayer]);
     const MemberRank = await Elkaisar.DB.ASelectFrom("id_guild, rank", "guild_member", "id_player = ?", [idMember]);
     if (!GuildMember.length)
-      return { state: "error_0", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_0", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (!MemberRank.length)
-      return { state: "error_1", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_1", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (GuildMember[0]["id_guild"] != MemberRank[0]["id_guild"])
-      return { state: "error_2", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_2", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (GuildMember[0]["rank"] <= MemberRank[0]["rank"] || MemberRank[0]["rank"] > Elkaisar.Config.GUILD_R_DEPUTY)
-      return { state: "error_3", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_3", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (promotTo > Elkaisar.Config.GUILD_R_DEPUTY)
-      return { state: "error_4", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_4", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (!Elkaisar.Lib.LGuild.G_POSITION_MAX_NUM.hasOwnProperty(promotTo))
-      return { state: "error_5", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_5", TryToHack: Elkaisar.Base.TryToHack(this) };
     const posCount = (await Elkaisar.DB.ASelectFrom("COUNT(*) AS poSC", "guild_member", "id_guild = ? AND rank = ?", [GuildMember[0]["id_guild"], promotTo]))[0]["poSC"];
     if (posCount >= Elkaisar.Lib.LGuild.G_POSITION_MAX_NUM[promotTo])
-      return { state: "error_6", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_6", TryToHack: Elkaisar.Base.TryToHack(this) };
     await Elkaisar.DB.AUpdate("rank = ?", "guild_member", "id_player = ? AND id_guild = ?", [promotTo, idMember, GuildMember[0]["id_guild"]]);
     return {
       state: "ok",
@@ -67,11 +67,11 @@ class AGuildMember {
     const GuildMember = await Elkaisar.DB.ASelectFrom("id_guild, rank", "guild_member", "id_player = ?", [this.idPlayer]);
     const MemberRank = await Elkaisar.DB.ASelectFrom("id_guild, rank", "guild_member", "id_player = ?", [idMember]);
     if (!GuildMember.length)
-      return { state: "error_0", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_0", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (!MemberRank.length)
-      return { state: "error_1", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_1", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (GuildMember[0]["id_guild"] != MemberRank[0]["id_guild"])
-      return { state: "error_2", TryToHack: Elkaisar.Lib.LBase.TryToHack(this) };
+      return { state: "error_2", TryToHack: Elkaisar.Base.TryToHack(this) };
     if (GuildMember[0]["rank"] <= MemberRank[0]["rank"])
       return { state: "error_3" };
     await Elkaisar.DB.AUpdate("rank = ?", "guild_member", "id_player = ? AND id_guild = ?", [GuildMember[0]["rank"], idMember, GuildMember[0]["id_guild"]]);
@@ -139,8 +139,31 @@ class AGuildMember {
     };
   }
 
-  async fireMember(){
+  async fireMember() {
     
+    const idMember = Elkaisar.Base.validateId(this.Parm.idMember);
+    const offset = Elkaisar.Base.validateOffset(this.Parm.offset);
+    const GuildMember = await Elkaisar.DB.ASelectFrom("id_guild, rank", "guild_member", "id_player = ?", [this.idPlayer]);
+    const MemberRank = await Elkaisar.DB.ASelectFrom("id_guild, rank", "guild_member", "id_player = ?", [idMember]);
+
+    if (GuildMember.length == 0)
+      return { state: "error_0", "TryToHack": Elkaisar.Base.TryToHack(this) };
+    if (MemberRank.length == 0)
+      return { state: "error_1", TryToHack: Elkaisar.Base.TryToHack(this) };
+    if (GuildMember[0].id_guild != MemberRank[0].id_guild)
+      return { state: "error_2", TryToHack: Elkaisar.Base.TryToHack(this) };
+    if (GuildMember[0].rank < Elkaisar.Config.GUILD_R_DEPUTY_2)
+      return { state: "error_3" }
+    if(MemberRank[0].rank > Elkaisar.Config.GUILD_R_MEMBER)
+      return {state: "error_4"};
+    
+    Elkaisar.DB.ADelete("guild_member", "id_player = ? AND id_guild = ?  AND rank = 0",[idMember, GuildMember[0].id_guild]);
+    Elkaisar.DB.AUpdate("guild = NULL , id_guild = NULL", "player", "id_player = ?", [idMember]);
+  
+    return {
+      state: "ok",
+      memberList: await Elkaisar.Lib.LGuild.getGuildMember(GuildMember[0]["id_guild"], offset)
+    };
   }
 
 }

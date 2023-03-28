@@ -2153,9 +2153,11 @@ $(document).on("click", "#isolate-guild-member", function () {
           if ($("#guild-g_relation").length > 0) {
             var offset = Number($("#AFTER-AJAX-allMember .tr:first-child").attr("data-offset")) || 0;
             Guild.getGuildMemeber(offset);
-
           }
-        }
+
+          alert_box.succesMessage("تم عزل الملك بنجاح!")
+        }else if(JsonObject.state == "error_3")
+          alert_box.failMessage("لا يمكنك عزل ملك أعلى منك بالرتبة ");
 
       },
       error: function (jqXHR, textStatus, errorThrown) {
@@ -2238,6 +2240,7 @@ $(document).on("click", ".promote-guild-member div", function () {
             Guild.getGuildMemeber(offset);
 
           }
+          alert_box.succesMessage("تمت الترقية بنجاح");
 
         } else if (JsonObject.state === "error_6") {
 
@@ -2314,33 +2317,22 @@ $(document).on("click", "#trade-guild-position", function () {
       },
       type: 'POST',
       success: function (data, textStatus, jqXHR) {
-
         if (!Elkaisar.LBase.isJson(data))
           return Elkaisar.LBase.Error(data);
-
         var JsonObject = JSON.parse(data);
-
         if (JsonObject.state === "ok") {
-
           //Guild.content_forRelation();
           var offset = Number($("#AFTER-AJAX-allMember .tr:first-child").attr("data-offset")) || 0;
           Guild.getGuildMemeber(offset);
-
+          alert_box.succesMessage("تم تبادل المناصب بنجاح!");
         } else if (JsonObject.state === "error_3") {
-
           alert_box.confirmMessage("لا يمكنك تبادل مناصب اعلى او فى نفس مستوى منصبك");
-
         }
-
       },
       error: function (jqXHR, textStatus, errorThrown) {
-
       }
-
     });
-
   }
-
 });
 $(document).on("click", ".mem-prize-percent", function () {
 

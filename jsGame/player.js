@@ -170,6 +170,7 @@ var Player_profile = {
       },
       type: 'GET',
       success: function (data, textStatus, jqXHR) {
+        console.log(data)
         if (isJson(data)) {
           Elkaisar.DPlayer.Notif = JSON.parse(data);
           Fixed.refreshPlayerNotif();
@@ -177,17 +178,11 @@ var Player_profile = {
       }
     });
   }
-
-
-
-
 };
-
-
-
 
 $(document).on("PlayerReady", "html", function () {
   Player_profile.getPlayerEdu();
+  Player_profile.refreshPlayerNotif();
   Player_profile.getPlayerGuildData();
   Player_profile.getPlayerStateData();
   Elkaisar.ArenaChallange.getArenaData();

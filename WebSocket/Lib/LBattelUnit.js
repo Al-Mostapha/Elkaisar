@@ -327,21 +327,19 @@ class LBattelUnit {
 
     static async startBattel(idPlayer, idHero, Hero, Unit, attackTask) {
 
-        Elkaisar.DB.Update("s = ?", "world", "x = ? AND y = ?", [Elkaisar.Config.WU_ON_FIRE, Unit.x, Unit.y]);
-        Elkaisar.DB.Update("in_city = ?", "hero", "id_hero = ?", [Elkaisar.Config.HERO_IN_BATTEL, idHero]);
-        const attackTime = Elkaisar.Lib.LBattelUnit.calAttackTime(Hero[0], Unit, Hero[0].LHArmy.getSlowestSpeed());
+        Elkaisar.DB.AUpdate("s = ?", "world", "x = ? AND y = ?", [Elkaisar.Config.WU_ON_FIRE, Unit.x, Unit.y]);
+        Elkaisar.DB.AUpdate("in_city = ?", "hero", "id_hero = ?", [Elkaisar.Config.HERO_IN_BATTEL, idHero]);
+        // const attackTime = Elkaisar.Lib.LBattelUnit.calAttackTime(Hero[0], Unit, Hero[0].LHArmy.getSlowestSpeed());
+        const attackTime = Math.min(Elkaisar.Lib.LBattelUnit.calAttackTime(Hero[0], Unit, Hero[0].LHArmy.getSlowestSpeed()), 90);
         const now = Date.now() / 1000;
         const InsBattel = await Elkaisar.DB.AInsert(
-            "id_hero = ?, time_start = ?, time_end = ?, x_coord = ?, y_coord = ?, id_player = ?, x_city = ? , y_city = ? , task = ?", "battel",
-            [idHero, now, now + attackTime, Unit["x"], Unit["y"], idPlayer, Hero[0]["x"], Hero[0]["y"], attackTask]
+          "id_hero = ?, time_start = ?, time_end = ?, x_coord = ?, y_coord = ?, id_player = ?, x_city = ? , y_city = ? , task = ?", "battel",
+          [idHero, now, now + attackTime, Unit["x"], Unit["y"], idPlayer, Hero[0]["x"], Hero[0]["y"], attackTask]
         );
-        
         const Battel = await Elkaisar.Lib.LBattelUnit.getBattelById(InsBattel.insertId);
-        
         Elkaisar.Lib.LBattel.HeroListInBattel[idHero] = now + attackTime;
         Elkaisar.Lib.LBattel.newBattelStarted(Battel);
         Elkaisar.Lib.LBattelUnit.join(idPlayer, Battel, Hero[0], Elkaisar.Config.BATTEL_SIDE_ATT);
-
         const TakenPower = Elkaisar.Lib.LBattelUnit.takeHeroPower(idHero, Unit["ut"]);
         Elkaisar.Lib.LBattelUnit.announceStart(idPlayer, Unit);
         Elkaisar.Lib.LBattelUnit.worldUnitFire(Unit);
@@ -352,7 +350,6 @@ class LBattelUnit {
             "classPath": "Hero.Power.Added",
             "Heros": [{idHero: idHero, power: Hero[0].power - TakenPower}]
         }));
-
     }
 
 

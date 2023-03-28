@@ -663,9 +663,6 @@ var message = {
 };
 
 
-
-
-
 $(document).on("click", ".show_msg_income", function () {
 
   var id_msg = $(this).parents(".tr").attr("id_msg");
