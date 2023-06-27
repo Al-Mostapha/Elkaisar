@@ -95,11 +95,8 @@ class AWorld {
 
 
   async getWorldUnitRank() {
-    // $xCoord = validateID($_GET["xCoord"]);
     const xCoord = Elkaisar.Base.validateCount(this.Parm.xCoord);
-    // $yCoord = validateID($_GET["yCoord"]);
     const yCoord = Elkaisar.Base.validateCount(this.Parm.yCoord);
-    // $UnitType = validateId($_GET["unitType"]);
     const UnitType = Elkaisar.World.getUnit(xCoord, yCoord).ut;
 
     let names = "";

@@ -31,11 +31,13 @@ class LPrize {
         "wood": 0.3,
         "stone": 0.15,
         "metal": 0.1,
-        "coin": 0.05
+        "coin": 0.05,
+        "gold": 0.0000001
     };
 
     seaCityTakenAmount = 0;
     SeaCityMaxTakenAmount = 1e9;
+    SeaCityMaxGoldTakenAmount = 150;
 
     static SEA_CITY_RES = {
         [Elkaisar.Config.WUT_SEA_CITY_1]: "food",
@@ -107,7 +109,7 @@ class LPrize {
 
     seaCityPrize(Player, SeaCity, callBack) {
 
-        var p_prize = { "food": 0, "wood": 0, "stone": 0, "metal": 0, "coin": 0 };
+        var p_prize = { "food": 0, "wood": 0, "stone": 0, "metal": 0, "coin": 0, gold: 0};
         var ResToTake = LPrize.SEA_CITY_RES[SeaCity];
 
         if (this.PlayerCities[Elkaisar.Config.BATTEL_SIDE_ATT][Player.idPlayer]) {
@@ -117,9 +119,15 @@ class LPrize {
             Cities.forEach(function (City, Index) {
                 var idCity = City.idCity;
                 var ResAmount = LPrize.SEA_CITY_RES_TAKE_RATE[ResToTake] * City.ResourceCap;
+                if(SeaCity == Elkaisar.Config.WUT_SEA_CITY_6)
+                  ResAmount = Math.min(ResAmount, This.SeaCityMaxGoldTakenAmount - This.seaCityTakenAmount);
+
                 This.seaCityTakenAmount += ResAmount;
                 p_prize[ResToTake] += ResAmount;
-                Elkaisar.DB.Update(`${ResToTake} = ${ResToTake} + ${ResAmount}`, "city", "id_city = ?", [idCity]);
+                if(SeaCity == Elkaisar.Config.WUT_SEA_CITY_6)
+                  Elkaisar.Lib.LPlayer.givePlayerGold(Player.idPlayer, ResAmount);
+                else
+                  Elkaisar.DB.Update(`${ResToTake} = ${ResToTake} + ${ResAmount}`, "city", "id_city = ?", [idCity]);
             });
         }
         return p_prize;

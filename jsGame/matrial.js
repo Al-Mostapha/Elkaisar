@@ -840,7 +840,12 @@ function useMatrial(user_for, matrial, other) {
     GodGate.useBoxPoint(matrial);
   } else if (user_for === "open-fourth-cell") {
     GodGate.OpenFourthCell(other);
+  } else if(user_for === "addArenaExp"){
+    Elkaisar.ArenaChallange.addExpByBox(matrial);
+  } else if(user_for === "addArenaAtt"){
+    Elkaisar.ArenaChallange.addAttByBox(matrial);
   }
+
 
 }
 

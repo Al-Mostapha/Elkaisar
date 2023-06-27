@@ -26,7 +26,7 @@ Elkaisar.Helper.CloseQueenCity = async function (UnitType) {
 
 
     GuildMember.forEach(function (Member, Index) {
-        var PlayerList = []
+        var PlayerList = [];
         PrizeList.forEach(function (Prize, Index) {
             var Luck = Math.floor(Math.random() * 1000);
             var amount = 0;
@@ -526,5 +526,47 @@ Elkaisar.Cron.schedule("0 17 * * 5", function () {
         classPath: "ServerAnnounce.SeaCityCoinClosed"
     }));
 });
+
+Elkaisar.Cron.schedule("0 16 * * 4", function () {
+    Elkaisar.DB.Update("lo = 0", "world", `ut IN (${Elkaisar.Config.WUT_SEA_CITY_6})`,
+            [], function () {
+        Elkaisar.World.refreshWorldUnit();
+    });
+    Elkaisar.Base.broadcast(JSON.stringify({
+        classPath: "ServerAnnounce.SeaCityGoldOppend"
+    }));
+});
+
+Elkaisar.Cron.schedule("0 17 * * 4", function () {
+    Elkaisar.DB.Update("lo = 1", "world", `ut IN (${Elkaisar.Config.WUT_SEA_CITY_6})`,
+            [], function () {
+        Elkaisar.World.refreshWorldUnit();
+    });
+    Elkaisar.Base.broadcast(JSON.stringify({
+        classPath: "ServerAnnounce.SeaCityGoldClosed"
+    }));
+});
+
+Elkaisar.Cron.schedule("0 16 * * 1", function () {
+    Elkaisar.DB.Update("lo = 0", "world", `ut IN (${Elkaisar.Config.WUT_SEA_CITY_6})`,
+            [], function () {
+        Elkaisar.World.refreshWorldUnit();
+    });
+    Elkaisar.Base.broadcast(JSON.stringify({
+        classPath: "ServerAnnounce.SeaCityGoldOppend"
+    }));
+});
+
+Elkaisar.Cron.schedule("0 17 * * 1", function () {
+    Elkaisar.DB.Update("lo = 1", "world", `ut IN (${Elkaisar.Config.WUT_SEA_CITY_6})`,
+            [], function () {
+        Elkaisar.World.refreshWorldUnit();
+    });
+    Elkaisar.Base.broadcast(JSON.stringify({
+        classPath: "ServerAnnounce.SeaCityGoldClosed"
+    }));
+});
+
+
 
 

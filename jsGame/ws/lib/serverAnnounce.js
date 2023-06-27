@@ -262,3 +262,13 @@ Elkaisar.WsLib.ServerAnnounce.SeaCityCoinClosed = function (data) {
     var Msg = '<div class="battel-f-ann"> تم غلق قلاع <span class="red">عملات السسترسس </span>!</div>';
     Chat['append'](Msg);
 };
+
+Elkaisar.WsLib.ServerAnnounce.SeaCityGoldOppend = function (data) {
+    var Msg = '<div class="battel-f-ann"> تم فتح قلاع <span class="red"> الذهب </span>  وسيتم اغلاقها بعد <span class="red">ساعة</span> !</div>';
+    Chat['append'](Msg);
+};
+
+Elkaisar.WsLib.ServerAnnounce.SeaCityGoldClosed = function (data) {
+    var Msg = '<div class="battel-f-ann"> تم غلق قلاع <span class="red"> الذهب </span>!</div>';
+    Chat['append'](Msg);
+};

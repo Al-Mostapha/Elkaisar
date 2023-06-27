@@ -962,37 +962,37 @@
     "tagned_3p": {
         "image": "images/items/item086.jpg",
         "Texture2D": "Texture2D'/Game/images/items/item086.item086'",
-        "use": "many",
+        "use": "once",
         "Key": "tagned_3p"
     },
     "tagned_4p": {
         "image": "images/items/item086.jpg",
         "Texture2D": "Texture2D'/Game/images/items/item086.item086'",
-        "use": "many",
+        "use": "once",
         "Key": "tagned_4p"
     },
     "tagned_5p": {
         "image": "images/items/item086.jpg",
         "Texture2D": "Texture2D'/Game/images/items/item086.item086'",
-        "use": "many",
+        "use": "once",
         "Key": "tagned_5p"
     },
     "tagned_6p": {
         "image": "images/items/item086.jpg",
         "Texture2D": "Texture2D'/Game/images/items/item086.item086'",
-        "use": "many",
+        "use": "once",
         "Key": "tagned_6p"
     },
     "tagned_7p": {
         "image": "images/items/item086.jpg",
         "Texture2D": "Texture2D'/Game/images/items/item086.item086'",
-        "use": "many",
+        "use": "once",
         "Key": "tagned_7p"
     },
     "tagned_8p": {
         "image": "images/items/item086.jpg",
         "Texture2D": "Texture2D'/Game/images/items/item086.item086'",
-        "use": "many",
+        "use": "once",
         "Key": "tagned_8p"
     },
     "necklace_1": {
