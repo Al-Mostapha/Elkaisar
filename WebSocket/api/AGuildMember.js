@@ -131,6 +131,7 @@ class AGuildMember {
       return { state: "error_1" }
     await Elkaisar.DB.ADelete("guild_member", "id_player = ?", [this.idPlayer]);
     await Elkaisar.DB.AUpdate("guild = NULL, id_guild = NULL", "player", "id_player = ?", [this.idPlayer]);
+    Elkaisar.DB.ADelete("arena_guild_challange_hero", "id_player = ?", [this.idPlayer]);
     Elkaisar.Lib.LGuild.updateGuildData(GuildMember[0].id_player);
     return {
       state: "ok",
@@ -159,7 +160,8 @@ class AGuildMember {
     
     Elkaisar.DB.ADelete("guild_member", "id_player = ? AND id_guild = ?  AND rank = 0",[idMember, GuildMember[0].id_guild]);
     Elkaisar.DB.AUpdate("guild = NULL , id_guild = NULL", "player", "id_player = ?", [idMember]);
-  
+    Elkaisar.DB.ADelete("arena_guild_challange_hero", "id_player = ?", [this.idPlayer]);
+    
     return {
       state: "ok",
       memberList: await Elkaisar.Lib.LGuild.getGuildMember(GuildMember[0]["id_guild"], offset)

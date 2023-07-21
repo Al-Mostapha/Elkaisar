@@ -169,7 +169,7 @@ class ATeam {
             return {state: "error_2"};
 
         await Elkaisar.DB.ADelete("team_member", "id_team = ? AND id_player = ?", [idTeam, this.idPlayer]);
-
+        Elkaisar.DB.ADelete("arena_team_challange_hero", "id_player = ?", [this.idPlayer]);
         Elkaisar.DB.Update("mem_num = (SELECT COUNT(*) FROM team_member WHERE id_team = ?)", "team", "id_team = ?", [idTeam, idTeam]);
         const Msg = JSON.stringify({
             classPath: "Team.playerTeamLeave",
@@ -282,6 +282,7 @@ class ATeam {
             
         const TeamMem = await Elkaisar.DB.ASelectFrom("id_player", "team_member", "id_team  = ?", [TeamLeader[0].id_team]) 
         await Elkaisar.DB.ADelete("team_member", "id_player = ?", [idMember]);
+        Elkaisar.DB.ADelete("arena_team_challange_hero", "id_player = ?", [idMember]);
         Elkaisar.Lib.ALTeam.refreshTeamData(TeamLeader[0].id_team);
         var Msg = JSON.stringify({
                     classPath: "Team.TeamMemberFired",

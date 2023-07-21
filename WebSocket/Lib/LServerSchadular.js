@@ -369,7 +369,7 @@ Elkaisar.Helper.CloseArenaChallangeTeam = async function () {
         const PrizeList = await Elkaisar.DB.ASelectFrom("*", "world_unit_prize_sp", "unitType = ? AND lvl = ?", [Elkaisar.Config.WUT_CHALLAGE_FIELD_TEAM, Index + 1]);
         const PlayerTeam = await Elkaisar.DB.ASelectFrom(
                 "hero.id_player",
-                "arena_team_challange_hero JOIN hero ON hero.id_hero = arena_team_challange_hero.id_hero",
+                "arena_team_challange_hero JOIN hero ON hero.id_hero = arena_team_challange_hero.id_hero JOIN team_member ON team_member.id_player = hero.id_player",
                 "id_team = ? GROUP BY hero.id_player", [Team.id_team]);
         if(PlayerTeam.length == 0)
             return; 
@@ -430,7 +430,7 @@ Elkaisar.Helper.CloseArenaChallangeGuild = async function () {
         const PrizeList = await Elkaisar.DB.ASelectFrom("*", "world_unit_prize_sp", "unitType = ? AND lvl = ?", [Elkaisar.Config.WUT_CHALLAGE_FIELD_GUILD, Index + 1]);
         const PlayerGuild = await Elkaisar.DB.ASelectFrom(
             "hero.id_player", 
-            "arena_guild_challange_hero JOIN hero ON hero.id_hero = arena_guild_challange_hero.id_hero",
+            "arena_guild_challange_hero JOIN hero ON hero.id_hero = arena_guild_challange_hero.id_hero JOIN guild_member ON guild_member.id_player = hero.id_player",
             "id_guild = ? GROUP BY hero.id_player", [Guild.id_guild]);
         PlayerGuild.forEach(function (Player) {
             var List = ``;
