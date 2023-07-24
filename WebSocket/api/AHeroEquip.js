@@ -44,7 +44,7 @@ class AHeroEquip {
     if (Equip[0]["id_hero"] > 0)
       return { state: "error_2", "idHero": Equip[0]["id_hero"] };
     if (Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[idHero] > Date.now() / 1000)
-      return { "state": "error_3", "Console": Console.log("Doublicate Hero Equip On", idHero) };
+      return { "state": "error_3", "Console": console.log("Doublicate Hero Equip On", idHero) };
     await Elkaisar.DB.AUpdate("id_hero = NULL, on_hero = 0", "equip", "id_hero = ? AND part = ?", [idHero, Equip[0]["part"]]);
     await Elkaisar.DB.AUpdate("id_hero = ?, on_hero = 1", "equip", "id_equip = ?", [idHero, Equip[0]["id_equip"]]);
 
@@ -66,7 +66,7 @@ class AHeroEquip {
     if (!Hero.length)
       return { state: "error_1" };
     if (Hero[0]["in_city"] != Elkaisar.Config.HERO_IN_CITY || Elkaisar.Lib.LBattel.HeroListInBattel[Equip[0]["id_hero"]] > Date.now() / 1000)
-      return { "state": "error_2", "Console": Console.log("Doublicate Hero Equip Off", Equip) };
+      return { "state": "error_2", "Console": console.log("Doublicate Hero Equip Off", Equip) };
 
     await Elkaisar.DB.AUpdate("id_hero = NULL, on_hero = 0", "equip", "id_equip = ?", [idEquip]);
 

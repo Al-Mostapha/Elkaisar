@@ -22,8 +22,8 @@ Elkaisar.Base.DailyReset = function (){
     Elkaisar.Base.broadcast(JSON.stringify({
         classPath: 'Base.DailyRest'
     }));
-    Elkaisar.DB.ADelete("arena_team_challange_hero", "id_player NOT IN(SELECT id_player FROM team_member)");
-    Elkaisar.DB.ADelete("arena_guild_challange_hero", "id_player NOT IN(SELECT id_player FROM guild_member)");
+    Elkaisar.DB.ADelete("arena_team_challange_hero", "id_player NOT IN (SELECT id_player FROM team_member)");
+    Elkaisar.DB.ADelete("arena_guild_challange_hero", "id_player NOT IN (SELECT id_player FROM guild_member)");
 };
 
 Elkaisar.Cron.schedule("0 0 * * *", function () {
