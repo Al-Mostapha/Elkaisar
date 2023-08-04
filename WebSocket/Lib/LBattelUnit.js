@@ -126,8 +126,6 @@ class LBattelUnit {
 
 
     static calAttackTime(City, Unit, slowestSpeed) {
-
-        
         if (
             Elkaisar.Lib.LWorldUnit.isAsianSquads(Unit.ut) || Elkaisar.Lib.LWorldUnit.isGangStar(Unit.ut)
             || Elkaisar.Lib.LWorldUnit.isCarthagianArmies(Unit.ut) || Elkaisar.Lib.LWorldUnit.isArenaChallange(Unit.ut)

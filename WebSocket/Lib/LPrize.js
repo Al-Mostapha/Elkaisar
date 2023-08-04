@@ -32,7 +32,7 @@ class LPrize {
         "stone": 0.15,
         "metal": 0.1,
         "coin": 0.05,
-        "gold": 0.0000001
+        "gold": 1e-6
     };
 
     seaCityTakenAmount = 0;
@@ -102,7 +102,6 @@ class LPrize {
         for (var idPlayer in this.PlayerCities[Elkaisar.Config.BATTEL_SIDE_ATT]) {
             for (var idCity in this.PlayerCities[Elkaisar.Config.BATTEL_SIDE_ATT][idPlayer]) {
                 this.totalResCap += this.PlayerCities[Elkaisar.Config.BATTEL_SIDE_ATT][idPlayer][idCity].ResourceCap;
-
             }
         }
     }
@@ -118,9 +117,10 @@ class LPrize {
 
             Cities.forEach(function (City, Index) {
                 var idCity = City.idCity;
+                var cityShareRate = City.ResourceCap / This.totalResCap;
                 var ResAmount = LPrize.SEA_CITY_RES_TAKE_RATE[ResToTake] * City.ResourceCap;
                 if(SeaCity == Elkaisar.Config.WUT_SEA_CITY_6)
-                  ResAmount = Math.min(ResAmount, This.SeaCityMaxGoldTakenAmount - This.seaCityTakenAmount);
+                  ResAmount = Math.min(ResAmount, This.SeaCityMaxGoldTakenAmount - This.seaCityTakenAmount)*cityShareRate;
 
                 This.seaCityTakenAmount += ResAmount;
                 p_prize[ResToTake] += ResAmount;
