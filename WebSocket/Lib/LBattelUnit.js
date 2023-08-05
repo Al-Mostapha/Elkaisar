@@ -327,8 +327,7 @@ class LBattelUnit {
 
         Elkaisar.DB.AUpdate("s = ?", "world", "x = ? AND y = ?", [Elkaisar.Config.WU_ON_FIRE, Unit.x, Unit.y]);
         Elkaisar.DB.AUpdate("in_city = ?", "hero", "id_hero = ?", [Elkaisar.Config.HERO_IN_BATTEL, idHero]);
-        // const attackTime = Elkaisar.Lib.LBattelUnit.calAttackTime(Hero[0], Unit, Hero[0].LHArmy.getSlowestSpeed());
-        const attackTime = Math.min(Elkaisar.Lib.LBattelUnit.calAttackTime(Hero[0], Unit, Hero[0].LHArmy.getSlowestSpeed()), 90);
+        const attackTime = Elkaisar.Lib.LBattelUnit.calAttackTime(Hero[0], Unit, Hero[0].LHArmy.getSlowestSpeed());
         const now = Date.now() / 1000;
         const InsBattel = await Elkaisar.DB.AInsert(
           "id_hero = ?, time_start = ?, time_end = ?, x_coord = ?, y_coord = ?, id_player = ?, x_city = ? , y_city = ? , task = ?", "battel",
