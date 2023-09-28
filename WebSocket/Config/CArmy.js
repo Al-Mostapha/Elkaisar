@@ -60,6 +60,19 @@ class CArmy {
     [Elkaisar.Config.ARMY_WALL_C]: { "attack": 40, "def": 20, "vit": 600, "dam": 70, "break": 5, "anti_break": 4, "strike": 15, "immunity": 5, "res_cap": 75 }
   };
 
+  static ArmyPowerFactor = {
+    0: { attack: 0, def: 0, vit: 0, dam: 0, break: 0, anti_break: 0, strike: 0, immunity: 0 },
+    [Elkaisar.Config.ARMY_A]: { attack: 1, def: 1, vit: 1, dam: 1, break: 1, anti_break: 1, strike: 1, immunity: 1 },
+    [Elkaisar.Config.ARMY_B]: { attack: 3, def: 3, vit: 2.3, dam: 2.4, break: 1, anti_break: 1, strike: 1, immunity: 1 },
+    [Elkaisar.Config.ARMY_C]: { attack: 6, def: 3.5, vit: 2.5, dam: 7.6, break: 1, anti_break: 1, strike: 1, immunity: 1 },
+    [Elkaisar.Config.ARMY_D]: { attack: 1, def: 1, vit: 1, dam: 1, break: 1, anti_break: 1, strike: 1, immunity: 1 },
+    [Elkaisar.Config.ARMY_E]: { attack: 4, def: 4, vit: 1.75, dam: 5, break: 1, anti_break: 1, strike: 1, immunity: 1 },
+    [Elkaisar.Config.ARMY_F]: { attack: 8, def: 5.5, vit: 2.85, dam: 10, break: 1, anti_break: 1, strike: 1, immunity: 1 },
+    [Elkaisar.Config.ARMY_WALL_A]: { attack: 1, def: 1, vit: 1, dam: 1, break: 1, anti_break: 1, strike: 1, immunity: 1 },
+    [Elkaisar.Config.ARMY_WALL_B]: { attack: 1, def: 1, vit: 1, dam: 1, break: 1, anti_break: 1, strike: 1, immunity: 1 },
+    [Elkaisar.Config.ARMY_WALL_C]: { attack: 1, def: 1, vit: 1, dam: 1, break: 1, anti_break: 1, strike: 1, immunity: 1 }
+  };
+
   static FoodEat = [0, 4, 18, 36, 5, 20, 150];
   static CurePrice = {
     "army_a": 18, // مشاة

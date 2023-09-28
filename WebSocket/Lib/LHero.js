@@ -76,21 +76,22 @@ class LHero {
       var EquipEff = Elkaisar.Equip.EquipPower[`${Hero.Equip[iii].type}.${Hero.Equip[iii].part}.${Hero.Equip[iii].lvl}`];
       Hero.EquipSpAt[EquipEff.sp_attr] = true;
       for (var ii in Hero.real_eff) {
-
-        Hero.real_eff[ii].attack += EquipEff.attack;
-        Hero.real_eff[ii].def += EquipEff.defence;
-        Hero.real_eff[ii].vit += EquipEff.vitality;
-        Hero.real_eff[ii].dam += EquipEff.damage;
-        Hero.real_eff[ii].break += EquipEff.break;
-        Hero.real_eff[ii].anti_break += EquipEff.anti_break;
-        Hero.real_eff[ii].strike += EquipEff.strike;
-        Hero.real_eff[ii].immunity += EquipEff.immunity;
+        let lArmyType = Hero.real_eff[ii].armyType;
+        Hero.real_eff[ii].attack     += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].attack * EquipEff.attack;
+        Hero.real_eff[ii].def        += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].def * EquipEff.defence;
+        Hero.real_eff[ii].vit        += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].vit * EquipEff.vitality;
+        Hero.real_eff[ii].dam        += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].dam * EquipEff.damage;
+        Hero.real_eff[ii].break      += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].break * EquipEff.break;
+        Hero.real_eff[ii].anti_break += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].anti_break * EquipEff.anti_break;
+        Hero.real_eff[ii].strike     += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].strike * EquipEff.strike;
+        Hero.real_eff[ii].immunity   += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].immunity * EquipEff.immunity;
       }
 
 
     }
     return Hero;
   }
+
   static studyEffectOnForces(armyType, Study) {
     if (armyType === Elkaisar.Config.ARMY_A || armyType === Elkaisar.Config.ARMY_C || armyType === Elkaisar.Config.ARMY_D) {
       return 0.03 * Study["infantry"];
@@ -103,6 +104,7 @@ class LHero {
     }
     return 0;
   }
+
   static prepareHeroPowerBattel(Hero, Battel) {
     if (Hero.id_player <= 0)
       return Hero;
@@ -124,24 +126,28 @@ class LHero {
       defencePercent = 0.1;
 
     for (var iii in Hero.real_eff) {
-
+      let lArmyType = Hero.real_eff[iii].armyType;
       Hero.real_eff[iii].attack += Hero.point_atk;
       Hero.real_eff[iii].attack += Hero.real_eff[iii].attack * LHero.studyEffectOnForces(Hero.real_eff[iii].armyType, Battel.Players[Hero.id_player].Study) || 0;
       if (!LHero.studyEffectOnForces(Hero.real_eff[iii].armyType, Battel.Players[Hero.id_player].Study) && LHero.studyEffectOnForces(Hero.real_eff[iii].armyType, Battel.Players[Hero.id_player].Study) != 0)
         console.log("Error Player Study", Battel.Players[Hero.id_player]);
-      Hero.real_eff[iii].attack += attackPercent * Hero.real_eff[iii].attack || 0;
-      Hero.real_eff[iii].attack += Battel.Players[Hero.id_player].GodGate.attack || 0;
 
-      Hero.real_eff[iii].def += Hero.point_def;
-      Hero.real_eff[iii].def += Hero.real_eff[iii].def * Battel.Players[Hero.id_player].Study.safe * 0.03 || 0;
+      Hero.real_eff[iii].attack += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].attack * Battel.Players[Hero.id_player].GodGate.attack || 0;
+      Hero.real_eff[iii].attack += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].attack * attackPercent * Hero.real_eff[iii].attack || 0;
+
+      Hero.real_eff[iii].def += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].def * Hero.point_def;
+      Hero.real_eff[iii].def += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].def * Hero.real_eff[iii].def * Battel.Players[Hero.id_player].Study.safe * 0.03 || 0;
+      Hero.real_eff[iii].def += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].def * Battel.Players[Hero.id_player].GodGate.defence || 0;
       Hero.real_eff[iii].def += defencePercent * Hero.real_eff[iii].def;
-      Hero.real_eff[iii].def += Battel.Players[Hero.id_player].GodGate.defence || 0;
+      
+      Hero.real_eff[iii].vit += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].vit * Hero.real_eff[iii].vit * Battel.Players[Hero.id_player].Study.medicine * 0.03 || 0;
+      Hero.real_eff[iii].vit += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].vit * Battel.Players[Hero.id_player].GodGate.vit || 0;
 
-      Hero.real_eff[iii].vit += Hero.real_eff[iii].vit * Battel.Players[Hero.id_player].Study.medicine * 0.03 || 0;
-      Hero.real_eff[iii].vit += Battel.Players[Hero.id_player].GodGate.vit || 0;
-
-      Hero.real_eff[iii].dam += Battel.Players[Hero.id_player].GodGate.damage || 0;
-
+      Hero.real_eff[iii].dam        += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].dam * Battel.Players[Hero.id_player].GodGate.damage || 0;
+      Hero.real_eff[iii].break      += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].break * Battel.Players[Hero.id_player].GodGate.break || 0;
+      Hero.real_eff[iii].anti_break += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].anti_break * Battel.Players[Hero.id_player].GodGate.anti_break || 0;
+      Hero.real_eff[iii].strike     += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].strike * Battel.Players[Hero.id_player].GodGate.strike || 0;
+      Hero.real_eff[iii].immunity   += Elkaisar.Config.CArmy.ArmyPowerFactor[lArmyType].immunity * Battel.Players[Hero.id_player].GodGate.immunity || 0;
     }
 
     return Hero;
@@ -171,9 +177,12 @@ class LHero {
       "pre": HeroArmy.pre,
       "post": HeroArmy.post,
       "real_eff": {
-        "0": Elkaisar.Config.CHero.EmptyBattelHeroEff(0, HeroArmy.type.f_1), "1": Elkaisar.Config.CHero.EmptyBattelHeroEff(1, HeroArmy.type.f_2),
-        "2": Elkaisar.Config.CHero.EmptyBattelHeroEff(2, HeroArmy.type.f_3), "3": Elkaisar.Config.CHero.EmptyBattelHeroEff(3, HeroArmy.type.b_1),
-        "4": Elkaisar.Config.CHero.EmptyBattelHeroEff(4, HeroArmy.type.b_2), "5": Elkaisar.Config.CHero.EmptyBattelHeroEff(5, HeroArmy.type.b_3)
+        "0": Elkaisar.Config.CHero.EmptyBattelHeroEff(0, HeroArmy.type.f_1), 
+        "1": Elkaisar.Config.CHero.EmptyBattelHeroEff(1, HeroArmy.type.f_2),
+        "2": Elkaisar.Config.CHero.EmptyBattelHeroEff(2, HeroArmy.type.f_3), 
+        "3": Elkaisar.Config.CHero.EmptyBattelHeroEff(3, HeroArmy.type.b_1),
+        "4": Elkaisar.Config.CHero.EmptyBattelHeroEff(4, HeroArmy.type.b_2), 
+        "5": Elkaisar.Config.CHero.EmptyBattelHeroEff(5, HeroArmy.type.b_3)
       },
       "Equip": Hero.Equip,
       "EquipSpAt": {},
@@ -189,10 +198,13 @@ class LHero {
       "troopsKills": 0
     };
 
-    LHero.prepareHeroPowerBattel(LHero.prepareHeroEquipPower(Elkaisar.Lib.LArmy.prepareHeroBattel(HeroPower), Battel), Battel);
-
-    var Index = Battel.HeroReadyList.push(HeroPower);
-
+    LHero.prepareHeroPowerBattel(
+      LHero.prepareHeroEquipPower(
+        Elkaisar.Lib.LArmy.prepareHeroBattel(HeroPower)
+        , Battel)
+        , Battel
+        );
+    Battel.HeroReadyList.push(HeroPower);
   }
 
   static HeroArmyBattel(Hero) {
