@@ -255,21 +255,27 @@ var Hero = {
 
   },
   getEquipEffectsForHero: function (hero) {
-    var sword = getEquipData(hero.Equip.sword);
-    var helmet = getEquipData(hero.Equip.helmet);
-    var shield = getEquipData(hero.Equip.shield);
-    var armor = getEquipData(hero.Equip.armor);
-    var boot = getEquipData(hero.Equip.boot);
-    console.log(boot)
+    var lPower = {};
+    lPower.sword = getEquipData(hero.Equip.sword);
+    lPower.helmet = getEquipData(hero.Equip.helmet);
+    lPower.shield = getEquipData(hero.Equip.shield);
+    lPower.armor = getEquipData(hero.Equip.armor);
+    lPower.boot = getEquipData(hero.Equip.boot);
+    lPower.belt = getEquipData(hero.Equip.belt);
+    lPower.necklace = getEquipData(hero.Equip.necklace);
+    lPower.pendant = getEquipData(hero.Equip.pendant);
+    lPower.ring = getEquipData(hero.Equip.ring);
+    lPower.steed = getEquipData(hero.Equip.steed);
+​​
     return {
-      "vit": sword.vit + helmet.vit + shield.vit + armor.vit + boot.vit,
-      "attack": sword.attack + helmet.attack + shield.attack + armor.attack + boot.attack + Number(hero.Hero.point_b),
-      "defence": sword.defence + helmet.defence + shield.defence + armor.vit + boot.defence + Number(hero.Hero.point_c),
-      "damage": sword.damage + helmet.damage + shield.damage + armor.damage + boot.damage,
-      "break": sword.break + helmet.break + shield.break + armor.break + boot.break,
-      "anti_break": sword.anti_break + helmet.anti_break + shield.anti_break + armor.anti_break + boot.anti_break,
-      "strike": sword.strike + helmet.strike + shield.strike + armor.strike + boot.strike,
-      "immunity": sword.immunity + helmet.immunity + shield.immunity + armor.immunity + boot.immunity
+      "vit":     Object.values(lPower).reduce((a, b) => a + b.vit || 0, 0),
+      "attack":  Object.values(lPower).reduce((a, b) => a + b.attack || 0, 0) + Number(hero.Hero.point_b),
+      "defence": Object.values(lPower).reduce((a, b) => a + b.defence || 0, 0)  + Number(hero.Hero.point_c),
+      "damage":  Object.values(lPower).reduce((a, b) => a + b.damage || 0, 0),
+      "break":   Object.values(lPower).reduce((a, b) => a + b.break || 0, 0),
+      "anti_break": Object.values(lPower).reduce((a, b) => a + b.anti_break || 0, 0),
+      "strike": Object.values(lPower).reduce((a, b) => a + b.strike || 0, 0) ,
+      "immunity":Object.values(lPower).reduce((a, b) => a + b.immunity || 0, 0)
     };
   },
   foodConsumption: function (hero) {

@@ -384,7 +384,7 @@ function getEquipData(eq_part) {
       image: image,
       id_equip: eq_part.id_equip,
       type: eq_part.type,
-      vit: EquData.Power.vit,
+      vit: EquData.Power.vitality,
       attack: EquData.Power.attack,
       defence: EquData.Power.defence,
       damage: EquData.Power.damage,
@@ -519,30 +519,28 @@ var army = {
     var nav_list = "";
     nav_bar.forEach(function (one, index) {
       nav_list += ` <li head_title = "${one["title"]}" class="${index === 0 ? "selected" : ""}" >
-                                   ${one[("title_" + UserLag.language)]}
-                               </li>`;
+                      ${one[("title_" + UserLag.language)]}
+                    </li>`;
     });
 
-
-
     return `
-                    <div id='dialg_box'>
-                        <div class="head_bar">
-                           <img src="images/style/head_bar.png">
-                           <div class="title">${title} </div>
+            <div id='dialg_box'>
+                <div class="head_bar">
+                  <img src="images/style/head_bar.png">
+                  <div class="title">${title} </div>
+                </div>
+                <div class="nav_bar">
+                    <div class="left-nav">
+                        <ul>${nav_list}</ul>
+                    </div>
+                    <div class="right-nav">
+                        <div class="nav_icon">
+                            <img  class ="close_dialog" src="images/btns/close_b.png">
                         </div>
-                        <div class="nav_bar">
-                            <div class="left-nav">
-                                <ul>${nav_list}</ul>
-                            </div>
-                            <div class="right-nav">
-                                <div class="nav_icon">
-                                    <img  class ="close_dialog" src="images/btns/close_b.png">
-                                </div>
-                            </div>
-                        </div>
-                        ${content}
-                    </div>`;
+                    </div>
+                </div>
+                ${content}
+            </div>`;
   },
 
   /*

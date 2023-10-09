@@ -30,7 +30,7 @@ module.exports.offline = async function (con) {
 
 
 
-module.exports.addPlayer = function (con) {
+module.exports.addPlayer = async function (con) {
   var idPlayer = con.idPlayer;
   var player = Elkaisar.Arr.Players[idPlayer];
   if (player && player.connection) {
@@ -41,6 +41,32 @@ module.exports.addPlayer = function (con) {
   setTimeout(function () {
     module.exports.online(con);
   }, 1000);
+  
+  var lTitles = await Elkaisar.DB.ASelectFrom("*", "player_title", "id_player = ?", [idPlayer]);
+  var Player = await Elkaisar.DB.ASelectFrom("*", "player", "id_player = ?", [idPlayer]);
+  var lPlayerRank = await Elkaisar.DB.ASelectFrom("*", "arena_player_challange", "id_player = ?", [idPlayer]);
+
+  if(lTitles.length > 0){
+    for(var lOneTitle in lTitles[0]){
+      if(lTitles[0][lOneTitle]  != null && lOneTitle != "id_player"){
+        Elkaisar.Base.broadcast(JSON.stringify({
+          classPath: "Chat.TitledPlayerOpen",
+          PlayerName: Player[0].name,
+          Title: lTitles[0][lOneTitle]
+        }))
+      }
+    }
+  }
+
+  if(lPlayerRank.length > 0){
+      if(lPlayerRank[0].rank == 1){
+        Elkaisar.Base.broadcast(JSON.stringify({
+          classPath: "Chat.TitledPlayerOpen",
+          PlayerName: Player[0].name,
+          Title: "ملك الميدان"
+        }))
+      }
+  }
 };
 
 

@@ -197,7 +197,7 @@ class ACityBuilding {
     await Elkaisar.DB.AUpdate(`${BuildingPlace} = 0`, "city_building", "id_city = ?", [idCity]);
     await Elkaisar.DB.AUpdate(`${BuildingPlace} = 0`, "city_building_lvl", "id_city = ?", [idCity]);
     await Elkaisar.DB.ADelete("build_army", "id_city = ? AND place = ?", [idCity, BuildingPlace]);
-    await Elkaisar.DB.ADelete("build_army", "id_city = ? AND place = ?", [idCity, BuildingPlace]);
+    await Elkaisar.DB.ADelete("city_worker", "id_city = ? AND place = ?", [idCity, BuildingPlace]);
 
 
     const BuildingTask = {

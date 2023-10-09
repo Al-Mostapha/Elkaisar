@@ -80,8 +80,8 @@ class CPPlayer {
             ];
         
         Elkaisar.Base.broadcast(JSON.stringify({
-           classPath: "Chat.PlayerTitleChanged",
-           PlayerName: Player[0].name
+          classPath: "Chat.PlayerTitleChanged",
+          PlayerName: Player[0].name
         }))
 
         return {state: "ok"};

@@ -73,6 +73,7 @@ class CArmy {
     [Elkaisar.Config.ARMY_WALL_C]: { attack: 1, def: 1, vit: 1, dam: 1, break: 1, anti_break: 1, strike: 1, immunity: 1 }
   };
 
+
   static FoodEat = [0, 4, 18, 36, 5, 20, 150];
   static CurePrice = {
     "army_a": 18, // مشاة
